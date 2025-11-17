@@ -1,0 +1,34 @@
+site_name: DataLynX
+site_url: https://buildinglogix.github.io/DataLynX/
+repo_url: https://github.com/BuildingLogiX/DataLynX
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.instant
+nav:
+  - Overview: index.md
+  - Getting Started:
+      - Installation & Services: getting-started/installation.md
+      - First BACnet Network: getting-started/first-bacnet-network.md
+      - Connect to BDX: getting-started/connect-to-bdx.md
+  - Concepts:
+      - Agent Architecture: concepts/architecture.md
+      - Evaluation Engine (BloX): concepts/evaluation-engine.md
+      - BasiX Ontology & Profiles: concepts/basix-ontology.md
+      - Mapping Modes: concepts/mapping-modes.md
+      - Units & Formatting: concepts/units-formatting.md
+  - User Guide:
+      - UI Tour: user-guide/ui-tour.md
+      - BACnet Integration Flow: user-guide/bacnet-integration.md
+      - BasiX Mapping Workflow: user-guide/basix-mapping-workflow.md
+  - Admin Guide:
+      - Windows Services & Logs: admin/windows-services-logs.md
+      - Backup & Restore: admin/backup-restore.md
+      - Resetting the Agent Config: admin/reset-config.md
+      - Security & User Management: admin/security-users.md
+  - Reference:
+      - BACnet Driver Reference: reference/bacnet-driver.md
+      - Evaluation Engine Reference: reference/evaluation-engine-api.md
+  - FAQ: faq.md
+  - Contributing: contributing.md
