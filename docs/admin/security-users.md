@@ -15,7 +15,7 @@ Security features include:
 - Role-based UI permissions  
 - Ability to create, edit, and delete users  
 - Logging for authentication and access events  
-- Recommended HTTPS usage for secure networks  
+- Network access restrictions for secure environments  
 
 Security in DataLynX is intentionally lightweight but robust enough for operational environments.
 
@@ -138,23 +138,7 @@ You can remove users entirely or disable them temporarily.
 
 ---
 
-# 🌐 7. HTTPS / Certificate Recommendations
-
-Because DataLynX uses a web interface, it is recommended to use HTTPS in production environments.
-
-Best practices:
-
-- Install a valid SSL certificate on the machine hosting DataLynX  
-- Configure the Web Service to use HTTPS (future versions may allow UI toggles)  
-- Restrict inbound access to trusted subnets  
-- Use strong passwords  
-
-If DataLynX is exposed beyond a local network:  
-**HTTPS is mandatory.**
-
----
-
-# 🧪 8. Auditing & Logging
+# 🧪 7. Auditing & Logging
 
 Authentication events are logged, including:
 
@@ -173,9 +157,9 @@ Use these logs to review suspicious activity or access issues.
 
 ---
 
-# 🔐 9. Security Best Practices
+# 🔐 8. Security Best Practices
 
-### ✔ Use HTTPS whenever possible  
+### ✔ Restrict network access to trusted subnets
 ### ✔ Always assign strong passwords  
 ### ✔ Restrict Supervisor role to trusted users  
 ### ✔ Rotate passwords frequently  

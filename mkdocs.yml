@@ -1,13 +1,37 @@
 site_name: DataLynX
 site_url: https://buildinglogix.github.io/DataLynX/
 repo_url: https://github.com/BuildingLogiX/DataLynX
+
 theme:
   name: material
+  custom_dir: overrides
+  logo: assets/blx-white.svg
+  favicon: assets/favicon.ico
   features:
+    - navigation.tabs
     - navigation.sections
     - navigation.instant
+    - content.code.copy
+    - search.highlight
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - tables
+  - attr_list
+  - md_in_html
+
 nav:
-  - Overview: index.md
+  - Home: index.md
   - Getting Started:
       - Installation & Services: getting-started/installation.md
       - First BACnet Network: getting-started/first-bacnet-network.md

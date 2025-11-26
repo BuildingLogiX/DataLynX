@@ -144,15 +144,13 @@ You should see log entries for:
 
 ---
 
-## 🔒 7. HTTPS & Security Best Practices
+## 🔒 7. Security Best Practices
 
 For production environments:
 
-- Use **HTTPS** instead of HTTP
-- Install a valid certificate on the DataLynX Web Service
 - Restrict inbound access to the web port (80, 8050, or 8020) to trusted networks
 - Use random, complex passwords for BDX credentials
-- Ensure Windows firewall allows only required inbound traffic  
+- Ensure Windows firewall allows only required inbound traffic
 
 ---
 

@@ -80,7 +80,7 @@ Common issues, troubleshooting steps, and quick answers.
 - DataLynX installer (.msi)  
 - Administrative privileges for service installation  
 - Network visibility to BACnet/IP devices  
-- HTTPS configuration recommended  
+- Network access to the web UI port (80, 8050, or 8020)  
 - Optional: Connectivity to a BDX instance
 
 ---
