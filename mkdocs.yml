@@ -1,18 +1,19 @@
 site_name: DataLynX
 site_url: https://buildinglogix.github.io/DataLynX/
-repo_url: https://github.com/BuildingLogiX/DataLynX
 
 theme:
   name: material
   custom_dir: overrides
-  logo: assets/blx-white.svg
-  favicon: assets/favicon.ico
+  logo: assets/blx white.svg
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.instant
+    - navigation.tracking
     - content.code.copy
     - search.highlight
+    - search.suggest
 
 extra_css:
   - assets/extra.css
