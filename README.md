@@ -41,28 +41,6 @@ The documentation includes:
 ### **FAQ**
 Common questions, troubleshooting steps, and workflow tips.
 
----
-
-## 🚀 Build the Docs
-
-To build the documentation locally:
-
-```bash
-pip install mkdocs mkdocs-material
-mkdocs serve
-```
-
-Your docs will be available at:
-
-```
-http://localhost:8000
-```
-
-To deploy to GitHub Pages:
-
-```bash
-mkdocs gh-deploy
-```
 
 ---
 
@@ -83,13 +61,6 @@ mkdocs gh-deploy
 
 ---
 
-## 🛠 Requirements
-
-- Windows 10 or Server 2016+ (for DataLynX Agent)
-- Python 3.9+ (for documentation tooling)
-- MkDocs + Material Theme
-
----
 
 ## 📄 License
 
