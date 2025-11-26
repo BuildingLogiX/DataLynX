@@ -1,4 +1,9 @@
-/* BuildingLogiX Consistent Footer Styling */
+/* BuildingLogiX Consistent Styling */
+
+/* Hide GitHub repository icons/links in header */
+.md-header__source {
+    display: none !important;
+}
 
 /* Ensure content doesn't overlap with fixed footer */
 .md-main {

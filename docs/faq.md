@@ -381,7 +381,7 @@ This FAQ covers:
 
 - General usage  
 - BACnet setup  
-- Evaluation engine logic  
+- Data transformation logic  
 - BasiX mappings  
 - BDX communication  
 - Backups & resets  
