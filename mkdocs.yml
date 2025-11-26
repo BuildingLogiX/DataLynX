@@ -14,12 +14,14 @@ nav:
       - Connect to BDX: getting-started/connect-to-bdx.md
   - Concepts:
       - Agent Architecture: concepts/architecture.md
-      - Evaluation Engine (BloX): concepts/evaluation-engine.md
+      - Data Transformation & Logic Flow: concepts/data-transformation.md
       - BasiX Ontology & Profiles: concepts/basix-ontology.md
       - Mapping Modes: concepts/mapping-modes.md
       - Units & Formatting: concepts/units-formatting.md
   - User Guide:
       - UI Tour: user-guide/ui-tour.md
+      - Explorer Structure: user-guide/explorer-structure.md
+      - Hierarchy & Digital Twin: user-guide/hierarchy-digital-twin.md
       - BACnet Integration Flow: user-guide/bacnet-integration.md
       - BasiX Mapping Workflow: user-guide/basix-mapping-workflow.md
   - Admin Guide:
@@ -28,7 +30,7 @@ nav:
       - Resetting the Agent Config: admin/reset-config.md
       - Security & User Management: admin/security-users.md
   - Reference:
+      - Terminology & Definitions: reference/terminology.md
+      - Toolbox Block Reference: reference/toolbox-blocks.md
       - BACnet Driver Reference: reference/bacnet-driver.md
-      - Evaluation Engine Reference: reference/evaluation-engine-api.md
   - FAQ: faq.md
-  - Contributing: contributing.md
