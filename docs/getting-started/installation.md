@@ -30,6 +30,7 @@ The installer sets up the following:
   ```
   C:\ProgramData\DataLynX\agents\default\
   ```
+
 - Windows Services (see next section)
 - Web UI host
 - Log directories
@@ -42,12 +43,14 @@ DataLynX installs **two** Windows services.
 Both must be running for the UI to be accessible.
 
 ### ✅ **DataLynX Supervisor Service**
+
 - Manages communication between the agent and BDX
 - Handles remote management commands
 - Provides the infrastructure for the agent to run
 - Process: `supervisor.exe`
 
 ### ✅ **DataLynX Web Service**
+
 - Hosts the web-based user interface
 - Provides local configuration and diagnostics
 - Required for logging into the UI via browser
@@ -63,7 +66,10 @@ Both must be running for the UI to be accessible.
    - **Status:** Running
    - **Startup Type:** Automatic
 
+![DataLynX Windows Services](../img/DataLynX Windows Services.PNG)
+
 If needed:
+
 - Right‑click → **Start**
 - Right‑click → **Restart**
 
@@ -75,6 +81,7 @@ If needed:
 
 - **Windows Services** (DataLynX Supervisor Service & DataLynX Web Service) provide the infrastructure and UI access
   - Run as Windows processes: `supervisor.exe` and `agent.exe`
+
 - **The DataLynX Agent** (controlled from the UI) runs the actual BACnet driver, data processing, and BuildingLogiX processes
 
 **You can have the Windows Services running but the DataLynX Agent stopped.**
@@ -137,6 +144,7 @@ New-NetFirewallRule -DisplayName "DataLynX Web UI" -Direction Inbound -Protocol 
 ### Testing Firewall Access
 
 After configuring the firewall:
+
 - From the local machine: Open a browser and navigate to `http://localhost`
 - From another machine on the network: Use `http://<server-ip-address>` (using the configured port if not 80)
 
@@ -162,6 +170,7 @@ http://localhost:8050
 **Default Credentials:**
 
 DataLynX ships with default login credentials provided by BuildingLogiX. Use these credentials for first login:
+
 - Username: *[Provided by BuildingLogiX during installation/setup]*
 - Password: *[Provided by BuildingLogiX during installation/setup]*
 
@@ -174,6 +183,7 @@ When you first log in, you will land on the **Supervisor** page. This is the adm
 ![Supervisor Page](../img/Supervisor.PNG)
 
 **⚠️ Critical Understanding:**
+
 - The **Windows Services** provide infrastructure and UI access
 - The **Agent** runs the BACnet driver, data processing, and BuildingLogiX processes
 - The services can be running while the agent is stopped
@@ -191,11 +201,13 @@ When you first log in, you will land on the **Supervisor** page. This is the adm
    - User management
 
 **If the agent is already running:**
+
 - The status will show "Running"
 - The full DataLynX Explorer tree will be immediately visible
 - You can navigate through all features and begin configuration
 
 **To stop the agent:**
+
 - Click the **Stop** button on the Supervisor page
 - This stops the BACnet driver and data processing (but leaves Windows Services running)
 
@@ -240,6 +252,7 @@ Both DataLynX services must show "Running".
 Open:
 `C:\ProgramData\DataLynX\agents\default\logs\datalynx.log`
 You should see entries such as:
+
 - Service startup
 - Driver initialization
 - Network listener opening
@@ -259,6 +272,7 @@ If all checks pass, your installation is complete and you're ready to configure 
 ## 🚑 7. Troubleshooting
 
 ### **UI will not load**
+
 - Ensure **DataLynX Web Service** is running in Windows Services
 - **Check Windows Firewall** - verify inbound rule exists for the web port (see section 3 above)
 - Verify no other application is using the same port
@@ -267,13 +281,14 @@ If all checks pass, your installation is complete and you're ready to configure 
 - Look for errors in: `C:\ProgramData\DataLynX\agents\default\logs\http.log`
 
 ### **Services fail to start**
+
 - Check Event Viewer → Windows Logs → Application
-- Ensure .NET and Visual C++ runtimes are installed
 - Look for permission issues in `ProgramData\DataLynX`
 - Verify both services are set to Automatic startup
 - Check Task Manager → Details for `supervisor.exe` and `agent.exe` processes
 
 ### **Logs show no activity**
+
 - The service may not have write access to the log directory
 - Check folder permissions under `C:\ProgramData`
 
@@ -283,6 +298,6 @@ If all checks pass, your installation is complete and you're ready to configure 
 
 Move on to:
 
-👉 **Getting Started → First BACnet Network**  
+👉 **[First BACnet Network](first-bacnet-network.md)**
 to configure your hosted device, add networks, and begin discovery.
 

@@ -35,6 +35,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started:
+      - Quick Start: getting-started/quick-start.md
       - Installation & Services: getting-started/installation.md
       - First BACnet Network: getting-started/first-bacnet-network.md
       - Connect to BDX: getting-started/connect-to-bdx.md

@@ -1,4 +1,4 @@
-# 🧭 Explorer Structure & Navigation
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="150" } Explorer Structure & Navigation
 
 The **Explorer** is the primary navigation tree in DataLynX, located on the left side of the UI. It provides hierarchical access to all configuration, devices, logic blocks, and system tools.
 
@@ -31,6 +31,7 @@ Each of these nodes serves a specific purpose in the DataLynX ecosystem.
 ### **DataLynX (Root Node)**
 
 The root node represents the DataLynX agent instance. Clicking on it provides:
+
 - System information (OS, host ID, version)
 - Agent information (name, data directory, state)
 - Agent control (Start/Stop buttons if accessed via Supervisor)
@@ -57,15 +58,18 @@ System
 ```
 
 **What's inside:**
+
 - **BasiX/mapping_schemes** - Contains BasiX profile templates and mapping configurations for different device types
 - **backup_service** - Configuration for automated backup scheduling and snapshot management
 
 **When to use:**
+
 - Configuring BasiX device mapping schemes (VAV, AHU, Chiller, etc.)
 - Setting up automated backup schedules
 - Managing system-level BasiX configuration
 
 **Related documentation:**
+
 - [BasiX Ontology & Profiles](../concepts/basix-ontology.md)
 - [BasiX Mapping Workflow](basix-mapping-workflow.md)
 
@@ -96,6 +100,7 @@ Connections
 ```
 
 **What's inside:**
+
 - **BDX** - Connection settings for sending data to the BuildingLogiX Data eXchange platform
 - **BACnet** - BACnet driver configuration and discovered devices
   - **configuration** - Hosted device, router table, network settings
@@ -103,6 +108,7 @@ Connections
   - **devices** - All discovered BACnet devices organized by vendor or name
 
 **When to use:**
+
 - Setting up your first BACnet network
 - Discovering and managing BACnet devices
 - Configuring the hosted device identity
@@ -110,6 +116,7 @@ Connections
 - Viewing and managing device points
 
 **Related documentation:**
+
 - [First BACnet Network](../getting-started/first-bacnet-network.md)
 - [Connect to BDX](../getting-started/connect-to-bdx.md)
 - [BACnet Driver Reference](../reference/bacnet-driver.md)
@@ -121,6 +128,7 @@ Connections
 The **Hierarchy** node is your digital twin workspace—a flexible area where you can mirror physical building infrastructure, organize custom logic and calculations, and build BasiX profiles for BDX.
 
 **Purpose:**
+
 - Build BasiX device profiles that get sent to the BDX agent
 - Create custom calculations and logic (efficiency metrics, aggregations, fault detection)
 - Organize blocks by physical layout (campuses, buildings, zones) OR by function (calculations, profiles, virtual meters)
@@ -149,6 +157,7 @@ Hierarchy
 ```
 
 **When to use:**
+
 - Creating BasiX device profiles to send to BDX
 - Building custom calculations (efficiency, aggregations, virtual meters)
 - Organizing logic by physical layout, equipment type, or analytical function
@@ -158,12 +167,14 @@ Hierarchy
 
 **Key Concept:**
 The Hierarchy is where **all your custom work lives**:
+
 - BasiX profiles for BDX are built here
 - Custom calculations and logic are organized here
 - Flow View workspace operates within Hierarchy folders
 - This is your canvas—structure it however makes sense for your needs
 
 **Related documentation:**
+
 - [Hierarchy & Digital Twin](hierarchy-digital-twin.md) (detailed guide)
 - [Data Transformation & Logic Flow](../concepts/data-transformation.md)
 
@@ -174,23 +185,27 @@ The Hierarchy is where **all your custom work lives**:
 The **Supervisor** node provides administrative control and monitoring of the DataLynX agent.
 
 **What's inside:**
+
 - Agent status display (Running/Stopped)
 - Start/Stop agent controls
 - System information
 - Agent configuration overview
 
 **When to use:**
+
 - Starting or stopping the DataLynX agent
 - Checking agent status
 - Viewing system information
 - Administrative oversight
 
 **Important:**
+
 - This is the **landing page** when you first log in
 - If the agent is not running, you must click **Start** here to see the full Explorer tree
 - The agent can be stopped while Windows Services continue running
 
 **Related documentation:**
+
 - [Installation & Services](../getting-started/installation.md)
 - [Terminology: Supervisor](../reference/terminology.md#supervisor)
 
@@ -201,18 +216,21 @@ The **Supervisor** node provides administrative control and monitoring of the Da
 User account management interface.
 
 **What's inside:**
+
 - User list with roles and permissions
 - User creation and deletion
 - Password management
 - Role assignment (Supervisor, Operator, Viewer, etc.)
 
 **When to use:**
+
 - Creating new user accounts
 - Assigning roles and permissions
 - Resetting passwords
 - Managing authentication settings
 
 **Related documentation:**
+
 - [Security & User Management](../admin/security-users.md)
 
 ---
@@ -222,12 +240,14 @@ User account management interface.
 License and activation management.
 
 **What's inside:**
+
 - Current license status
 - License key entry
 - Feature entitlements
 - Expiration information
 
 **When to use:**
+
 - Activating DataLynX with a license key
 - Checking license status
 - Viewing enabled features
@@ -257,11 +277,13 @@ This shows your current location in the tree and helps you understand context wh
 ### **Flow View Context**
 
 When you select a node in the Explorer:
+
 - The **center workspace** shows the Flow View for that node (if it contains blocks)
 - The **right panel** shows the Toolbox (with block categories)
 - The **Edit Block** panel appears when you select a block
 
 **Example:**
+
 - Click on `Hierarchy → AHUs → AHU-1`
 - Flow View opens showing all logic blocks for AHU-1
 - Toolbox appears on the right with available block types
@@ -272,6 +294,7 @@ When you select a node in the Explorer:
 ### **Switching Between Views**
 
 The top-right corner shows the **Active View** toggle:
+
 - **Flow View** - Visual block-based logic workspace (most common)
 - **Mapping Editor** - Used when working with BasiX mapping schemes
 - **Other views** - Context-dependent based on the selected node

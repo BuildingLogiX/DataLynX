@@ -192,14 +192,15 @@ If routers are present on your network:
 
 ---
 
-## 🎉 9. You’re Ready for BasiX Mapping
+## 🎉 9. Next Steps
 
 After discovery and point validation, you can proceed with:
 
-👉 **BasiX Mapping Workflow**  
-to normalize your BACnet points into standardized BasiX devices and send them to BDX.
+👉 **[Connect to BDX](connect-to-bdx.md)**
+to configure the agent connection to the BuildingLogiX Data eXchange.
 
-This will be the next major step in the knowledge base.
+👉 **[BasiX Mapping Workflow](../user-guide/basix-mapping-workflow.md)**
+to normalize your BACnet points into standardized BasiX devices and send them to BDX.
 
 ---
 

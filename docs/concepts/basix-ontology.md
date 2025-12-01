@@ -10,8 +10,7 @@ It ensures that AHUs, VAVs, pumps, chillers, heat pumps, fan coils, and other HV
 **BasiX** defines:
 
 - Standard **device types** (e.g., AHU, VAV, Chiller, Pump)
-- Standard **point names** (e.g., SupplyAirTemp, FanSpeed, CoolingCommand)
-- Required vs optional points
+- Standard **point names** (e.g., supplyAirTemp, supplyFanVFDSpeed, coolOutput)
 - Units, data types, and expected ranges
 - Normalized behavior and meaning of each value
 - Metadata needed for analytics and equipment classification
@@ -55,20 +54,20 @@ Each profile includes:
   - Units
   - Expected ranges
   - Setpoint behavior
+
 - **Tags & metadata**
 - **Virtual or computed fields**
 - **Normalization rules**
 
 ### Example: AHU BasiX Profile
 
-| BasiX Point | Description | Required? | Units |
-|-------------|-------------|-----------|--------|
-| SupplyAirTemp | Discharge air temperature | ✔ | °F |
-| MixedAirTemp | Mixed air temperature | ✔ | °F |
-| CoolingValveCommand | Cooling coil valve position | ✔ | % |
-| FanSpeed | Supply fan speed or VFD output | Optional | % |
-| FilterPressure | Filter differential pressure | Optional | inWC |
-| Mode | Occupied/unoccupied, economizer, etc. | Optional | Enum |
+| BasiX Point | Description | Units |
+|-------------|-------------|--------|
+| supplyAirTemp | Discharge air temperature | °F |
+| mixedAirTemp | Mixed air temperature | °F |
+| coolOutput | Cooling coil valve position | % |
+| supplyFanVFDSpeed | Supply fan speed or VFD output | % |
+| ductStaticPressure | Duct static pressure | inWC |
 
 The same logic applies to VAVs, Chillers, Pumps, etc.
 
@@ -92,9 +91,9 @@ DataLynX uses two layers to convert field data into BasiX:
 ### Example Mapping
 
 ```
-BACnet AI "SF-T"  →  BasiX SupplyAirTemp
-BACnet AV "RM-T"  →  BasiX ZoneAirTemp
-BACnet BO "CCV"   →  BasiX CoolingValveCommand
+BACnet AI "SF-T"  →  BasiX supplyAirTemp
+BACnet AV "RM-T"  →  BasiX zoneAirTemp
+BACnet AO "CCV"   →  BasiX coolOutput
 ```
 
 If a device has 100 VAVs named `VAV-1` through `VAV-100`, pattern matching might be used:
@@ -188,5 +187,5 @@ Without BasiX, the cloud would receive inconsistent, vendor-specific, and unreli
 
 ## ➡️ Next Step
 
-Continue to **Concepts → Mapping Modes** to learn how DataLynX maps BACnet points to BasiX using exact, pattern, and regex approaches.
+Continue to **[Mapping Modes](mapping-modes.md)** to learn how DataLynX maps BACnet points to BasiX using exact, pattern, and regex approaches.
 

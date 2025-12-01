@@ -31,7 +31,7 @@ Mapping modes provide the flexibility needed for these realities.
 
 ---
 
-# 🎯 2. Exact Mapping
+## 🎯 2. Exact Mapping
 
 Exact Mapping creates a strict one-to-one relationship:
 
@@ -50,14 +50,14 @@ Specific BACnet Point → Specific BasiX Point
 
 ```
 BACnet Path: /AHU-1/AI-SAT
-BasiX Point: SupplyAirTemp
+BasiX Point: supplyAirTemp
 ```
 
 If the name does not match exactly, the mapping will not apply.
 
 ---
 
-# 🟡 3. Pattern Mapping (Glob)
+## 🟡 3. Pattern Mapping (Glob)
 
 Pattern mapping uses simple wildcards:
 
@@ -76,7 +76,7 @@ This is helpful when working with repeated devices, such as:
 
 ```
 BACnet Pattern: /VAV-*/AI-RM-T
-BasiX Point: ZoneAirTemp
+BasiX Point: zoneAirTemp
 ```
 
 This will match:
@@ -99,7 +99,7 @@ Matches:
 
 ---
 
-# 🧠 4. Regex Mapping (Advanced)
+## 🧠 4. Regex Mapping (Advanced)
 
 Regex mapping uses **full regular expressions**, allowing the most powerful matching method.
 
@@ -115,7 +115,7 @@ Use this mode when:
 
 ```
 Regex: ^/VAV[-_ ]?(\d{1,3})/((AI|AV|AI-TEMP|RM-TEMP).*)
-Maps to: ZoneAirTemp
+Maps to: zoneAirTemp
 ```
 
 This rule would match:
@@ -129,16 +129,17 @@ This rule would match:
 
 ```
 Regex: (CCV|COOLING.*VALVE.*CMD|CV_CMD|CVALVE)
-Maps to: CoolingValveCommand
+Maps to: coolingValveCommand
 ```
 
 Regex mapping is extremely powerful and enables cross-vendor normalization.
 
 ---
 
-# 🧩 5. Best Practices
+## 🧩 5. Best Practices
 
 ### ✔ Use Exact Mapping for:
+
 - AHUs  
 - Chillers  
 - Boilers  
@@ -146,6 +147,7 @@ Regex mapping is extremely powerful and enables cross-vendor normalization.
 - One-off equipment  
 
 ### ✔ Use Pattern Mapping for:
+
 - Any repeated device count > 10  
 - VAVs  
 - Heat pumps  
@@ -153,6 +155,7 @@ Regex mapping is extremely powerful and enables cross-vendor normalization.
 - VRF zones  
 
 ### ✔ Use Regex Mapping for:
+
 - Messy systems  
 - Mixed-vendor retrofits  
 - Custom naming  
@@ -161,7 +164,7 @@ Regex mapping is extremely powerful and enables cross-vendor normalization.
 
 ---
 
-# 🧪 6. Testing Your Mappings
+## 🧪 6. Testing Your Mappings
 
 DataLynX supports live testing via:
 
@@ -176,7 +179,7 @@ Highlights missing required BasiX points.
 
 ---
 
-# 📝 7. Summary
+## 📝 7. Summary
 
 Mapping modes provide the flexibility needed to normalize messy BAS naming conventions into clean BasiX points.
 
@@ -192,6 +195,6 @@ Together, these tools allow DataLynX to model any building consistently.
 
 ## ➡️ Next Step
 
-Proceed to **Concepts → Units & Formatting**  
+Proceed to **[Units & Formatting](units-formatting.md)**
 to learn how DataLynX handles engineering units and best formatting practices.
 

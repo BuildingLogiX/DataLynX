@@ -1,36 +1,64 @@
-# 🧹 Resetting the Agent Configuration
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="150" } Resetting the Agent Configuration
 
-There may be scenarios where you need to reset the DataLynX Agent back to a clean, default state.  
-This procedure is safe when done correctly and is often used when:
+!!! danger "DESTRUCTIVE OPERATION - READ CAREFULLY"
+    **Resetting the configuration will PERMANENTLY DELETE all your DataLynX settings.** This includes:
 
-- The configuration becomes corrupted  
-- Mappings or logic flows are severely broken  
-- BACnet networks were misconfigured  
-- You want to completely rebuild the integration  
-- A test environment needs to be reset  
-- Restoring from backup is not desired  
+    - **All BACnet network configurations**
+    - **All discovered devices and points**
+    - **All BasiX mappings and profiles**
+    - **All Flow View logic and calculations**
+    - **All user accounts and credentials**
+    - **All custom settings and preferences**
 
-This guide explains **exactly how to perform a safe reset** and avoid accidentally overwriting changes.
+    **This action cannot be undone.** You will be starting completely from scratch.
 
 ---
 
-# ⚠️ 1. Important Warnings
+## When to Reset
+
+Reset is a **last resort** option, typically used only when:
+
+- The configuration is severely corrupted and cannot be restored from backup
+- Mappings or logic flows are so broken that rebuilding is faster than fixing
+- You intentionally want to completely wipe the system and start fresh
+- A test environment needs to be cleared for new testing
+
+**Before resetting, consider:**
+
+- Can you restore from a backup instead? See [Backup & Restore](backup-restore.md)
+- Can you fix the specific issue without losing everything?
+- Have you exported any configurations you might need later?
+
+---
+
+## 🛑 1. Critical Warnings
+
+!!! warning "STOP - Back Up First!"
+    **Before proceeding, you MUST manually back up your configuration files if you want any chance of recovery.**
+
+    1. **Use the UI backup feature first:** Go to **System → backup_service** and trigger a manual backup
+    2. **Copy the .cfg file:** Navigate to `C:\ProgramData\DataLynX\agents\default\` and copy `datalynx.cfg` to a safe location
+    3. **Copy the entire folder (recommended):** Copy the entire `default` folder including `backups/` and `snapshots/` subdirectories
 
 ### ❗ The Agent must NOT be running when resetting
-If you delete `datalynx.cfg` while the Supervisor Service is running:
-- The service may rewrite the file during shutdown  
-- You may lose the intended reset  
-- You risk generating partial or invalid configuration states  
 
-### ❗ Always stop the Supervisor Service first  
+If you delete `datalynx.cfg` while the Supervisor Service is running:
+
+- The service may rewrite the file during shutdown
+- You may lose the intended reset
+- You risk generating partial or invalid configuration states
+
+### ❗ Always stop the Supervisor Service first
+
 This ensures the agent cannot write to the config directory.
 
-### ❗ Make a backup before resetting  
-Even if you don’t plan to restore the old configuration, keeping a copy is good practice.
+### ❗ There is NO automatic recovery
+
+Once you delete the configuration and restart the service, the old configuration is **gone forever** unless you have a backup copy.
 
 ---
 
-# 🧭 2. Reset Procedure (Safe Method)
+## 🧭 2. Reset Procedure (Safe Method)
 
 ### Step 1 — Open Windows Services
 
@@ -93,20 +121,23 @@ to a safe location.
 
 ### Step 5 — Delete the Config File
 
+!!! danger "Point of No Return"
+    **This step will permanently delete your configuration.** Make absolutely sure you have backed up your files before proceeding. Once deleted and the service restarts, your old configuration cannot be recovered.
+
 Delete:
 
 ```
 datalynx.cfg
 ```
 
-This wipes all user configuration including:
+This **permanently wipes** all user configuration including:
 
-- BACnet networks
+- All BACnet networks and device configurations
 - Hosted device settings
-- Mappings
-- Logic processing state
-- User roles and credentials (depending on version)
-- BasiX devices  
+- All BasiX mappings and profiles
+- All Flow View logic and calculations
+- User roles and credentials
+- All custom settings  
 
 ---
 
@@ -129,7 +160,7 @@ Once complete, you can log into the UI and begin a fresh setup.
 
 ---
 
-# 🧪 3. Verifying the Reset
+## 🧪 3. Verifying the Reset
 
 After restart, confirm:
 
@@ -140,6 +171,7 @@ Timestamp should reflect the restart time.
 BACnet networks and BasiX devices will be empty.
 
 ### ✔ Logs show initialization messages:
+
 - `Initializing agent...`
 - `Loading default configuration…`
 - `BACnet driver started`
@@ -155,7 +187,7 @@ http://localhost
 
 ---
 
-# 🛑 4. What NOT to Delete
+## 🛑 4. What NOT to Delete
 
 Do **NOT** remove:
 
@@ -169,7 +201,7 @@ These are managed by the system and should not be tampered with.
 
 ---
 
-# 🔄 5. Optional: Full Hard Reset
+## 🔄 5. Optional: Full Hard Reset
 
 If you want to completely wipe the agent state:
 
@@ -193,7 +225,7 @@ Avoid this for production unless absolutely necessary.
 
 ---
 
-# 📝 Summary
+## 📝 Summary
 
 Resetting the configuration is safe when done correctly:
 
@@ -210,6 +242,6 @@ This allows you to quickly return to a clean state and rebuild your BACnet or Ba
 
 Proceed to:
 
-👉 **Administration → Security & User Management**  
+👉 **[Security & User Management](security-users.md)**
 to learn how DataLynX handles authentication, roles, and user permissions.
 

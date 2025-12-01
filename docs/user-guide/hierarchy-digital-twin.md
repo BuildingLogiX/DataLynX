@@ -1,4 +1,4 @@
-# 🏢 Hierarchy & Digital Twin Workspace
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="150" } Hierarchy & Digital Twin Workspace
 
 The **Hierarchy** node in DataLynX is your digital twin workspace—a flexible area where you can mirror your physical building infrastructure, organize custom logic and calculations, and build BasiX profiles for BDX.
 
@@ -19,12 +19,14 @@ The Hierarchy is:
 
 **Key Concept:**
 Think of Hierarchy as the flexible workspace where you:
+
 - Build custom calculations and logic (efficiency metrics, aggregations, fault detection)
 - Create BasiX device profiles that map to physical equipment
 - Organize data processing flows in whatever structure makes sense for your site
 - Prepare normalized output for the BDX agent
 
 **The flow:**
+
 - **Physical BACnet devices** (raw data from controllers) → Connections/BACnet/devices
 - **Custom logic & BasiX profiles** (processed, organized data) → Hierarchy
 - **Normalized BasiX output** (sent to BDX) → Built from Hierarchy blocks
@@ -60,6 +62,7 @@ Hierarchy
 ```
 
 **When to use:**
+
 - Multi-building campuses
 - Clear physical separation between buildings or zones
 - Facility management teams organized by building
@@ -92,6 +95,7 @@ Hierarchy
 ```
 
 **When to use:**
+
 - Single building or small campus
 - Emphasis on equipment-type analytics
 - When creating standardized logic that applies to all equipment of the same type
@@ -122,6 +126,7 @@ Hierarchy
 ```
 
 **When to use:**
+
 - Focus on BasiX profile creation for BDX
 - Separating custom calculations from device mappings
 - Organizing by analytical function rather than physical location
@@ -154,6 +159,7 @@ Hierarchy
 ```
 
 **When to use:**
+
 - Large, complex sites
 - Multiple systems spanning multiple buildings
 - Need for both location-based and system-based views
@@ -173,6 +179,7 @@ Hierarchy → AHUs → (folder)
 ```
 
 **How to create:**
+
 - Right-click on Hierarchy or a subfolder → New Folder
 - Or drag a **Folder** block from the Toolbox
 
@@ -181,6 +188,7 @@ Hierarchy → AHUs → (folder)
 ### **2. Logic Blocks**
 
 Custom data transformation blocks that:
+
 - Read values from BACnet points
 - Perform calculations (math, conversions, logic)
 - Create virtual points
@@ -192,6 +200,7 @@ Hierarchy → AHUs → AHU-1 → (contains logic blocks)
 ```
 
 Inside `AHU-1`, you might have blocks like:
+
 - BACnet point references (supply air temp, fan status, etc.)
 - Math blocks (computing airflow, ΔT)
 - Conversion blocks (scaling, unit changes)
@@ -206,12 +215,14 @@ Inside `AHU-1`, you might have blocks like:
 Computed values that don't exist as physical BACnet points.
 
 **Examples:**
+
 - **Total Building Electric Demand** - Sum of multiple meter readings
 - **AHU Efficiency** - Calculated from airflow, temperatures, and power
 - **System Status** - Derived from multiple fault conditions
 - **Occupancy-Adjusted Setpoint** - Computed from schedule and space temp
 
 These virtual points are created using blocks in the Hierarchy and can be:
+
 - Mapped to BasiX profiles
 - Sent to BDX
 - Used as inputs to other logic blocks
@@ -228,6 +239,7 @@ Hierarchy → Building_A → Floor_2 → VAV-205
 ```
 
 Inside `VAV-205`, you might build logic to:
+
 - Read zone temp from BACnet
 - Read damper position from BACnet
 - Calculate airflow (if not directly available)
@@ -242,6 +254,7 @@ Inside `VAV-205`, you might build logic to:
 ### **Step 1: Plan Your Structure**
 
 Before creating folders, decide:
+
 - How is your site organized physically? (campus, buildings, floors)
 - What equipment types do you have? (AHUs, VAVs, chillers, etc.)
 - How will you group similar equipment?
@@ -261,6 +274,7 @@ Before creating folders, decide:
 ### **Step 3: Build Out the Tree**
 
 Create subfolders for:
+
 - Buildings (if you have multiple)
 - Equipment categories (AHUs, VAVs, Chillers, etc.)
 - Zones or floors (if organizing by location)
@@ -315,7 +329,8 @@ With the equipment folder open in Flow View:
 ### **Step 6: Organize and Document**
 
 Best practices:
-- **Use clear naming conventions** - `AHU-1_SupplyAirTemp` instead of `SAT1`
+
+- **Use clear naming conventions** - `AHU-1_supplyAirTemp` instead of `SAT1`
 - **Group related blocks** - Keep blocks for the same equipment together
 - **Use folders to separate systems** - Don't mix chillers and AHUs in the same folder
 - **Add comments** - Use description fields to document complex logic
@@ -379,6 +394,7 @@ Hierarchy → Building_A → Energy_Metering
 ```
 
 **Logic blocks:**
+
 - Read electric meters for all floors
 - Sum total building demand
 - Compute peak demand
@@ -394,6 +410,7 @@ Hierarchy → HVAC_Equipment → AHUs → AHU-1
 ```
 
 **Logic blocks:**
+
 - Read supply air temp, return air temp, outdoor air temp from BACnet
 - Read fan power (kW) from BACnet
 - Calculate airflow (cfm)
@@ -410,6 +427,7 @@ Hierarchy → Central_Plant → Chilled_Water_System
 ```
 
 **Logic blocks:**
+
 - Read chiller kW from all chillers
 - Read supply/return CHW temps
 - Compute plant ΔT
@@ -427,6 +445,7 @@ Hierarchy → Building_A → Floor_2 → Zone_Averages
 ```
 
 **Logic blocks:**
+
 - Read zone temps from 15 VAVs
 - Calculate average zone temp
 - Calculate min/max zone temps
@@ -503,6 +522,7 @@ Hierarchy
 ❌ **Don't start building logic without a plan**
 
 ✅ **Sketch out your structure first:**
+
 - What buildings do you have?
 - What equipment types?
 - How will you group similar equipment?

@@ -1,9 +1,7 @@
 # 🔗 Connecting DataLynX to BDX
 
-This guide explains how to connect your local DataLynX Agent to the **BuildingLogiX Data eXchange (BDX)** platform.
+This guide explains how to connect your local DataLynX Agent to the **[BuildingLogiX Data eXchange (BDX)](https://buildinglogix.github.io/BDX/)** platform.
 Once connected, DataLynX will begin securely transmitting normalized point data (BasiX) to BDX for analytics, dashboards, alarming, and long‑term storage.
-
-**Note:** BDX can be deployed as a cloud-based service or on-premise within your organization's infrastructure.
 
 ---
 
@@ -124,6 +122,7 @@ You should now see the Agent listed in the BDX Agent screen with status indicato
 You can confirm the connection by checking:
 
 ### **BDX Side**  
+
 - The Agent appears under **Management → Agents**  
 - Device list begins populating under **Devices**  
 - BasiX profiles show up as they are mapped and sent  
@@ -157,16 +156,19 @@ For production environments:
 ## 🚑 8. Troubleshooting
 
 ### ❌ "Agent Unreachable" in BDX
+
 - Verify firewall rules for the configured web port (80, 8050, or 8020)
 - Confirm correct agent URL (`/agent/bdxAgent`)
 - Ensure the DataLynX Web Service is running  
 
 ### ❌ Authentication failures  
+
 - Check credentials in `System → BDX Connection`  
 - Update password in both BDX and DataLynX  
 - Restart the DataLynX Supervisor Service  
 
 ### ❌ No data flowing to BDX  
+
 - Ensure BasiX mappings are present  
 - Make sure polling is active in BACnet networks  
 - Verify device discovery is completed  
@@ -177,6 +179,6 @@ For production environments:
 
 Move on to:
 
-👉 **Concepts → Architecture**  
+👉 **[Agent Architecture](../concepts/architecture.md)**
 to understand how DataLynX communicates internally through its data transformation layer, BasiX layer, and BACnet driver.
 

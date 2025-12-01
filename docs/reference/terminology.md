@@ -12,6 +12,7 @@ Understanding these terms will help you navigate the software, communicate with 
 The running DataLynX instance that executes the actual BACnet driver, data processing, and BuildingLogiX processes.
 
 When the agent is running, it:
+
 - Loads configuration files
 - Runs the BACnet driver for device communication
 - Executes data processing and transformation logic
@@ -26,6 +27,7 @@ You can have the Windows Services running while the agent is stopped.
 
 ### **Supervisor**
 The top-level administrator role and control interface for the Agent. The Supervisor provides full access to:
+
 - **Start and stop the Agent** - Control interface appears immediately after login
 - Manage user accounts and permissions
 - Access system-level configuration
@@ -42,6 +44,7 @@ The Supervisor role has the highest level of privileges in DataLynX.
 
 ### **Explorer**
 The navigation tree (typically on the left side of the UI) that allows users to browse and organize:
+
 - **System Node**: BasiX mapping schemes and backup service
 - **Connections Node**: BACnet and BDX configuration
 - **Hierarchy Node**: Digital twin workspace for custom logic and virtual equipment structure
@@ -69,6 +72,7 @@ See [Explorer Structure Guide](../user-guide/explorer-structure.md) for complete
 
 ### **System Node**
 The top-level Explorer node containing DataLynX system configuration:
+
 - **BasiX** - Contains mapping schemes for device types (VAV, AHU, Chiller, etc.)
 - **backup_service** - Automated backup scheduling and snapshot management
 
@@ -78,6 +82,7 @@ The top-level Explorer node containing DataLynX system configuration:
 
 ### **Connections Node**
 The top-level Explorer node containing communication driver configuration:
+
 - **BDX** - Connection settings for BuildingLogiX Data eXchange
 - **BACnet** - BACnet driver configuration, hosted device, networks, and discovered devices
 
@@ -87,6 +92,7 @@ The top-level Explorer node containing communication driver configuration:
 
 ### **Hierarchy Node**
 The digital twin workspace—a flexible area where users can mirror physical building infrastructure, organize custom logic and calculations, and build BasiX profiles:
+
 - Can mirror physical layout (campus, building, floor)
 - Can group by equipment type (AHUs, VAVs, Chillers, etc.)
 - Can organize by function (BasiX profiles, custom calculations, virtual meters)
@@ -115,12 +121,14 @@ See [Hierarchy & Digital Twin](../user-guide/hierarchy-digital-twin.md) for comp
 
 ### **Toolbox**
 The panel (typically on the right side in Flow View) containing available blocks that can be:
+
 - Dragged and dropped into the workspace
 - Used to build logic flows
 - Connected together to create data transformations
 - Organized by category (Math, Logic, BACnet, Comparisons, etc.)
 
 **Toolbox Categories:**
+
 - Aggregate Functions
 - BACnet
 - BasiX Profiles
@@ -144,6 +152,7 @@ See [Toolbox Block Reference](toolbox-blocks.md) for complete block library.
 
 ### **Block / Blox**
 A functional component that can exist in the Explorer or Toolbox. Blocks are used for:
+
 - Data transformation (math, logic, conversions)
 - Connecting to BACnet points
 - Creating virtual points
@@ -165,6 +174,7 @@ The dropdown selector in the top-right corner of the UI that allows switching be
 
 ### **Flow View**
 The default visual, block-based programming interface where users can:
+
 - Drag and drop blocks from the Toolbox
 - Connect blocks together with links
 - Build data transformation logic
@@ -179,6 +189,7 @@ Similar to programming interfaces in building automation systems like Niagara, F
 
 ### **Property View**
 A full-page list view showing **all properties** of the selected block in detail:
+
 - All inputs listed (In_1 through In_16 for aggregate blocks)
 - Status column showing OK, NULL, or error states
 - Checkbox to mark properties as "null" (unused)
@@ -193,6 +204,7 @@ A full-page list view showing **all properties** of the selected block in detail
 
 ### **Link View**
 A table view showing **all connections (links)** into and out of the selected block:
+
 - Source block and property
 - Target block and property
 - Propagate Units checkbox
@@ -207,6 +219,7 @@ A table view showing **all connections (links)** into and out of the selected bl
 
 ### **Mapping Editor**
 A specialized view for configuring BasiX mapping schemes:
+
 - Define paths to BACnet points using patterns
 - Configure which property to read (typically `out`)
 - Set up input properties for fields that need additional data
@@ -218,6 +231,7 @@ A specialized view for configuring BasiX mapping schemes:
 
 ### **Properties Pane (Edit Block Panel)**
 The side panel that appears on the right when you select a block in **any view**, labeled **"Edit Block"** in the UI:
+
 - Block name editing
 - Input and output configuration
 - Property values with live updates
@@ -228,6 +242,7 @@ The side panel that appears on the right when you select a block in **any view**
 **Location:** Right side of the screen when a block is selected (in Flow View, Property View, or Link View)
 
 **Key Difference from Property View:**
+
 - **Properties Pane** = Quick access side panel, always available when a block is selected
 - **Property View** = Full-page detailed view accessed via the Active View dropdown
 
@@ -239,6 +254,7 @@ The Properties Pane streamlines workflow by keeping block configuration visible 
 
 ### **Property**
 A data element that contains:
+
 - **Value**: The actual data (number, text, boolean, etc.)
 - **Units**: Optional unit of measurement (°F, kW, %, etc.)
 - **Status**: Current state (OK, Fault, Downstream Fault, etc.)
@@ -251,6 +267,7 @@ Properties flow through blocks and links, carrying data and metadata throughout 
 
 ### **Link**
 A connection between blocks that:
+
 - Propagates values from one block's output to another block's input
 - Can propagate units and status
 - Handles change detection
@@ -265,6 +282,7 @@ Links are the "wires" that connect blocks together in Flow View.
 
 ### **Hosted Device**
 The BACnet device identity that DataLynX presents on the network:
+
 - Has a unique Device ID
 - Represents the DataLynX Agent on BACnet/IP
 - Can be discovered by other BACnet devices
@@ -274,6 +292,7 @@ The BACnet device identity that DataLynX presents on the network:
 
 ### **Discovery**
 The process of finding BACnet devices on the network using:
+
 - **Who-Is / I-Am** broadcasts
 - Ranged discovery for large networks
 - Manual device entry when needed
@@ -284,6 +303,7 @@ Discovery populates the device list in the Explorer.
 
 ### **Polling**
 The automated reading of point values from BACnet devices at configured intervals:
+
 - Ensures data remains current
 - Respects stale-time rules
 - Manages network bandwidth
@@ -295,6 +315,7 @@ The automated reading of point values from BACnet devices at configured interval
 
 ### **BasiX Profile**
 A standardized device template that defines:
+
 - Device type (AHU, VAV, Chiller, etc.)
 - Required and optional points
 - Expected units and ranges
@@ -306,6 +327,7 @@ BasiX Profiles ensure consistent data structure for analytics.
 
 ### **Mapping**
 The process of connecting raw BACnet points to BasiX profile fields using:
+
 - **Exact Mapping**: One-to-one connection to a specific point
 - **Pattern Mapping**: Wildcards (`*`, `?`) to match multiple devices
 - **Regex Mapping**: Advanced patterns for complex naming schemes
@@ -316,6 +338,7 @@ The process of connecting raw BACnet points to BasiX profile fields using:
 
 ### **Snapshot**
 A saved state of the logic processing configuration including:
+
 - All block definitions
 - All link connections
 - All property values
@@ -327,6 +350,7 @@ Snapshots enable quick restoration after changes or failures.
 
 ### **Data Pump**
 The component responsible for:
+
 - Packaging normalized BasiX data
 - Sending data securely to BDX
 - Handling retries and errors
@@ -358,6 +382,7 @@ The component responsible for:
 ## ➡️ Related Documentation
 
 For more details on specific topics:
+
 - **Flow View & Logic**: See [Data Transformation & Logic Flow](../concepts/data-transformation.md)
 - **BasiX**: See [BasiX Ontology & Profiles](../concepts/basix-ontology.md)
 - **BACnet**: See [BACnet Driver Reference](bacnet-driver.md)

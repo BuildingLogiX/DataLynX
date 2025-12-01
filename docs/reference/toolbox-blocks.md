@@ -34,19 +34,31 @@ Toolbox
 
 Mathematical operations for calculations and transformations.
 
-### **Common Math Blocks:**
+### **Math Blocks:**
 
-| Block | Description | Inputs | Output | Use Case |
-|-------|-------------|--------|--------|----------|
-| **Add** | Sum two values | in_a, in_b | out | Total energy consumption, combined airflow |
-| **Subtract** | Difference between values | in_a, in_b | out | Delta temperature (ΔT), pressure drop |
-| **Multiply** | Product of two values | in_a, in_b | out | Power calculations, scaling factors |
-| **Divide** | Quotient of two values | in_a, in_b | out | Efficiency (kW/ton), per-square-foot metrics |
-| **Mean** | Average of multiple inputs | in_0, in_1, ... in_N | out | Zone temperature averaging, load balancing |
-| **Max** | Maximum of multiple inputs | in_0, in_1, ... in_N | out | Peak demand, highest zone temp |
-| **Min** | Minimum of multiple inputs | in_0, in_1, ... in_N | out | Lowest zone temp, minimum setpoint |
-| **Abs** | Absolute value | in | out | Removing negative signs, distance calculations |
-| **Median** | Median of multiple inputs | in_0, in_1, ... in_N | out | Statistical analysis, outlier removal |
+| Block | Description | Use Case |
+|-------|-------------|----------|
+| **Absolute Value** | Returns the absolute value of a number | Removing negative signs, distance calculations |
+| **Add** | Sum of two or more values | Total energy consumption, combined airflow |
+| **Arccosine** | Inverse cosine function | Trigonometric calculations |
+| **Arcsine** | Inverse sine function | Trigonometric calculations |
+| **Arctangent** | Inverse tangent function | Angle calculations |
+| **Cosine** | Cosine function | Trigonometric calculations |
+| **Divide** | Quotient of two values | Efficiency (kW/ton), per-square-foot metrics |
+| **Exponential** | Exponential function (e^x) | Growth calculations |
+| **Factorial** | Factorial of a number | Statistical calculations |
+| **Logarithm Base 10** | Base 10 logarithm | Decibel calculations, scaling |
+| **Logarithm Base 2** | Base 2 logarithm | Binary scaling |
+| **Modulus** | Remainder after division | Cyclic calculations, scheduling |
+| **Multiply** | Product of two values | Power calculations, scaling factors |
+| **Natural Logarithm** | Natural logarithm (ln) | Exponential decay calculations |
+| **Negate** | Reverses the sign of a value | Sign inversion |
+| **Power** | Raises a value to a power | Exponential calculations |
+| **Sine** | Sine function | Trigonometric calculations |
+| **Square Root** | Square root of a value | RMS calculations |
+| **Subtract** | Difference between values | Delta temperature (ΔT), pressure drop |
+| **Tangent** | Tangent function | Trigonometric calculations |
+| **Value Reset** | Resets a value to a default | Initialization, fault recovery |
 
 ### **Example: Computing ΔT**
 
@@ -74,14 +86,14 @@ Boiler kW ──┘
 
 Boolean logic and decision-making blocks.
 
-### **Common Logic Blocks:**
+### **Logic Blocks:**
 
-| Block | Description | Inputs | Output | Use Case |
-|-------|-------------|--------|--------|----------|
-| **AND** | All inputs must be true | in_a, in_b | out | Multiple conditions (fan on AND valve open) |
-| **OR** | At least one input must be true | in_a, in_b | out | Alarm conditions, any zone over setpoint |
-| **NOT** | Invert boolean value | in | out | Opposite of a condition (NOT occupied) |
-| **XOR** | Exclusive OR | in_a, in_b | out | Either/or logic (heating XOR cooling) |
+| Block | Description | Use Case |
+|-------|-------------|----------|
+| **And** | All inputs must be true | Multiple conditions (fan on AND valve open) |
+| **Not** | Invert boolean value | Opposite of a condition (NOT occupied) |
+| **Or** | At least one input must be true | Alarm conditions, any zone over setpoint |
+| **Xor** | Exclusive OR - one or the other but not both | Either/or logic (heating XOR cooling) |
 
 ### **Example: Fault Detection**
 
@@ -99,16 +111,16 @@ Supply Temp > 100°F ─┘
 
 Compare values and generate boolean outputs.
 
-### **Common Comparison Blocks:**
+### **Comparison Blocks:**
 
-| Block | Description | Inputs | Output | Use Case |
-|-------|-------------|--------|--------|----------|
-| **Greater Than (>)** | Check if A > B | in_a, in_b | out (bool) | Temp above setpoint, power exceeds threshold |
-| **Less Than (<)** | Check if A < B | in_a, in_b | out (bool) | Temp below setpoint, low pressure alarm |
-| **Equal (==)** | Check if A == B | in_a, in_b | out (bool) | Mode matching, status verification |
-| **Greater or Equal (>=)** | Check if A >= B | in_a, in_b | out (bool) | At or above threshold |
-| **Less or Equal (<=)** | Check if A <= B | in_a, in_b | out (bool) | At or below threshold |
-| **Not Equal (!=)** | Check if A != B | in_a, in_b | out (bool) | Detecting changes |
+| Block | Description | Use Case |
+|-------|-------------|----------|
+| **Equal** | Check if A equals B | Mode matching, status verification |
+| **Greater Than** | Check if A > B | Temp above setpoint, power exceeds threshold |
+| **Greater Than or Equal** | Check if A >= B | At or above threshold |
+| **Less Than** | Check if A < B | Temp below setpoint, low pressure alarm |
+| **Less Than or Equal** | Check if A <= B | At or below threshold |
+| **Not Equal** | Check if A does not equal B | Detecting changes |
 
 ### **Example: High Temperature Alarm**
 
@@ -124,23 +136,25 @@ Setpoint ───┘
 
 ## 🌐 BACnet
 
-Blocks for reading and writing BACnet points.
+Blocks for BACnet network configuration and point references.
 
-### **Common BACnet Blocks:**
+### **BACnet Blocks:**
 
 | Block | Description | Use Case |
 |-------|-------------|----------|
-| **BACnet Point Reference** | Read a BACnet object's present value | Reading AI, AV, BI, BV values from devices |
-| **BACnet Write** | Write to a BACnet writable property | Commanding AO, BO, or writable AV/BV points |
-| **BACnet Priority** | Write with priority level (1-16) | Override control with specific priority |
+| **BACnet Device** | Represents a BACnet device on the network | Reference discovered or manually added devices |
+| **BACnet Device Folder** | Container for organizing BACnet devices | Group devices by location or system |
+| **BACnet IP Network** | BACnet/IP network configuration | Define network interface, port, and network number |
+| **BACnet Point Folder** | Container for organizing points within a device | Group points by type or function |
+| **BACnet Router Table Entry** | Router table configuration for remote networks | Access devices on routed networks (MSTP, etc.) |
 
 ### **How to Use:**
 
-1. Drag **BACnet Point Reference** from Toolbox
-2. Configure the block to point to a BACnet object:
-   - Navigate to Connections → BACnet → devices → [Device] → [Point]
-3. The block outputs the present value, units, status, and reliability
-4. Link to other blocks for processing
+1. Configure **BACnet IP Network** with your network settings
+2. Discover or manually add **BACnet Device** entries
+3. Use **BACnet Point Folder** to organize points within devices
+4. Reference points in Flow View for data transformation
+5. The block outputs the present value, units, status, and reliability
 
 ### **Example: Reading Supply Air Temp**
 
@@ -153,6 +167,8 @@ Blocks for reading and writing BACnet points.
    └─> reliability (Reliable)
 ```
 
+> **Note:** DataLynX is a read-only BACnet client. It reads point values from BACnet devices but does not write to them.
+
 ---
 
 ## 🧬 BasiX Profiles
@@ -162,26 +178,29 @@ Blocks representing BasiX device profile fields.
 ### **Common BasiX Profile Blocks:**
 
 These blocks represent standardized points in BasiX profiles:
-- **SupplyAirTemp** - AHU supply/discharge air temperature
-- **ZoneAirTemp** - VAV zone temperature
-- **DamperPosition** - VAV damper position
-- **CoolingValveCommand** - Cooling coil valve position
-- **FanSpeed** - Fan or VFD speed
-- **Airflow** - Measured airflow (cfm)
-- **Power** - Equipment power consumption (kW)
-- **Status** - Equipment on/off or run status
+
+| Block | Description |
+|-------|-------------|
+| **supplyAirTemp** | AHU supply/discharge air temperature |
+| **zoneAirTemp** | VAV zone temperature |
+| **damperPosition** | VAV damper position |
+| **coolOutput** | Cooling coil valve position |
+| **supplyFanVFDSpeed** | Fan or VFD speed |
+| **airflow** | Measured airflow (cfm) |
+| **power** | Equipment power consumption (kW) |
+| **runStatus** | Equipment on/off or run status |
 
 ### **How to Use:**
 
 1. Drag a BasiX Profile block from the Toolbox
-2. Link processed values to the block inputs
+2. Map processed values to the block inputs
 3. These blocks become the output points for BasiX mapping
 4. They are published to BDX
 
 ### **Example: Mapping AHU Supply Temp**
 
 ```
-[BACnet: AHU-1 Supply Temp] ──> [Divide by 10] ──> [BasiX: SupplyAirTemp]
+[BACnet: AHU-1 Supply Temp] ──> [Divide by 10] ──> [BasiX: supplyAirTemp]
                                                             │
                                                       (Sent to BDX)
 ```
@@ -190,22 +209,27 @@ These blocks represent standardized points in BasiX profiles:
 
 ## 🔄 Switches and Selects
 
-Conditional routing and selection blocks.
+Conditional routing and selection blocks for different data types.
 
-### **Common Switch/Select Blocks:**
+### **Switch/Select Blocks:**
 
-| Block | Description | Inputs | Output | Use Case |
-|-------|-------------|--------|--------|----------|
-| **Switch** | Route input based on condition | in, condition | out | If occupied, use schedule A; else use schedule B |
-| **Select** | Choose between multiple inputs | in_0, in_1, selector | out | Select between sensors, choose control mode |
-| **Multiplexer** | N-to-1 selection | Multiple inputs, index | out | Select from array of values |
+| Block | Description | Use Case |
+|-------|-------------|----------|
+| **Boolean Select** | Choose between boolean inputs based on selector | Select active alarm source |
+| **Boolean Switch** | Route boolean input based on condition | Toggle between on/off states |
+| **Enum Select** | Choose between enumerated inputs based on selector | Select operating mode source |
+| **Enum Switch** | Route enumerated input based on condition | Switch between mode options |
+| **Numeric Select** | Choose between numeric inputs based on selector | Select between sensors |
+| **Numeric Switch** | Route numeric input based on condition | Occupancy-based setpoints |
+| **String Select** | Choose between string inputs based on selector | Select message source |
+| **String Switch** | Route string input based on condition | Switch between text labels |
 
 ### **Example: Occupancy-Based Setpoint**
 
 ```
 Occupied Setpoint (72°F) ──┐
                            │
-Occupancy Status ────> [Switch] ──> Active Setpoint
+Occupancy Status ────> [Numeric Switch] ──> Active Setpoint
                            │
 Unoccupied Setpoint (65°F) ┘
 ```
@@ -214,17 +238,19 @@ Unoccupied Setpoint (65°F) ┘
 
 ## 📊 Aggregate Functions
 
-Advanced aggregation and statistical operations.
+Aggregation and statistical operations for multiple inputs.
 
-### **Common Aggregate Blocks:**
+### **Aggregate Function Blocks:**
 
-| Block | Description | Inputs | Output | Use Case |
-|-------|-------------|--------|--------|----------|
-| **Sum** | Sum all inputs | Multiple inputs | out | Total energy, combined load |
-| **Average** | Mean of all inputs | Multiple inputs | out | Average zone temp across floor |
-| **Weighted Average** | Weighted mean | Values, weights | out | Load-weighted efficiency |
-| **Standard Deviation** | Statistical deviation | Multiple inputs | out | Variability analysis |
-| **Count** | Count valid inputs | Multiple inputs | out | Number of active devices |
+| Block | Description | Use Case |
+|-------|-------------|----------|
+| **Add** | Sum of multiple inputs | Total energy, combined load |
+| **Average** | Mean of all inputs | Average zone temp across floor |
+| **Maximum** | Highest value among inputs | Peak demand, highest zone temp |
+| **Median** | Middle value of inputs | Statistical analysis, outlier filtering |
+| **Minimum** | Lowest value among inputs | Lowest zone temp, minimum setpoint |
+| **Mode** | Most frequent value among inputs | Common operating state |
+| **Standard Deviation** | Statistical deviation of inputs | Variability analysis, anomaly detection |
 
 ### **Example: Average Zone Temperature**
 
@@ -240,78 +266,75 @@ VAV-105 Zone Temp ──┘
 
 ## 🎛️ Control Points
 
-Virtual setpoints and control variables.
+Virtual points for storing and managing values.
 
-### **Common Control Point Blocks:**
+### **Control Point Blocks:**
 
 | Block | Description | Use Case |
 |-------|-------------|----------|
-| **Setpoint** | Configurable constant value | Fixed setpoints, thresholds |
-| **Schedule** | Time-based value changes | Occupancy schedules, setback schedules |
-| **Override** | Manual override capability | Testing, commissioning |
+| **Boolean Point** | Stores a true/false value | On/off states, mode flags |
+| **Boolean Priority Array** | Boolean with 16-level priority | Priority-based boolean control |
+| **Enumerated Point** | Stores a value from a defined set of options | Operating modes, state machines |
+| **Enumerated Priority Array** | Enumerated with 16-level priority | Priority-based mode control |
+| **Numeric Point** | Stores a numeric value | Setpoints, thresholds, calculated values |
+| **Numeric Priority Array** | Numeric with 16-level priority | Priority-based setpoint control |
+| **String Point** | Stores a text value | Labels, descriptions, messages |
+| **String Priority Array** | String with 16-level priority | Priority-based text values |
 
-### **Example: Setpoint Block**
+### **Example: Numeric Point (Setpoint)**
 
 ```
-[Setpoint: 72.0°F] ──> Used in comparison or control logic
+[Numeric Point: 72.0°F] ──> Used in comparison or control logic
 ```
 
 ---
 
 ## 📡 Status
 
-Status monitoring and fault detection blocks.
+Status monitoring and signal routing blocks.
 
-### **Common Status Blocks:**
+### **Status Blocks:**
 
 | Block | Description | Use Case |
 |-------|-------------|----------|
-| **Status Monitor** | Check reliability and status flags | Detect offline points, faulted sensors |
-| **Fault Detector** | Generate fault alarms based on conditions | High temp, low pressure, stuck valve |
-| **Quality Check** | Validate data quality | Out-of-range detection, stale data |
+| **Status Demultiplexer** | Separates combined status into individual signals | Parse composite status values, route status bits |
 
-### **Example: Sensor Fault Detection**
+### **Example: Status Demultiplexer**
 
 ```
-[BACnet: Temp Sensor] ──> [Status Monitor] ──> Sensor Fault Alarm
+[Combined Status] ──> [Status Demultiplexer] ──> Individual status outputs
                               │
-                          (Check reliability != Reliable)
+                          (Separates fault, alarm, mode flags)
 ```
 
 ---
 
 ## 🔢 Priority Arrays
 
-BACnet priority array management.
+Priority array blocks for managing values with BACnet-style 16-level priorities.
 
 ### **Priority Array Blocks:**
 
 | Block | Description | Use Case |
 |-------|-------------|----------|
-| **Priority Write** | Write to specific priority level (1-16) | Override control logic |
-| **Priority Release** | Release a priority level | Return control to lower priority |
-| **Priority Status** | Read current priority array | View active overrides |
+| **Boolean Priority Array** | Boolean value with 16-level priority | Priority-based on/off control |
+| **Enumerated Priority Array** | Enumerated value with 16-level priority | Priority-based mode selection |
+| **Numeric Priority Array** | Numeric value with 16-level priority | Priority-based setpoint control |
+| **String Priority Array** | String value with 16-level priority | Priority-based text values |
 
-### **Example: Manual Override**
-
-```
-Manual Command ──> [Priority Write: Level 8] ──> BACnet AO
-```
-
-**Important:** Priority 1 is highest, 16 is lowest. Manual operator overrides typically use priority 8.
+Priority arrays allow multiple sources to command a value at different priority levels. The highest active priority (lowest number) wins.
 
 ---
 
 ## 📦 BDX
 
-Blocks for sending data to BDX.
+Blocks for BDX connectivity configuration.
 
 ### **BDX Blocks:**
 
 | Block | Description | Use Case |
 |-------|-------------|----------|
-| **BDX Output** | Send value to BDX | Publishing custom metrics |
-| **BDX Tag** | Add metadata tags | Equipment classification |
+| **BDX Agent Configuration** | Configure connection to BDX | Set up BDX URL, credentials, and sync settings |
 
 ---
 

@@ -1,4 +1,4 @@
-# 📘 **DataLynX Documentation**
+# ![DataLynX Logo](assets/datalynx_logo.svg){ width="200" } **DataLynX Documentation**
 
 **DataLynX** is a modern, high-performance BACnet agent and integration framework designed for the BuildingLogiX ecosystem.
 Built on Python, it provides fast, reliable BACnet/IP communication, powerful data transformation and logic capabilities, and seamless integration with the BuildingLogiX Data eXchange (BDX).
@@ -10,6 +10,15 @@ Built on Python, it provides fast, reliable BACnet/IP communication, powerful da
 DataLynX acts as the **bridge between on-premises building automation systems (BAS)** and the **BDX (BuildingLogiX Data eXchange)** analytics platform.
 
 Built entirely in **Python**, DataLynX leverages modern libraries and frameworks to deliver enterprise-grade performance, extensibility, and reliability.
+
+![DataLynX Flow View](img/Flow View.PNG)
+
+<div style="margin-top: 1em;">
+  <a href="https://www.bacnetinternational.org/" target="_blank" rel="noopener" title="BACnet International">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/BACnet-Logo-New.gif" alt="BACnet Logo" style="height: 50px;">
+  </a>
+  <span style="margin-left: 0.5em; vertical-align: middle; font-size: 0.9em; color: #666;">BACnet/IP compliant</span>
+</div>
 
 It provides:
 
@@ -38,12 +47,14 @@ It provides:
 This site contains the complete documentation for DataLynX, including:
 
 ### **➡ Getting Started**
+
 - Installation & required Windows services  
 - Creating your first BACnet network  
 - Connecting the Agent to BDX  
 - Verifying communication & first-run checks
 
 ### **➡ Concepts & Architecture**
+
 - Agent architecture
 - Data transformation and logic flow
 - BasiX ontology and profiles
@@ -51,12 +62,14 @@ This site contains the complete documentation for DataLynX, including:
 - **Units, formatting, and best practices** ⚠️ (Critical for BasiX mapping)
 
 ### **➡ User Guide**
+
 - Full UI tour with screenshots  
 - BACnet discovery, device views, and point properties  
 - BasiX mapping workflow  
 - Using the Flow/Link view for logic visualization
 
 ### **➡ Administration**
+
 - Managing users and permissions  
 - Understanding Windows services  
 - Logs and diagnostics  
@@ -64,6 +77,7 @@ This site contains the complete documentation for DataLynX, including:
 - Resetting the Agent configuration safely
 
 ### **➡ Reference**
+
 - BACnet driver configuration details
 - Polling policies & device health rules
 - Data transformation reference
@@ -89,13 +103,13 @@ Common issues, troubleshooting steps, and quick answers.
 
 DataLynX is designed to work seamlessly with:
 
-- **BDX (BuildingLogiX Data eXchange):**
-  Analytics platform (cloud-based or on-premise) that receives normalized data from Agents.
+- **[BDX (BuildingLogiX Data eXchange)](https://buildinglogix.github.io/BDX/)**
+  Analytics platform that receives normalized data from Agents.
 
-- **Supervisor UI:**  
+- **Supervisor UI**
   Remote visibility into Agents, status, and device mappings.
 
-- **BDXpy:**  
+- **BDXpy**
   Python SDK for interacting programmatically with BDX data.
 
 DataLynX handles on-prem BAS communication, computation, and normalization so BDX can focus on long-term storage, analytics, and visualization.

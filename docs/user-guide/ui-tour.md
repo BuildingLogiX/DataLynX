@@ -1,11 +1,11 @@
-# 🖥️ DataLynX UI Tour
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="150" } DataLynX UI Tour
 
 This guide provides a visual walkthrough of the DataLynX User Interface, including navigation structure, key screens, configuration pages, and diagnostic views.  
 Use this as a reference when learning the platform or training new users.
 
 ---
 
-# 🧭 1. UI Navigation Overview
+## 🧭 1. UI Navigation Overview
 
 When you access the DataLynX UI (typically at `http://localhost` on port 80, or alternatively port 8050 or 8020), you will see a clean, organized navigation structure consisting of:
 
@@ -23,7 +23,7 @@ When you access the DataLynX UI (typically at `http://localhost` on port 80, or 
 
 ---
 
-# 🏠 2. Explorer Parent Nodes
+## 🏠 2. Explorer Parent Nodes
 
 The Explorer tree is the primary navigation tool in DataLynX. When you first log in with the agent running, you'll see these **parent nodes**:
 
@@ -57,7 +57,7 @@ For detailed information, see [Explorer Structure Guide](explorer-structure.md).
 
 ---
 
-# 🌐 3. BACnet Configuration
+## 🌐 3. BACnet Configuration
 
 BACnet configuration consists of several key sections:
 
@@ -99,7 +99,7 @@ Shows automatically discovered or manually added BACnet router entries.
 
 ---
 
-# 🔍 4. Device Discovery
+## 🔍 4. Device Discovery
 
 After configuring your network, use the **Device Discovery** section to scan the BACnet network.
 
@@ -107,7 +107,7 @@ After configuring your network, use the **Device Discovery** section to scan the
 
 ---
 
-# 📟 5. BACnet Device List
+## 📟 5. BACnet Device List
 
 All discovered devices appear in the Devices view:
 
@@ -115,7 +115,7 @@ All discovered devices appear in the Devices view:
 
 ---
 
-# 🔧 6. Point Discovery Within Devices
+## 🔧 6. Point Discovery Within Devices
 
 Each device exposes object lists.  
 The point discovery screen shows details for each point, including:
@@ -130,7 +130,7 @@ The point discovery screen shows details for each point, including:
 
 ---
 
-# 🔄 7. View Modes & Active View Toggle
+## 🔄 7. View Modes & Active View Toggle
 
 DataLynX provides multiple **view modes** for working with blocks. You can switch between views using the **Active View** dropdown in the **top-right corner** of the screen.
 
@@ -148,6 +148,7 @@ DataLynX provides multiple **view modes** for working with blocks. You can switc
 The default visual workspace showing blocks as draggable components with connections.
 
 **Use Flow View to:**
+
 - Build and visualize logic flows
 - Drag blocks from the Toolbox
 - Connect blocks with links
@@ -158,6 +159,7 @@ The default visual workspace showing blocks as draggable components with connect
 Notice the **"Active View: Flow View"** dropdown in the top-right corner.
 
 **Right Pane:** When in Flow View, the right pane shows:
+
 - **Toolbox** - Block categories you can drag into the workspace
 - **Properties Pane (Edit Block)** - Appears when you select a block
 
@@ -172,6 +174,7 @@ For detailed information about blocks and categories, see [Toolbox Block Referen
 A full-page list view showing **all properties** of the selected block in detail.
 
 **Use Property View to:**
+
 - See all inputs and outputs for a block
 - View detailed status for each property
 - Configure multiple properties at once
@@ -182,6 +185,7 @@ A full-page list view showing **all properties** of the selected block in detail
 Notice the **"Active View: Property View"** in the top-right corner.
 
 **Key Features:**
+
 - All inputs listed (In_1 through In_16 for aggregate blocks)
 - Status column shows OK, NULL, or error states
 - Checkbox to mark properties as "null" (unused)
@@ -194,6 +198,7 @@ Notice the **"Active View: Property View"** in the top-right corner.
 A table view showing **all connections (links)** into and out of the selected block.
 
 **Use Link View to:**
+
 - See all blocks connected to the selected block
 - Check link properties (Propagate Units, Propagate Range, Is Active)
 - Debug data flow issues
@@ -221,6 +226,7 @@ Notice the **"Active View: Link View"** in the top-right corner.
 A specialized view for configuring BasiX mapping schemes.
 
 **Use Mapping Editor to:**
+
 - Define paths to BACnet points
 - Configure which property to read
 - Set up input properties for BasiX fields
@@ -238,6 +244,7 @@ System → BasiX → mapping_schemes → [Device Type]
 When you select a block in **any view**, the **Properties Pane** appears on the right side, labeled **"Edit Block"**.
 
 **The Properties Pane shows:**
+
 - Block name (editable)
 - Block-specific properties
 - Input/output configuration
@@ -246,12 +253,13 @@ When you select a block in **any view**, the **Properties Pane** appears on the 
 This panel allows quick edits without switching to Property View.
 
 **Key Difference:**
+
 - **Properties Pane** = Quick access side panel (always available)
 - **Property View** = Full-page detailed view (via Active View dropdown)
 
 ---
 
-# 🧬 8. BasiX Mapping
+## 🧬 8. BasiX Mapping
 
 Mapping nodes let you configure BasiX Profiles and link BACnet points to BasiX standard fields.
 
@@ -259,7 +267,7 @@ Mapping nodes let you configure BasiX Profiles and link BACnet points to BasiX s
 
 ---
 
-# 👤 9. User Administration
+## 👤 9. User Administration
 
 DataLynX supports multiple user roles and privileges.
 
@@ -275,7 +283,7 @@ Configure passwords, role levels, and account options.
 
 ---
 
-# 💾 10. System Tools & Backup
+## 💾 10. System Tools & Backup
 
 DataLynX includes system maintenance tools for:
 
@@ -288,7 +296,7 @@ DataLynX includes system maintenance tools for:
 
 ---
 
-# 🧩 11. Windows Services & File Locations (Reference)
+## 🧩 11. Windows Services & File Locations (Reference)
 
 Diagnostics views provide insight into:
 
@@ -304,7 +312,7 @@ Diagnostics views provide insight into:
 
 ---
 
-# 🎨 12. Theme & Personalization
+## 🎨 12. Theme & Personalization
 
 Users can optionally change the theme and appearance of the UI.
 
@@ -312,7 +320,7 @@ Users can optionally change the theme and appearance of the UI.
 
 ---
 
-# 📝 Summary
+## 📝 Summary
 
 The User Interface provides:
 
@@ -328,6 +336,6 @@ Together, these tools create a powerful standalone integration platform.
 
 ## ➡️ Next Step
 
-Proceed to **User Guide → BACnet Integration Workflow**  
+Proceed to **[BACnet Integration Workflow](bacnet-integration.md)**
 to learn how to use these UI components to complete a full, end-to-end integration.
 

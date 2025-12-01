@@ -19,6 +19,7 @@ DataLynX's data transformation layer:
   - Status
   - Reliability
   - Timestamp
+
 - Propagates data through links between logic blocks
 - Performs math, conversions, logical operations, and conditionals
 - Produces clean, normalized values for BasiX profiles
@@ -137,6 +138,7 @@ Every property maintains:
   - Faulted
   - Downstream Fault
   - Configuration Error
+
 - **Reliability**
   - No Fault
   - Questionable
@@ -230,5 +232,5 @@ All meaningful data in DataLynX flows through this layer before reaching BDX.
 
 ## ➡️ Next Step
 
-Proceed to **Concepts → BasiX Ontology & Profiles**
+Proceed to **[BasiX Ontology & Profiles](basix-ontology.md)**
 to understand how DataLynX models equipment in a standardized form before sending it to BDX.

@@ -8,7 +8,7 @@ This guide explains how DataLynX manages units, handling of dimensionless values
 
 ---
 
-# 🎯 1. Why Units Matter
+## 🎯 1. Why Units Matter
 
 BACnet points may come in with:
 
@@ -30,7 +30,7 @@ To prevent bad data from reaching analytics, DataLynX:
 
 ---
 
-# 🧩 2. Unit Propagation
+## 🧩 2. Unit Propagation
 
 Each value in the Data Processing Layer contains:
 
@@ -43,17 +43,19 @@ Each value in the Data Processing Layer contains:
 Links between blocks may propagate units depending on configuration.
 
 ### ✔ If "Propagate Units" is enabled:
+
 - Linked properties must have *compatible units*
 - Mismatches may trigger **fault status**, often resulting in **NaN outputs**
 
 ### ✔ If disabled:
+
 - Units are not required to match
 - Useful for advanced or custom logic
 - Use with caution
 
 ---
 
-# 🔧 3. Dimensionless Units in BACnet
+## 🔧 3. Dimensionless Units in BACnet
 
 BACnet points can legally have **dimensionless** or **no units**—this is fully supported in the BACnet standard.
 
@@ -70,10 +72,13 @@ BACnet objects frequently use dimensionless units when the value is:
 
 - **A percentage represented as 0–1** instead of 0–100
   - Example: valve position, VFD speed
+
 - **A raw count**
   - Example: number of starts, cycle counts
+
 - **A ratio**
   - Example: mixing percentages, humidity ratios
+
 - **A custom engineering value** that the vendor defines without mapping to a physical unit
 - **Boolean-like analog values**
   - Example: 0 = off, 1 = on, but stored in an Analog Input
@@ -101,7 +106,7 @@ BACnet objects frequently use dimensionless units when the value is:
 
 ---
 
-# 🌡️ 4. Temperature Units and Delta Temperature
+## 🌡️ 4. Temperature Units and Delta Temperature
 
 ## Critical Difference: Absolute vs Delta Temperature
 
@@ -110,6 +115,7 @@ BACnet objects frequently use dimensionless units when the value is:
 ### When to Use Delta Temperature
 
 For calculations involving temperature differences:
+
 - Space temp vs space temp setpoint
 - Supply air temp vs supply air temp setpoint
 - Return temp vs supply temp
@@ -120,12 +126,14 @@ For calculations involving temperature differences:
 
 #### ✔ Addition (requires temp + delta):
 For an **Add** block, you need:
+
 - One input: absolute temperature (°F)
 - Other input: delta temperature (ΔF)
 - Output: absolute temperature (°F)
 
 #### ✔ Subtraction and Mean (works correctly):
 **Subtract** or **Mean** blocks work correctly with absolute temperatures:
+
 - Input: Two absolute temperatures (°F, °F)
 - Output: Delta temperature (ΔF)
 
@@ -134,6 +142,7 @@ For an **Add** block, you need:
 Degrees Celsius and Fahrenheit are **offset units**, measured using a basis. Multiplying or dividing them requires conversion to base units (Kelvin).
 
 **Example of the problem**:
+
 - Dividing 70°C by 2 translates to -101°C when forcefully converted back to Celsius
 - You probably expected 35°C
 - This happens because absolute temperatures aren't additive/multiplicative
@@ -150,13 +159,14 @@ To avoid these issues:
 
 ---
 
-# 🔄 5. Override Source Units
+## 🔄 5. Override Source Units
 
 **Override Source Units** is a flag in DataLynX that allows users to override the incoming or native units on a block and change it to something else.
 
 ## When to Use This Feature
 
 This is useful when:
+
 - A controller has wrong units selected in device configuration
 - A manufacturer used incorrect units in their integration
 - The value needs to be maintained in DataLynX with just the unit changed
@@ -170,7 +180,7 @@ This is useful when:
 
 ---
 
-# 🛠️ 6. HVAC Measurement Formatting Reference
+## 🛠️ 6. HVAC Measurement Formatting Reference
 
 The following table provides recommended formatting for all common HVAC and energy management measurements. These recommendations ensure consistent, readable displays throughout DataLynX and BDX.
 
@@ -221,7 +231,7 @@ The following table provides recommended formatting for all common HVAC and ener
 
 ---
 
-# 📘 7. Physical Unit Conversions
+## 📘 7. Physical Unit Conversions
 
 The Data Processing Layer supports automatic unit conversions such as:
 
@@ -240,7 +250,7 @@ If a BACnet point has no unit:
 
 ---
 
-# ❗ 8. Handling Incorrect or Missing Units
+## ❗ 8. Handling Incorrect or Missing Units
 
 If a BACnet point:
 
@@ -262,7 +272,7 @@ You can correct this by:
 
 ---
 
-# 🔍 9. Typical Examples
+## 🔍 9. Typical Examples
 
 ### ✔ Example 1: Temperature Scaling
 Some devices send temperatures like `734` to represent `73.4°F`.
@@ -313,7 +323,7 @@ Some devices send binary states as numbers:
 
 ---
 
-# 📝 10. Summary
+## 📝 10. Summary
 
 Proper unit and formatting handling is **critical for DataLynX success**:
 

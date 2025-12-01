@@ -1,11 +1,11 @@
-# 💾 Backup & Restore
+## 💾 Backup & Restore
 
 DataLynX includes built-in support for configuration backups, logic processing snapshots, and system restore options.  
 These features ensure that the agent can recover from failures, configuration corruption, hardware issues, or accidental misconfiguration without losing critical integration work.
 
 ---
 
-# 🧭 1. Overview
+## 🧭 1. Overview
 
 DataLynX automatically manages:
 
@@ -18,7 +18,7 @@ Administrators can also manually trigger backups or restore from a previous vers
 
 ---
 
-# 💼 2. What Gets Backed Up?
+## 💼 2. What Gets Backed Up?
 
 Backups include:
 
@@ -37,7 +37,7 @@ C:\ProgramData\DataLynX\agents\default\backups\
 
 ---
 
-# 🛠️ 3. Automatic Backup Behavior
+## 🛠️ 3. Automatic Backup Behavior
 
 DataLynX maintains **rotating backup sets** to prevent excessive disk usage.  
 Backups are triggered automatically when:
@@ -53,7 +53,7 @@ You can configure these settings via the **Backup Service** panel.
 
 ---
 
-# 🧪 4. Manual Backups
+## 🧪 4. Manual Backups
 
 To create a manual backup:
 
@@ -80,7 +80,7 @@ Use manual backups when:
 
 ---
 
-# 🔄 5. Restoring from Backup
+## 🔄 5. Restoring from Backup
 
 Restoration allows you to revert the agent to a previously saved working state.
 
@@ -144,7 +144,7 @@ C:\ProgramData\DataLynX\agents\default\datalynx.cfg
 
 ---
 
-# 📝 Summary
+## 📝 Summary
 
 DataLynX’s backup and restore system ensures:
 
@@ -161,6 +161,6 @@ Use backups frequently—especially before major changes.
 
 Proceed to:
 
-👉 **Administration → Resetting the Agent Config**  
+👉 **[Resetting the Agent Config](reset-config.md)**
 to learn how to safely perform a clean configuration reset.
 

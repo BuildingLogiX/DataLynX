@@ -1,4 +1,4 @@
-# 🔄 BACnet Integration Workflow
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="150" } BACnet Integration Workflow
 
 This guide walks through a complete **end-to-end BACnet integration** in DataLynX — from enabling the driver, to discovering devices, to validating live values and preparing for BasiX mapping.
 
@@ -6,7 +6,7 @@ Use this as a practical checklist for new deployments.
 
 ---
 
-# 🧭 1. Prerequisites
+## 🧭 1. Prerequisites
 
 Before starting:
 
@@ -25,7 +25,7 @@ If you haven’t done so yet, complete:
 
 ---
 
-# ⚙️ 2. Enable the BACnet Driver
+## ⚙️ 2. Enable the BACnet Driver
 
 1. Open the DataLynX UI.
 2. In the Explorer tree, locate:
@@ -43,7 +43,7 @@ If the driver is disabled, enable it, then refresh the view.
 
 ---
 
-# 🏠 3. Configure the Hosted BACnet Device
+## 🏠 3. Configure the Hosted BACnet Device
 
 The hosted device is the identity of the DataLynX agent on the BACnet network.
 
@@ -66,7 +66,7 @@ The hosted device is the identity of the DataLynX agent on the BACnet network.
 
 ---
 
-# 🌐 4. Configure BACnet/IP Network(s)
+## 🌐 4. Configure BACnet/IP Network(s)
 
 1. Navigate to:
 
@@ -92,7 +92,7 @@ The hosted device is the identity of the DataLynX agent on the BACnet network.
 
 ---
 
-# ⏱️ 5. Configure Polling & Health Monitoring
+## ⏱️ 5. Configure Polling & Health Monitoring
 
 ### Poll Service
 
@@ -122,7 +122,7 @@ The hosted device is the identity of the DataLynX agent on the BACnet network.
 
 ---
 
-# 🔍 6. Device Discovery
+## 🔍 6. Device Discovery
 
 1. Navigate to:
 
@@ -149,7 +149,7 @@ The hosted device is the identity of the DataLynX agent on the BACnet network.
 
 ---
 
-# 🔁 7. Router Table & MSTP Devices (If Applicable)
+## 🔁 7. Router Table & MSTP Devices (If Applicable)
 
 If your BACnet environment includes routers:
 
@@ -171,7 +171,7 @@ If your BACnet environment includes routers:
 
 ---
 
-# 📟 8. Point Discovery for Devices
+## 📟 8. Point Discovery for Devices
 
 Once devices are discovered, drill into each device to find its points.
 
@@ -182,17 +182,17 @@ Once devices are discovered, drill into each device to find its points.
 
 3. For each point, you can see:
 
-   - Object type and instance  
-   - Present value  
-   - Units  
-   - Reliability  
-   - Priority array (if writable)  
+   - Object type and instance
+   - Present value
+   - Units
+   - Reliability
+   - Status flags
 
 4. Use filters or search to focus on key points (e.g., temperatures, flows, valve commands).
 
 ---
 
-# 🧩 9. Inspect Properties & Live Values
+## 🧩 9. Inspect Properties & Live Values
 
 Use the **Property View** for detailed insight and debugging.
 
@@ -209,7 +209,7 @@ You can:
 
 ---
 
-# 🎛️ 10. Flow View & Data Transformation (Optional at this Stage)
+## 🎛️ 10. Flow View & Data Transformation (Optional at this Stage)
 
 If you need to:
 
@@ -234,7 +234,7 @@ Common tasks:
 
 ---
 
-# ✅ 11. Integration Checklist
+## ✅ 11. Integration Checklist
 
 Before moving on to BasiX mapping, verify:
 
@@ -251,10 +251,10 @@ If all items are checked, your BACnet integration is ready for the next stage.
 
 ---
 
-# 🚀 12. Next Step: BasiX Mapping Workflow
+## 🚀 12. Next Step: BasiX Mapping Workflow
 
 You are now ready to:
 
-👉 Proceed to **User Guide → BasiX Mapping Workflow**  
+👉 Proceed to **[BasiX Mapping Workflow](basix-mapping-workflow.md)**
 to normalize BACnet points into BasiX device profiles and push them to BDX.
 

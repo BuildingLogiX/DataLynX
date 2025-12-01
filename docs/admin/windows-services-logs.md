@@ -1,15 +1,16 @@
-# 🖥️ Windows Services & Logs
+# ![Windows Logo](../assets/windows_logo.svg){ width="40" } Windows Services & Logs
 
 DataLynX runs as a pair of Windows Services that must be operational for BACnet communication, the Web UI, BasiX mapping, and BDX communication to function properly.  
 This guide explains where these services run, how to verify they are healthy, and where to find logs and configuration files.
 
 ---
 
-# ⚙️ 1. DataLynX Windows Services
+## ⚙️ 1. DataLynX Windows Services
 
 When installed via the `.msi` installer, DataLynX creates **two** Windows services:
 
 ### ✅ **1. DataLynX Supervisor Service**
+
 - Manages the Agent runtime
 - Handles data processing and logic state
 - Oversees BACnet drivers  
@@ -17,6 +18,7 @@ When installed via the `.msi` installer, DataLynX creates **two** Windows servic
 - Helps recover gracefully from errors or faults  
 
 ### ✅ **2. DataLynX Web Service**
+
 - Hosts the Web UI (HTTP interface)  
 - Exposes REST API endpoints  
 - Allows you to configure networks, users, mappings, and system settings  
@@ -24,7 +26,7 @@ When installed via the `.msi` installer, DataLynX creates **two** Windows servic
 
 ---
 
-# 🔍 2. Viewing Services in Windows
+## 🔍 2. Viewing Services in Windows
 
 To view and manage DataLynX services:
 
@@ -49,7 +51,7 @@ services.msc
 
 ---
 
-# 🟢 3. Restarting or Controlling Services
+## 🟢 3. Restarting or Controlling Services
 
 Right-click any service to:
 
@@ -66,7 +68,7 @@ Restarting services is often useful after modifying configuration files.
 
 ---
 
-# 📁 4. File Locations
+## 📁 4. File Locations
 
 The DataLynX agent stores config files, logs, snapshots, and backups under:
 
@@ -87,7 +89,7 @@ C:\ProgramData\DataLynX\agents\default\
 
 ---
 
-# 🗂️ 5. Log Files
+## 🗂️ 5. Log Files
 
 Logs are located under:
 
@@ -112,7 +114,7 @@ Logs are rotated automatically and timestamped for easier debugging.
 
 ---
 
-# 🧪 6. What to Look For in Logs
+## 🧪 6. What to Look For in Logs
 
 Logs can help troubleshoot:
 
@@ -134,7 +136,7 @@ Logs can help troubleshoot:
 
 ---
 
-# 📦 7. Backup & Restore
+## 📦 7. Backup & Restore
 
 DataLynX maintains rotating backups of:
 
@@ -158,7 +160,7 @@ Restoration involves:
 
 ---
 
-# 🛑 8. Resetting Configuration (Safely)
+## 🛑 8. Resetting Configuration (Safely)
 
 To reset the DataLynX configuration:
 
@@ -177,7 +179,7 @@ C:\ProgramData\DataLynX\agents\default\datalynx.cfg
 
 ---
 
-# 📝 Summary
+## 📝 Summary
 
 The Windows Services & Logs section helps you:
 
@@ -195,6 +197,6 @@ These tools form the backbone of DataLynX system administration.
 
 Move on to:
 
-👉 **Administration → Backup & Restore**
+👉 **[Backup & Restore](backup-restore.md)**
 to learn how DataLynX preserves configuration and processing state.
 

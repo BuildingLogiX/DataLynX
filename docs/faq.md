@@ -4,7 +4,7 @@ This FAQ covers the most common questions and troubleshooting steps for working 
 
 ---
 
-# 🔧 1. General System Questions
+## 🔧 1. General System Questions
 
 ### **Q: What's the difference between the Windows Services and the DataLynX Agent?**
 **A:**
@@ -12,6 +12,7 @@ This FAQ covers the most common questions and troubleshooting steps for working 
 **This is a critical distinction:**
 
 **Windows Services** (DataLynX Supervisor Service & DataLynX Web Service):
+
 - Provide the infrastructure for DataLynX to run
 - Host the web UI
 - Enable remote management capabilities
@@ -20,6 +21,7 @@ This FAQ covers the most common questions and troubleshooting steps for working 
 - Run as processes: `supervisor.exe` and `agent.exe`
 
 **The DataLynX Agent** (controlled from the UI):
+
 - Runs the actual BACnet driver
 - Executes data processing and transformation logic
 - Manages BuildingLogiX processes
@@ -98,6 +100,7 @@ See **Getting Started → Installation** for detailed steps.
 DataLynX uses port **80** by default for the Web UI.
 
 **If port 80 is unavailable** (used by IIS, Apache, etc.):
+
 - Recommended alternatives: **8050** or **8020**
 - Configure during installation, or manually edit the port in `datalynx.cfg`
 - **Important:** Update your firewall rules to match the new port
@@ -152,10 +155,11 @@ The agent is probably not running. After login, you land on the **Supervisor** p
 
 ---
 
-# 🌐 2. BACnet Questions
+## 🌐 2. BACnet Questions
 
 ### **Q: Devices are not showing up in discovery. What should I check?**
 **A:**
+
 - Ensure BACnet driver is enabled  
 - Check UDP port (default 47808)  
 - Ensure firewall allows UDP broadcasts  
@@ -167,6 +171,7 @@ The agent is probably not running. After login, you land on the **Supervisor** p
 
 ### **Q: Why do some points show NaN or Fault in the UI?**
 **A:**
+
 - Device may be offline (check Health Monitoring)  
 - Units may be incompatible (if unit propagation enabled)  
 - Link or mapping may be incorrect  
@@ -191,10 +196,11 @@ If using routers, verify:
 
 ---
 
-# 🧩 3. Data Transformation & Logic Questions
+## 🧩 3. Data Transformation & Logic Questions
 
 ### **Q: My math block is producing NaN. Why?**
 **Possible reasons:**
+
 - Input units are incompatible (°F vs inWC, etc.)  
 - Divide-by-zero error  
 - Unsupported or missing values from upstream  
@@ -214,13 +220,14 @@ Use the **Watch** feature:
 
 ### **Q: Why is my value not converting units?**
 Check that:
+
 - The correct block type is used (e.g., Convert block)  
 - Units are defined on the source value  
 - “Propagate Units” is enabled in the link  
 
 ---
 
-# 🧬 4. BasiX Questions
+## 🧬 4. BasiX Questions
 
 ### **Q: Why can't I publish my BasiX device to BDX?**
 Because required fields are missing or have incorrect/missing units.
@@ -247,6 +254,7 @@ Use "Mapping Preview" to validate which points match the rule.
 
 ### **Q: What are dimensionless units and how do I handle them?**
 Dimensionless (or "unitless") values are valid in BACnet. They're commonly used for:
+
 - Ratios (0–1 fractions)
 - Counts (number of starts)
 - Vendor-specific scales
@@ -263,6 +271,7 @@ See **[Units & Formatting](../concepts/units-formatting.md)** for details.
 You may be mixing absolute temperature (°F) with delta temperature (ΔF).
 
 **Key rules**:
+
 - Use **delta temperature (ΔF)** for temperature differences
 - Do NOT multiply or divide absolute temperatures
 - Subtract/Mean blocks work with absolute temps
@@ -284,10 +293,11 @@ For actual conversion (e.g., Pa → inWC), use a Convert block.
 
 ---
 
-# ☁️ 5. BDX Communication Questions
+## ☁️ 5. BDX Communication Questions
 
 ### **Q: Agent shows “offline” in BDX. Why?**
 Check:
+
 - BDX URL configured correctly  
 - `/agent/bdxAgent` endpoint is used  
 - Password is correct  
@@ -296,12 +306,14 @@ Check:
 
 ---
 
-### **Q: Data isn’t showing in BDX. What should I check?**
+### **Q: Data isn't showing in BDX. What should I check?**
+
 - Ensure BasiX devices are published  
 - Check BDX logs:  
   ```
   C:\ProgramData\DataLynX\agents\default\logs\bdx.log
   ```
+
 - Verify data pump is enabled  
 - Confirm values are updating in the data processing layer  
 
@@ -326,7 +338,7 @@ For temporary access removal, disable the account instead.
 
 ---
 
-# 💾 7. Backup & Reset Questions
+## 💾 7. Backup & Reset Questions
 
 ### **Q: Does deleting datalynx.cfg reset the system?**
 Yes, **but only if the Supervisor Service is stopped first**.  
@@ -336,6 +348,7 @@ Otherwise, the agent will recreate the file from its in-memory state.
 
 ### **Q: How often does DataLynX back up automatically?**
 Backups occur when:
+
 - Configuration changes
 - Logic processing snapshot is created
 - A restart triggers state persistence  
@@ -356,7 +369,7 @@ onto the new machine’s agent directory.
 
 ---
 
-# 🛠️ 8. Advanced Questions
+## 🛠️ 8. Advanced Questions
 
 ### **Q: Does DataLynX support BACnet MSTP?**
 Yes, **via routed networks** (Remote Stations).  
@@ -375,7 +388,7 @@ Yes — DataLynX supports saving and loading mapping structures through configur
 
 ---
 
-# 📝 Summary
+## 📝 Summary
 
 This FAQ covers:
 
