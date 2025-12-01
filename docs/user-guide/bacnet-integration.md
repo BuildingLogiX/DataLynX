@@ -28,7 +28,7 @@ If you haven’t done so yet, complete:
 ## ⚙️ 2. Enable the BACnet Driver
 
 1. Open the DataLynX UI.
-2. In the Explorer tree, locate:
+2. In the eXplorer tree, locate:
 
    ```
    Drivers → BACnet
@@ -132,7 +132,7 @@ The hosted device is the identity of the DataLynX agent on the BACnet network.
 
 2. Click **Discover** and choose:
 
-   - **Who-Is** for broad discovery  
+   - **Who-Is** for broad discovery
    - **Ranged Who-Is** for large networks or targeted ranges
 
 ![Device Discovery](../img/BACnet - discovery.PNG)
@@ -143,9 +143,37 @@ The hosted device is the identity of the DataLynX agent on the BACnet network.
 
 4. Verify:
 
-   - Each expected controller is present  
-   - Device IDs and names look correct  
+   - Each expected controller is present
+   - Device IDs and names look correct
    - Network numbers / MACs are as expected
+
+### 📁 Organizing Devices with Folders
+
+By default, all discovered devices appear under the top-level `devices` node. For larger sites with many controllers, this can become difficult to navigate and manage.
+
+**Best Practice:** Use **BACnet Device Folders** to organize controllers logically:
+
+- **By building or floor:** `Building-A`, `Floor-1`, `Floor-2`
+- **By system type:** `AHUs`, `VAVs`, `Chillers`, `Lighting`
+- **By network segment:** `Network-1`, `MSTP-Trunk-A`
+
+**To create a device folder:**
+
+1. Right-click on the `devices` node
+2. Select **Add → BACnet Device Folder**
+3. Name the folder appropriately
+4. Drag discovered devices into the folder, or run discovery with the folder selected
+
+**Why organize devices?**
+
+- Easier navigation on sites with 50+ controllers
+- Logical grouping matches your building structure
+- Simplifies BasiX mapping workflows
+- Cleaner hierarchy in the eXplorer tree
+- Better team collaboration when multiple users work on the same agent
+
+!!! tip "Plan your folder structure before large discoveries"
+    On sites with many controllers, create your folder structure first, then discover devices directly into the appropriate folders. This saves time compared to reorganizing later.
 
 ---
 

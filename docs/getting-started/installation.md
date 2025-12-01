@@ -19,6 +19,9 @@ DataLynX is distributed as a Windows **.msi installer**.
      - Default is port **80**
      - If port 80 is already in use by another application (like IIS, Apache, or another web server), choose an alternative port such as **8050** or **8020**
      - Make note of the port you select for browser access and firewall configuration
+
+![DataLynX Installer Port Configuration](../img/DataLynX Installer Port Config.PNG)
+
    - Proceed with installation
 
 ### **What the installer creates**
@@ -194,7 +197,7 @@ When you first log in, you will land on the **Supervisor** page. This is the adm
 2. The status will show "Stopped" or "Not Running"
 3. Click **Start** to launch the agent
 4. Wait for the agent to initialize (BACnet driver, data processing, etc.)
-5. Once started, the full DataLynX Explorer tree will become visible, showing:
+5. Once started, the full DataLynX eXplorer tree will become visible, showing:
    - BACnet networks and devices
    - BasiX profiles
    - System configuration
@@ -203,13 +206,36 @@ When you first log in, you will land on the **Supervisor** page. This is the adm
 **If the agent is already running:**
 
 - The status will show "Running"
-- The full DataLynX Explorer tree will be immediately visible
+- The full DataLynX eXplorer tree will be immediately visible
 - You can navigate through all features and begin configuration
 
 **To stop the agent:**
 
 - Click the **Stop** button on the Supervisor page
 - This stops the BACnet driver and data processing (but leaves Windows Services running)
+
+### Agent Startup Type Configuration
+
+The Supervisor page also allows you to configure the **Agent Startup Type**, which determines how the DataLynX agent behaves when the Windows Services start.
+
+![Supervisor Startup Type Configuration](../img/DataLynX - Supervisor - Start Up Type.PNG)
+
+**Startup Type Options:**
+
+| Option | Description |
+|--------|-------------|
+| **Manual** | The agent does not start automatically. You must log into the Supervisor page and click **Start** to launch the agent. Useful for development, testing, or troubleshooting scenarios. |
+| **Automatic** | The agent starts automatically when the Windows Services start. **Recommended for production environments.** Ensures the BACnet driver and data processing begin immediately after a server reboot or service restart. |
+
+**To change the startup type:**
+
+1. Navigate to the **Supervisor** page
+2. Locate the **Startup Type** setting
+3. Select **Manual** or **Automatic**
+4. Save the configuration
+
+!!! tip "Production Recommendation"
+    For production environments, always set the startup type to **Automatic**. This ensures your BACnet integration and BDX data flow resume automatically after server maintenance, reboots, or power outages without requiring manual intervention.
 
 ---
 
@@ -242,7 +268,7 @@ Both DataLynX services must show "Running".
 ### ✔ Agent Starts Successfully
 1. In the Supervisor view, click **Start** (if agent is not already running)
 2. Wait for the agent to start (may take a few seconds)
-3. Verify the full DataLynX Explorer tree appears with:
+3. Verify the full DataLynX eXplorer tree appears with:
    - BACnet section
    - BasiX section
    - System section

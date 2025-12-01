@@ -164,21 +164,6 @@ Regex mapping is extremely powerful and enables cross-vendor normalization.
 
 ---
 
-## 🧪 6. Testing Your Mappings
-
-DataLynX supports live testing via:
-
-### ✔ Property Watch  
-View the live incoming BACnet value alongside its BasiX-mapped value.
-
-### ✔ BasiX Mappings Preview  
-Shows which devices are covered by a mapping rule.
-
-### ✔ Error Indicators  
-Highlights missing required BasiX points.
-
----
-
 ## ➡️ Next Step
 
 Proceed to **[Units & Formatting](units-formatting.md)**

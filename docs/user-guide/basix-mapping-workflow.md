@@ -24,7 +24,7 @@ The BasiX Mapping Workflow covers:
 
 ## 🧩 2. Where Mapping Happens
 
-In the Explorer tree, BasiX mapping schemes are located at:
+In the eXplorer tree, BasiX mapping schemes are located at:
 
 ```
 System → BasiX → mapping_schemes → [Device Type]
@@ -47,7 +47,64 @@ The mapping scheme editor allows you to:
 
 ---
 
-## 🏗️ 3. Creating a BasiX Device
+## 💾 3. Saving & Reusing Mapping Schemes
+
+One of the most powerful features of DataLynX is the ability to **save mapping configurations as reusable schemes** that can be applied to multiple devices. This dramatically reduces setup time when integrating sites with many similar devices.
+
+### How Mapping Schemes Work
+
+When you create a BasiX profile and configure its point mappings, you can save that configuration as a **mapping scheme**. This scheme becomes a template that can be applied to other devices of the same type.
+
+**Key Benefits:**
+
+- **Time Savings**: Configure once, apply to dozens or hundreds of similar devices
+- **Consistency**: All devices using the same scheme have identical mapping rules
+- **Maintainability**: Update the scheme once to affect all linked devices
+
+### Creating a Reusable Mapping Scheme
+
+1. Create a BasiX device and configure all point mappings
+2. Use pattern matching (wildcards like `*`) for device-specific identifiers
+3. Save the profile as a mapping scheme
+4. The scheme appears under `System → BasiX → mapping_schemes → [Device Type]`
+
+**Example:**
+For 50 VAVs with naming convention `VAV-01` through `VAV-50`:
+
+```
+BACnet Pattern: /VAV-*/AI-RM-T → zoneAirTemp
+BACnet Pattern: /VAV-*/AO-DMP → damperPosition
+```
+
+This single scheme maps all 50 VAVs automatically.
+
+### Linked vs Private (Rogue) Schemes
+
+**Linked Scheme (Default):**
+
+- Multiple devices share the same mapping scheme
+- **Editing the scheme updates ALL linked devices**
+- Ideal for standardized equipment with consistent naming
+
+**Private Scheme (Rogue):**
+
+- A device uses its own independent mapping configuration
+- Changes affect only that specific device
+- Useful for one-off devices or equipment with unique naming conventions
+
+**To make a scheme private:**
+
+1. Select the device using the shared scheme
+2. Choose to "disconnect" or "go rogue" from the linked scheme
+3. The device now has its own private mapping configuration
+4. Future edits to the original scheme will not affect this device
+
+!!! warning "Consider Before Editing Shared Schemes"
+    When you edit a mapping scheme that is linked to multiple devices, **all linked devices will be affected**. Always verify which devices are using a scheme before making changes. If you need to customize mapping for a specific device without affecting others, make that device's scheme private first.
+
+---
+
+## 🏗️ 4. Creating a BasiX Device
 
 ### Automatic Creation  
 If your BACnet naming conventions are consistent (e.g., `VAV-01` through `VAV-100`), DataLynX may automatically detect logical groups.
@@ -76,7 +133,7 @@ You can create a BasiX device manually:
 
 ---
 
-## 🔀 4. Mapping Modes You Can Use
+## 🔀 5. Mapping Modes You Can Use
 
 When mapping BACnet points to BasiX fields, you may choose:
 
@@ -88,7 +145,7 @@ Each profile contains required and optional fields.
 
 ---
 
-## 🧭 5. Mapping Example (VAV)
+## 🧭 6. Mapping Example (VAV)
 
 Suppose you create a VAV BasiX device for `VAV-12`.
 
@@ -111,7 +168,7 @@ BasiX Point: zoneAirTemp
 
 ---
 
-## 🛠️ 6. Using Flow View for Value Conditioning
+## 🛠️ 7. Using Flow View for Value Conditioning
 
 Before mapping to BasiX, you may need to apply logic such as:
 
@@ -139,7 +196,7 @@ See **[Units & Formatting Best Practices](../concepts/units-formatting.md)** for
 
 ---
 
-## 📋 7. Required vs Optional Points
+## 📋 8. Required vs Optional Points
 
 Each BasiX Profile defines:
 
@@ -154,7 +211,7 @@ You can still save the device but cannot publish to BDX until the profile is com
 
 ---
 
-## 📡 8. Device Completeness Indicators
+## 📡 9. Device Completeness Indicators
 
 After mapping a BasiX device, DataLynX displays:
 
@@ -166,7 +223,7 @@ You can filter all mapped devices by status.
 
 ---
 
-## ☁️ 9. Publishing to BDX
+## ☁️ 10. Publishing to BDX
 
 Once mappings are valid:
 
@@ -188,7 +245,7 @@ BDX will receive a normalized BasiX structure, enabling analytics, dashboards, a
 
 ---
 
-## 🧪 10. Troubleshooting Common Mapping Issues
+## 🧪 11. Troubleshooting Common Mapping Issues
 
 ### ❌ No points appear in the mapping search
 

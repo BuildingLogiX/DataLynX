@@ -47,7 +47,7 @@ nav:
       - Units & Formatting: concepts/units-formatting.md
   - User Guide:
       - UI Tour: user-guide/ui-tour.md
-      - Explorer Structure: user-guide/explorer-structure.md
+      - eXplorer Structure: user-guide/explorer-structure.md
       - Hierarchy & Digital Twin: user-guide/hierarchy-digital-twin.md
       - BACnet Integration Flow: user-guide/bacnet-integration.md
       - BasiX Mapping Workflow: user-guide/basix-mapping-workflow.md

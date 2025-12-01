@@ -127,7 +127,7 @@ DataLynX ships with default login credentials provided by BuildingLogiX during i
 After first login:
 1. You will land on the **Supervisor** view
 2. If the agent is not running, click **Start**
-3. Once started, the full DataLynX Explorer tree will appear
+3. Once started, the full DataLynX eXplorer tree will appear
 
 **IMPORTANT**: Change the default password immediately after first login for security.
 
@@ -147,7 +147,7 @@ The agent is probably not running. After login, you land on the **Supervisor** p
 2. Look for the **Start** button on the Supervisor page
 3. Click **Start**
 4. Wait for the agent to initialize (BACnet driver, data processing, BuildingLogiX processes)
-5. The full DataLynX Explorer tree will appear with all sections:
+5. The full DataLynX eXplorer tree will appear with all sections:
    - BACnet networks and devices
    - BasiX profiles
    - System configuration

@@ -1,12 +1,12 @@
-# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="50" } Explorer Structure & Navigation
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="50" } eXplorer Structure & Navigation
 
-The **Explorer** is the primary navigation tree in DataLynX, located on the left side of the UI. It provides hierarchical access to all configuration, devices, logic blocks, and system tools.
+The **eXplorer** is the primary navigation tree in DataLynX, located on the left side of the UI. It provides hierarchical access to all configuration, devices, logic blocks, and system tools.
 
-Understanding the Explorer structure is essential for efficient navigation and workflow management in DataLynX.
+Understanding the eXplorer structure is essential for efficient navigation and workflow management in DataLynX.
 
 ---
 
-## 📊 Explorer Tree Overview
+## 📊 eXplorer Tree Overview
 
 When you log into DataLynX with the agent running, you'll see the following top-level structure:
 
@@ -20,7 +20,7 @@ DataLynX (root)
 └── Manage Licenses
 ```
 
-![Explorer Top Node](../img/DataLynX - eXplorer Top Node.PNG)
+![eXplorer Top Node](../img/DataLynX - eXplorer Top Node.PNG)
 
 Each of these nodes serves a specific purpose in the DataLynX ecosystem.
 
@@ -201,7 +201,7 @@ The **Supervisor** node provides administrative control and monitoring of the Da
 **Important:**
 
 - This is the **landing page** when you first log in
-- If the agent is not running, you must click **Start** here to see the full Explorer tree
+- If the agent is not running, you must click **Start** here to see the full eXplorer tree
 - The agent can be stopped while Windows Services continue running
 
 **Related documentation:**
@@ -258,7 +258,7 @@ License and activation management.
 
 ### **Breadcrumb Navigation**
 
-When you click on an Explorer node, the top of the screen shows a breadcrumb path:
+When you click on an eXplorer node, the top of the screen shows a breadcrumb path:
 
 ```
 /Hierarchy/Campus_Main/Building_A/AHUs
@@ -276,7 +276,7 @@ This shows your current location in the tree and helps you understand context wh
 
 ### **Flow View Context**
 
-When you select a node in the Explorer:
+When you select a node in the eXplorer:
 
 - The **center workspace** shows the Flow View for that node (if it contains blocks)
 - The **right panel** shows the Toolbox (with block categories)
@@ -353,7 +353,7 @@ To create a new folder in Hierarchy:
 | Configure hosted device | Connections → BACnet → configuration → hosted_device |
 | Connect to BDX | Connections → BDX |
 | Create custom logic blocks | Hierarchy → [Your folders] |
-| Configure BasiX mappings | System → BasiX → mapping_schemes |
+| View existing BasiX mappings | System → BasiX → mapping_schemes |
 | Set up backups | System → backup_service |
 | Start/stop agent | Supervisor |
 | Manage users | Manage Users |
@@ -368,7 +368,7 @@ To create a new folder in Hierarchy:
    - **Hierarchy** = Logical organization and custom data processing
 
 2. **Flow View is Everywhere:**
-   - Most Explorer nodes can be opened in Flow View
+   - Most eXplorer nodes can be opened in Flow View
    - This is where you visualize and edit logic blocks
 
 3. **Breadcrumbs Show Context:**
@@ -383,7 +383,7 @@ To create a new folder in Hierarchy:
 
 ## ➡️ Next Steps
 
-Now that you understand the Explorer structure:
+Now that you understand the eXplorer structure:
 
 - **Create your digital twin** - See [Hierarchy & Digital Twin](hierarchy-digital-twin.md)
 - **Learn about blocks** - See [Toolbox Reference](../reference/toolbox-blocks.md)

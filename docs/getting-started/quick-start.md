@@ -47,7 +47,7 @@ New-NetFirewallRule -DisplayName "DataLynX BACnet" -Direction Inbound -Protocol 
 2. Open browser → `http://localhost`
 3. Log in with credentials provided by BuildingLogiX
 4. On the **Supervisor** page → click **Start** to launch the agent
-5. Wait for Explorer tree to populate
+5. Wait for eXplorer tree to populate
 
 ![Supervisor Page](../img/Supervisor.PNG)
 

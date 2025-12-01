@@ -264,7 +264,7 @@ Before creating folders, decide:
 
 ### **Step 2: Create the Top-Level Structure**
 
-1. Navigate to **Hierarchy** in the Explorer
+1. Navigate to **Hierarchy** in the eXplorer
 2. Right-click → **New Folder**
 3. Name it (e.g., `Campus_Main` or `Building_A`)
 4. Repeat for other top-level folders
@@ -581,4 +581,4 @@ Now that you understand the Hierarchy and digital twin concept:
 - **Build logic flows** - See [Data Transformation & Logic Flow](../concepts/data-transformation.md)
 - **Understand units** - See [Units & Formatting Best Practices](../concepts/units-formatting.md)
 - **Map to BasiX** - See [BasiX Mapping Workflow](basix-mapping-workflow.md)
-- **Explore the full UI** - See [Explorer Structure](explorer-structure.md)
+- **Explore the full UI** - See [eXplorer Structure](explorer-structure.md)

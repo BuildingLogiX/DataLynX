@@ -156,7 +156,7 @@ By default, all discovered devices appear under the top-level `devices` node. Fo
 - Easier navigation on sites with 50+ controllers
 - Logical grouping matches your building structure
 - Simplifies BasiX mapping workflows
-- Cleaner hierarchy in the Explorer tree
+- Cleaner hierarchy in the eXplorer tree
 - Better team collaboration when multiple users work on the same agent
 
 !!! tip "Plan your folder structure before large discoveries"

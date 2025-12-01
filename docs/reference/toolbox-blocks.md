@@ -560,4 +560,4 @@ Use **Link View** to see all connections into and out of a block at a glance:
 - **[Hierarchy & Digital Twin](../user-guide/hierarchy-digital-twin.md)** - Where to organize your blocks
 - **[Units & Formatting Best Practices](../concepts/units-formatting.md)** - Critical unit handling guidance
 - **[BasiX Mapping Workflow](../user-guide/basix-mapping-workflow.md)** - How to map block outputs to BasiX
-- **[Explorer Structure](../user-guide/explorer-structure.md)** - Understanding the UI navigation
+- **[eXplorer Structure](../user-guide/explorer-structure.md)** - Understanding the UI navigation

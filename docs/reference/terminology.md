@@ -34,7 +34,7 @@ The top-level administrator role and control interface for the Agent. The Superv
 - View and modify all settings
 - Perform backups and restores
 
-**Important**: When you first log into DataLynX, you land on the Supervisor view. If the agent is not running, you must click the **Start** button to launch the agent and see the full DataLynX Explorer tree.
+**Important**: When you first log into DataLynX, you land on the Supervisor view. If the agent is not running, you must click the **Start** button to launch the agent and see the full DataLynX eXplorer tree.
 
 The Supervisor role has the highest level of privileges in DataLynX.
 
@@ -42,7 +42,7 @@ The Supervisor role has the highest level of privileges in DataLynX.
 
 ## 🧭 User Interface Elements
 
-### **Explorer**
+### **eXplorer**
 The navigation tree (typically on the left side of the UI) that allows users to browse and organize:
 
 - **System Node**: BasiX mapping schemes and backup service
@@ -53,7 +53,7 @@ The navigation tree (typically on the left side of the UI) that allows users to 
 - **System Settings**: Configuration, logs, backups, and diagnostics
 - **User Management**: Accounts, roles, and permissions
 
-The Explorer is the primary navigation tool for accessing all DataLynX features.
+The eXplorer is the primary navigation tool for accessing all DataLynX features.
 
 **Top-Level Structure:**
 ```
@@ -66,12 +66,12 @@ DataLynX (root)
 └── Manage Licenses
 ```
 
-See [Explorer Structure Guide](../user-guide/explorer-structure.md) for complete details.
+See [eXplorer Structure Guide](../user-guide/explorer-structure.md) for complete details.
 
 ---
 
 ### **System Node**
-The top-level Explorer node containing DataLynX system configuration:
+The top-level eXplorer node containing DataLynX system configuration:
 
 - **BasiX** - Contains mapping schemes for device types (VAV, AHU, Chiller, etc.)
 - **backup_service** - Automated backup scheduling and snapshot management
@@ -81,7 +81,7 @@ The top-level Explorer node containing DataLynX system configuration:
 ---
 
 ### **Connections Node**
-The top-level Explorer node containing communication driver configuration:
+The top-level eXplorer node containing communication driver configuration:
 
 - **BDX** - Connection settings for BuildingLogiX Data eXchange
 - **BACnet** - BACnet driver configuration, hosted device, networks, and discovered devices
@@ -151,7 +151,7 @@ See [Toolbox Block Reference](toolbox-blocks.md) for complete block library.
 ## 🧩 Logic & Data Processing
 
 ### **Block / Blox**
-A functional component that can exist in the Explorer or Toolbox. Blocks are used for:
+A functional component that can exist in the eXplorer or Toolbox. Blocks are used for:
 
 - Data transformation (math, logic, conversions)
 - Connecting to BACnet points
@@ -311,7 +311,7 @@ The process of finding BACnet devices on the network using:
 - Ranged discovery for large networks
 - Manual device entry when needed
 
-Discovery populates the device list in the Explorer.
+Discovery populates the device list in the eXplorer.
 
 ---
 
@@ -378,7 +378,7 @@ The component responsible for:
 |------|----------|-------------|
 | Agent | Core | Running DataLynX instance |
 | Supervisor | User Role | Top-level administrator |
-| Explorer | UI | Navigation tree |
+| eXplorer | UI | Navigation tree |
 | Toolbox | UI | Block selection panel |
 | Block/Blox | Logic | Functional component |
 | Flow View | UI | Visual programming interface |

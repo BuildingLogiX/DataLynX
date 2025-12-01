@@ -9,7 +9,7 @@ Use this as a reference when learning the platform or training new users.
 
 When you access the DataLynX UI (typically at `http://localhost` on port 80, or alternatively port 8050 or 8020), you will see a clean, organized navigation structure consisting of:
 
-- **Explorer Tree (Left Pane)**
+- **eXplorer Tree (Left Pane)**
   Shows drivers, networks, devices, BasiX mappings, system tools, and settings.
 
 - **Main Content Area (Center)**
@@ -23,11 +23,11 @@ When you access the DataLynX UI (typically at `http://localhost` on port 80, or 
 
 ---
 
-## 🏠 2. Explorer Parent Nodes
+## 🏠 2. eXplorer Parent Nodes
 
-The Explorer tree is the primary navigation tool in DataLynX. When you first log in with the agent running, you'll see these **parent nodes**:
+The eXplorer tree is the primary navigation tool in DataLynX. When you first log in with the agent running, you'll see these **parent nodes**:
 
-![Explorer Top Node](../img/DataLynX - eXplorer Top Node.PNG)
+![eXplorer Top Node](../img/DataLynX - eXplorer Top Node.PNG)
 
 ### **Top-Level Structure:**
 
@@ -48,12 +48,12 @@ The Explorer tree is the primary navigation tool in DataLynX. When you first log
 | Configure BACnet network | **Connections → BACnet → configuration** |
 | Discover BACnet devices | **Connections → BACnet → devices** |
 | Connect to BDX | **Connections → BDX** |
-| Create BasiX mapping schemes | **System → BasiX → mapping_schemes** |
+| Create BasiX mapping schemes | **Hierarchy → BasiX → save profile as a mapping_schemes** |
 | Build custom logic/calculations | **Hierarchy → [Your folders]** |
 | Manage user accounts | **Manage Users** |
 | Configure backups | **System → backup_service** |
 
-For detailed information, see [Explorer Structure Guide](explorer-structure.md).
+For detailed information, see [eXplorer Structure Guide](explorer-structure.md).
 
 ---
 
@@ -136,7 +136,7 @@ DataLynX provides multiple **view modes** for working with blocks. You can switc
 
 ### **How to Switch Views:**
 
-1. Select a block in the Explorer or Flow View
+1. Select a block in the eXplorer or Flow View
 2. Look at the **top-right corner** of the screen
 3. Click the **Active View** dropdown (shows current view name)
 4. Select the desired view mode
@@ -317,20 +317,6 @@ Diagnostics views provide insight into:
 Users can optionally change the theme and appearance of the UI.
 
 ![Theme Settings](../img/Settings - Theme.PNG)
-
----
-
-## 📝 Summary
-
-The User Interface provides:
-
-- Complete visibility into BACnet networks
-- Configuration tools for drivers, networks, users, and BasiX
-- Visual logic development via Flow View and the Toolbox
-- Health monitoring and diagnostics
-- System-level maintenance and backups
-
-Together, these tools create a powerful standalone integration platform.
 
 ---
 
