@@ -57,8 +57,10 @@ Navigate to: `BACnet → Hosted Device`
 
 | Setting | Recommendation |
 |---------|---------------|
-| Device ID | 700000–799999 range |
-| Device Name | Unique identifier |
+| Device ID | 1530000–1530999 (BuildingLogiX range) |
+| Device Name | DataLynX |
+
+> **Note:** Device ID must be unique on your BACnet network. Verify availability before use.
 
 ---
 

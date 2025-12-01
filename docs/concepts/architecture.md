@@ -9,25 +9,25 @@ This page provides an overview of **DataLynX**, the BuildingLogiX on-premises ag
 DataLynX is designed with clear, modular layers:
 
 ```
-           +-----------------------+
-           |          BDX          |
-           +-----------+-----------+
-                       ↑
-                 Data Pump
-                       ↑
-          +------------+------------+
-          |      BasiX Profiles     |
-          +------------+------------+
-                       ↑
+        +-----------------------+
+        |          BDX          |
+        +-----------+-----------+
+                    ↑
+              Data Pump
+                    ↑
+        +------------+------------+
+        |      BasiX Profiles     |
+        +------------+------------+
+                    ↑
          Data Processing Layer
-                       ↑
-              Property Containers
-                       ↑
-                 BACnet Driver
-                       ↑
-              Driver Framework
-                       ↑
-                Physical Network
+                    ↑
+          Property Containers
+                    ↑
+             BACnet Driver
+                    ↑
+           Driver Framework
+                    ↑
+           Physical Network
 ```
 
 **In plain terms:**

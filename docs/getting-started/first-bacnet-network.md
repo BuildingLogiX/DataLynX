@@ -42,8 +42,10 @@ BACnet → Hosted Device
 
 ### ✔ Recommendations
 
-- Use a Device ID in the **700000–799999** range to avoid conflicts  
-- If using multiple agents, assign each a different Device ID  
+- Use a Device ID in the **1530000–1530999** range (BuildingLogiX vendor ID range)
+- **Device ID must be unique** on the BACnet network — verify availability before use
+- Recommended Device Name: **DataLynX**
+- If using multiple agents, assign each a different Device ID (e.g., 1530001, 1530002)
 - Do not reuse the device ID of a field controller or plant controller  
 
 ---
