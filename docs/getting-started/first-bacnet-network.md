@@ -27,7 +27,7 @@ The **hosted device** is DataLynX’s identity on the BACnet network.
 2. Navigate to:
 
 ```
-BACnet → Hosted Device
+Connections → BACnet → configuration → Hosted Device
 ```
 
 3. Configure the following fields:
@@ -42,7 +42,7 @@ BACnet → Hosted Device
 
 ### ✔ Recommendations
 
-- Use a Device ID in the **1530000–1530999** range (BuildingLogiX vendor ID range)
+- Use an available Device ID range, for example in the **1530000–1530999**  
 - **Device ID must be unique** on the BACnet network — verify availability before use
 - Recommended Device Name: **DataLynX**
 - If using multiple agents, assign each a different Device ID (e.g., 1530001, 1530002)
@@ -96,7 +96,7 @@ Defaults include:
 Polling can be modified later under:
 
 ```
-BACnet → Networks → Poll Service
+Connections → BACnet → Networks → Poll Service
 ```
 
 ---
@@ -108,7 +108,7 @@ Now you are ready to find controllers on the network.
 1. Go to:
 
 ```
-BACnet → Devices
+Connections → BACnet → Devices
 ```
 
 2. Click:
@@ -128,11 +128,39 @@ Discover → Who-Is
 
 ### After discovery, you should see:
 
-- Device name  
-- Device ID  
-- Network number  
-- MAC address  
-- Vendor information  
+- Device name
+- Device ID
+- Network number
+- MAC address
+- Vendor information
+
+### 📁 Organizing Devices with Folders
+
+By default, all discovered devices appear under the top-level `devices` node. For larger sites, this can become difficult to manage.
+
+**Best Practice:** Use **BACnet Device Folders** to organize controllers logically:
+
+- **By building or floor:** `Building-A`, `Floor-1`, `Floor-2`
+- **By system type:** `AHUs`, `VAVs`, `Chillers`, `Lighting`
+- **By network segment:** `Network-1`, `MSTP-Trunk-A`
+
+**To create a device folder:**
+
+1. Right-click on `devices` node
+2. Select **Add → BACnet Device Folder**
+3. Name the folder appropriately
+4. Drag discovered devices into the folder, or run discovery with the folder selected
+
+**Why organize devices?**
+
+- Easier navigation on sites with 50+ controllers
+- Logical grouping matches your building structure
+- Simplifies BasiX mapping workflows
+- Cleaner hierarchy in the Explorer tree
+- Better team collaboration when multiple users work on the same agent
+
+!!! tip "Plan your folder structure before large discoveries"
+    On sites with many controllers, create your folder structure first, then discover devices directly into the appropriate folders. This saves time compared to reorganizing later.
 
 ---
 
@@ -183,14 +211,43 @@ If values do not change:
 Navigate to:
 
 ```
-BACnet → Networks → Router Table
+Connections → BACnet → Configuration → Router Table
 ```
+
+![Router Table Configuration](../img/BACnet - Configuration - router table.PNG)
 
 If routers are present on your network:
 
-- Entries will populate automatically  
-- You may add manual overrides if network permission requires it  
+- Entries will populate automatically from I-Am-Router-To-Network messages
+- You may add manual entries if network topology requires it
 - Remote stations (for MSTP) may appear here as well
+
+### 📌 Pinning Router Table Entries
+
+Router table entries learned automatically can be purged or overwritten when routers restart or network conditions change. To prevent this:
+
+**Use the "Pinned" flag** on critical router entries:
+
+1. Select the router table entry
+2. Enable the **Pinned** checkbox
+3. Save the configuration
+
+**When to pin entries:**
+
+- Static routes that should never change
+- Manual overrides for complex network topologies
+- Entries for routers that may temporarily go offline
+- Critical paths to MSTP trunks or remote networks
+
+**Pinned entries will:**
+
+- Never be automatically purged
+- Not be overwritten by learned routes
+- Persist across agent restarts
+- Take priority over dynamically learned entries
+
+!!! warning "Use pinning carefully"
+    Only pin entries you're certain are correct. Incorrect pinned routes can prevent communication with devices on those networks.
 
 ---
 

@@ -41,10 +41,15 @@ New-NetFirewallRule -DisplayName "DataLynX BACnet" -Direction Inbound -Protocol 
 ## 3. Start Services & Agent (1 min)
 
 1. Open `services.msc` → verify both DataLynX services are **Running**
+
+![DataLynX Windows Services](../img/DataLynX Windows Services.PNG)
+
 2. Open browser → `http://localhost`
 3. Log in with credentials provided by BuildingLogiX
 4. On the **Supervisor** page → click **Start** to launch the agent
 5. Wait for Explorer tree to populate
+
+![Supervisor Page](../img/Supervisor.PNG)
 
 !!! note "Services ≠ Agent"
     Windows Services provide infrastructure. The **Agent** (started from Supervisor page) runs the BACnet driver.
@@ -54,6 +59,8 @@ New-NetFirewallRule -DisplayName "DataLynX BACnet" -Direction Inbound -Protocol 
 ## 4. Configure Hosted Device (1 min)
 
 Navigate to: `BACnet → Hosted Device`
+
+![Hosted Device Configuration](../img/BACnet - Configuration - hosted device.PNG)
 
 | Setting | Recommendation |
 |---------|---------------|
@@ -67,6 +74,8 @@ Navigate to: `BACnet → Hosted Device`
 ## 5. Add BACnet/IP Network (2 min)
 
 Navigate to: `Connections → BACnet → configuration → bacnet_networks → Add`
+
+![BACnet IP Network Configuration](../img/BACnet - Configuration - BACnet IP Network - configuration.PNG)
 
 | Setting | Value |
 |---------|-------|
@@ -86,11 +95,15 @@ Save and ensure network shows **Enabled**.
 3. Devices populate automatically
 4. Click any device to browse points
 
+![Device Discovery](../img/BACnet - discovery.PNG)
+
 ---
 
 ## 7. Connect to BDX (1 min)
 
 Navigate to: `Connections → BDX → bdx_agent`
+
+![BDX Agent Configuration](../img/Connections - BDX - Agent Config.PNG)
 
 | Setting | Value |
 |---------|-------|
@@ -109,6 +122,8 @@ Enable connection → verify status shows **Connected**.
 3. Configure path patterns to match your BACnet naming
 4. Map required fields to BACnet points
 5. Publish device to BDX
+
+![BasiX VAV Mapping Scheme](../img/System - BasiX - VAV Mapping Scheme.PNG)
 
 ---
 

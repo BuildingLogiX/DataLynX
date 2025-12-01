@@ -134,16 +134,16 @@ The block automatically:
 Every property maintains:
 
 - **Status**
-  - OK
-  - Faulted
-  - Downstream Fault
-  - Configuration Error
+    - OK
+    - Faulted
+    - Downstream Fault
+    - Configuration Error
 
 - **Reliability**
-  - No Fault
-  - Questionable
-  - Unreliable
-  - Out of Range
+    - No Fault
+    - Questionable
+    - Unreliable
+    - Out of Range
 
 DataLynX enforces data quality through:
 
@@ -202,9 +202,6 @@ DataLynX stores your logic configuration in standard formats:
 - **Configuration Files** (`.json`)
   Full block definitions, links, and properties.
 
-- **Snapshot Format** (`.snapshot`)
-  Used internally for state restore.
-
 Configuration and state files live under:
 
 ```
@@ -213,22 +210,6 @@ C:\ProgramData\DataLynX\agents\default\
 
 ---
 
-## 🧱 9. Summary
-
-DataLynX's data transformation capabilities allow you to:
-
-- Normalize raw BACnet data
-- Convert units automatically
-- Apply custom logic and calculations
-- Generate virtual points
-- Ensure data reliability
-- Prepare values for BasiX modeling
-- Support real-time debugging
-- Maintain recoverable state
-
-All meaningful data in DataLynX flows through this layer before reaching BDX.
-
----
 
 ## ➡️ Next Step
 

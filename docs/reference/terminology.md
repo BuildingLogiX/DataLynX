@@ -265,6 +265,20 @@ Properties flow through blocks and links, carrying data and metadata throughout 
 
 ---
 
+### **Property Flags**
+Configuration options that control how a property behaves within the system:
+
+| Flag | Description |
+|------|-------------|
+| **Transient** | The property can be linked, but its value is not persisted to the Agent Configuration Database. Use for temporary or calculated values that don't need to survive an agent restart. |
+| **Summary** | Always displays the property in the Flow View, even if it is not linked. Useful for key values you want visible at a glance. |
+| **Readonly** | Prevents the property value from being modified. Use for values that should only be read from their source. |
+| **Override Source Units** | Allows you to reinterpret the incoming units on a block without converting the value. |
+
+See **[Property Configuration & Flags](../concepts/units-formatting.md#-5-property-configuration--flags)** for detailed usage.
+
+---
+
 ### **Link**
 A connection between blocks that:
 
@@ -372,6 +386,7 @@ The component responsible for:
 | Link View | UI | Connection management view |
 | Properties Pane | UI | Full property details view |
 | Property | Data | Value with units, status, reliability |
+| Property Flags | Data | Transient, Summary, Readonly, Override Source Units |
 | Link | Logic | Connection between blocks |
 | Hosted Device | BACnet | DataLynX's BACnet identity |
 | BasiX Profile | Data | Standardized device template |

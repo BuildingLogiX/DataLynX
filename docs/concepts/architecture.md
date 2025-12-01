@@ -15,9 +15,9 @@ DataLynX is designed with clear, modular layers:
                     ↑
                BDX Data Pump
                     ↑
-        +------------+------------+
-        |      BasiX Profiles     |
-        +------------+------------+
+        +-----------+------------+
+        |      BasiX Profiles    |
+        +-----------+------------+
                     ↑
            Data Processing Layer
                     ↑
@@ -30,16 +30,6 @@ DataLynX is designed with clear, modular layers:
              Physical Network
 ```
 
-**In plain terms:**
-
-1. **Physical Network** → BACnet devices on your building network
-2. **BACnet Driver** → Discovers devices, reads point values
-3. **Property Containers** → Tracks values, units, status, and timestamps
-4. **Data Processing Layer** → Transforms, scales, and computes derived values
-5. **BasiX Profiles** → Normalizes data into standard device schemas
-6. **Data Pump** → Sends normalized data securely to BDX
-
----
 
 ## 🧩 Core Components at a Glance
 
@@ -107,14 +97,6 @@ DataLynX uses **Property Containers** to track each value through the system:
 - Units
 - Timestamps
 - Reliability
-
-**Data flow:**
-
-```
-BACnet Driver → Property Container → Data Processing → BasiX Profile → Data Pump → BDX
-```
-
-Each layer annotates and transforms the data as it moves through.
 
 ---
 

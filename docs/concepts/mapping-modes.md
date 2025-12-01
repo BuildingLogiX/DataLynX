@@ -179,20 +179,6 @@ Highlights missing required BasiX points.
 
 ---
 
-## 📝 7. Summary
-
-Mapping modes provide the flexibility needed to normalize messy BAS naming conventions into clean BasiX points.
-
-| Mode | Difficulty | Flexibility | Ideal For |
-|------|------------|-------------|-----------|
-| Exact | Easy | Low | Small systems, AHUs, chillers |
-| Pattern (Glob) | Medium | Medium | VAVs, repeated devices |
-| Regex | Hard | Very High | Mixed naming, large campuses |
-
-Together, these tools allow DataLynX to model any building consistently.
-
----
-
 ## ➡️ Next Step
 
 Proceed to **[Units & Formatting](units-formatting.md)**

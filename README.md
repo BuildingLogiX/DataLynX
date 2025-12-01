@@ -1,5 +1,5 @@
-<p align="center">
-  <img src="docs/assets/datalynx_logo.svg" alt="DataLynX Logo" width="200">
+<p align="left">
+  <img src="docs/assets/datalynx_logo.svg" alt="DataLynX Logo" width="100">
 </p>
 
 # DataLynX Documentation
@@ -61,6 +61,13 @@ Common questions, troubleshooting steps, and workflow tips.
 ---
 
 
-## 📄 License
+## 📄 License & Copyright
 
-Documentation © BuildingLogiX. All rights reserved.
+**DataLynX** is proprietary software developed and owned by **BuildingLogiX**.
+
+- **Software:** DataLynX © 2025 BuildingLogiX. All rights reserved.
+- **Documentation:** © 2025 BuildingLogiX. All rights reserved.
+
+DataLynX is licensed software. Unauthorized copying, distribution, modification, or use of this software without a valid license from BuildingLogiX is strictly prohibited.
+
+For licensing inquiries, contact: [technical.support@buildinglogix.net](mailto:technical.support@buildinglogix.net)

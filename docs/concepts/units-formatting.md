@@ -159,24 +159,44 @@ To avoid these issues:
 
 ---
 
-## 🔄 5. Override Source Units
+## 🔄 5. Property Configuration & Flags
 
-**Override Source Units** is a flag in DataLynX that allows users to override the incoming or native units on a block and change it to something else.
+When configuring properties in DataLynX, you have access to several flags that control how the property behaves within the system. These are accessed through the **Configure Property** dialog.
 
-## When to Use This Feature
+![Configure Property Dialog](../img/DataLynX - Configure Units.PNG)
 
-This is useful when:
+### Property Flags
+
+| Flag | Description |
+|------|-------------|
+| **Transient** | The property can be linked, but its value is not persisted to the Agent Configuration Database. Use this for temporary or calculated values that don't need to survive an agent restart. This flag cannot be used with MetadataProperty or PersistedValue declarations. |
+| **Summary** | Always displays the property in the Flow View, even if it is not linked. Useful for key values you want visible at a glance without opening the block details. |
+| **Readonly** | Prevents the property value from being modified. Use this for values that should only be read from their source and not overwritten. |
+| **Override Source Units** | Allows you to override the incoming or native units on a block and change them to something else. See details below. |
+
+### Override Source Units
+
+**Override Source Units** is the flag that allows DataLynX users to override the incoming or native units on a block and change it to something else.
+
+**When to use this feature:**
 
 - A controller has wrong units selected in device configuration
 - A manufacturer used incorrect units in their integration
 - The value needs to be maintained in DataLynX with just the unit changed
 
-## How It Works
+**How it works:**
 
-1. Check the **Override Source Units** flag on the block
-2. Select the correct units for the value
+1. Check the **Override Source Units** checkbox
+2. Select the correct units from the **Unit** dropdown
 3. DataLynX will treat the value as having the new units
-4. **Important**: This does NOT convert the value—it reinterprets the existing value with different units  
+4. **Important**: This does NOT convert the value—it reinterprets the existing value with different units
+
+### Unit and Value Format Options
+
+The Configure Property dialog also provides:
+
+- **Unit** — Select the engineering units for this property
+- **Value Format** — Define how the value is displayed (decimal places, formatting)
 
 ---
 

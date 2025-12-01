@@ -221,9 +221,25 @@ Use the **Watch** feature:
 ### **Q: Why is my value not converting units?**
 Check that:
 
-- The correct block type is used (e.g., Convert block)  
-- Units are defined on the source value  
-- “Propagate Units” is enabled in the link  
+- The correct block type is used (e.g., Convert block)
+- Units are defined on the source value
+- "Propagate Units" is enabled in the link
+
+---
+
+### **Q: What do the property flags (Transient, Summary, Readonly) mean?**
+**A:**
+
+These flags control property behavior in the Configure Property dialog:
+
+| Flag | What it does |
+|------|--------------|
+| **Transient** | Value is not saved to the database. Use for temporary/calculated values that don't need to persist across restarts. |
+| **Summary** | Property always appears in Flow View even when not linked. Useful for important values you want visible at a glance. |
+| **Readonly** | Prevents the property from being modified. Use when values should only come from their source. |
+| **Override Source Units** | Reinterprets units without converting the value. Use when a BACnet point has wrong units configured. |
+
+See **[Property Configuration & Flags](concepts/units-formatting.md#-5-property-configuration--flags)** for details.
 
 ---
 

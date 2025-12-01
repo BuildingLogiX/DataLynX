@@ -17,7 +17,6 @@ Built entirely in **Python**, DataLynX leverages modern libraries and frameworks
   <a href="https://www.bacnetinternational.org/" target="_blank" rel="noopener" title="BACnet International">
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/BACnet-Logo-New.gif" alt="BACnet Logo" style="height: 50px;">
   </a>
-  <span style="margin-left: 0.5em; vertical-align: middle; font-size: 0.9em; color: #666;">BACnet/IP compliant</span>
 </div>
 
 It provides:
@@ -132,17 +131,21 @@ Use the navigation on the left to follow the recommended sequence.
 
 ---
 
-## 📧 Support & Contact
+## 📧 Licensing, Support, & Contact
 
-This documentation — and DataLynX itself — is maintained by BuildingLogiX.
+**DataLynX** is proprietary software developed and owned by **BuildingLogiX**.
 
-For questions, technical support, or feedback:
+For questions, licensing, technical support, or feedback:
 
 📧 **Email:** [technical.support@buildinglogix.net](mailto:technical.support@buildinglogix.net)
 
 ---
 
-## 📄 License
+## 📄 License & Copyright
 
-Documentation © BuildingLogiX.
-All rights reserved.
+- **Software:** DataLynX © 2025 BuildingLogiX. All rights reserved.
+- **Documentation:** © 2025 BuildingLogiX. All rights reserved.
+
+DataLynX is licensed software. Unauthorized copying, distribution, modification, or use of this software without a valid license from BuildingLogiX is strictly prohibited.
+
+

@@ -105,20 +105,7 @@ BasiX point: ZoneAirTemp
 
 ---
 
-## 🧩 5. Supported Mapping Modes
-
-### ✔ **Exact Mapping**
-Strict one-to-one link from a specific BACnet object.
-
-### ✔ **Pattern Mapping**
-Uses simple wildcards (`*`, `?`) to match sets of devices.
-
-### ✔ **Regex Mapping**
-Advanced pattern matching for messy or irregular naming conventions.
-
----
-
-## 🔎 6. Multi-Device Scenarios
+## 🔎 5. Multi-Device Scenarios
 
 Some equipment configurations require special handling:
 
@@ -135,14 +122,11 @@ The mapping layer handles all these scenarios.
 
 ---
 
-## 🧪 7. Validation & Health Checking
+## 🧪 6. Validation & Health Checking
 
 The BasiX layer validates:
 
-- **Missing required points**
 - **Invalid or missing units** ⚠️
-- Out-of-range values
-- Faulted statuses
 - Inconsistent enumerations
 
 **Critical**: All points mapped to BasiX profiles must have proper units. Missing or incorrect units will prevent device publishing to BDX.
@@ -153,7 +137,7 @@ See **[Units & Formatting Best Practices](units-formatting.md)** for detailed gu
 
 ---
 
-## ☁️ 8. Output to BDX
+## ☁️ 7. Output to BDX
 
 Once a device is mapped and validated:
 
@@ -171,19 +155,6 @@ This allows:
 
 ---
 
-## 📝 9. Summary
-
-The BasiX Ontology is the core of standardized data across the entire BuildingLogiX ecosystem.  
-It provides:
-
-- A unified model for HVAC equipment  
-- Consistent point naming and units  
-- Vendor-neutral analysis  
-- Reliable downstream analytics  
-
-Without BasiX, the cloud would receive inconsistent, vendor-specific, and unreliable data.
-
----
 
 ## ➡️ Next Step
 

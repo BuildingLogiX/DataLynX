@@ -35,11 +35,13 @@ Before connecting, ensure:
 
 ## 🔧 3. Configure BDX to Recognize Your Agent
 
+For detailed instructions on managing agents in BDX, see the **[BDX Agent Management Documentation](https://buildinglogix.github.io/BDX/manage_agent_summary)**.
+
 1. Log in to **BDX**.
 2. Navigate to:
 
 ```
-Management → Agents
+Administration → Manage Agents
 ```
 
 3. Click **Add Agent**.
@@ -121,27 +123,11 @@ You should now see the Agent listed in the BDX Agent screen with status indicato
 
 You can confirm the connection by checking:
 
-### **BDX Side**  
 
-- The Agent appears under **Management → Agents**  
-- Device list begins populating under **Devices**  
-- BasiX profiles show up as they are mapped and sent  
+- The Agent appears under **BDX → Administration → Manage Agents**  
+- BDX Communication Logs show success
+- DataLynX and BDX Agent settings match or update if changed and appear in sync on eachothers pages
 
-### **DataLynX Side**  
-Navigate to:
-
-```
-System → Logs → BDX Communication
-```
-
-You should see log entries for:
-
-- Registration  
-- Authentication success  
-- Device and point uploads  
-- Any communication warnings or failures  
-
----
 
 ## 🔒 7. Security Best Practices
 
@@ -163,7 +149,7 @@ For production environments:
 
 ### ❌ Authentication failures  
 
-- Check credentials in `System → BDX Connection`  
+- Check credentials in **BDX → Administration → Manage Agents**   
 - Update password in both BDX and DataLynX  
 - Restart the DataLynX Supervisor Service  
 
@@ -171,7 +157,9 @@ For production environments:
 
 - Ensure BasiX mappings are present  
 - Make sure polling is active in BACnet networks  
-- Verify device discovery is completed  
+- Verify metadata refresh from the BDX side is completed
+- Check Licensing is valid and active
+- Check BDX subscriptions status under Manage Agent → Subscriptions 
 
 ---
 
