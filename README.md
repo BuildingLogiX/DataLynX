@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/datalynx_logo.svg" alt="DataLynX Logo" width="200">
+</p>
+
 # DataLynX Documentation
 
 [![Documentation](https://img.shields.io/badge/docs-live-blue)](https://buildinglogix.github.io/DataLynX/)
@@ -56,42 +60,6 @@ Common questions, troubleshooting steps, and workflow tips.
 
 ---
 
-## 📂 Repository Structure
-
-```
-/
-├─ docs/
-│  ├─ getting-started/    # Installation, Quick Start, BACnet, BDX
-│  ├─ concepts/           # Architecture, Data Flow, BasiX, Units
-│  ├─ user-guide/         # UI Tour, Explorer, Workflows
-│  ├─ admin/              # Services, Backup, Security
-│  ├─ reference/          # Terminology, Toolbox, BACnet Driver
-│  ├─ img/                # Screenshots and diagrams
-│  ├─ assets/             # Logos and styling
-│  └─ faq.md
-├─ overrides/             # MkDocs theme customizations
-├─ mkdocs.yml             # Site configuration
-└─ README.md
-```
-
----
-
-## 🛠️ Local Development
-
-To build and preview the documentation locally:
-
-```bash
-# Install MkDocs with Material theme
-pip install mkdocs-material
-
-# Serve locally with live reload
-mkdocs serve
-
-# Build static site
-mkdocs build
-```
-
----
 
 ## 📄 License
 

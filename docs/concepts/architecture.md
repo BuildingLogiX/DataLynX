@@ -13,21 +13,21 @@ DataLynX is designed with clear, modular layers:
         |          BDX          |
         +-----------+-----------+
                     ↑
-              Data Pump
+               BDX Data Pump
                     ↑
         +------------+------------+
         |      BasiX Profiles     |
         +------------+------------+
                     ↑
-         Data Processing Layer
+           Data Processing Layer
                     ↑
-          Property Containers
+            Property Containers
                     ↑
-             BACnet Driver
+              BACnet Driver
                     ↑
-           Driver Framework
+             Driver Framework
                     ↑
-           Physical Network
+             Physical Network
 ```
 
 **In plain terms:**
