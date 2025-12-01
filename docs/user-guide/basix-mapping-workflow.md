@@ -1,4 +1,4 @@
-# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="150" } BasiX Mapping Workflow
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="25" } BasiX Mapping Workflow
 
 This guide walks you through the full workflow for converting raw BACnet points into clean, normalized **BasiX device profiles** using DataLynX.
 This is the final step before sending standardized data to BDX.

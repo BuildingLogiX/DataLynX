@@ -1,4 +1,4 @@
-# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="150" } Explorer Structure & Navigation
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="25" } Explorer Structure & Navigation
 
 The **Explorer** is the primary navigation tree in DataLynX, located on the left side of the UI. It provides hierarchical access to all configuration, devices, logic blocks, and system tools.
 

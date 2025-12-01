@@ -1,4 +1,4 @@
-# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="150" } Hierarchy & Digital Twin Workspace
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="25" } Hierarchy & Digital Twin Workspace
 
 The **Hierarchy** node in DataLynX is your digital twin workspace—a flexible area where you can mirror your physical building infrastructure, organize custom logic and calculations, and build BasiX profiles for BDX.
 

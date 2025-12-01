@@ -1,4 +1,4 @@
-# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="150" } BACnet Integration Workflow
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="25" } BACnet Integration Workflow
 
 This guide walks through a complete **end-to-end BACnet integration** in DataLynX — from enabling the driver, to discovering devices, to validating live values and preparing for BasiX mapping.
 
