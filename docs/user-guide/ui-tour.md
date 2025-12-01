@@ -1,4 +1,4 @@
-# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="25" } DataLynX UI Tour
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="50" } DataLynX UI Tour
 
 This guide provides a visual walkthrough of the DataLynX User Interface, including navigation structure, key screens, configuration pages, and diagnostic views.  
 Use this as a reference when learning the platform or training new users.

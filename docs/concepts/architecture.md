@@ -1,4 +1,4 @@
-# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="25" } DataLynX Agent Architecture
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="50" } DataLynX Agent Architecture
 
 This page provides an overview of **DataLynX**, the BuildingLogiX on-premises agent responsible for BACnet communication, data transformation, BasiX modeling, and secure data exchange with BDX.
 

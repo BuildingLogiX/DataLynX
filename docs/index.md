@@ -1,4 +1,4 @@
-# ![DataLynX Logo](assets/datalynx_logo.svg){ width="25" } **DataLynX Documentation**
+# ![DataLynX Logo](assets/datalynx_logo.svg){ width="50" } **DataLynX Documentation**
 
 **DataLynX** is a modern, high-performance BACnet agent and integration framework designed for the BuildingLogiX ecosystem.
 Built on Python, it provides fast, reliable BACnet/IP communication, powerful data transformation and logic capabilities, and seamless integration with the BuildingLogiX Data eXchange (BDX).

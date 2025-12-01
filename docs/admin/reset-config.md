@@ -1,4 +1,4 @@
-# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="25" } Resetting the Agent Configuration
+# ![DataLynX Logo](../assets/datalynx_logo.svg){ width="50" } Resetting the Agent Configuration
 
 !!! danger "DESTRUCTIVE OPERATION - READ CAREFULLY"
     **Resetting the configuration will PERMANENTLY DELETE all your DataLynX settings.** This includes:
