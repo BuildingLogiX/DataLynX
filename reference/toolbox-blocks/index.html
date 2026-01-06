@@ -1,0 +1,3763 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://buildinglogix.github.io/DataLynX/reference/toolbox-blocks/">
+      
+      
+        <link rel="prev" href="../terminology/">
+      
+      
+        <link rel="next" href="../bacnet-driver/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/datalynx_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Toolbox Block Reference - DataLynX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#toolbox-block-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DataLynX" class="md-header__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DataLynX
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Toolbox Block Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/architecture/" class="md-tabs__link">
+          
+  
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../user-guide/ui-tour/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../admin/windows-services-logs/" class="md-tabs__link">
+          
+  
+  
+  Admin Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../terminology/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DataLynX" class="md-nav__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    DataLynX
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-bacnet-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First BACnet Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/connect-to-bdx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect to BDX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/data-transformation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Transformation & Logic Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/basix-ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Ontology & Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/mapping-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapping Modes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/units-formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units & Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/ui-tour/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Tour
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/explorer-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eXplorer Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/hierarchy-digital-twin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hierarchy & Digital Twin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/bacnet-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Integration Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/basix-mapping-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Mapping Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Admin Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/windows-services-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Services & Logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/reset-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resetting the Agent Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/security-users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security & User Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology & Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toolbox Block Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toolbox Block Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#toolbox-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toolbox Categories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Math">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#math-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-computing-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Computing ΔT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-total-building-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Total Building Load
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logic-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-fault-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Fault Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparisons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparisons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparisons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-high-temperature-alarm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: High Temperature Alarm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bacnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BACnet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BACnet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bacnet-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BACnet Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-reading-supply-air-temp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Reading Supply Air Temp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basix-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BasiX Profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BasiX Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-basix-profile-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common BasiX Profile Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mapping-ahu-supply-temp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Mapping AHU Supply Temp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switches-and-selects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switches and Selects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Switches and Selects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switchselect-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch/Select Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-occupancy-based-setpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Occupancy-Based Setpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregate-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggregate Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aggregate Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-function-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggregate Function Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-average-zone-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Average Zone Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-point-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Point Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-numeric-point-setpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Numeric Point (Setpoint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-status-demultiplexer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Status Demultiplexer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#priority-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Priority Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priority-array-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Array Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BDX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BDX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bdx-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BDX Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#folder-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Block:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#units-and-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Units and Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Units and Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-propagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Propagation:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-conversion-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Conversion Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-converting-celsius-to-fahrenheit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Converting Celsius to Fahrenheit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-blocks-in-flow-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Blocks in Flow View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Blocks in Flow View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-open-flow-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Open Flow View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-drag-blocks-from-toolbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Drag Blocks from Toolbox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-configure-the-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Configure the Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-connect-blocks-with-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Connect Blocks with Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-test-and-validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Test and Validate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-block-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Block Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Block Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-1-reading-and-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 1: Reading and Scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-2-fault-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 2: Fault Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-3-virtual-point-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 3: Virtual Point Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-4-unit-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 4: Unit Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-5-computed-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 5: Computed Efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-forgetting-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Forgetting Units
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-unit-mismatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Unit Mismatches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-absolute-vs-delta-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Absolute vs Delta Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-circular-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Circular References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-missing-status-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Missing Status Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolbox-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toolbox Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➡️ Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bacnet-driver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Driver Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#toolbox-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toolbox Categories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Math">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#math-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-computing-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Computing ΔT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-total-building-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Total Building Load
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logic-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-fault-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Fault Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparisons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparisons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparisons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-high-temperature-alarm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: High Temperature Alarm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bacnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BACnet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BACnet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bacnet-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BACnet Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-reading-supply-air-temp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Reading Supply Air Temp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basix-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BasiX Profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BasiX Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-basix-profile-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common BasiX Profile Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mapping-ahu-supply-temp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Mapping AHU Supply Temp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switches-and-selects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switches and Selects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Switches and Selects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switchselect-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch/Select Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-occupancy-based-setpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Occupancy-Based Setpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregate-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggregate Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aggregate Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-function-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggregate Function Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-average-zone-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Average Zone Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-point-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control Point Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-numeric-point-setpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Numeric Point (Setpoint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-status-demultiplexer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Status Demultiplexer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#priority-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Arrays
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Priority Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priority-array-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Array Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BDX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BDX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bdx-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BDX Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#folder-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folder Block:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#units-and-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Units and Conversions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Units and Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-propagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Propagation:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-conversion-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Conversion Blocks:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-converting-celsius-to-fahrenheit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Converting Celsius to Fahrenheit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-blocks-in-flow-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Blocks in Flow View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Blocks in Flow View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-open-flow-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Open Flow View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-drag-blocks-from-toolbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Drag Blocks from Toolbox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-configure-the-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Configure the Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-connect-blocks-with-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Connect Blocks with Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-test-and-validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Test and Validate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-block-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Block Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Block Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-1-reading-and-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 1: Reading and Scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-2-fault-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 2: Fault Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-3-virtual-point-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 3: Virtual Point Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-4-unit-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 4: Unit Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-5-computed-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 5: Computed Efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-forgetting-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Forgetting Units
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-unit-mismatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Unit Mismatches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-absolute-vs-delta-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Absolute vs Delta Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-circular-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Circular References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-missing-status-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Missing Status Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolbox-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toolbox Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➡️ Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="toolbox-block-reference">Toolbox Block Reference</h1>
+<p>The <strong>Toolbox</strong> is the block library available in DataLynX Flow View. It contains all the building blocks you can use to create data transformation logic, perform calculations, connect to BACnet points, and build virtual points for BasiX mapping.</p>
+<p>The Toolbox appears on the right side of the screen when you're working in Flow View.</p>
+<p><img alt="Toolbox" src="../../img/DataLynX%20-%20Toolbox.PNG" /></p>
+<hr />
+<h2 id="toolbox-categories">Toolbox Categories</h2>
+<p>Blocks are organized into the following categories:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Toolbox
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Aggregate Functions
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── BACnet
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── BasiX Profiles
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── BDX
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── Comparisons
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── Control Points
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── Folder
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── Logic
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── Math
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── Priority Arrays
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>├── Status
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>└── Switches and Selects
+</code></pre></div>
+<hr />
+<h2 id="math">Math</h2>
+<p>Mathematical operations for calculations and transformations.</p>
+<h3 id="math-blocks"><strong>Math Blocks:</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Absolute Value</strong></td>
+<td>Returns the absolute value of a number</td>
+<td>Removing negative signs, distance calculations</td>
+</tr>
+<tr>
+<td><strong>Add</strong></td>
+<td>Sum of two or more values</td>
+<td>Total energy consumption, combined airflow</td>
+</tr>
+<tr>
+<td><strong>Arccosine</strong></td>
+<td>Inverse cosine function</td>
+<td>Trigonometric calculations</td>
+</tr>
+<tr>
+<td><strong>Arcsine</strong></td>
+<td>Inverse sine function</td>
+<td>Trigonometric calculations</td>
+</tr>
+<tr>
+<td><strong>Arctangent</strong></td>
+<td>Inverse tangent function</td>
+<td>Angle calculations</td>
+</tr>
+<tr>
+<td><strong>Cosine</strong></td>
+<td>Cosine function</td>
+<td>Trigonometric calculations</td>
+</tr>
+<tr>
+<td><strong>Divide</strong></td>
+<td>Quotient of two values</td>
+<td>Efficiency (kW/ton), per-square-foot metrics</td>
+</tr>
+<tr>
+<td><strong>Exponential</strong></td>
+<td>Exponential function (e^x)</td>
+<td>Growth calculations</td>
+</tr>
+<tr>
+<td><strong>Factorial</strong></td>
+<td>Factorial of a number</td>
+<td>Statistical calculations</td>
+</tr>
+<tr>
+<td><strong>Logarithm Base 10</strong></td>
+<td>Base 10 logarithm</td>
+<td>Decibel calculations, scaling</td>
+</tr>
+<tr>
+<td><strong>Logarithm Base 2</strong></td>
+<td>Base 2 logarithm</td>
+<td>Binary scaling</td>
+</tr>
+<tr>
+<td><strong>Modulus</strong></td>
+<td>Remainder after division</td>
+<td>Cyclic calculations, scheduling</td>
+</tr>
+<tr>
+<td><strong>Multiply</strong></td>
+<td>Product of two values</td>
+<td>Power calculations, scaling factors</td>
+</tr>
+<tr>
+<td><strong>Natural Logarithm</strong></td>
+<td>Natural logarithm (ln)</td>
+<td>Exponential decay calculations</td>
+</tr>
+<tr>
+<td><strong>Negate</strong></td>
+<td>Reverses the sign of a value</td>
+<td>Sign inversion</td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td>Raises a value to a power</td>
+<td>Exponential calculations</td>
+</tr>
+<tr>
+<td><strong>Sine</strong></td>
+<td>Sine function</td>
+<td>Trigonometric calculations</td>
+</tr>
+<tr>
+<td><strong>Square Root</strong></td>
+<td>Square root of a value</td>
+<td>RMS calculations</td>
+</tr>
+<tr>
+<td><strong>Subtract</strong></td>
+<td>Difference between values</td>
+<td>Delta temperature (ΔT), pressure drop</td>
+</tr>
+<tr>
+<td><strong>Tangent</strong></td>
+<td>Tangent function</td>
+<td>Trigonometric calculations</td>
+</tr>
+<tr>
+<td><strong>Value Reset</strong></td>
+<td>Resets a value to a default</td>
+<td>Initialization, fault recovery</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-computing-t"><strong>Example: Computing ΔT</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Supply Air Temp (72°F) ──┐
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                         │
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                      [Subtract] ──&gt; ΔT (12°F)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>                         │
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Return Air Temp (84°F) ──┘
+</code></pre></div>
+<h3 id="example-total-building-load"><strong>Example: Total Building Load</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>AHU-1 kW ──┐
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>AHU-2 kW ──┤
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>AHU-3 kW ──┼── [Add] ──&gt; Total HVAC Load (kW)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Chiller kW ─┤
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Boiler kW ──┘
+</code></pre></div>
+<hr />
+<h2 id="logic">Logic</h2>
+<p>Boolean logic and decision-making blocks.</p>
+<h3 id="logic-blocks"><strong>Logic Blocks:</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>And</strong></td>
+<td>All inputs must be true</td>
+<td>Multiple conditions (fan on AND valve open)</td>
+</tr>
+<tr>
+<td><strong>Not</strong></td>
+<td>Invert boolean value</td>
+<td>Opposite of a condition (NOT occupied)</td>
+</tr>
+<tr>
+<td><strong>Or</strong></td>
+<td>At least one input must be true</td>
+<td>Alarm conditions, any zone over setpoint</td>
+</tr>
+<tr>
+<td><strong>Xor</strong></td>
+<td>Exclusive OR - one or the other but not both</td>
+<td>Either/or logic (heating XOR cooling)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-fault-detection"><strong>Example: Fault Detection</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Fan Status = OFF ────┐
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>                     │
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>                  [AND] ──&gt; Fault Alarm
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>                     │
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Supply Temp &gt; 100°F ─┘
+</code></pre></div>
+<hr />
+<h2 id="comparisons">Comparisons</h2>
+<p>Compare values and generate boolean outputs.</p>
+<h3 id="comparison-blocks"><strong>Comparison Blocks:</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Equal</strong></td>
+<td>Check if A equals B</td>
+<td>Mode matching, status verification</td>
+</tr>
+<tr>
+<td><strong>Greater Than</strong></td>
+<td>Check if A &gt; B</td>
+<td>Temp above setpoint, power exceeds threshold</td>
+</tr>
+<tr>
+<td><strong>Greater Than or Equal</strong></td>
+<td>Check if A &gt;= B</td>
+<td>At or above threshold</td>
+</tr>
+<tr>
+<td><strong>Less Than</strong></td>
+<td>Check if A &lt; B</td>
+<td>Temp below setpoint, low pressure alarm</td>
+</tr>
+<tr>
+<td><strong>Less Than or Equal</strong></td>
+<td>Check if A &lt;= B</td>
+<td>At or below threshold</td>
+</tr>
+<tr>
+<td><strong>Not Equal</strong></td>
+<td>Check if A does not equal B</td>
+<td>Detecting changes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-high-temperature-alarm"><strong>Example: High Temperature Alarm</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Zone Temp ──┐
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>            │
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>         [&gt;] ──&gt; High Temp Alarm (true/false)
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>            │
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Setpoint ───┘
+</code></pre></div>
+<hr />
+<h2 id="bacnet">BACnet</h2>
+<p>Blocks for BACnet network configuration and point references.</p>
+<h3 id="bacnet-blocks"><strong>BACnet Blocks:</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BACnet Device</strong></td>
+<td>Represents a BACnet device on the network</td>
+<td>Reference discovered or manually added devices</td>
+</tr>
+<tr>
+<td><strong>BACnet Device Folder</strong></td>
+<td>Container for organizing BACnet devices</td>
+<td>Group devices by location or system</td>
+</tr>
+<tr>
+<td><strong>BACnet IP Network</strong></td>
+<td>BACnet/IP network configuration</td>
+<td>Define network interface, port, and network number</td>
+</tr>
+<tr>
+<td><strong>BACnet Point Folder</strong></td>
+<td>Container for organizing points within a device</td>
+<td>Group points by type or function</td>
+</tr>
+<tr>
+<td><strong>BACnet Router Table Entry</strong></td>
+<td>Router table configuration for remote networks</td>
+<td>Access devices on routed networks (MSTP, etc.)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-to-use"><strong>How to Use:</strong></h3>
+<ol>
+<li>Configure <strong>BACnet IP Network</strong> with your network settings</li>
+<li>Discover or manually add <strong>BACnet Device</strong> entries</li>
+<li>Use <strong>BACnet Point Folder</strong> to organize points within devices</li>
+<li>Reference points in Flow View for data transformation</li>
+<li>The block outputs the present value, units, status, and reliability</li>
+</ol>
+<h3 id="example-reading-supply-air-temp"><strong>Example: Reading Supply Air Temp</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[BACnet: /Connections/BACnet/devices/AHU-1/AI-SAT]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   │
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>   ├─&gt; out (value: 55.2°F)
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>   ├─&gt; units (°F)
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>   ├─&gt; status (OK)
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>   └─&gt; reliability (Reliable)
+</code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> DataLynX is a read-only BACnet client. It reads point values from BACnet devices but does not write to them.</p>
+</blockquote>
+<hr />
+<h2 id="basix-profiles">BasiX Profiles</h2>
+<p>Blocks representing BasiX device profile fields.</p>
+<h3 id="common-basix-profile-blocks"><strong>Common BasiX Profile Blocks:</strong></h3>
+<p>These blocks represent standardized points in BasiX profiles:</p>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>supplyAirTemp</strong></td>
+<td>AHU supply/discharge air temperature</td>
+</tr>
+<tr>
+<td><strong>zoneAirTemp</strong></td>
+<td>VAV zone temperature</td>
+</tr>
+<tr>
+<td><strong>damperPosition</strong></td>
+<td>VAV damper position</td>
+</tr>
+<tr>
+<td><strong>coolOutput</strong></td>
+<td>Cooling coil valve position</td>
+</tr>
+<tr>
+<td><strong>supplyFanVFDSpeed</strong></td>
+<td>Fan or VFD speed</td>
+</tr>
+<tr>
+<td><strong>airflow</strong></td>
+<td>Measured airflow (cfm)</td>
+</tr>
+<tr>
+<td><strong>power</strong></td>
+<td>Equipment power consumption (kW)</td>
+</tr>
+<tr>
+<td><strong>runStatus</strong></td>
+<td>Equipment on/off or run status</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-to-use_1"><strong>How to Use:</strong></h3>
+<ol>
+<li>Drag a BasiX Profile block from the Toolbox</li>
+<li>Map processed values to the block inputs</li>
+<li>These blocks become the output points for BasiX mapping</li>
+<li>They are published to BDX</li>
+</ol>
+<h3 id="example-mapping-ahu-supply-temp"><strong>Example: Mapping AHU Supply Temp</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[BACnet: AHU-1 Supply Temp] ──&gt; [Divide by 10] ──&gt; [BasiX: supplyAirTemp]
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>                                                            │
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                                                      (Sent to BDX)
+</code></pre></div>
+<hr />
+<h2 id="switches-and-selects">Switches and Selects</h2>
+<p>Conditional routing and selection blocks for different data types.</p>
+<h3 id="switchselect-blocks"><strong>Switch/Select Blocks:</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Boolean Select</strong></td>
+<td>Choose between boolean inputs based on selector</td>
+<td>Select active alarm source</td>
+</tr>
+<tr>
+<td><strong>Boolean Switch</strong></td>
+<td>Route boolean input based on condition</td>
+<td>Toggle between on/off states</td>
+</tr>
+<tr>
+<td><strong>Enum Select</strong></td>
+<td>Choose between enumerated inputs based on selector</td>
+<td>Select operating mode source</td>
+</tr>
+<tr>
+<td><strong>Enum Switch</strong></td>
+<td>Route enumerated input based on condition</td>
+<td>Switch between mode options</td>
+</tr>
+<tr>
+<td><strong>Numeric Select</strong></td>
+<td>Choose between numeric inputs based on selector</td>
+<td>Select between sensors</td>
+</tr>
+<tr>
+<td><strong>Numeric Switch</strong></td>
+<td>Route numeric input based on condition</td>
+<td>Occupancy-based setpoints</td>
+</tr>
+<tr>
+<td><strong>String Select</strong></td>
+<td>Choose between string inputs based on selector</td>
+<td>Select message source</td>
+</tr>
+<tr>
+<td><strong>String Switch</strong></td>
+<td>Route string input based on condition</td>
+<td>Switch between text labels</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-occupancy-based-setpoint"><strong>Example: Occupancy-Based Setpoint</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Occupied Setpoint (72°F) ──┐
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>                           │
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Occupancy Status ────&gt; [Numeric Switch] ──&gt; Active Setpoint
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>                           │
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Unoccupied Setpoint (65°F) ┘
+</code></pre></div>
+<hr />
+<h2 id="aggregate-functions">Aggregate Functions</h2>
+<p>Aggregation and statistical operations for multiple inputs.</p>
+<h3 id="aggregate-function-blocks"><strong>Aggregate Function Blocks:</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add</strong></td>
+<td>Sum of multiple inputs</td>
+<td>Total energy, combined load</td>
+</tr>
+<tr>
+<td><strong>Average</strong></td>
+<td>Mean of all inputs</td>
+<td>Average zone temp across floor</td>
+</tr>
+<tr>
+<td><strong>Maximum</strong></td>
+<td>Highest value among inputs</td>
+<td>Peak demand, highest zone temp</td>
+</tr>
+<tr>
+<td><strong>Median</strong></td>
+<td>Middle value of inputs</td>
+<td>Statistical analysis, outlier filtering</td>
+</tr>
+<tr>
+<td><strong>Minimum</strong></td>
+<td>Lowest value among inputs</td>
+<td>Lowest zone temp, minimum setpoint</td>
+</tr>
+<tr>
+<td><strong>Mode</strong></td>
+<td>Most frequent value among inputs</td>
+<td>Common operating state</td>
+</tr>
+<tr>
+<td><strong>Standard Deviation</strong></td>
+<td>Statistical deviation of inputs</td>
+<td>Variability analysis, anomaly detection</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-average-zone-temperature"><strong>Example: Average Zone Temperature</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>VAV-101 Zone Temp ──┐
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>VAV-102 Zone Temp ──┤
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>VAV-103 Zone Temp ──┼── [Average] ──&gt; Floor Average Temp
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>VAV-104 Zone Temp ──┤
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>VAV-105 Zone Temp ──┘
+</code></pre></div>
+<hr />
+<h2 id="control-points">Control Points</h2>
+<p>Virtual points for storing and managing values.</p>
+<h3 id="control-point-blocks"><strong>Control Point Blocks:</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Boolean Point</strong></td>
+<td>Stores a true/false value</td>
+<td>On/off states, mode flags</td>
+</tr>
+<tr>
+<td><strong>Boolean Priority Array</strong></td>
+<td>Boolean with 16-level priority</td>
+<td>Priority-based boolean control</td>
+</tr>
+<tr>
+<td><strong>Enumerated Point</strong></td>
+<td>Stores a value from a defined set of options</td>
+<td>Operating modes, state machines</td>
+</tr>
+<tr>
+<td><strong>Enumerated Priority Array</strong></td>
+<td>Enumerated with 16-level priority</td>
+<td>Priority-based mode control</td>
+</tr>
+<tr>
+<td><strong>Numeric Point</strong></td>
+<td>Stores a numeric value</td>
+<td>Setpoints, thresholds, calculated values</td>
+</tr>
+<tr>
+<td><strong>Numeric Priority Array</strong></td>
+<td>Numeric with 16-level priority</td>
+<td>Priority-based setpoint control</td>
+</tr>
+<tr>
+<td><strong>String Point</strong></td>
+<td>Stores a text value</td>
+<td>Labels, descriptions, messages</td>
+</tr>
+<tr>
+<td><strong>String Priority Array</strong></td>
+<td>String with 16-level priority</td>
+<td>Priority-based text values</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-numeric-point-setpoint"><strong>Example: Numeric Point (Setpoint)</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>[Numeric Point: 72.0°F] ──&gt; Used in comparison or control logic
+</code></pre></div>
+<hr />
+<h2 id="status">Status</h2>
+<p>Status monitoring and signal routing blocks.</p>
+<h3 id="status-blocks"><strong>Status Blocks:</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Status Demultiplexer</strong></td>
+<td>Separates combined status into individual signals</td>
+<td>Parse composite status values, route status bits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-status-demultiplexer"><strong>Example: Status Demultiplexer</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>[Combined Status] ──&gt; [Status Demultiplexer] ──&gt; Individual status outputs
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>                              │
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>                          (Separates fault, alarm, mode flags)
+</code></pre></div>
+<hr />
+<h2 id="priority-arrays">Priority Arrays</h2>
+<p>Priority array blocks for managing values with BACnet-style 16-level priorities.</p>
+<h3 id="priority-array-blocks"><strong>Priority Array Blocks:</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Boolean Priority Array</strong></td>
+<td>Boolean value with 16-level priority</td>
+<td>Priority-based on/off control</td>
+</tr>
+<tr>
+<td><strong>Enumerated Priority Array</strong></td>
+<td>Enumerated value with 16-level priority</td>
+<td>Priority-based mode selection</td>
+</tr>
+<tr>
+<td><strong>Numeric Priority Array</strong></td>
+<td>Numeric value with 16-level priority</td>
+<td>Priority-based setpoint control</td>
+</tr>
+<tr>
+<td><strong>String Priority Array</strong></td>
+<td>String value with 16-level priority</td>
+<td>Priority-based text values</td>
+</tr>
+</tbody>
+</table>
+<p>Priority arrays allow multiple sources to command a value at different priority levels. The highest active priority (lowest number) wins.</p>
+<hr />
+<h2 id="bdx">BDX</h2>
+<p>Blocks for BDX connectivity configuration.</p>
+<h3 id="bdx-blocks"><strong>BDX Blocks:</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BDX Agent Configuration</strong></td>
+<td>Configure connection to BDX</td>
+<td>Set up BDX URL, credentials, and sync settings</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="folder">Folder</h2>
+<p>Organizational container block.</p>
+<h3 id="folder-block"><strong>Folder Block:</strong></h3>
+<p>Used to create organizational folders within the Hierarchy or other nodes.</p>
+<p><strong>How to use:</strong>
+1. Drag <strong>Folder</strong> block from Toolbox
+2. Name the folder
+3. Drag other blocks into the folder</p>
+<p><strong>Purpose:</strong> Keep logic organized by equipment, system, or location.</p>
+<hr />
+<h2 id="units-and-conversions">Units and Conversions</h2>
+<p>Many blocks automatically handle units:</p>
+<h3 id="unit-propagation"><strong>Unit Propagation:</strong></h3>
+<ul>
+<li>When "Propagate Units" is enabled on a link, units flow from input to output</li>
+<li>Math blocks (Add, Subtract) check for compatible units</li>
+<li><strong>Subtract</strong> two temperatures (°F) → outputs delta temperature (ΔF)</li>
+<li><strong>Add</strong> temperature (°F) + delta (ΔF) → outputs temperature (°F)</li>
+</ul>
+<h3 id="unit-conversion-blocks"><strong>Unit Conversion Blocks:</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Convert Units</strong></td>
+<td>Change units (°C → °F, Pa → inWC)</td>
+<td>Normalizing vendor-specific units</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>Multiply by constant</td>
+<td>Temperature scaling (value / 10)</td>
+</tr>
+<tr>
+<td><strong>Assign Units</strong></td>
+<td>Apply units to dimensionless value</td>
+<td>Adding units to unitless BACnet points</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-converting-celsius-to-fahrenheit"><strong>Example: Converting Celsius to Fahrenheit</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>[BACnet: Temp in °C] ──&gt; [Convert Units: °C → °F] ──&gt; [BasiX: Temp in °F]
+</code></pre></div>
+<hr />
+<h2 id="using-blocks-in-flow-view">Using Blocks in Flow View</h2>
+<h3 id="step-1-open-flow-view"><strong>Step 1: Open Flow View</strong></h3>
+<p>Navigate to a Hierarchy folder or equipment node. The Flow View workspace opens in the center, and the Toolbox appears on the right.</p>
+<hr />
+<h3 id="step-2-drag-blocks-from-toolbox"><strong>Step 2: Drag Blocks from Toolbox</strong></h3>
+<ol>
+<li>Find the block you need in the Toolbox</li>
+<li>Click and drag it onto the Flow View canvas</li>
+<li>Drop it in the workspace</li>
+</ol>
+<hr />
+<h3 id="step-3-configure-the-block"><strong>Step 3: Configure the Block</strong></h3>
+<ol>
+<li>Click on the block to select it</li>
+<li>The <strong>Edit Block</strong> panel appears on the right</li>
+<li>Set properties:</li>
+<li>Block name</li>
+<li>Input values</li>
+<li>Configuration options</li>
+<li>Units</li>
+</ol>
+<hr />
+<h3 id="step-4-connect-blocks-with-links"><strong>Step 4: Connect Blocks with Links</strong></h3>
+<ol>
+<li>Click on an output pin of one block</li>
+<li>Drag to the input pin of another block</li>
+<li>The link connects the two blocks</li>
+<li>Right-click the link to configure:</li>
+<li>Unit propagation</li>
+<li>Fault forwarding</li>
+<li>Link properties</li>
+</ol>
+<p>Use <strong>Link View</strong> to see all connections into and out of a block at a glance:</p>
+<p><img alt="Link View" src="../../img/Link%20View.PNG" /></p>
+<hr />
+<h3 id="step-5-test-and-validate"><strong>Step 5: Test and Validate</strong></h3>
+<ol>
+<li>Check the block outputs in the Edit Block panel</li>
+<li>Verify units are correct</li>
+<li>Watch for fault status or NaN values</li>
+<li>Use the <strong>Watch</strong> feature to monitor live values</li>
+</ol>
+<hr />
+<h2 id="common-block-patterns">Common Block Patterns</h2>
+<h3 id="pattern-1-reading-and-scaling"><strong>Pattern 1: Reading and Scaling</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>[BACnet Point] ──&gt; [Divide by 10] ──&gt; [Assign Units: °F] ──&gt; [Output]
+</code></pre></div>
+<p><strong>Use case:</strong> Controller sends temp as 723 instead of 72.3°F</p>
+<hr />
+<h3 id="pattern-2-fault-detection"><strong>Pattern 2: Fault Detection</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>[BACnet: Fan Status] ──┐
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>                       │
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>                    [AND] ──&gt; Fault Alarm
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>                       │
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>[BACnet: Temp &gt; 100°F] ┘
+</code></pre></div>
+<p><strong>Use case:</strong> Detect when fan is off but temp is high</p>
+<hr />
+<h3 id="pattern-3-virtual-point-creation"><strong>Pattern 3: Virtual Point Creation</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>[BACnet: kW Meter 1] ──┐
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>[BACnet: kW Meter 2] ──┼── [Add] ──&gt; Total Building kW ──&gt; [BasiX: Power]
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>[BACnet: kW Meter 3] ──┘
+</code></pre></div>
+<p><strong>Use case:</strong> Create building-level total that doesn't exist as a physical point</p>
+<hr />
+<h3 id="pattern-4-unit-conversion"><strong>Pattern 4: Unit Conversion</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>[BACnet: Pressure in Pa] ──&gt; [Convert: Pa → inWC] ──&gt; [BasiX: Pressure]
+</code></pre></div>
+<p><strong>Use case:</strong> Vendor uses Pascals, BasiX expects inches of water column</p>
+<hr />
+<h3 id="pattern-5-computed-efficiency"><strong>Pattern 5: Computed Efficiency</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>[BACnet: Chiller Tons] ──┐
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>                         │
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>                      [Divide] ──&gt; kW/Ton ──&gt; [BasiX: Efficiency]
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>                         │
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>[BACnet: Chiller kW] ────┘
+</code></pre></div>
+<p><strong>Use case:</strong> Calculate chiller efficiency metric</p>
+<hr />
+<h2 id="common-mistakes">Common Mistakes</h2>
+<h3 id="1-forgetting-units"><strong>1. Forgetting Units</strong></h3>
+<p>❌ <strong>Problem:</strong> Dimensionless BACnet point connected directly to BasiX field expecting units</p>
+<p>✅ <strong>Solution:</strong> Use <strong>Assign Units</strong> block before mapping to BasiX</p>
+<hr />
+<h3 id="2-unit-mismatches"><strong>2. Unit Mismatches</strong></h3>
+<p>❌ <strong>Problem:</strong> Adding temperature (°F) + pressure (psi) = fault</p>
+<p>✅ <strong>Solution:</strong> Use <strong>Convert Units</strong> to make them compatible, or disable unit propagation</p>
+<hr />
+<h3 id="3-absolute-vs-delta-temperature"><strong>3. Absolute vs Delta Temperature</strong></h3>
+<p>❌ <strong>Problem:</strong> Multiplying or dividing absolute temperature (°F)</p>
+<p>✅ <strong>Solution:</strong> Convert to delta temperature (ΔF) first, or subtract 0°F</p>
+<hr />
+<h3 id="4-circular-references"><strong>4. Circular References</strong></h3>
+<p>❌ <strong>Problem:</strong> Block A links to Block B, Block B links to Block A</p>
+<p>✅ <strong>Solution:</strong> Redesign logic to avoid circular dependencies</p>
+<hr />
+<h3 id="5-missing-status-checks"><strong>5. Missing Status Checks</strong></h3>
+<p>❌ <strong>Problem:</strong> Using values from faulted or offline points</p>
+<p>✅ <strong>Solution:</strong> Use <strong>Status Monitor</strong> blocks to check reliability before processing</p>
+<hr />
+<h2 id="toolbox-best-practices">Toolbox Best Practices</h2>
+<ol>
+<li><strong>Start simple</strong> - Build one piece of logic at a time</li>
+<li><strong>Test frequently</strong> - Verify each block works before connecting more</li>
+<li><strong>Use clear names</strong> - Rename blocks from defaults (<code>Add_1</code> → <code>Total_Building_Load</code>)</li>
+<li><strong>Check units</strong> - Always verify units are propagating correctly</li>
+<li><strong>Monitor status</strong> - Use status blocks to detect faulty inputs</li>
+<li><strong>Organize with folders</strong> - Group related logic together</li>
+<li><strong>Document complex logic</strong> - Add descriptions to blocks</li>
+<li><strong>Follow patterns</strong> - Use proven patterns for common tasks</li>
+<li><strong>Validate outputs</strong> - Check that final values make sense</li>
+<li><strong>Plan for BasiX</strong> - Build logic with BasiX mapping in mind</li>
+</ol>
+<hr />
+<h2 id="related-documentation">➡️ Related Documentation</h2>
+<ul>
+<li><strong><a href="../../concepts/data-transformation/">Data Transformation &amp; Logic Flow</a></strong> - Concepts behind block-based logic</li>
+<li><strong><a href="../../user-guide/hierarchy-digital-twin/">Hierarchy &amp; Digital Twin</a></strong> - Where to organize your blocks</li>
+<li><strong><a href="../../concepts/units-formatting/">Units &amp; Formatting Best Practices</a></strong> - Critical unit handling guidance</li>
+<li><strong><a href="../../user-guide/basix-mapping-workflow/">BasiX Mapping Workflow</a></strong> - How to map block outputs to BasiX</li>
+<li><strong><a href="../../user-guide/explorer-structure/">eXplorer Structure</a></strong> - Understanding the UI navigation</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div class="footer-left">
+        &copy; 2025 BuildingLogiX. All Rights Reserved.
+    </div>
+    <div class="footer-right">
+        <!-- GitHub -->
+        <a href="https://github.com/BuildingLogiX" target="_blank" rel="noopener" title="GitHub">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/company/buildinglogix" target="_blank" rel="noopener" title="LinkedIn">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+        </a>
+        <!-- BuildingLogiX Website -->
+        <a href="https://buildinglogix.net" target="_blank" rel="noopener" title="BuildingLogiX">
+            <img src="https://buildinglogix.github.io/DataLynX/assets/blx-white.svg" alt="BuildingLogiX" class="footer-logo" onerror="this.style.display='none'">
+        </a>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.tracking", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

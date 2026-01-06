@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataLynX Complete Documentation</title>
+    <style>
+        :root {
+            --primary-color: #1976d2;
+            --secondary-color: #424242;
+            --background-color: #ffffff;
+            --code-bg: #f5f5f5;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            background-color: var(--background-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            page-break-before: always;
+            margin-top: 40px;
+        }
+
+        h1:first-of-type {
+            page-break-before: avoid;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 25px;
+        }
+
+        h4 {
+            color: #666;
+            margin-top: 20px;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: "Consolas", "Monaco", "Courier New", monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        pre code {
+            padding: 0;
+            background: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--code-bg);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            margin: 15px 0;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .danger {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .tip {
+            background-color: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .note {
+            background-color: #e7f3ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 30px 0;
+        }
+
+        .toc {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            padding: 20px 30px;
+            margin: 20px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: none;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin: 8px 0;
+        }
+
+        .toc a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        .cover-page {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cover-page h1 {
+            font-size: 2.5em;
+            border-bottom: none;
+            page-break-before: avoid;
+        }
+
+        .cover-page p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        @media print {
+            body {
+                max-width: none;
+                padding: 0;
+            }
+
+            h1 {
+                page-break-before: always;
+            }
+
+            h1:first-of-type, .cover-page h1 {
+                page-break-before: avoid;
+            }
+
+            pre, blockquote, table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cover-page">
+    <h1>DataLynX Documentation</h1>
+    <p><strong>Complete Reference Guide</strong></p>
+    <p>Version 2025</p>
+    <p>&copy; 2025 BuildingLogiX. All rights reserved.</p>
+    <p style="margin-top: 50px;"><em>BACnet Integration Agent &amp; Data Transformation Platform</em></p>
+</div>
+
+<div class="page-break"></div>
+
+<div class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><strong>Home</strong></li>
+        <li><strong>Getting Started</strong>
+            <ul>
+                <li>Quick Start Guide</li>
+                <li>Installation &amp; Windows Services</li>
+                <li>First BACnet Network</li>
+                <li>Connect to BDX</li>
+            </ul>
+        </li>
+        <li><strong>Concepts</strong>
+            <ul>
+                <li>Agent Architecture</li>
+                <li>Data Transformation &amp; Logic Flow</li>
+                <li>BasiX Ontology &amp; Profiles</li>
+                <li>Mapping Modes</li>
+                <li>Units &amp; Formatting</li>
+            </ul>
+        </li>
+        <li><strong>User Guide</strong>
+            <ul>
+                <li>UI Tour</li>
+                <li>eXplorer Structure</li>
+                <li>Hierarchy &amp; Digital Twin</li>
+                <li>BACnet Integration Workflow</li>
+                <li>BasiX Mapping Workflow</li>
+            </ul>
+        </li>
+        <li><strong>Admin Guide</strong>
+            <ul>
+                <li>Windows Services &amp; Logs</li>
+                <li>Backup &amp; Restore</li>
+                <li>Resetting the Agent Config</li>
+                <li>Security &amp; User Management</li>
+            </ul>
+        </li>
+        <li><strong>Reference</strong>
+            <ul>
+                <li>Terminology &amp; Definitions</li>
+                <li>Toolbox Block Reference</li>
+                <li>BACnet Driver Reference</li>
+            </ul>
+        </li>
+        <li><strong>FAQ</strong></li>
+    </ul>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ==================== HOME ==================== -->
+<h1>DataLynX Documentation</h1>
+
+<p><strong>DataLynX</strong> is a modern, high-performance BACnet agent and integration framework designed for the BuildingLogiX ecosystem. Built on Python, it provides fast, reliable BACnet/IP communication, powerful data transformation and logic capabilities, and seamless integration with the BuildingLogiX Data eXchange (BDX).</p>
+
+<hr>
+
+<h2>What is DataLynX?</h2>
+
+<p>DataLynX acts as the <strong>bridge between on-premises building automation systems (BAS)</strong> and the <strong>BDX (BuildingLogiX Data eXchange)</strong> analytics platform.</p>
+
+<p>Built entirely in <strong>Python</strong>, DataLynX leverages modern libraries and frameworks to deliver enterprise-grade performance, extensibility, and reliability.</p>
+
+<p>It provides:</p>
+
+<ul>
+    <li><strong>BACnet/IP communication</strong> - Full client support, router/FDT handling, polling, discovery, and device health monitoring.</li>
+    <li><strong>Data Transformation &amp; Logic Flow</strong> - Visual wiresheet interface (Flow View) for transforming BAS values, scaling units, creating virtual points, and performing custom logic.</li>
+    <li><strong>BasiX Ontology &amp; Profiles</strong> - Standardized device and point modeling to normalize diverse BAS data into a common structure.</li>
+    <li><strong>User Interface</strong> - A clean web UI for configuring networks, discovering devices, managing BasiX mappings, monitoring live values, and navigating logic flows.</li>
+    <li><strong>Secure communication to BDX</strong> - Agent registration, data pumping, and remote commands/status handling.</li>
+    <li><strong>Windows Services</strong> - The DataLynX installation includes system services for Agent execution, background operations, and UI hosting.</li>
+</ul>
+
+<hr>
+
+<h2>Documentation Overview</h2>
+
+<p>This document contains the complete documentation for DataLynX, including:</p>
+
+<h3>Getting Started</h3>
+<ul>
+    <li>Installation &amp; required Windows services</li>
+    <li>Creating your first BACnet network</li>
+    <li>Connecting the Agent to BDX</li>
+    <li>Verifying communication &amp; first-run checks</li>
+</ul>
+
+<h3>Concepts &amp; Architecture</h3>
+<ul>
+    <li>Agent architecture</li>
+    <li>Data transformation and logic flow</li>
+    <li>BasiX ontology and profiles</li>
+    <li>Mapping strategies (Exact, Pattern, Regex)</li>
+    <li>Units, formatting, and best practices (Critical for BasiX mapping)</li>
+</ul>
+
+<h3>User Guide</h3>
+<ul>
+    <li>Full UI tour with screenshots</li>
+    <li>BACnet discovery, device views, and point properties</li>
+    <li>BasiX mapping workflow</li>
+    <li>Using the Flow/Link view for logic visualization</li>
+</ul>
+
+<h3>Administration</h3>
+<ul>
+    <li>Managing users and permissions</li>
+    <li>Understanding Windows services</li>
+    <li>Logs and diagnostics</li>
+    <li>Backups &amp; restoring</li>
+    <li>Resetting the Agent configuration safely</li>
+</ul>
+
+<h3>Reference</h3>
+<ul>
+    <li>BACnet driver configuration details</li>
+    <li>Polling policies &amp; device health rules</li>
+    <li>Data transformation reference</li>
+    <li>BasiX device/point modeling guidelines</li>
+</ul>
+
+<hr>
+
+<h2>System Requirements</h2>
+
+<ul>
+    <li>Windows 10, Windows Server 2016+</li>
+    <li>DataLynX installer (.msi)</li>
+    <li>Administrative privileges for service installation</li>
+    <li>Network visibility to BACnet/IP devices</li>
+    <li>Network access to the web UI port (80, 8050, or 8020)</li>
+    <li>Optional: Connectivity to a BDX instance</li>
+</ul>
+
+<hr>
+
+<h2>How DataLynX Fits into the BDX Ecosystem</h2>
+
+<p>DataLynX is designed to work seamlessly with:</p>
+
+<ul>
+    <li><strong>BDX (BuildingLogiX Data eXchange)</strong> - Analytics platform that receives normalized data from Agents.</li>
+    <li><strong>Supervisor UI</strong> - Remote visibility into Agents, status, and device mappings.</li>
+    <li><strong>BDXpy</strong> - Python SDK for interacting programmatically with BDX data.</li>
+</ul>
+
+<p>DataLynX handles on-prem BAS communication, computation, and normalization so BDX can focus on long-term storage, analytics, and visualization.</p>
+
+<hr>
+
+<h2>Getting Started Steps</h2>
+
+<p>After installing DataLynX, you will:</p>
+
+<ol>
+    <li>Open the Web UI</li>
+    <li>Configure the hosted BACnet device</li>
+    <li>Add your first BACnet network</li>
+    <li>Discover devices</li>
+    <li>Map points using BasiX</li>
+    <li>Connect the Agent to BDX</li>
+</ol>
+
+<hr>
+
+<h2>Licensing, Support, &amp; Contact</h2>
+
+<p><strong>DataLynX</strong> is proprietary software developed and owned by <strong>BuildingLogiX</strong>.</p>
+
+<p>For questions, licensing, technical support, or feedback:</p>
+
+<p><strong>Email:</strong> technical.support@buildinglogix.net</p>
+
+<hr>
+
+<h2>License &amp; Copyright</h2>
+
+<ul>
+    <li><strong>Software:</strong> DataLynX &copy; 2025 BuildingLogiX. All rights reserved.</li>
+    <li><strong>Documentation:</strong> &copy; 2025 BuildingLogiX. All rights reserved.</li>
+</ul>
+
+<p>DataLynX is licensed software. Unauthorized copying, distribution, modification, or use of this software without a valid license from BuildingLogiX is strictly prohibited.</p>
+
+<!-- ==================== QUICK START ==================== -->
+<h1>Quick Start Guide</h1>
+
+<p><strong>Get DataLynX running in 10 minutes.</strong> This guide is for experienced BAS integrators who want to get up and running fast.</p>
+
+<hr>
+
+<h2>Prerequisites</h2>
+
+<ul>
+    <li>Windows Server or Workstation with admin rights</li>
+    <li>DataLynX <code>.msi</code> installer</li>
+    <li>BACnet/IP network accessible from this machine</li>
+    <li>UDP port 47808 available</li>
+    <li>Web port 80 (or 8050/8020) available</li>
+</ul>
+
+<hr>
+
+<h2>1. Install (2 min)</h2>
+
+<ol>
+    <li>Run the <code>.msi</code> installer</li>
+    <li>Accept defaults (or change web port if 80 is in use)</li>
+    <li>Installation creates two Windows services:
+        <ul>
+            <li><strong>DataLynX Supervisor Service</strong></li>
+            <li><strong>DataLynX Web Service</strong></li>
+        </ul>
+    </li>
+</ol>
+
+<hr>
+
+<h2>2. Configure Firewall (1 min)</h2>
+
+<p>Open PowerShell as Administrator:</p>
+
+<pre><code># Web UI access (use your configured port)
+New-NetFirewallRule -DisplayName "DataLynX Web UI" -Direction Inbound -Protocol TCP -LocalPort 80 -Action Allow
+
+# BACnet/IP
+New-NetFirewallRule -DisplayName "DataLynX BACnet" -Direction Inbound -Protocol UDP -LocalPort 47808 -Action Allow</code></pre>
+
+<hr>
+
+<h2>3. Start Services &amp; Agent (1 min)</h2>
+
+<ol>
+    <li>Open <code>services.msc</code> → verify both DataLynX services are <strong>Running</strong></li>
+    <li>Open browser → <code>http://localhost</code></li>
+    <li>Log in with credentials provided by BuildingLogiX</li>
+    <li>On the <strong>Supervisor</strong> page → click <strong>Start</strong> to launch the agent</li>
+    <li>Wait for eXplorer tree to populate</li>
+</ol>
+
+<div class="note">
+    <strong>Note:</strong> Services ≠ Agent. Windows Services provide infrastructure. The <strong>Agent</strong> (started from Supervisor page) runs the BACnet driver.
+</div>
+
+<hr>
+
+<h2>4. Configure Hosted Device (1 min)</h2>
+
+<p>Navigate to: <code>BACnet → Hosted Device</code></p>
+
+<table>
+    <tr><th>Setting</th><th>Recommendation</th></tr>
+    <tr><td>Device ID</td><td>1530000–1530999 (BuildingLogiX range)</td></tr>
+    <tr><td>Device Name</td><td>DataLynX</td></tr>
+</table>
+
+<div class="note">
+    <strong>Note:</strong> Device ID must be unique on your BACnet network. Verify availability before use.
+</div>
+
+<hr>
+
+<h2>5. Add BACnet/IP Network (2 min)</h2>
+
+<p>Navigate to: <code>Connections → BACnet → configuration → bacnet_networks → Add</code></p>
+
+<table>
+    <tr><th>Setting</th><th>Value</th></tr>
+    <tr><td>UDP Port</td><td>47808</td></tr>
+    <tr><td>Network Number</td><td>Unique per segment</td></tr>
+    <tr><td>Interface</td><td>Select your NIC</td></tr>
+    <tr><td>Device Type</td><td>Standard Device</td></tr>
+</table>
+
+<p>Save and ensure network shows <strong>Enabled</strong>.</p>
+
+<hr>
+
+<h2>6. Discover Devices (1 min)</h2>
+
+<ol>
+    <li>Go to <code>BACnet → Devices</code></li>
+    <li>Click <code>Discover → Who-Is</code></li>
+    <li>Devices populate automatically</li>
+    <li>Click any device to browse points</li>
+</ol>
+
+<hr>
+
+<h2>7. Connect to BDX (1 min)</h2>
+
+<p>Navigate to: <code>Connections → BDX → bdx_agent</code></p>
+
+<table>
+    <tr><th>Setting</th><th>Value</th></tr>
+    <tr><td>BDX URL</td><td>Your BDX endpoint</td></tr>
+    <tr><td>Agent ID</td><td>Provided by BuildingLogiX</td></tr>
+    <tr><td>Password</td><td>Provided by BuildingLogiX</td></tr>
+</table>
+
+<p>Enable connection → verify status shows <strong>Connected</strong>.</p>
+
+<hr>
+
+<h2>8. Create First BasiX Mapping (1 min)</h2>
+
+<ol>
+    <li>Navigate to: <code>System → BasiX → mapping_schemes</code></li>
+    <li>Select a profile (VAV, AHU, etc.)</li>
+    <li>Configure path patterns to match your BACnet naming</li>
+    <li>Map required fields to BACnet points</li>
+    <li>Publish device to BDX</li>
+</ol>
+
+<hr>
+
+<h2>You're Done!</h2>
+
+<p>DataLynX is now:</p>
+
+<ul>
+    <li>✅ Reading BACnet devices</li>
+    <li>✅ Connected to BDX</li>
+    <li>✅ Ready for BasiX mapping</li>
+</ul>
+
+<hr>
+
+<h2>Quick Reference</h2>
+
+<table>
+    <tr><th>Task</th><th>Location</th></tr>
+    <tr><td>Start/Stop Agent</td><td>Supervisor page</td></tr>
+    <tr><td>View devices</td><td>BACnet → Devices</td></tr>
+    <tr><td>Configure polling</td><td>BACnet → Networks → Poll Service</td></tr>
+    <tr><td>BasiX mappings</td><td>System → BasiX → mapping_schemes</td></tr>
+    <tr><td>User management</td><td>System → Users</td></tr>
+    <tr><td>Logs</td><td><code>C:\ProgramData\DataLynX\agents\default\logs\</code></td></tr>
+    <tr><td>Config file</td><td><code>C:\ProgramData\DataLynX\agents\default\datalynx.cfg</code></td></tr>
+</table>
+
+<hr>
+
+<h2>Common Issues</h2>
+
+<table>
+    <tr><th>Problem</th><th>Solution</th></tr>
+    <tr><td>UI won't load</td><td>Check Web Service running, verify firewall port</td></tr>
+    <tr><td>No devices found</td><td>Check UDP 47808, verify network interface selection</td></tr>
+    <tr><td>Agent won't start</td><td>Check Supervisor Service, review logs</td></tr>
+    <tr><td>BDX offline</td><td>Verify URL, credentials, outbound connectivity</td></tr>
+</table>
+
+<!-- ==================== INSTALLATION ==================== -->
+<h1>Installation &amp; Windows Services</h1>
+
+<p>This guide walks you through installing <strong>DataLynX</strong>, understanding the required Windows services, and verifying the system is running correctly.</p>
+
+<hr>
+
+<h2>1. Install DataLynX</h2>
+
+<p>DataLynX is distributed as a Windows <strong>.msi installer</strong>.</p>
+
+<h3>Steps:</h3>
+
+<ol>
+    <li>Download the installer from BuildingLogiX (internal distribution or BDX portal).</li>
+    <li>Double-click the <code>.msi</code> file.</li>
+    <li>Follow the prompts:
+        <ul>
+            <li>Accept the license</li>
+            <li>Choose installation directory (default recommended)</li>
+            <li><strong>Configure Web Port</strong> (if prompted):
+                <ul>
+                    <li>Default is port <strong>80</strong></li>
+                    <li>If port 80 is already in use, choose an alternative port such as <strong>8050</strong> or <strong>8020</strong></li>
+                    <li>Make note of the port you select for browser access and firewall configuration</li>
+                </ul>
+            </li>
+            <li>Proceed with installation</li>
+        </ul>
+    </li>
+</ol>
+
+<h3>What the installer creates</h3>
+
+<ul>
+    <li>Program files (typically under <code>C:\Program Files\DataLynX</code>)</li>
+    <li>Configuration directory and default agent: <code>C:\ProgramData\DataLynX\agents\default\</code></li>
+    <li>Windows Services (see next section)</li>
+    <li>Web UI host</li>
+    <li>Log directories</li>
+</ul>
+
+<hr>
+
+<h2>2. Required Windows Services</h2>
+
+<p>DataLynX installs <strong>two</strong> Windows services. Both must be running for the UI to be accessible.</p>
+
+<h3>DataLynX Supervisor Service</h3>
+
+<ul>
+    <li>Manages communication between the agent and BDX</li>
+    <li>Handles remote management commands</li>
+    <li>Provides the infrastructure for the agent to run</li>
+    <li>Process: <code>supervisor.exe</code></li>
+</ul>
+
+<h3>DataLynX Web Service</h3>
+
+<ul>
+    <li>Hosts the web-based user interface</li>
+    <li>Provides local configuration and diagnostics</li>
+    <li>Required for logging into the UI via browser</li>
+    <li>Process: <code>agent.exe</code></li>
+</ul>
+
+<h3>How to check services</h3>
+
+<ol>
+    <li>Open <strong>Services.msc</strong></li>
+    <li>Look for:
+        <ul>
+            <li><code>DataLynX Supervisor Service</code></li>
+            <li><code>DataLynX Web Service</code></li>
+        </ul>
+    </li>
+    <li>Ensure both are:
+        <ul>
+            <li><strong>Status:</strong> Running</li>
+            <li><strong>Startup Type:</strong> Automatic</li>
+        </ul>
+    </li>
+</ol>
+
+<p>If needed:</p>
+<ul>
+    <li>Right-click → <strong>Start</strong></li>
+    <li>Right-click → <strong>Restart</strong></li>
+</ul>
+
+<hr>
+
+<h2>IMPORTANT: Services vs Agent</h2>
+
+<div class="warning">
+    <p><strong>The Windows Services and the DataLynX Agent are different:</strong></p>
+    <ul>
+        <li><strong>Windows Services</strong> (DataLynX Supervisor Service &amp; DataLynX Web Service) provide the infrastructure and UI access</li>
+        <li><strong>The DataLynX Agent</strong> (controlled from the UI) runs the actual BACnet driver, data processing, and BuildingLogiX processes</li>
+    </ul>
+    <p><strong>You can have the Windows Services running but the DataLynX Agent stopped.</strong></p>
+    <p>The DataLynX Agent is controlled from the <strong>Supervisor</strong> page in the UI (not from Windows Services).</p>
+</div>
+
+<hr>
+
+<h2>3. Firewall Configuration</h2>
+
+<p><strong>IMPORTANT:</strong> DataLynX requires firewall configuration to access the Web UI from a browser.</p>
+
+<h3>Option 1: Using Windows Defender Firewall (GUI)</h3>
+
+<ol>
+    <li>Press <strong>Win + R</strong> and type: <code>wf.msc</code></li>
+    <li>Click <strong>Inbound Rules</strong> in the left pane</li>
+    <li>Click <strong>New Rule...</strong> in the right pane</li>
+    <li>Select <strong>Port</strong> and click <strong>Next</strong></li>
+    <li>Select <strong>TCP</strong> and enter the port number (80, 8050, or 8020)</li>
+    <li>Select <strong>Allow the connection</strong> and click <strong>Next</strong></li>
+    <li>Check all profiles (Domain, Private, Public) and click <strong>Next</strong></li>
+    <li>Name the rule: <code>DataLynX Web UI</code></li>
+    <li>Click <strong>Finish</strong></li>
+</ol>
+
+<h3>Option 2: Using PowerShell (Quick Method)</h3>
+
+<pre><code># For port 80 (default)
+New-NetFirewallRule -DisplayName "DataLynX Web UI" -Direction Inbound -Protocol TCP -LocalPort 80 -Action Allow
+
+# OR for port 8050
+New-NetFirewallRule -DisplayName "DataLynX Web UI" -Direction Inbound -Protocol TCP -LocalPort 8050 -Action Allow
+
+# OR for port 8020
+New-NetFirewallRule -DisplayName "DataLynX Web UI" -Direction Inbound -Protocol TCP -LocalPort 8020 -Action Allow</code></pre>
+
+<hr>
+
+<h2>4. Accessing the Web UI</h2>
+
+<p>After installation and service startup:</p>
+
+<ol>
+    <li>Open a browser</li>
+    <li>Navigate to: <code>http://localhost</code> (or <code>http://localhost:8050</code> for alternative port)</li>
+</ol>
+
+<p><strong>Default Credentials:</strong> DataLynX ships with default login credentials provided by BuildingLogiX.</p>
+
+<p><strong>IMPORTANT:</strong> After first login, you should change the default password for security.</p>
+
+<h3>Initial Login and Agent Startup</h3>
+
+<p>When you first log in, you will land on the <strong>Supervisor</strong> page. This is the administrative control interface where you start/stop the agent and view its status.</p>
+
+<p><strong>If the agent is not running:</strong></p>
+<ol>
+    <li>You will see a <strong>Start</strong> button on the Supervisor page</li>
+    <li>The status will show "Stopped" or "Not Running"</li>
+    <li>Click <strong>Start</strong> to launch the agent</li>
+    <li>Wait for the agent to initialize (BACnet driver, data processing, etc.)</li>
+    <li>Once started, the full DataLynX eXplorer tree will become visible</li>
+</ol>
+
+<h3>Agent Startup Type Configuration</h3>
+
+<p>The Supervisor page also allows you to configure the <strong>Agent Startup Type</strong>, which determines how the DataLynX agent behaves when the Windows Services start.</p>
+
+<table>
+    <tr><th>Option</th><th>Description</th></tr>
+    <tr><td><strong>Manual</strong></td><td>The agent does not start automatically. You must log into the Supervisor page and click <strong>Start</strong> to launch the agent. Useful for development, testing, or troubleshooting scenarios.</td></tr>
+    <tr><td><strong>Automatic</strong></td><td>The agent starts automatically when the Windows Services start. <strong>Recommended for production environments.</strong> Ensures the BACnet driver and data processing begin immediately after a server reboot or service restart.</td></tr>
+</table>
+
+<div class="tip">
+    <strong>Production Recommendation:</strong> For production environments, always set the startup type to <strong>Automatic</strong>. This ensures your BACnet integration and BDX data flow resume automatically after server maintenance, reboots, or power outages without requiring manual intervention.
+</div>
+
+<hr>
+
+<h2>5. Important Folders</h2>
+
+<table>
+    <tr><th>Purpose</th><th>Path</th></tr>
+    <tr><td>Agent Config</td><td><code>C:\ProgramData\DataLynX\agents\default\datalynx.cfg</code></td></tr>
+    <tr><td>Agent Logs</td><td><code>C:\ProgramData\DataLynX\agents\default\logs\datalynx.log</code></td></tr>
+    <tr><td>Backup Snapshots</td><td><code>C:\ProgramData\DataLynX\agents\default\backups\</code></td></tr>
+    <tr><td>Services Executables</td><td><code>C:\Program Files\DataLynX\</code></td></tr>
+</table>
+
+<p><strong>Note:</strong> If you delete <code>datalynx.cfg</code> while the agent is running, it will <strong>rebuild the file on shutdown</strong> using in-memory settings. Always <strong>stop the service first</strong> before deleting the config to perform a reset.</p>
+
+<hr>
+
+<h2>6. Verify Successful Installation</h2>
+
+<p>Perform the following checks:</p>
+
+<h3>✔ Services Running</h3>
+<p>Both DataLynX services must show "Running".</p>
+
+<h3>✔ UI Loads Successfully</h3>
+<ol>
+    <li>Visit: <code>http://localhost</code></li>
+    <li>Login with default credentials provided by BuildingLogiX</li>
+    <li>You should see the Supervisor interface</li>
+</ol>
+
+<h3>✔ Agent Starts Successfully</h3>
+<ol>
+    <li>In the Supervisor view, click <strong>Start</strong> (if agent is not already running)</li>
+    <li>Wait for the agent to start</li>
+    <li>Verify the full DataLynX eXplorer tree appears</li>
+</ol>
+
+<h3>✔ Log Activity</h3>
+<p>Open: <code>C:\ProgramData\DataLynX\agents\default\logs\datalynx.log</code></p>
+<p>You should see entries such as:</p>
+<ul>
+    <li>Service startup</li>
+    <li>Driver initialization</li>
+    <li>Network listener opening</li>
+    <li>Agent started successfully</li>
+</ul>
+
+<hr>
+
+<h2>7. Troubleshooting</h2>
+
+<h3>UI will not load</h3>
+<ul>
+    <li>Ensure <strong>DataLynX Web Service</strong> is running in Windows Services</li>
+    <li><strong>Check Windows Firewall</strong> - verify inbound rule exists for the web port</li>
+    <li>Verify no other application is using the same port</li>
+    <li>Try accessing from localhost first: <code>http://localhost</code></li>
+</ul>
+
+<h3>Services fail to start</h3>
+<ul>
+    <li>Check Event Viewer → Windows Logs → Application</li>
+    <li>Look for permission issues in <code>ProgramData\DataLynX</code></li>
+    <li>Verify both services are set to Automatic startup</li>
+</ul>
+
+<!-- ==================== FIRST BACNET NETWORK ==================== -->
+<h1>Setting Up Your First BACnet Network</h1>
+
+<p>This guide walks you through configuring DataLynX for BACnet/IP communication, creating your first network, discovering devices, and validating point data.</p>
+
+<hr>
+
+<h2>1. Overview</h2>
+
+<p>After installing DataLynX and ensuring services are running, your next step is to configure your first <strong>BACnet network</strong>. This process includes:</p>
+
+<ol>
+    <li>Configuring the <strong>Hosted BACnet Device</strong></li>
+    <li>Creating a <strong>BACnet/IP Network</strong></li>
+    <li>Performing <strong>device discovery</strong></li>
+    <li>Reviewing discovered devices and point properties</li>
+    <li>Validating polling and value updates</li>
+</ol>
+
+<hr>
+
+<h2>2. Configure the Hosted Device</h2>
+
+<p>The <strong>hosted device</strong> is DataLynX's identity on the BACnet network.</p>
+
+<ol>
+    <li>Open the DataLynX UI</li>
+    <li>Navigate to: <code>Connections → BACnet → configuration → Hosted Device</code></li>
+    <li>Configure the following fields:</li>
+</ol>
+
+<table>
+    <tr><th>Field</th><th>Description</th></tr>
+    <tr><td><strong>Device Name</strong></td><td>Friendly name of the agent</td></tr>
+    <tr><td><strong>Device ID</strong></td><td>Must be unique on the BACnet network</td></tr>
+    <tr><td><strong>Vendor ID</strong></td><td>Defaults to BuildingLogiX</td></tr>
+    <tr><td><strong>Model / Firmware Info</strong></td><td>Optional but recommended</td></tr>
+    <tr><td><strong>Max APDU</strong></td><td>Leave default unless required otherwise</td></tr>
+</table>
+
+<h3>Recommendations</h3>
+<ul>
+    <li>Use an available Device ID range, for example in the <strong>1530000–1530999</strong></li>
+    <li><strong>Device ID must be unique</strong> on the BACnet network — verify availability before use</li>
+    <li>Recommended Device Name: <strong>DataLynX</strong></li>
+    <li>If using multiple agents, assign each a different Device ID</li>
+</ul>
+
+<hr>
+
+<h2>3. Add a BACnet/IP Network</h2>
+
+<ol>
+    <li>Navigate to: <code>Connections → BACnet → configuration → bacnet_networks</code></li>
+    <li>Add a new BACnet/IP Network</li>
+    <li>Configure the required fields:</li>
+</ol>
+
+<table>
+    <tr><th>Setting</th><th>Description</th></tr>
+    <tr><td><strong>UDP Port</strong></td><td>Typically <strong>47808</strong> (0xBAC0). Must match field devices.</td></tr>
+    <tr><td><strong>Network Number</strong></td><td>Required for routing. Must be unique per network segment.</td></tr>
+    <tr><td><strong>Interface / IP Address</strong></td><td>The NIC the agent should bind to.</td></tr>
+    <tr><td><strong>Device Type</strong></td><td>Standard Device, Foreign Device, or BBMD participant.</td></tr>
+    <tr><td><strong>Foreign Device Lifespan</strong></td><td>Only applicable if using FD mode.</td></tr>
+</table>
+
+<h3>Important Notes</h3>
+<ul>
+    <li>Use <strong>decimal</strong> for the UDP port (e.g., 47808), <em>not</em> hex notation.</li>
+    <li>If you are on a routed network, ensure router tables eventually appear.</li>
+    <li>Only enable Foreign Device mode if joining a remote BBMD.</li>
+</ul>
+
+<p>After saving, make sure the network shows as <strong>Enabled</strong>.</p>
+
+<hr>
+
+<h2>4. Configure Polling (Optional for First Setup)</h2>
+
+<p>You may keep default polling settings. Defaults include:</p>
+
+<ul>
+    <li>Poll interval for analog values</li>
+    <li>Timeout settings</li>
+    <li>Stale-time logic</li>
+    <li>Fallback behavior for unresponsive devices</li>
+</ul>
+
+<p>Polling can be modified later under: <code>Connections → BACnet → Networks → Poll Service</code></p>
+
+<hr>
+
+<h2>5. Discover Devices</h2>
+
+<p>Now you are ready to find controllers on the network.</p>
+
+<ol>
+    <li>Go to: <code>Connections → BACnet → Devices</code></li>
+    <li>Click: <code>Discover → Who-Is</code></li>
+    <li>(Optional) Use <strong>Ranged Who-Is</strong> for large networks.</li>
+</ol>
+
+<h3>During discovery, DataLynX will:</h3>
+<ul>
+    <li>Send Who-Is requests</li>
+    <li>Listen for I-Am responses</li>
+    <li>Auto-populate the device list</li>
+    <li>Build router table entries as routers respond</li>
+</ul>
+
+<h3>Organizing Devices with Folders</h3>
+
+<p>By default, all discovered devices appear under the top-level <code>devices</code> node. For larger sites, this can become difficult to manage.</p>
+
+<p><strong>Best Practice:</strong> Use <strong>BACnet Device Folders</strong> to organize controllers logically:</p>
+
+<ul>
+    <li><strong>By building or floor:</strong> <code>Building-A</code>, <code>Floor-1</code>, <code>Floor-2</code></li>
+    <li><strong>By system type:</strong> <code>AHUs</code>, <code>VAVs</code>, <code>Chillers</code>, <code>Lighting</code></li>
+    <li><strong>By network segment:</strong> <code>Network-1</code>, <code>MSTP-Trunk-A</code></li>
+</ul>
+
+<p><strong>To create a device folder:</strong></p>
+<ol>
+    <li>Right-click on <code>devices</code> node</li>
+    <li>Select <strong>Add → BACnet Device Folder</strong></li>
+    <li>Name the folder appropriately</li>
+    <li>Drag discovered devices into the folder, or run discovery with the folder selected</li>
+</ol>
+
+<div class="tip">
+    <strong>Tip:</strong> On sites with many controllers, create your folder structure first, then discover devices directly into the appropriate folders. This saves time compared to reorganizing later.
+</div>
+
+<hr>
+
+<h2>6. View Device Details</h2>
+
+<p>Click any discovered device to open the <strong>device detail view</strong>, where you can:</p>
+
+<ul>
+    <li>Browse object lists</li>
+    <li>View all BACnet properties</li>
+    <li>Monitor live values</li>
+    <li>Check faults and reliability fields</li>
+    <li>Inspect priority array values</li>
+</ul>
+
+<hr>
+
+<h2>7. Validate Point Data</h2>
+
+<p>Choose a device and open its <strong>Point List</strong>. Verify:</p>
+
+<ul>
+    <li>Values update over time</li>
+    <li>Units appear correctly</li>
+    <li>Reliability = "No Fault Detected"</li>
+    <li>Status is healthy</li>
+    <li>Analog values look reasonable</li>
+    <li>Binary values respond when the device changes state</li>
+</ul>
+
+<p>If values do not change:</p>
+<ul>
+    <li>Confirm polling is enabled</li>
+    <li>Check that the device is reachable</li>
+    <li>Ensure no firewalls are blocking UDP 47808</li>
+    <li>Verify router table entries exist for remote networks</li>
+</ul>
+
+<hr>
+
+<h2>8. Router Table Verification (If Using Routers)</h2>
+
+<p>Navigate to: <code>Connections → BACnet → Configuration → Router Table</code></p>
+
+<p>If routers are present on your network:</p>
+<ul>
+    <li>Entries will populate automatically from I-Am-Router-To-Network messages</li>
+    <li>You may add manual entries if network topology requires it</li>
+    <li>Remote stations (for MSTP) may appear here as well</li>
+</ul>
+
+<h3>Pinning Router Table Entries</h3>
+
+<p>Router table entries learned automatically can be purged or overwritten when routers restart. To prevent this:</p>
+
+<p><strong>Use the "Pinned" flag</strong> on critical router entries:</p>
+<ol>
+    <li>Select the router table entry</li>
+    <li>Enable the <strong>Pinned</strong> checkbox</li>
+    <li>Save the configuration</li>
+</ol>
+
+<p><strong>Pinned entries will:</strong></p>
+<ul>
+    <li>Never be automatically purged</li>
+    <li>Not be overwritten by learned routes</li>
+    <li>Persist across agent restarts</li>
+    <li>Take priority over dynamically learned entries</li>
+</ul>
+
+<div class="warning">
+    <strong>Warning:</strong> Only pin entries you're certain are correct. Incorrect pinned routes can prevent communication with devices on those networks.
+</div>
+
+<!-- ==================== CONNECT TO BDX ==================== -->
+<h1>Connecting DataLynX to BDX</h1>
+
+<p>This guide explains how to connect your local DataLynX Agent to the <strong>BuildingLogiX Data eXchange (BDX)</strong> platform. Once connected, DataLynX will begin securely transmitting normalized point data (BasiX) to BDX for analytics, dashboards, alarming, and long-term storage.</p>
+
+<hr>
+
+<h2>1. Overview</h2>
+
+<p>DataLynX communicates with BDX using a secure, authenticated connection. Each local Agent appears as a managed device inside BDX.</p>
+
+<p>To connect the Agent, you will:</p>
+<ol>
+    <li>Configure the Agent URL in BDX</li>
+    <li>Provide authentication credentials</li>
+    <li>Enable the Agent in both DataLynX and BDX</li>
+    <li>Verify communication health</li>
+</ol>
+
+<hr>
+
+<h2>2. Prerequisites</h2>
+
+<p>Before connecting, ensure:</p>
+<ul>
+    <li>DataLynX installation is complete</li>
+    <li>Both <strong>DataLynX Supervisor</strong> and <strong>DataLynX Web Service</strong> are running</li>
+    <li>You can access the UI at <code>http://localhost</code></li>
+    <li>BACnet network is configured and functioning (optional but recommended)</li>
+    <li>You have a BDX account with permission to add or manage agents</li>
+</ul>
+
+<hr>
+
+<h2>3. Configure BDX to Recognize Your Agent</h2>
+
+<ol>
+    <li>Log in to <strong>BDX</strong>.</li>
+    <li>Navigate to: <code>Administration → Manage Agents</code></li>
+    <li>Click <strong>Add Agent</strong>.</li>
+    <li>When prompted for the Agent URL, enter: <code>http://&lt;your-agent-ip&gt;/agent/bdxAgent</code></li>
+</ol>
+
+<h3>Important Notes</h3>
+<ul>
+    <li><code>/agent/bdxAgent</code> is required — this is the DataLynX API endpoint.</li>
+    <li>Default port is 80. If unavailable, use port 8050 or 8020 instead.</li>
+    <li>For local machines, you may use: <code>http://localhost/agent/bdxAgent</code></li>
+</ul>
+
+<hr>
+
+<h2>4. Authentication Setup</h2>
+
+<p>BDX and DataLynX exchange:</p>
+<ul>
+    <li>Username</li>
+    <li>Password</li>
+    <li>Token authorization (generated automatically after connection)</li>
+</ul>
+
+<p>In the DataLynX UI:</p>
+<ol>
+    <li>Navigate to: <code>Connections → BDX</code></li>
+    <li>Enter:
+        <ul>
+            <li><strong>BDX Server URL</strong></li>
+            <li><strong>Username</strong></li>
+            <li><strong>Password</strong></li>
+        </ul>
+    </li>
+    <li>Save the configuration.</li>
+    <li>Enable the connection using the <strong>Enable BDX</strong> toggle.</li>
+</ol>
+
+<hr>
+
+<h2>5. Establishing Communication</h2>
+
+<p>Once both sides (BDX and DataLynX) have matching credentials and agent URLs:</p>
+<ul>
+    <li>DataLynX registers itself with BDX</li>
+    <li>BDX validates the Agent identity</li>
+    <li>A persistent, secure channel is created for sending:
+        <ul>
+            <li>BasiX point updates</li>
+            <li>Device health events</li>
+            <li>Alarms and faults</li>
+            <li>Logs (if configured)</li>
+        </ul>
+    </li>
+</ul>
+
+<p>You should now see the Agent listed in the BDX Agent screen with status indicators:</p>
+
+<table>
+    <tr><th>Status</th><th>Meaning</th></tr>
+    <tr><td>🟢 <strong>Online</strong></td><td>Agent is actively sending data</td></tr>
+    <tr><td>🟡 <strong>Warning</strong></td><td>Intermittent communication</td></tr>
+    <tr><td>🔴 <strong>Offline</strong></td><td>Agent unreachable for extended time</td></tr>
+</table>
+
+<hr>
+
+<h2>6. Validate the Connection</h2>
+
+<p>You can confirm the connection by checking:</p>
+<ul>
+    <li>The Agent appears under <strong>BDX → Administration → Manage Agents</strong></li>
+    <li>BDX Communication Logs show success</li>
+    <li>DataLynX and BDX Agent settings match and appear in sync</li>
+</ul>
+
+<hr>
+
+<h2>7. Security Best Practices</h2>
+
+<p>For production environments:</p>
+<ul>
+    <li>Restrict inbound access to the web port (80, 8050, or 8020) to trusted networks</li>
+    <li>Use random, complex passwords for BDX credentials</li>
+    <li>Ensure Windows firewall allows only required inbound traffic</li>
+</ul>
+
+<hr>
+
+<h2>8. Troubleshooting</h2>
+
+<h3>"Agent Unreachable" in BDX</h3>
+<ul>
+    <li>Verify firewall rules for the configured web port</li>
+    <li>Confirm correct agent URL (<code>/agent/bdxAgent</code>)</li>
+    <li>Ensure the DataLynX Web Service is running</li>
+</ul>
+
+<h3>Authentication failures</h3>
+<ul>
+    <li>Check credentials in <strong>BDX → Administration → Manage Agents</strong></li>
+    <li>Update password in both BDX and DataLynX</li>
+    <li>Restart the DataLynX Supervisor Service</li>
+</ul>
+
+<h3>No data flowing to BDX</h3>
+<ul>
+    <li>Ensure BasiX mappings are present</li>
+    <li>Make sure polling is active in BACnet networks</li>
+    <li>Verify metadata refresh from the BDX side is completed</li>
+    <li>Check Licensing is valid and active</li>
+    <li>Check BDX subscriptions status under Manage Agent → Subscriptions</li>
+</ul>
+
+<!-- ==================== AGENT ARCHITECTURE ==================== -->
+<h1>DataLynX Agent Architecture</h1>
+
+<p>This page provides an overview of <strong>DataLynX</strong>, the BuildingLogiX on-premises agent responsible for BACnet communication, data transformation, BasiX modeling, and secure data exchange with BDX.</p>
+
+<hr>
+
+<h2>How DataLynX Works</h2>
+
+<p>DataLynX is designed with clear, modular layers:</p>
+
+<pre><code>        +-----------------------+
+        |          BDX          |
+        +-----------+-----------+
+                    ↑
+               BDX Data Pump
+                    ↑
+        +-----------+------------+
+        |      BasiX Profiles    |
+        +-----------+------------+
+                    ↑
+           Data Processing Layer
+                    ↑
+            Property Containers
+                    ↑
+              BACnet Driver
+                    ↑
+             Driver Framework
+                    ↑
+             Physical Network</code></pre>
+
+<hr>
+
+<h2>Core Components at a Glance</h2>
+
+<table>
+    <tr><th>Component</th><th>What It Does</th></tr>
+    <tr><td><strong>BACnet Driver</strong></td><td>Discovers devices, reads points, manages polling</td></tr>
+    <tr><td><strong>Data Processing Layer</strong></td><td>Transforms data, handles units, creates virtual points</td></tr>
+    <tr><td><strong>BasiX Profiles</strong></td><td>Standardizes devices into consistent schemas for analytics</td></tr>
+    <tr><td><strong>Data Pump</strong></td><td>Sends processed data to BDX securely</td></tr>
+    <tr><td><strong>Web Service</strong></td><td>Hosts the UI and API endpoints</td></tr>
+    <tr><td><strong>Supervisor Interface</strong></td><td>Enables remote management from BDX</td></tr>
+</table>
+
+<hr>
+
+<h2>BACnet Driver</h2>
+
+<p>The BACnet driver handles all communication with your building automation system.</p>
+
+<p><strong>Key capabilities:</strong></p>
+<ul>
+    <li>BACnet/IP communication</li>
+    <li>Device discovery (Who-Is / I-Am)</li>
+    <li>Reading object lists and properties</li>
+    <li>Configurable polling intervals</li>
+    <li>Router table management</li>
+    <li>Support for Standard Device, Foreign Device, and BBMD modes</li>
+    <li>Device health monitoring and stale-time detection</li>
+</ul>
+
+<hr>
+
+<h2>Data Processing &amp; Transformation Layer</h2>
+
+<p>The data processing layer is where raw BACnet data becomes analytics-ready.</p>
+
+<p><strong>What it provides:</strong></p>
+<ul>
+    <li>Visual logic blocks (Flow View)</li>
+    <li>Arithmetic and logical operations</li>
+    <li>Unit conversion and propagation</li>
+    <li>Virtual point generation</li>
+    <li>Status and reliability tracking</li>
+    <li>Watch values for debugging</li>
+</ul>
+
+<p><strong>Why it matters:</strong> Raw BACnet data is often incomplete, improperly scaled, or missing units. The data processing layer lets you convert values to standard units, compute derived values, combine multiple points, and apply fallback logic.</p>
+
+<hr>
+
+<h2>Property Containers &amp; Data Flow</h2>
+
+<p>DataLynX uses <strong>Property Containers</strong> to track each value through the system:</p>
+<ul>
+    <li>Value</li>
+    <li>Status</li>
+    <li>Units</li>
+    <li>Timestamps</li>
+    <li>Reliability</li>
+</ul>
+
+<hr>
+
+<h2>BasiX Ontology &amp; Device Profiles</h2>
+
+<p>BasiX provides a <strong>standardized schema</strong> for HVAC and building equipment.</p>
+
+<p>A BasiX Profile:</p>
+<ul>
+    <li>Defines the device type (AHU, VAV, Chiller, Pump, etc.)</li>
+    <li>Maps points to standard names</li>
+    <li>Specifies expected units and ranges</li>
+    <li>Enables consistent analytics across different vendors</li>
+</ul>
+
+<hr>
+
+<h2>Data Pump (BDX Communication)</h2>
+
+<p>The Data Pump sends normalized data to BDX:</p>
+<ul>
+    <li>Packages BasiX data for transmission</li>
+    <li>Handles retries and communication errors</li>
+    <li>Receives remote commands from BDX</li>
+    <li>Reports agent and device health</li>
+</ul>
+
+<p><strong>Communication modes:</strong> Agent-initiated, Server-initiated, Bi-directional</p>
+
+<hr>
+
+<h2>Web Service</h2>
+
+<p>The Web Service provides:</p>
+<ul>
+    <li>Local UI access</li>
+    <li>REST API endpoints</li>
+    <li>Authentication</li>
+    <li>Live point values</li>
+    <li>Configuration management</li>
+</ul>
+
+<hr>
+
+<h2>Supervisor Interface</h2>
+
+<p>Used by BDX for remote management:</p>
+<ul>
+    <li>Agent health checks</li>
+    <li>Driver restarts</li>
+    <li>Configuration updates</li>
+    <li>Log collection</li>
+    <li>Snapshot management</li>
+</ul>
+
+<hr>
+
+<h2>Summary</h2>
+
+<p>This architecture ensures:</p>
+<ul>
+    <li><strong>High reliability</strong> — Modular components isolate failures</li>
+    <li><strong>Clean separation</strong> — Device data, logic, and BDX integration are independent layers</li>
+    <li><strong>Flexibility</strong> — Transform any BACnet system into standardized BasiX data</li>
+    <li><strong>Visibility</strong> — Debug at any layer using Watch values and logs</li>
+</ul>
+
+<!-- ==================== DATA TRANSFORMATION ==================== -->
+<h1>Data Transformation &amp; Logic Flow</h1>
+
+<p>DataLynX provides powerful <strong>data transformation and logic capabilities</strong> that allow you to clean, scale, convert, and manipulate building automation data before sending it to BDX.</p>
+
+<p>This layer sits between your BACnet devices and the final BasiX profiles, ensuring that raw field data becomes accurate, normalized, and analytics-ready information.</p>
+
+<p>You'll interact with these capabilities primarily through the <strong>Flow View</strong> in the DataLynX UI—a visual wiresheet interface where you can build logic using drag-and-drop blocks.</p>
+
+<hr>
+
+<h2>1. What Data Transformation Does</h2>
+
+<p>DataLynX's data transformation layer:</p>
+<ul>
+    <li>Receives raw values from BACnet devices</li>
+    <li>Wraps values in standardized objects including: Value, Units, Status, Reliability, Timestamp</li>
+    <li>Propagates data through links between logic blocks</li>
+    <li>Performs math, conversions, logical operations, and conditionals</li>
+    <li>Produces clean, normalized values for BasiX profiles</li>
+    <li>Supports live monitoring through Watch features</li>
+    <li>Supports snapshots and online backups</li>
+</ul>
+
+<p>Everything that goes to BDX flows through this transformation layer.</p>
+
+<hr>
+
+<h2>2. Core Concepts</h2>
+
+<h3>Logic Blocks</h3>
+<p>Logic blocks are the functional units you'll work with in the Flow View. Each block has:</p>
+<ul>
+    <li><strong>Inputs</strong> (properties)</li>
+    <li><strong>Outputs</strong> (properties)</li>
+    <li>Optional <strong>configuration parameters</strong></li>
+</ul>
+
+<p>Common block categories include:</p>
+<ul>
+    <li>Math (Add, Subtract, Multiply, Divide)</li>
+    <li>Logic (And, Or, Not)</li>
+    <li>Comparisons (GreaterThan, Equal)</li>
+    <li>Unit conversions</li>
+    <li>Status propagation</li>
+    <li>Value merging or fallback blocks</li>
+    <li>Custom BasiX mapping blocks</li>
+</ul>
+
+<h3>Properties</h3>
+<p>Properties represent the data at inputs and outputs of blocks. They contain:</p>
+<ul>
+    <li>A value</li>
+    <li>A unit (optional)</li>
+    <li>A status (OK, Fault, Downstream Fault, etc.)</li>
+    <li>A reliability indicator</li>
+    <li>A timestamp</li>
+    <li>Optional error or fallback information</li>
+</ul>
+
+<h3>Links</h3>
+<p>Links connect block outputs to block inputs in the Flow View. A link handles:</p>
+<ul>
+    <li>Value propagation</li>
+    <li>Unit propagation</li>
+    <li>Status propagation</li>
+    <li>Change detection</li>
+    <li>Fault-forwarding</li>
+</ul>
+
+<p>There is a global configuration option for <strong>"propagate units"</strong>:</p>
+<ul>
+    <li>When enabled, mismatched units between blocks may trigger faults</li>
+    <li>When disabled, blocks may accept values without unit constraints</li>
+</ul>
+
+<hr>
+
+<h2>3. Data Flow Through DataLynX</h2>
+
+<p>Below is the typical flow of a single value from a BACnet device:</p>
+
+<pre><code>BACnet Driver → Raw Value
+Raw Value → Processing Layer
+Processing Layer → Logic Block
+Logic Block → Transformation
+Transformation → Linked Block
+...
+Final Value → BasiX Profile
+BasiX Profile → Data Pump → BDX</code></pre>
+
+<p>This pipeline ensures that raw, noisy field data is normalized, scaled, and reliable.</p>
+
+<hr>
+
+<h2>4. Example: Building a Simple Logic Flow</h2>
+
+<p>Consider measuring an AHU Cooling Coil Delta-T:</p>
+
+<pre><code>MAT (°F) → Subtract Block ┐
+                           ├→ Result = ΔT (°F)
+SAT (°F) → Subtract Block ┘</code></pre>
+
+<p>Configuration:</p>
+<ul>
+    <li>Block: <strong>Subtract</strong></li>
+    <li>Input A: MAT (Mixed Air Temperature)</li>
+    <li>Input B: SAT (Supply Air Temperature)</li>
+    <li>Output: deltaT</li>
+</ul>
+
+<p>The block automatically:</p>
+<ul>
+    <li>Ensures units are compatible</li>
+    <li>Tracks status (fault, ok, unreliable)</li>
+    <li>Produces an updated output whenever either input changes</li>
+    <li>Passes the ΔT result to downstream logic or BasiX mapping</li>
+</ul>
+
+<hr>
+
+<h2>5. Status &amp; Reliability Handling</h2>
+
+<p>Every property maintains:</p>
+
+<p><strong>Status:</strong></p>
+<ul>
+    <li>OK</li>
+    <li>Faulted</li>
+    <li>Downstream Fault</li>
+    <li>Configuration Error</li>
+</ul>
+
+<p><strong>Reliability:</strong></p>
+<ul>
+    <li>No Fault</li>
+    <li>Questionable</li>
+    <li>Unreliable</li>
+    <li>Out of Range</li>
+</ul>
+
+<p>DataLynX enforces data quality through block-level rules, link behavior, input validation, unit consistency checking, and device stale-time handling. This ensures BDX receives quality data.</p>
+
+<hr>
+
+<h2>6. Flow View &amp; Live Monitoring</h2>
+
+<p>The <strong>Flow View</strong> in the UI provides a visual wiresheet interface where you can:</p>
+<ul>
+    <li>Drag and drop logic blocks</li>
+    <li>Connect blocks with links</li>
+    <li>Configure block parameters</li>
+    <li>View live data flowing through your logic</li>
+    <li>Use the <strong>Watch</strong> feature to monitor any point in real-time</li>
+</ul>
+
+<h3>Using the Watch Feature</h3>
+<p>The Watch feature lets you:</p>
+<ul>
+    <li>Select any property in the logic flow</li>
+    <li>View its value, status, and units live</li>
+    <li>See change events in real time</li>
+    <li>Debug mappings and logic</li>
+    <li>Confirm BACnet reads are working</li>
+</ul>
+
+<hr>
+
+<h2>7. Snapshots &amp; Backups</h2>
+
+<p>DataLynX automatically maintains:</p>
+<ul>
+    <li><strong>Logic Snapshots</strong> - Save all block states and property values instantly.</li>
+    <li><strong>Online Backups</strong> - Rotating backups of the entire agent configuration and logic state.</li>
+</ul>
+
+<p>This is critical for restoring operation after failures, upgrades, or corrupted configs.</p>
+
+<hr>
+
+<h2>8. Configuration Files</h2>
+
+<p>DataLynX stores your logic configuration in standard formats:</p>
+<ul>
+    <li><strong>Configuration Files</strong> (<code>.json</code>) - Full block definitions, links, and properties.</li>
+</ul>
+
+<p>Configuration and state files live under: <code>C:\ProgramData\DataLynX\agents\default\</code></p>
+
+<!-- ==================== BASIX ONTOLOGY ==================== -->
+<h1>BasiX Ontology &amp; Device Profiles</h1>
+
+<p>The <strong>BasiX Ontology</strong> is the standardized data model that DataLynX uses to transform diverse BACnet devices and point structures into a common, analytics-ready format for BDX. It ensures that AHUs, VAVs, pumps, chillers, heat pumps, fan coils, and other HVAC systems all follow consistent schemas—regardless of vendor differences.</p>
+
+<hr>
+
+<h2>1. What Is BasiX?</h2>
+
+<p><strong>BasiX</strong> defines:</p>
+<ul>
+    <li>Standard <strong>device types</strong> (e.g., AHU, VAV, Chiller, Pump)</li>
+    <li>Standard <strong>point names</strong> (e.g., supplyAirTemp, supplyFanVFDSpeed, coolOutput)</li>
+    <li>Units, data types, and expected ranges</li>
+    <li>Normalized behavior and meaning of each value</li>
+    <li>Metadata needed for analytics and equipment classification</li>
+</ul>
+
+<p>BasiX serves as the "lingua franca" between on-prem building systems and BDX.</p>
+
+<hr>
+
+<h2>2. Why BasiX Exists</h2>
+
+<p>BACnet systems differ dramatically across:</p>
+<ul>
+    <li>Manufacturer naming conventions</li>
+    <li>Object types</li>
+    <li>Units</li>
+    <li>Enumerations</li>
+    <li>Scaling</li>
+    <li>Device structures</li>
+    <li>Quality / reliability fields</li>
+</ul>
+
+<p>BasiX solves this by:</p>
+<ul>
+    <li>Normalizing all HVAC equipment into predictable structures</li>
+    <li>Defining consistent point names</li>
+    <li>Ensuring uniform units and interpretation</li>
+    <li>Eliminating vendor-specific quirks</li>
+    <li>Enabling common analytics across campuses and portfolios</li>
+</ul>
+
+<hr>
+
+<h2>3. BasiX Device Profiles</h2>
+
+<p>A <strong>BasiX Profile</strong> is a template that defines the standard structure of a device.</p>
+
+<p>Each profile includes:</p>
+<ul>
+    <li><strong>Device type</strong> (e.g., AHU, VAV, ExhaustFan, Tower, Boiler)</li>
+    <li><strong>Point schema</strong> - Required points, optional points, units, expected ranges, setpoint behavior</li>
+    <li><strong>Tags &amp; metadata</strong></li>
+    <li><strong>Virtual or computed fields</strong></li>
+    <li><strong>Normalization rules</strong></li>
+</ul>
+
+<h3>Example: AHU BasiX Profile</h3>
+
+<table>
+    <tr><th>BasiX Point</th><th>Description</th><th>Units</th></tr>
+    <tr><td>supplyAirTemp</td><td>Discharge air temperature</td><td>°F</td></tr>
+    <tr><td>mixedAirTemp</td><td>Mixed air temperature</td><td>°F</td></tr>
+    <tr><td>coolOutput</td><td>Cooling coil valve position</td><td>%</td></tr>
+    <tr><td>supplyFanVFDSpeed</td><td>Supply fan speed or VFD output</td><td>%</td></tr>
+    <tr><td>ductStaticPressure</td><td>Duct static pressure</td><td>inWC</td></tr>
+</table>
+
+<hr>
+
+<h2>4. Mapping BACnet → BasiX</h2>
+
+<p>DataLynX uses two layers to convert field data into BasiX:</p>
+
+<ol>
+    <li><strong>Data Transformation</strong> - Performs scaling, unit conversion, reliability logic, derived values. Access these features through the Flow View interface.</li>
+    <li><strong>Mapping Layer</strong> - Connects BACnet objects to BasiX point definitions. Supports:
+        <ul>
+            <li><strong>Exact mapping</strong></li>
+            <li><strong>Pattern mapping</strong> (<code>*</code>, <code>?</code>)</li>
+            <li><strong>Regex mapping</strong></li>
+        </ul>
+    </li>
+</ol>
+
+<h3>Example Mapping</h3>
+<pre><code>BACnet AI "SF-T"  →  BasiX supplyAirTemp
+BACnet AV "RM-T"  →  BasiX zoneAirTemp
+BACnet AO "CCV"   →  BasiX coolOutput</code></pre>
+
+<p>If a device has 100 VAVs named <code>VAV-1</code> through <code>VAV-100</code>, pattern matching might be used:</p>
+<pre><code>BACnet path: /VAV-*/AI-RM-T
+BasiX point: ZoneAirTemp</code></pre>
+
+<hr>
+
+<h2>5. Multi-Device Scenarios</h2>
+
+<p>Some equipment configurations require special handling:</p>
+
+<h3>1 BAS → Many BasiX</h3>
+<p>Example: A plant controller exposes multiple towers and pumps under one device.</p>
+
+<h3>Many BAS → One BasiX</h3>
+<p>Example: Multiple BAS controllers represent a single AHU's logic and sensors.</p>
+
+<h3>Many BAS → Many BasiX</h3>
+<p>Often used in distributed systems with many repeated devices (VAVs, FCUs).</p>
+
+<p>The mapping layer handles all these scenarios.</p>
+
+<hr>
+
+<h2>6. Validation &amp; Health Checking</h2>
+
+<p>The BasiX layer validates:</p>
+<ul>
+    <li><strong>Invalid or missing units</strong></li>
+    <li>Inconsistent enumerations</li>
+</ul>
+
+<div class="warning">
+    <strong>Critical:</strong> All points mapped to BasiX profiles must have proper units. Missing or incorrect units will prevent device publishing to BDX.
+</div>
+
+<hr>
+
+<h2>7. Output to BDX</h2>
+
+<p>Once a device is mapped and validated:</p>
+<ul>
+    <li>A <strong>fully normalized BasiX object</strong> is created</li>
+    <li>It is transmitted to BDX through the Data Pump</li>
+    <li>BDX treats all devices of the same type uniformly</li>
+</ul>
+
+<p>This allows: Portfolio-wide analytics, fault detection, load modeling, equipment comparisons, and energy performance baselines.</p>
+
+<!-- ==================== MAPPING MODES ==================== -->
+<h1>Mapping Modes in DataLynX</h1>
+
+<p>The Mapping Layer in DataLynX is responsible for converting raw BACnet points into structured BasiX points. Because building automation systems vary widely in naming, structure, and point availability, DataLynX supports <strong>three powerful mapping modes</strong>:</p>
+
+<ol>
+    <li><strong>Exact Mapping</strong></li>
+    <li><strong>Pattern (Glob) Mapping</strong></li>
+    <li><strong>Regex (Regular Expression) Mapping</strong></li>
+</ol>
+
+<hr>
+
+<h2>1. Why Mapping Matters</h2>
+
+<p>Raw BACnet metadata is rarely standardized. Examples you may encounter:</p>
+<ul>
+    <li><code>AI-1</code>, <code>AI-Temp1</code>, <code>T_SF</code>, <code>SA-T</code>, <code>DischargeTemp</code></li>
+    <li><code>BO-CV</code>, <code>CCV-CMD</code>, <code>CoolingValveCmd</code>, <code>CV_OUT</code></li>
+    <li><code>VAV-01</code>, <code>VAV-002</code>, <code>VAV-A</code>, <code>VAV_NorthWing-12</code></li>
+</ul>
+
+<p>To create reliable, analytics-ready data:</p>
+<ul>
+    <li>Every device must map to a <strong>BasiX Profile</strong></li>
+    <li>Every BasiX point must have <strong>a source</strong></li>
+    <li>Mapping rules must survive <strong>naming inconsistencies</strong></li>
+    <li>Users must be able to maintain large systems with <strong>repeatable patterns</strong></li>
+</ul>
+
+<hr>
+
+<h2>2. Exact Mapping</h2>
+
+<p>Exact Mapping creates a strict one-to-one relationship:</p>
+<pre><code>Specific BACnet Point → Specific BasiX Point</code></pre>
+
+<h3>Use Exact Mapping When:</h3>
+<ul>
+    <li>You have a small system</li>
+    <li>Names are clean and consistent</li>
+    <li>You want explicit links for clarity</li>
+    <li>You are troubleshooting or verifying values</li>
+</ul>
+
+<h3>Example:</h3>
+<pre><code>BACnet Path: /AHU-1/AI-SAT
+BasiX Point: supplyAirTemp</code></pre>
+
+<p>If the name does not match exactly, the mapping will not apply.</p>
+
+<hr>
+
+<h2>3. Pattern Mapping (Glob)</h2>
+
+<p>Pattern mapping uses simple wildcards:</p>
+<ul>
+    <li><code>*</code> — any number of characters</li>
+    <li><code>?</code> — exactly one character</li>
+</ul>
+
+<p>This is helpful when working with repeated devices, such as VAVs, fan coils, heat pumps, room controllers, and lighting zones.</p>
+
+<h3>Example: VAV Temperature</h3>
+<pre><code>BACnet Pattern: /VAV-*/AI-RM-T
+BasiX Point: zoneAirTemp</code></pre>
+
+<p>This will match:</p>
+<ul>
+    <li><code>/VAV-1/AI-RM-T</code></li>
+    <li><code>/VAV-27/AI-RM-T</code></li>
+    <li><code>/VAV-EAST-WING/AI-RM-T</code></li>
+</ul>
+
+<h3>Example: Numbered Devices</h3>
+<pre><code>/HP-??/AO-CMD</code></pre>
+
+<p>Matches: <code>HP-01</code>, <code>HP-12</code> — but not <code>HP-123</code></p>
+
+<hr>
+
+<h2>4. Regex Mapping (Advanced)</h2>
+
+<p>Regex mapping uses <strong>full regular expressions</strong>, allowing the most powerful matching method.</p>
+
+<p>Use this mode when:</p>
+<ul>
+    <li>Naming conventions are inconsistent</li>
+    <li>There are optional prefixes/suffixes</li>
+    <li>Strings include unpredictable separators</li>
+    <li>Multiple segments must be parsed</li>
+    <li>Vendor naming is inconsistent across floors or controllers</li>
+</ul>
+
+<h3>Example: Match all VAV room temp sensors with odd conventions</h3>
+<pre><code>Regex: ^/VAV[-_ ]?(\d{1,3})/((AI|AV|AI-TEMP|RM-TEMP).*)
+Maps to: zoneAirTemp</code></pre>
+
+<p>This rule would match:</p>
+<ul>
+    <li><code>/VAV-1/AI1</code></li>
+    <li><code>/VAV_05/RM-TEMP</code></li>
+    <li><code>/VAV 12/AI-TEMP</code></li>
+    <li><code>/VAV-003/AV-TEMP</code></li>
+</ul>
+
+<hr>
+
+<h2>5. Best Practices</h2>
+
+<h3>Use Exact Mapping for:</h3>
+<ul>
+    <li>AHUs</li>
+    <li>Chillers</li>
+    <li>Boilers</li>
+    <li>Pumps</li>
+    <li>One-off equipment</li>
+</ul>
+
+<h3>Use Pattern Mapping for:</h3>
+<ul>
+    <li>Any repeated device count &gt; 10</li>
+    <li>VAVs</li>
+    <li>Heat pumps</li>
+    <li>FCUs</li>
+    <li>VRF zones</li>
+</ul>
+
+<h3>Use Regex Mapping for:</h3>
+<ul>
+    <li>Messy systems</li>
+    <li>Mixed-vendor retrofits</li>
+    <li>Custom naming</li>
+    <li>Large campuses</li>
+    <li>Any naming where patterns are unpredictable</li>
+</ul>
+
+<!-- ==================== UNITS & FORMATTING ==================== -->
+<h1>Units &amp; Formatting Best Practices</h1>
+
+<p>DataLynX includes powerful unit handling, formatting rules, and data validation features to ensure that values coming from BACnet devices are presented correctly, normalized for analytics, and safely propagated through the Data Processing Layer.</p>
+
+<p><strong>Proper unit handling is critical</strong> because different BAS vendors use inconsistent or non-standard engineering units, scaling factors, and precision. Incorrect or missing units will prevent successful mapping to BasiX profiles and can cause data quality issues in BDX.</p>
+
+<hr>
+
+<h2>1. Why Units Matter</h2>
+
+<p>BACnet points may come in with:</p>
+<ul>
+    <li>Incorrect units</li>
+    <li>No units at all</li>
+    <li>Unexpected scaling (e.g., temperature x10)</li>
+    <li>Vendor-specific conventions</li>
+    <li>Values represented as integers when they should be floats</li>
+</ul>
+
+<p>To prevent bad data from reaching analytics, DataLynX:</p>
+<ul>
+    <li>Propagates units through the Data Processing Layer</li>
+    <li>Converts units where possible</li>
+    <li>Flags incompatible or missing units</li>
+    <li>Applies default formatting rules</li>
+    <li>Generates normalized output for BasiX</li>
+</ul>
+
+<div class="warning">
+    <strong>Critical:</strong> BasiX profiles require proper units on all mapped points. Missing or incorrect units will prevent device publishing to BDX.
+</div>
+
+<hr>
+
+<h2>2. Unit Propagation</h2>
+
+<p>Each value in the Data Processing Layer contains: Value, Units, Status, Reliability, Timestamp.</p>
+
+<p>Links between blocks may propagate units depending on configuration.</p>
+
+<h3>If "Propagate Units" is enabled:</h3>
+<ul>
+    <li>Linked properties must have <em>compatible units</em></li>
+    <li>Mismatches may trigger <strong>fault status</strong>, often resulting in <strong>NaN outputs</strong></li>
+</ul>
+
+<h3>If disabled:</h3>
+<ul>
+    <li>Units are not required to match</li>
+    <li>Useful for advanced or custom logic</li>
+    <li>Use with caution</li>
+</ul>
+
+<hr>
+
+<h2>3. Dimensionless Units in BACnet</h2>
+
+<p>BACnet points can legally have <strong>dimensionless</strong> or <strong>no units</strong>—this is fully supported in the BACnet standard.</p>
+
+<h3>Where You Commonly See Dimensionless Units</h3>
+<p>BACnet objects frequently use dimensionless units when the value is:</p>
+<ul>
+    <li><strong>A percentage represented as 0–1</strong> instead of 0–100 (Example: valve position, VFD speed)</li>
+    <li><strong>A raw count</strong> (Example: number of starts, cycle counts)</li>
+    <li><strong>A ratio</strong> (Example: mixing percentages, humidity ratios)</li>
+    <li><strong>A custom engineering value</strong> that the vendor defines without mapping to a physical unit</li>
+    <li><strong>Boolean-like analog values</strong> (Example: 0 = off, 1 = on, but stored in an Analog Input)</li>
+</ul>
+
+<h3>Important Notes</h3>
+<ul>
+    <li>Many devices incorrectly use <strong>Percent</strong> (0–100%) for values that are actually 0–1 fractions</li>
+    <li><strong>DataLynX behavior with dimensionless units</strong>: Users can override units on points/blocks. For dimensionless units, it's up to the user to define the correct units when mapping to BasiX profile fields that expect units.</li>
+</ul>
+
+<hr>
+
+<h2>4. Temperature Units and Delta Temperature</h2>
+
+<p><strong>Delta degree Fahrenheit (ΔF)</strong> is different than <strong>degrees Fahrenheit (°F)</strong> when calculating temperature differences.</p>
+
+<h3>When to Use Delta Temperature</h3>
+<p>For calculations involving temperature differences:</p>
+<ul>
+    <li>Space temp vs space temp setpoint</li>
+    <li>Supply air temp vs supply air temp setpoint</li>
+    <li>Return temp vs supply temp</li>
+</ul>
+
+<p><strong>You cannot use absolute temperature units to represent the difference between two temperatures.</strong></p>
+
+<h3>Math Operations with Temperature</h3>
+
+<h4>Addition (requires temp + delta):</h4>
+<ul>
+    <li>One input: absolute temperature (°F)</li>
+    <li>Other input: delta temperature (ΔF)</li>
+    <li>Output: absolute temperature (°F)</li>
+</ul>
+
+<h4>Subtraction and Mean (works correctly):</h4>
+<ul>
+    <li>Input: Two absolute temperatures (°F, °F)</li>
+    <li>Output: Delta temperature (ΔF)</li>
+</ul>
+
+<h3>Best Practices</h3>
+<ol>
+    <li>Convert degrees to delta degrees by using the <strong>Override Source Units</strong> flag, OR subtracting 0°F from the source value</li>
+    <li>Then perform multiplication/division operations</li>
+    <li><strong>Bottom line</strong>: Do not multiply/divide absolute temperatures unless you expect absolute values in Kelvin</li>
+    <li><strong>Only deltas can be multiplied or divided</strong></li>
+</ol>
+
+<hr>
+
+<h2>5. Property Configuration &amp; Flags</h2>
+
+<p>When configuring properties in DataLynX, you have access to several flags that control how the property behaves within the system. These are accessed through the <strong>Configure Property</strong> dialog.</p>
+
+<h3>Property Flags</h3>
+
+<table>
+    <tr><th>Flag</th><th>Description</th></tr>
+    <tr><td><strong>Transient</strong></td><td>The property can be linked, but its value is not persisted to the Agent Configuration Database. Use this for temporary or calculated values that don't need to survive an agent restart.</td></tr>
+    <tr><td><strong>Summary</strong></td><td>Always displays the property in the Flow View, even if it is not linked. Useful for key values you want visible at a glance.</td></tr>
+    <tr><td><strong>Readonly</strong></td><td>Prevents the property value from being modified. Use this for values that should only be read from their source.</td></tr>
+    <tr><td><strong>Override Source Units</strong></td><td>Allows you to override the incoming or native units on a block and change them to something else. See details below.</td></tr>
+</table>
+
+<h3>Override Source Units</h3>
+<p><strong>Override Source Units</strong> is the flag that allows DataLynX users to override the incoming or native units on a block and change it to something else.</p>
+
+<p><strong>When to use this feature:</strong></p>
+<ul>
+    <li>A controller has wrong units selected in device configuration</li>
+    <li>A manufacturer used incorrect units in their integration</li>
+    <li>The value needs to be maintained in DataLynX with just the unit changed</li>
+</ul>
+
+<p><strong>How it works:</strong></p>
+<ol>
+    <li>Check the <strong>Override Source Units</strong> checkbox</li>
+    <li>Select the correct units from the <strong>Unit</strong> dropdown</li>
+    <li>DataLynX will treat the value as having the new units</li>
+    <li><strong>Important</strong>: This does NOT convert the value—it reinterprets the existing value with different units</li>
+</ol>
+
+<hr>
+
+<h2>6. HVAC Measurement Formatting Reference</h2>
+
+<table>
+    <tr><th>Measurement Type</th><th>Example Units (IP)</th><th>Recommended Format</th><th>Example Output</th></tr>
+    <tr><td><strong>Temperature</strong></td><td>°F</td><td>.1f</td><td>72.5 °F</td></tr>
+    <tr><td><strong>Delta Temperature (CHW ΔT)</strong></td><td>ΔF</td><td>.2f</td><td>12.47 °F</td></tr>
+    <tr><td><strong>Relative Humidity</strong></td><td>%</td><td>.0f</td><td>45 %</td></tr>
+    <tr><td><strong>CO₂ Concentration</strong></td><td>ppm</td><td>,.0f</td><td>1,024 ppm</td></tr>
+    <tr><td><strong>Airflow</strong></td><td>cfm</td><td>,.0f</td><td>1,250 cfm</td></tr>
+    <tr><td><strong>Pressure</strong></td><td>inH₂O</td><td>.2f</td><td>1.25 inH₂O</td></tr>
+    <tr><td><strong>Power</strong></td><td>kW</td><td>.1f</td><td>18.7 kW</td></tr>
+    <tr><td><strong>Energy</strong></td><td>kWh</td><td>,.0f</td><td>3,542 kWh</td></tr>
+    <tr><td><strong>Flow Rate (Water)</strong></td><td>gpm</td><td>.1f</td><td>245.6 gpm</td></tr>
+    <tr><td><strong>Valve/Damper Position</strong></td><td>%</td><td>.0f</td><td>75 %</td></tr>
+    <tr><td><strong>Fan/Pump Speed</strong></td><td>%</td><td>.0f</td><td>60 %</td></tr>
+</table>
+
+<h3>Format Code Reference</h3>
+<table>
+    <tr><th>Code</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td>.0f</td><td>No decimals (rounded)</td><td>72</td></tr>
+    <tr><td>.1f</td><td>One decimal</td><td>72.5</td></tr>
+    <tr><td>.2f</td><td>Two decimals</td><td>12.47</td></tr>
+    <tr><td>,.0f</td><td>Thousands separator, no decimals</td><td>1,024</td></tr>
+</table>
+
+<hr>
+
+<h2>7. Physical Unit Conversions</h2>
+
+<p>The Data Processing Layer supports automatic unit conversions such as:</p>
+<ul>
+    <li>°C ↔ °F</li>
+    <li>Pa ↔ inWC</li>
+    <li>kW ↔ W</li>
+    <li>Tons ↔ kBTU/hr</li>
+</ul>
+
+<p>Conversions occur <em>only</em> when units are defined and compatible.</p>
+
+<hr>
+
+<h2>8. Handling Incorrect or Missing Units</h2>
+
+<p>If a BACnet point has wrong units, no units, or inconsistent metadata, you can correct this by:</p>
+<ol>
+    <li>Using the <strong>Override Source Units</strong> flag</li>
+    <li>Applying a conversion block in Flow View</li>
+    <li>Explicitly assigning units in a mapping block</li>
+    <li>Using fallback or override logic</li>
+    <li>Normalizing the value before feeding it to BasiX</li>
+</ol>
+
+<p><strong>Best Practice</strong>: Devices with chronically incorrect units should be fixed upstream in the BAS, but DataLynX allows on-the-fly correction.</p>
+
+<!-- Additional sections continue in the same format... -->
+
+<!-- ==================== SUMMARY/KEY TAKEAWAYS ==================== -->
+<h2>Key Takeaways</h2>
+
+<ol>
+    <li><strong>Dimensionless units are valid</strong> in BACnet but must be assigned proper units when mapping to BasiX fields that expect physical measurements</li>
+    <li><strong>Delta temperatures (ΔF)</strong> are different from absolute temperatures (°F)—use the right one for calculations</li>
+    <li><strong>Override Source Units</strong> flag allows you to reinterpret (not convert) units on BACnet points</li>
+    <li><strong>Use the formatting reference table</strong> for consistent, readable displays</li>
+    <li><strong>Missing or wrong units on fields expecting physical measurements will prevent BasiX device publishing</strong>—always validate units before mapping</li>
+</ol>
+
+<!-- ==================== FAQ (ABBREVIATED) ==================== -->
+<h1>Frequently Asked Questions (FAQ)</h1>
+
+<hr>
+
+<h2>General System Questions</h2>
+
+<h3>Q: What's the difference between the Windows Services and the DataLynX Agent?</h3>
+<p><strong>A:</strong> This is a critical distinction:</p>
+<ul>
+    <li><strong>Windows Services</strong> (DataLynX Supervisor Service &amp; DataLynX Web Service) provide the infrastructure for DataLynX to run, host the web UI, and enable remote management.</li>
+    <li><strong>The DataLynX Agent</strong> (controlled from the UI) runs the actual BACnet driver, executes data processing, and manages BuildingLogiX processes.</li>
+</ul>
+<p><strong>Key Point</strong>: You can have the Windows Services running while the DataLynX Agent is stopped.</p>
+
+<h3>Q: The UI won't load. What should I check?</h3>
+<p><strong>A:</strong></p>
+<ol>
+    <li>Make sure <strong>DataLynX Web Service</strong> is running in Windows Services</li>
+    <li><strong>Check Windows Firewall</strong> - Ensure an inbound rule exists for the web port (default: 80, or 8050/8020)</li>
+    <li>Verify no other application is using the same port</li>
+    <li>Try accessing from localhost first: <code>http://localhost</code></li>
+</ol>
+
+<h3>Q: How do I restart the DataLynX Agent?</h3>
+<p><strong>A:</strong></p>
+<ol>
+    <li>Log into the DataLynX UI</li>
+    <li>Go to the <strong>Supervisor</strong> page</li>
+    <li>Click <strong>Stop</strong> (wait for agent to stop)</li>
+    <li>Click <strong>Start</strong> (wait for agent to start)</li>
+</ol>
+
+<h3>Q: I logged in but don't see the BACnet or BasiX sections. What's wrong?</h3>
+<p><strong>A:</strong> The agent is probably not running. Look for the <strong>Start</strong> button on the Supervisor page and click it to launch the agent.</p>
+
+<hr>
+
+<h2>BACnet Questions</h2>
+
+<h3>Q: Devices are not showing up in discovery. What should I check?</h3>
+<p><strong>A:</strong></p>
+<ul>
+    <li>Ensure BACnet driver is enabled</li>
+    <li>Check UDP port (default 47808)</li>
+    <li>Ensure firewall allows UDP broadcasts</li>
+    <li>Verify correct network interface is selected</li>
+    <li>Confirm network number matches your system</li>
+</ul>
+
+<h3>Q: Why do some points show NaN or Fault in the UI?</h3>
+<p><strong>A:</strong></p>
+<ul>
+    <li>Device may be offline (check Health Monitoring)</li>
+    <li>Units may be incompatible (if unit propagation enabled)</li>
+    <li>Value may be stale—check poll interval &amp; stale timeout</li>
+</ul>
+
+<hr>
+
+<h2>BasiX Questions</h2>
+
+<h3>Q: Why can't I publish my BasiX device to BDX?</h3>
+<p><strong>A:</strong> Because required fields are missing or have incorrect/missing units. Open the BasiX device and check required fields and correct units on all mapped points.</p>
+
+<h3>Q: What do the property flags (Transient, Summary, Readonly) mean?</h3>
+<p><strong>A:</strong></p>
+<table>
+    <tr><th>Flag</th><th>What it does</th></tr>
+    <tr><td><strong>Transient</strong></td><td>Value is not saved to the database. Use for temporary/calculated values.</td></tr>
+    <tr><td><strong>Summary</strong></td><td>Property always appears in Flow View even when not linked.</td></tr>
+    <tr><td><strong>Readonly</strong></td><td>Prevents the property from being modified.</td></tr>
+    <tr><td><strong>Override Source Units</strong></td><td>Reinterprets units without converting the value.</td></tr>
+</table>
+
+<hr>
+
+<h2>BDX Communication Questions</h2>
+
+<h3>Q: Agent shows "offline" in BDX. Why?</h3>
+<p><strong>A:</strong> Check: BDX URL configured correctly, <code>/agent/bdxAgent</code> endpoint is used, password is correct, Web Service is running, outbound traffic allowed on required ports.</p>
+
+<h3>Q: Data isn't showing in BDX. What should I check?</h3>
+<p><strong>A:</strong></p>
+<ul>
+    <li>Ensure BasiX devices are published</li>
+    <li>Check BDX logs at <code>C:\ProgramData\DataLynX\agents\default\logs\bdx.log</code></li>
+    <li>Verify data pump is enabled</li>
+    <li>Check Licensing is valid and active</li>
+</ul>
+
+<hr>
+
+<h2>Backup &amp; Reset Questions</h2>
+
+<h3>Q: Does deleting datalynx.cfg reset the system?</h3>
+<p><strong>A:</strong> Yes, <strong>but only if the Supervisor Service is stopped first</strong>. Otherwise, the agent will recreate the file from its in-memory state.</p>
+
+<hr>
+
+<!-- ==================== FOOTER ==================== -->
+<div style="text-align: center; margin-top: 80px; padding: 40px; border-top: 2px solid #1976d2;">
+    <h2>End of Documentation</h2>
+    <p><strong>DataLynX</strong> &copy; 2025 BuildingLogiX. All rights reserved.</p>
+    <p>For support: technical.support@buildinglogix.net</p>
+    <p><em>Document generated from GitHub Pages source</em></p>
+</div>
+
+</body>
+</html>

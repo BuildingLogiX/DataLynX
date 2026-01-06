@@ -1,0 +1,2267 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://buildinglogix.github.io/DataLynX/user-guide/explorer-structure/">
+      
+      
+        <link rel="prev" href="../ui-tour/">
+      
+      
+        <link rel="next" href="../hierarchy-digital-twin/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/datalynx_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>eXplorer Structure - DataLynX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#explorer-structure-navigation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DataLynX" class="md-header__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DataLynX
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              eXplorer Structure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/architecture/" class="md-tabs__link">
+          
+  
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ui-tour/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../admin/windows-services-logs/" class="md-tabs__link">
+          
+  
+  
+  Admin Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/terminology/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DataLynX" class="md-nav__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    DataLynX
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-bacnet-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First BACnet Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/connect-to-bdx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect to BDX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/data-transformation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Transformation & Logic Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/basix-ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Ontology & Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/mapping-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapping Modes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/units-formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units & Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-tour/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Tour
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eXplorer Structure
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eXplorer Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explorer-tree-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eXplorer Tree Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-nodes-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-Level Nodes Explained
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Top-Level Nodes Explained">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datalynx-root-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataLynX (Root Node)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supervisor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supervisor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage Licenses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breadcrumb-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breadcrumb Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-view-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow View Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-between-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching Between Views
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizing-your-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organizing Your Workspace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organizing Your Workspace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-for-hierarchy-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices for Hierarchy Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-where-to-find-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference: Where to Find Things
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➡️ Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hierarchy-digital-twin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hierarchy & Digital Twin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bacnet-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Integration Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basix-mapping-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Mapping Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Admin Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/windows-services-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Services & Logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/reset-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resetting the Agent Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/security-users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security & User Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology & Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/toolbox-blocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toolbox Block Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/bacnet-driver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Driver Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explorer-tree-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eXplorer Tree Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-nodes-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-Level Nodes Explained
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Top-Level Nodes Explained">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datalynx-root-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataLynX (Root Node)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supervisor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supervisor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-licenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage Licenses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breadcrumb-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breadcrumb Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-view-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow View Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-between-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching Between Views
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizing-your-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organizing Your Workspace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organizing Your Workspace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-for-hierarchy-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices for Hierarchy Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-where-to-find-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference: Where to Find Things
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➡️ Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="explorer-structure-navigation"><img alt="DataLynX Logo" src="../../assets/datalynx_logo.svg" width="50" /> eXplorer Structure &amp; Navigation</h1>
+<p>The <strong>eXplorer</strong> is the primary navigation tree in DataLynX, located on the left side of the UI. It provides hierarchical access to all configuration, devices, logic blocks, and system tools.</p>
+<p>Understanding the eXplorer structure is essential for efficient navigation and workflow management in DataLynX.</p>
+<hr />
+<h2 id="explorer-tree-overview">eXplorer Tree Overview</h2>
+<p>When you log into DataLynX with the agent running, you'll see the following top-level structure:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>DataLynX (root)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── System
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── Connections
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── Hierarchy
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── Supervisor
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── Manage Users
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>└── Manage Licenses
+</code></pre></div>
+<p><img alt="eXplorer Top Node" src="../../img/DataLynX%20-%20eXplorer%20Top%20Node.PNG" /></p>
+<p>Each of these nodes serves a specific purpose in the DataLynX ecosystem.</p>
+<hr />
+<h2 id="top-level-nodes-explained">Top-Level Nodes Explained</h2>
+<h3 id="datalynx-root-node"><strong>DataLynX (Root Node)</strong></h3>
+<p>The root node represents the DataLynX agent instance. Clicking on it provides:</p>
+<ul>
+<li>System information (OS, host ID, version)</li>
+<li>Agent information (name, data directory, state)</li>
+<li>Agent control (Start/Stop buttons if accessed via Supervisor)</li>
+</ul>
+<hr />
+<h3 id="system"><strong>System</strong></h3>
+<p>The <strong>System</strong> node contains configuration and management tools for DataLynX itself.</p>
+<p><strong>Structure:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>System
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── BasiX
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│   └── mapping_schemes
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│       ├── VAV
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│       ├── AHU
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│       ├── FanCoil
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│       ├── Chiller
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│       ├── CoolingTower
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│       ├── ResourceMeter
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│       └── [Other device types...]
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>└── backup_service
+</code></pre></div></p>
+<p><strong>What's inside:</strong></p>
+<ul>
+<li><strong>BasiX/mapping_schemes</strong> - Contains BasiX profile templates and mapping configurations for different device types</li>
+<li><strong>backup_service</strong> - Configuration for automated backup scheduling and snapshot management</li>
+</ul>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Configuring BasiX device mapping schemes (VAV, AHU, Chiller, etc.)</li>
+<li>Setting up automated backup schedules</li>
+<li>Managing system-level BasiX configuration</li>
+</ul>
+<p><strong>Related documentation:</strong></p>
+<ul>
+<li><a href="../../concepts/basix-ontology/">BasiX Ontology &amp; Profiles</a></li>
+<li><a href="../basix-mapping-workflow/">BasiX Mapping Workflow</a></li>
+</ul>
+<hr />
+<h3 id="connections"><strong>Connections</strong></h3>
+<p>The <strong>Connections</strong> node contains all communication driver configuration for external systems.</p>
+<p><strong>Structure:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Connections
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── BDX
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│   └── [BDX connection settings]
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>└── BACnet
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    ├── configuration
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    │   ├── hosted_device
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    │   ├── router_table
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    │   └── bacnet_networks
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    │       └── BACnetIPNetwork
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    │           ├── configuration
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    │           ├── polling_service
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    │           └── health_monitoring_configuration
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    └── devices
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        ├── [Discovered device: Honeywell]
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        ├── [Discovered device: ALC]
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        └── [Other vendors/devices...]
+</code></pre></div></p>
+<p><strong>What's inside:</strong></p>
+<ul>
+<li><strong>BDX</strong> - Connection settings for sending data to the BuildingLogiX Data eXchange platform</li>
+<li><strong>BACnet</strong> - BACnet driver configuration and discovered devices</li>
+<li><strong>configuration</strong> - Hosted device, router table, network settings</li>
+<li><strong>bacnet_networks</strong> - Individual BACnet/IP network configurations</li>
+<li><strong>devices</strong> - All discovered BACnet devices organized by vendor or name</li>
+</ul>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Setting up your first BACnet network</li>
+<li>Discovering and managing BACnet devices</li>
+<li>Configuring the hosted device identity</li>
+<li>Connecting to BDX</li>
+<li>Viewing and managing device points</li>
+</ul>
+<p><strong>Related documentation:</strong></p>
+<ul>
+<li><a href="../../getting-started/first-bacnet-network/">First BACnet Network</a></li>
+<li><a href="../../getting-started/connect-to-bdx/">Connect to BDX</a></li>
+<li><a href="../../reference/bacnet-driver/">BACnet Driver Reference</a></li>
+</ul>
+<hr />
+<h3 id="hierarchy"><strong>Hierarchy</strong></h3>
+<p>The <strong>Hierarchy</strong> node is your digital twin workspace—a flexible area where you can mirror physical building infrastructure, organize custom logic and calculations, and build BasiX profiles for BDX.</p>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>Build BasiX device profiles that get sent to the BDX agent</li>
+<li>Create custom calculations and logic (efficiency metrics, aggregations, fault detection)</li>
+<li>Organize blocks by physical layout (campuses, buildings, zones) OR by function (calculations, profiles, virtual meters)</li>
+<li>Build data transformation flows in whatever structure makes sense for your site</li>
+<li>Maintain separation between physical BACnet devices (under Connections) and logical processing (under Hierarchy)</li>
+</ul>
+<p><strong>Example Structure:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Hierarchy
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── Campus_Main
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│   ├── Building_A
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│   │   ├── AHUs
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│   │   │   ├── AHU-1 [logic blocks]
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│   │   │   └── AHU-2 [logic blocks]
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   │   ├── VAVs
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│   │   └── Lighting
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│   └── Building_B
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│       ├── Chiller_Plant
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│       └── Boiler_Plant
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>├── Water_System_Devices
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│   ├── Pumps
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>│   └── Cooling_Towers
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>└── Central_Plant
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    ├── Chillers
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    └── Boilers
+</code></pre></div></p>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Creating BasiX device profiles to send to BDX</li>
+<li>Building custom calculations (efficiency, aggregations, virtual meters)</li>
+<li>Organizing logic by physical layout, equipment type, or analytical function</li>
+<li>Developing virtual points that combine multiple physical points</li>
+<li>Creating fault detection and monitoring logic</li>
+<li>Preparing all data processing that feeds the BDX agent</li>
+</ul>
+<p><strong>Key Concept:</strong>
+The Hierarchy is where <strong>all your custom work lives</strong>:</p>
+<ul>
+<li>BasiX profiles for BDX are built here</li>
+<li>Custom calculations and logic are organized here</li>
+<li>Flow View workspace operates within Hierarchy folders</li>
+<li>This is your canvas—structure it however makes sense for your needs</li>
+</ul>
+<p><strong>Related documentation:</strong></p>
+<ul>
+<li><a href="../hierarchy-digital-twin/">Hierarchy &amp; Digital Twin</a> (detailed guide)</li>
+<li><a href="../../concepts/data-transformation/">Data Transformation &amp; Logic Flow</a></li>
+</ul>
+<hr />
+<h3 id="supervisor"><strong>Supervisor</strong></h3>
+<p>The <strong>Supervisor</strong> node provides administrative control and monitoring of the DataLynX agent.</p>
+<p><strong>What's inside:</strong></p>
+<ul>
+<li>Agent status display (Running/Stopped)</li>
+<li>Start/Stop agent controls</li>
+<li>System information</li>
+<li>Agent configuration overview</li>
+</ul>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Starting or stopping the DataLynX agent</li>
+<li>Checking agent status</li>
+<li>Viewing system information</li>
+<li>Administrative oversight</li>
+</ul>
+<p><strong>Important:</strong></p>
+<ul>
+<li>This is the <strong>landing page</strong> when you first log in</li>
+<li>If the agent is not running, you must click <strong>Start</strong> here to see the full eXplorer tree</li>
+<li>The agent can be stopped while Windows Services continue running</li>
+</ul>
+<p><strong>Related documentation:</strong></p>
+<ul>
+<li><a href="../../getting-started/installation/">Installation &amp; Services</a></li>
+<li><a href="../../reference/terminology/#supervisor">Terminology: Supervisor</a></li>
+</ul>
+<hr />
+<h3 id="manage-users"><strong>Manage Users</strong></h3>
+<p>User account management interface.</p>
+<p><strong>What's inside:</strong></p>
+<ul>
+<li>User list with roles and permissions</li>
+<li>User creation and deletion</li>
+<li>Password management</li>
+<li>Role assignment (Supervisor, Operator, Viewer, etc.)</li>
+</ul>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Creating new user accounts</li>
+<li>Assigning roles and permissions</li>
+<li>Resetting passwords</li>
+<li>Managing authentication settings</li>
+</ul>
+<p><strong>Related documentation:</strong></p>
+<ul>
+<li><a href="../../admin/security-users/">Security &amp; User Management</a></li>
+</ul>
+<hr />
+<h3 id="manage-licenses"><strong>Manage Licenses</strong></h3>
+<p>License and activation management.</p>
+<p><strong>What's inside:</strong></p>
+<ul>
+<li>Current license status</li>
+<li>License key entry</li>
+<li>Feature entitlements</li>
+<li>Expiration information</li>
+</ul>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Activating DataLynX with a license key</li>
+<li>Checking license status</li>
+<li>Viewing enabled features</li>
+</ul>
+<hr />
+<h2 id="navigation-patterns">Navigation Patterns</h2>
+<h3 id="breadcrumb-navigation"><strong>Breadcrumb Navigation</strong></h3>
+<p>When you click on an eXplorer node, the top of the screen shows a breadcrumb path:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/Hierarchy/Campus_Main/Building_A/AHUs
+</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/Connections/BACnet/devices/Honeywell_Controller
+</code></pre></div>
+<p>This shows your current location in the tree and helps you understand context when working in Flow View or configuration pages.</p>
+<hr />
+<h3 id="flow-view-context"><strong>Flow View Context</strong></h3>
+<p>When you select a node in the eXplorer:</p>
+<ul>
+<li>The <strong>center workspace</strong> shows the Flow View for that node (if it contains blocks)</li>
+<li>The <strong>right panel</strong> shows the Toolbox (with block categories)</li>
+<li>The <strong>Edit Block</strong> panel appears when you select a block</li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Click on <code>Hierarchy → AHUs → AHU-1</code></li>
+<li>Flow View opens showing all logic blocks for AHU-1</li>
+<li>Toolbox appears on the right with available block types</li>
+<li>You can drag blocks, create links, and build logic flows</li>
+</ul>
+<hr />
+<h3 id="switching-between-views"><strong>Switching Between Views</strong></h3>
+<p>The top-right corner shows the <strong>Active View</strong> toggle:</p>
+<ul>
+<li><strong>Flow View</strong> - Visual block-based logic workspace (most common)</li>
+<li><strong>Mapping Editor</strong> - Used when working with BasiX mapping schemes</li>
+<li><strong>Other views</strong> - Context-dependent based on the selected node</li>
+</ul>
+<hr />
+<h2 id="organizing-your-workspace">Organizing Your Workspace</h2>
+<h3 id="best-practices-for-hierarchy-organization"><strong>Best Practices for Hierarchy Organization</strong></h3>
+<ol>
+<li>
+<p><strong>Mirror Physical Layout:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Hierarchy
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>├── Campus_North
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>├── Campus_South
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>└── Remote_Sites
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Or Organize by System Type:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Hierarchy
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── HVAC_Equipment
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>├── Lighting_Systems
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>├── Electrical_Monitoring
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>└── Water_Systems
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Or Combine Both:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Hierarchy
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├── Building_1
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>│   ├── HVAC
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>│   └── Lighting
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>└── Building_2
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    ├── HVAC
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    └── Lighting
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="creating-folders"><strong>Creating Folders</strong></h3>
+<p>To create a new folder in Hierarchy:
+1. Right-click on Hierarchy (or a subfolder)
+2. Select <strong>New Folder</strong> (or use Toolbox → Folder)
+3. Name the folder
+4. Drag blocks into the folder or create new logic inside it</p>
+<hr />
+<h2 id="quick-reference-where-to-find-things">Quick Reference: Where to Find Things</h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Navigate To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Configure BACnet network</td>
+<td>Connections → BACnet → configuration → bacnet_networks</td>
+</tr>
+<tr>
+<td>Discover BACnet devices</td>
+<td>Connections → BACnet → devices</td>
+</tr>
+<tr>
+<td>View device points</td>
+<td>Connections → BACnet → devices → [Device Name]</td>
+</tr>
+<tr>
+<td>Configure hosted device</td>
+<td>Connections → BACnet → configuration → hosted_device</td>
+</tr>
+<tr>
+<td>Connect to BDX</td>
+<td>Connections → BDX</td>
+</tr>
+<tr>
+<td>Create custom logic blocks</td>
+<td>Hierarchy → [Your folders]</td>
+</tr>
+<tr>
+<td>View existing BasiX mappings</td>
+<td>System → BasiX → mapping_schemes</td>
+</tr>
+<tr>
+<td>Set up backups</td>
+<td>System → backup_service</td>
+</tr>
+<tr>
+<td>Start/stop agent</td>
+<td>Supervisor</td>
+</tr>
+<tr>
+<td>Manage users</td>
+<td>Manage Users</td>
+</tr>
+<tr>
+<td>Check license</td>
+<td>Manage Licenses</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="key-concepts-summary">Key Concepts Summary</h2>
+<ol>
+<li><strong>Physical vs Logical Separation:</strong></li>
+<li><strong>Connections/BACnet/devices</strong> = Physical BACnet devices from the network</li>
+<li>
+<p><strong>Hierarchy</strong> = Logical organization and custom data processing</p>
+</li>
+<li>
+<p><strong>Flow View is Everywhere:</strong></p>
+</li>
+<li>Most eXplorer nodes can be opened in Flow View</li>
+<li>
+<p>This is where you visualize and edit logic blocks</p>
+</li>
+<li>
+<p><strong>Breadcrumbs Show Context:</strong></p>
+</li>
+<li>Always check the breadcrumb path to know where you are</li>
+<li>
+<p>Helps when navigating complex nested structures</p>
+</li>
+<li>
+<p><strong>Hierarchy is Your Canvas:</strong></p>
+</li>
+<li>This is where you build the digital twin</li>
+<li>Organize it to match how you think about your building systems</li>
+</ol>
+<hr />
+<h2 id="next-steps">➡️ Next Steps</h2>
+<p>Now that you understand the eXplorer structure:</p>
+<ul>
+<li><strong>Create your digital twin</strong> - See <a href="../hierarchy-digital-twin/">Hierarchy &amp; Digital Twin</a></li>
+<li><strong>Learn about blocks</strong> - See <a href="../../reference/toolbox-blocks/">Toolbox Reference</a></li>
+<li><strong>Build logic flows</strong> - See <a href="../../concepts/data-transformation/">Data Transformation &amp; Logic Flow</a></li>
+<li><strong>Map to BasiX</strong> - See <a href="../basix-mapping-workflow/">BasiX Mapping Workflow</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div class="footer-left">
+        &copy; 2025 BuildingLogiX. All Rights Reserved.
+    </div>
+    <div class="footer-right">
+        <!-- GitHub -->
+        <a href="https://github.com/BuildingLogiX" target="_blank" rel="noopener" title="GitHub">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/company/buildinglogix" target="_blank" rel="noopener" title="LinkedIn">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+        </a>
+        <!-- BuildingLogiX Website -->
+        <a href="https://buildinglogix.net" target="_blank" rel="noopener" title="BuildingLogiX">
+            <img src="https://buildinglogix.github.io/DataLynX/assets/blx-white.svg" alt="BuildingLogiX" class="footer-logo" onerror="this.style.display='none'">
+        </a>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.tracking", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

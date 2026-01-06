@@ -1,0 +1,2782 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://buildinglogix.github.io/DataLynX/concepts/units-formatting/">
+      
+      
+        <link rel="prev" href="../mapping-modes/">
+      
+      
+        <link rel="next" href="../../user-guide/ui-tour/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/datalynx_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Units & Formatting - DataLynX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#units-formatting-best-practices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DataLynX" class="md-header__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DataLynX
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Units & Formatting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../architecture/" class="md-tabs__link">
+          
+  
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../user-guide/ui-tour/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../admin/windows-services-logs/" class="md-tabs__link">
+          
+  
+  
+  Admin Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/terminology/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DataLynX" class="md-nav__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    DataLynX
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-bacnet-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First BACnet Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/connect-to-bdx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect to BDX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-transformation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Transformation & Logic Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basix-ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Ontology & Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapping-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapping Modes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units & Formatting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units & Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-units-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Why Units Matter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-unit-propagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Unit Propagation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Unit Propagation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-propagate-units-is-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ If "Propagate Units" is enabled:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-disabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ If disabled:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-dimensionless-units-in-bacnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Dimensionless Units in BACnet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-bacnet-handles-no-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How BACnet Handles "No Units"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-you-commonly-see-dimensionless-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where You Commonly See Dimensionless Units
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimensionless-units-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimensionless Units in Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-temperature-units-and-delta-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Temperature Units and Delta Temperature
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-difference-absolute-vs-delta-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Difference: Absolute vs Delta Temperature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Critical Difference: Absolute vs Delta Temperature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-delta-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Delta Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#math-operations-with-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Operations with Temperature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Math Operations with Temperature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addition-requires-temp-delta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Addition (requires temp + delta):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtraction-and-mean-works-correctly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Subtraction and Mean (works correctly):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-property-configuration-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Property Configuration &amp; Flags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Property Configuration &amp; Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#property-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Property Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override-source-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Override Source Units
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-and-value-format-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit and Value Format Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-hvac-measurement-formatting-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. HVAC Measurement Formatting Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-formatting-reference-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Formatting Reference Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-code-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Code Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-formatting-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Formatting Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-physical-unit-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Physical Unit Conversions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-handling-incorrect-or-missing-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Handling Incorrect or Missing Units
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-typical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Typical Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Typical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-temperature-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Example 1: Temperature Scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-pressure-in-pascals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Example 2: Pressure in Pascals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-dimensionless-vfd-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Example 3: Dimensionless VFD Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-wrong-units-from-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Example 4: Wrong Units from Controller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-enum-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Example 5: Enum Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➡️ Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/ui-tour/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Tour
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/explorer-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eXplorer Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/hierarchy-digital-twin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hierarchy & Digital Twin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/bacnet-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Integration Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/basix-mapping-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Mapping Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Admin Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/windows-services-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Services & Logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/reset-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resetting the Agent Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/security-users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security & User Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology & Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/toolbox-blocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toolbox Block Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/bacnet-driver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Driver Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-units-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Why Units Matter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-unit-propagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Unit Propagation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Unit Propagation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-propagate-units-is-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ If "Propagate Units" is enabled:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-disabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ If disabled:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-dimensionless-units-in-bacnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Dimensionless Units in BACnet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-bacnet-handles-no-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How BACnet Handles "No Units"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-you-commonly-see-dimensionless-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where You Commonly See Dimensionless Units
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimensionless-units-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimensionless Units in Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-temperature-units-and-delta-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Temperature Units and Delta Temperature
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-difference-absolute-vs-delta-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Difference: Absolute vs Delta Temperature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Critical Difference: Absolute vs Delta Temperature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-delta-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Delta Temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#math-operations-with-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Operations with Temperature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Math Operations with Temperature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addition-requires-temp-delta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Addition (requires temp + delta):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtraction-and-mean-works-correctly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Subtraction and Mean (works correctly):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-property-configuration-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Property Configuration &amp; Flags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Property Configuration &amp; Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#property-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Property Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override-source-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Override Source Units
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-and-value-format-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit and Value Format Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-hvac-measurement-formatting-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. HVAC Measurement Formatting Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-formatting-reference-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Formatting Reference Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-code-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Code Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-formatting-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Formatting Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-physical-unit-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Physical Unit Conversions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-handling-incorrect-or-missing-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Handling Incorrect or Missing Units
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-typical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Typical Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Typical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-temperature-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Example 1: Temperature Scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-pressure-in-pascals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Example 2: Pressure in Pascals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-dimensionless-vfd-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Example 3: Dimensionless VFD Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-wrong-units-from-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Example 4: Wrong Units from Controller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-enum-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✔ Example 5: Enum Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➡️ Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="units-formatting-best-practices">Units &amp; Formatting Best Practices</h1>
+<p>DataLynX includes powerful unit handling, formatting rules, and data validation features to ensure that values coming from BACnet devices are presented correctly, normalized for analytics, and safely propagated through the Data Processing Layer.</p>
+<p><strong>Proper unit handling is critical</strong> because different BAS vendors use inconsistent or non-standard engineering units, scaling factors, and precision. Incorrect or missing units will prevent successful mapping to BasiX profiles and can cause data quality issues in BDX.</p>
+<p>This guide explains how DataLynX manages units, handling of dimensionless values, temperature calculations, and provides comprehensive formatting recommendations for all common HVAC measurements.</p>
+<hr />
+<h2 id="1-why-units-matter">1. Why Units Matter</h2>
+<p>BACnet points may come in with:</p>
+<ul>
+<li>Incorrect units  </li>
+<li>No units at all  </li>
+<li>Unexpected scaling (e.g., temperature x10)  </li>
+<li>Vendor-specific conventions  </li>
+<li>Values represented as integers when they should be floats  </li>
+</ul>
+<p>To prevent bad data from reaching analytics, DataLynX:</p>
+<ul>
+<li>Propagates units through the Data Processing Layer</li>
+<li>Converts units where possible</li>
+<li>Flags incompatible or missing units</li>
+<li>Applies default formatting rules</li>
+<li>Generates normalized output for BasiX</li>
+</ul>
+<p><strong>Critical</strong>: BasiX profiles require proper units on all mapped points. Missing or incorrect units will prevent device publishing to BDX.  </p>
+<hr />
+<h2 id="2-unit-propagation">2. Unit Propagation</h2>
+<p>Each value in the Data Processing Layer contains:</p>
+<ul>
+<li>Value</li>
+<li>Units</li>
+<li>Status</li>
+<li>Reliability</li>
+<li>Timestamp</li>
+</ul>
+<p>Links between blocks may propagate units depending on configuration.</p>
+<h3 id="if-propagate-units-is-enabled">✔ If "Propagate Units" is enabled:</h3>
+<ul>
+<li>Linked properties must have <em>compatible units</em></li>
+<li>Mismatches may trigger <strong>fault status</strong>, often resulting in <strong>NaN outputs</strong></li>
+</ul>
+<h3 id="if-disabled">✔ If disabled:</h3>
+<ul>
+<li>Units are not required to match</li>
+<li>Useful for advanced or custom logic</li>
+<li>Use with caution</li>
+</ul>
+<hr />
+<h2 id="3-dimensionless-units-in-bacnet">3. Dimensionless Units in BACnet</h2>
+<p>BACnet points can legally have <strong>dimensionless</strong> or <strong>no units</strong>—this is fully supported in the BACnet standard.</p>
+<h2 id="how-bacnet-handles-no-units">How BACnet Handles "No Units"</h2>
+<p>BACnet uses an enumeration called <code>EngineeringUnits</code>. Among the many unit codes, there is a specific one for dimensionless values:</p>
+<ul>
+<li><strong>UNITLESS</strong> (sometimes called dimensionless, no units, or unitless)</li>
+<li>This means the value has meaning but is not tied to a physical quantity like temperature, pressure, flow, etc.</li>
+</ul>
+<h2 id="where-you-commonly-see-dimensionless-units">Where You Commonly See Dimensionless Units</h2>
+<p>BACnet objects frequently use dimensionless units when the value is:</p>
+<ul>
+<li><strong>A percentage represented as 0–1</strong> instead of 0–100</li>
+<li>
+<p>Example: valve position, VFD speed</p>
+</li>
+<li>
+<p><strong>A raw count</strong></p>
+</li>
+<li>
+<p>Example: number of starts, cycle counts</p>
+</li>
+<li>
+<p><strong>A ratio</strong></p>
+</li>
+<li>
+<p>Example: mixing percentages, humidity ratios</p>
+</li>
+<li>
+<p><strong>A custom engineering value</strong> that the vendor defines without mapping to a physical unit</p>
+</li>
+<li><strong>Boolean-like analog values</strong></li>
+<li>Example: 0 = off, 1 = on, but stored in an Analog Input</li>
+</ul>
+<h2 id="dimensionless-units-in-practice">Dimensionless Units in Practice</h2>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Example Value</th>
+<th>Why Dimensionless?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mixed air ratio</td>
+<td>0.65</td>
+<td>Pure ratio</td>
+</tr>
+<tr>
+<td>Filter status score</td>
+<td>13</td>
+<td>Vendor-specific scale</td>
+</tr>
+<tr>
+<td>VFD speed fraction</td>
+<td>0.82</td>
+<td>Not a physical "speed" unit</td>
+</tr>
+<tr>
+<td>Occupancy "level"</td>
+<td>1</td>
+<td>Mode indicator stored as analog</td>
+</tr>
+</tbody>
+</table>
+<h2 id="important-notes">Important Notes</h2>
+<ul>
+<li>Many devices incorrectly use <strong>Percent</strong> (0–100%) for values that are actually 0–1 fractions, so "dimensionless" is often a cleaner choice</li>
+<li>Trend and analytics systems prefer knowing when a value is unitless so they don't try to convert it or compare it incorrectly</li>
+<li><strong>DataLynX behavior with dimensionless units</strong>:</li>
+<li>DataLynX will read or inherit BACnet units</li>
+<li>Users can override units on points/blocks</li>
+<li>Users can override units on linked blocks where units pass through links</li>
+<li>Dimensionless units can have units added in DataLynX</li>
+<li>DataLynX will auto-convert values when units are changed on non-dimensionless units</li>
+<li><strong>For dimensionless units, it's up to the user to define the correct units when mapping to BasiX profile fields that expect units</strong> (e.g., airflow, temperature, pressure)</li>
+</ul>
+<hr />
+<h2 id="4-temperature-units-and-delta-temperature">4. Temperature Units and Delta Temperature</h2>
+<h2 id="critical-difference-absolute-vs-delta-temperature">Critical Difference: Absolute vs Delta Temperature</h2>
+<p><strong>Delta degree Fahrenheit (ΔF)</strong> is different than <strong>degrees Fahrenheit (°F)</strong> when calculating temperature differences.</p>
+<h3 id="when-to-use-delta-temperature">When to Use Delta Temperature</h3>
+<p>For calculations involving temperature differences:</p>
+<ul>
+<li>Space temp vs space temp setpoint</li>
+<li>Supply air temp vs supply air temp setpoint</li>
+<li>Return temp vs supply temp</li>
+</ul>
+<p><strong>You cannot use absolute temperature units to represent the difference between two temperatures.</strong></p>
+<h3 id="math-operations-with-temperature">Math Operations with Temperature</h3>
+<h4 id="addition-requires-temp-delta">✔ Addition (requires temp + delta):</h4>
+<p>For an <strong>Add</strong> block, you need:</p>
+<ul>
+<li>One input: absolute temperature (°F)</li>
+<li>Other input: delta temperature (ΔF)</li>
+<li>Output: absolute temperature (°F)</li>
+</ul>
+<h4 id="subtraction-and-mean-works-correctly">✔ Subtraction and Mean (works correctly):</h4>
+<p><strong>Subtract</strong> or <strong>Mean</strong> blocks work correctly with absolute temperatures:</p>
+<ul>
+<li>Input: Two absolute temperatures (°F, °F)</li>
+<li>Output: Delta temperature (ΔF)</li>
+</ul>
+<h3 id="why-this-matters">Why This Matters</h3>
+<p>Degrees Celsius and Fahrenheit are <strong>offset units</strong>, measured using a basis. Multiplying or dividing them requires conversion to base units (Kelvin).</p>
+<p><strong>Example of the problem</strong>:</p>
+<ul>
+<li>Dividing 70°C by 2 translates to -101°C when forcefully converted back to Celsius</li>
+<li>You probably expected 35°C</li>
+<li>This happens because absolute temperatures aren't additive/multiplicative</li>
+</ul>
+<h3 id="best-practices">Best Practices</h3>
+<p>To avoid these issues:
+1. Convert degrees to delta degrees by:
+   - Using the <strong>Override Source Units</strong> flag, OR
+   - Subtracting 0°F from the source value
+2. Then perform multiplication/division operations
+3. <strong>Bottom line</strong>: Do not multiply/divide absolute temperatures unless you expect absolute values in Kelvin as the result
+4. <strong>Only deltas can be multiplied or divided</strong></p>
+<hr />
+<h2 id="5-property-configuration-flags">5. Property Configuration &amp; Flags</h2>
+<p>When configuring properties in DataLynX, you have access to several flags that control how the property behaves within the system. These are accessed through the <strong>Configure Property</strong> dialog.</p>
+<p><img alt="Configure Property Dialog" src="../img/DataLynX - Configure Units.PNG" /></p>
+<h3 id="property-flags">Property Flags</h3>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transient</strong></td>
+<td>The property can be linked, but its value is not persisted to the Agent Configuration Database. Use this for temporary or calculated values that don't need to survive an agent restart. This flag cannot be used with MetadataProperty or PersistedValue declarations.</td>
+</tr>
+<tr>
+<td><strong>Summary</strong></td>
+<td>Always displays the property in the Flow View, even if it is not linked. Useful for key values you want visible at a glance without opening the block details.</td>
+</tr>
+<tr>
+<td><strong>Readonly</strong></td>
+<td>Prevents the property value from being modified. Use this for values that should only be read from their source and not overwritten.</td>
+</tr>
+<tr>
+<td><strong>Override Source Units</strong></td>
+<td>Allows you to override the incoming or native units on a block and change them to something else. See details below.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="override-source-units">Override Source Units</h3>
+<p><strong>Override Source Units</strong> is the flag that allows DataLynX users to override the incoming or native units on a block and change it to something else.</p>
+<p><strong>When to use this feature:</strong></p>
+<ul>
+<li>A controller has wrong units selected in device configuration</li>
+<li>A manufacturer used incorrect units in their integration</li>
+<li>The value needs to be maintained in DataLynX with just the unit changed</li>
+</ul>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>Check the <strong>Override Source Units</strong> checkbox</li>
+<li>Select the correct units from the <strong>Unit</strong> dropdown</li>
+<li>DataLynX will treat the value as having the new units</li>
+<li><strong>Important</strong>: This does NOT convert the value—it reinterprets the existing value with different units</li>
+</ol>
+<h3 id="unit-and-value-format-options">Unit and Value Format Options</h3>
+<p>The Configure Property dialog also provides:</p>
+<ul>
+<li><strong>Unit</strong> — Select the engineering units for this property</li>
+<li><strong>Value Format</strong> — Define how the value is displayed (decimal places, formatting)</li>
+</ul>
+<hr />
+<h2 id="6-hvac-measurement-formatting-reference">6. HVAC Measurement Formatting Reference</h2>
+<p>The following table provides recommended formatting for all common HVAC and energy management measurements. These recommendations ensure consistent, readable displays throughout DataLynX and BDX.</p>
+<h2 id="complete-formatting-reference-table">Complete Formatting Reference Table</h2>
+<table>
+<thead>
+<tr>
+<th>Measurement Type</th>
+<th>Example Units (IP)</th>
+<th>Recommended Format</th>
+<th>Example Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Temperature</strong></td>
+<td>°F</td>
+<td><code>.1f</code></td>
+<td>72.5 °F</td>
+</tr>
+<tr>
+<td><strong>Delta Temperature (CHW ΔT)</strong></td>
+<td>ΔF</td>
+<td><code>.2f</code></td>
+<td>12.47 °F</td>
+</tr>
+<tr>
+<td><strong>Relative Humidity</strong></td>
+<td>%</td>
+<td><code>.0f</code></td>
+<td>45 %</td>
+</tr>
+<tr>
+<td><strong>CO₂ Concentration</strong></td>
+<td>ppm</td>
+<td><code>,.0f</code></td>
+<td>1,024 ppm</td>
+</tr>
+<tr>
+<td><strong>Airflow</strong></td>
+<td>cfm</td>
+<td><code>,.0f</code></td>
+<td>1,250 cfm</td>
+</tr>
+<tr>
+<td><strong>Pressure</strong></td>
+<td>inH₂O</td>
+<td><code>.2f</code></td>
+<td>1.25 inH₂O</td>
+</tr>
+<tr>
+<td><strong>Differential Pressure (Filter/Coil)</strong></td>
+<td>inH₂O</td>
+<td><code>.3f</code></td>
+<td>0.245 inH₂O</td>
+</tr>
+<tr>
+<td><strong>Pressure (Fluid)</strong></td>
+<td>psi</td>
+<td><code>.1f</code></td>
+<td>35.4 psi</td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td>kW</td>
+<td><code>.1f</code></td>
+<td>18.7 kW</td>
+</tr>
+<tr>
+<td><strong>Energy</strong></td>
+<td>kWh</td>
+<td><code>,.0f</code></td>
+<td>3,542 kWh</td>
+</tr>
+<tr>
+<td><strong>Thermal Energy</strong></td>
+<td>ton·hr</td>
+<td><code>,.0f</code></td>
+<td>1,280 ton·hr</td>
+</tr>
+<tr>
+<td><strong>Flow Rate (Water)</strong></td>
+<td>gpm</td>
+<td><code>.1f</code></td>
+<td>245.6 gpm</td>
+</tr>
+<tr>
+<td><strong>Setpoints</strong></td>
+<td>°F, psi, %</td>
+<td><code>.1f</code></td>
+<td>68.0 °F</td>
+</tr>
+<tr>
+<td><strong>Valve or Damper Position</strong></td>
+<td>%</td>
+<td><code>.0f</code></td>
+<td>75 %</td>
+</tr>
+<tr>
+<td><strong>Fan / Pump Speed</strong></td>
+<td>%</td>
+<td><code>.0f</code></td>
+<td>60 %</td>
+</tr>
+<tr>
+<td><strong>Runtime / Hours</strong></td>
+<td>hr</td>
+<td><code>,.1f</code></td>
+<td>1,240.5 hr</td>
+</tr>
+<tr>
+<td><strong>Power Factor</strong></td>
+<td>(unitless)</td>
+<td><code>.3f</code></td>
+<td>0.982</td>
+</tr>
+<tr>
+<td><strong>Frequency</strong></td>
+<td>Hz</td>
+<td><code>.2f</code></td>
+<td>59.97 Hz</td>
+</tr>
+<tr>
+<td><strong>Voltage</strong></td>
+<td>V</td>
+<td><code>.1f</code></td>
+<td>480.2 V</td>
+</tr>
+<tr>
+<td><strong>Current</strong></td>
+<td>A</td>
+<td><code>.2f</code></td>
+<td>12.45 A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format-code-reference">Format Code Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.0f</code></td>
+<td>No decimals (rounded)</td>
+<td>72</td>
+</tr>
+<tr>
+<td><code>.1f</code></td>
+<td>One decimal</td>
+<td>72.5</td>
+</tr>
+<tr>
+<td><code>.2f</code></td>
+<td>Two decimals</td>
+<td>12.47</td>
+</tr>
+<tr>
+<td><code>.3f</code></td>
+<td>Three decimals</td>
+<td>0.245</td>
+</tr>
+<tr>
+<td><code>,.0f</code></td>
+<td>Thousands separator, no decimals</td>
+<td>1,024</td>
+</tr>
+<tr>
+<td><code>,.1f</code></td>
+<td>Thousands separator, one decimal</td>
+<td>1,240.5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-formatting-tips">General Formatting Tips</h2>
+<ul>
+<li>Use <code>,.0f</code> for large cumulative totals (kWh, ton·hr, runtime hours)</li>
+<li>Use <code>.2f</code> for precision control metrics (ΔT, pressure, energy rate)</li>
+<li>Avoid more than two decimals unless troubleshooting sensors or doing diagnostics</li>
+<li>Always pair unit formatting with unit symbols so displays automatically adapt if engineering units change</li>
+<li>For <strong>Binary / Enum States</strong>: Always show the <strong>label</strong>, not the numeric value</li>
+<li>Example: <code>Off</code>, <code>Auto</code>, <code>Occupied</code>, <code>Unoccupied</code>  </li>
+</ul>
+<hr />
+<h2 id="7-physical-unit-conversions">7. Physical Unit Conversions</h2>
+<p>The Data Processing Layer supports automatic unit conversions such as:</p>
+<ul>
+<li>°C ↔ °F</li>
+<li>Pa ↔ inWC</li>
+<li>kW ↔ W</li>
+<li>Tons ↔ kBTU/hr</li>
+</ul>
+<p>Conversions occur <em>only</em> when units are defined and compatible.</p>
+<p>If a BACnet point has no unit:</p>
+<ul>
+<li>A default may be assigned during mapping</li>
+<li>Or the user may manually set the expected unit</li>
+<li><strong>Remember</strong>: BasiX profile fields that expect physical measurements (temperature, airflow, pressure, etc.) require proper units, so dimensionless values must have units assigned before mapping to these fields  </li>
+</ul>
+<hr />
+<h2 id="8-handling-incorrect-or-missing-units">8. Handling Incorrect or Missing Units</h2>
+<p>If a BACnet point:</p>
+<ul>
+<li>Has wrong units</li>
+<li>Has no units</li>
+<li>Has inconsistent metadata</li>
+</ul>
+<p>You can correct this by:</p>
+<ol>
+<li>Using the <strong>Override Source Units</strong> flag (see Section 5)</li>
+<li>Applying a conversion block in Flow View</li>
+<li>Explicitly assigning units in a mapping block</li>
+<li>Using fallback or override logic</li>
+<li>Normalizing the value before feeding it to BasiX</li>
+</ol>
+<p><strong>Best Practice</strong>: Devices with chronically incorrect units should be fixed upstream in the BAS, but DataLynX allows on-the-fly correction.</p>
+<p><strong>Critical for BasiX</strong>: All points mapped to BasiX profiles must have correct units. Missing or incorrect units will prevent device publishing to BDX.</p>
+<hr />
+<h2 id="9-typical-examples">9. Typical Examples</h2>
+<h3 id="example-1-temperature-scaling">✔ Example 1: Temperature Scaling</h3>
+<p>Some devices send temperatures like <code>734</code> to represent <code>73.4°F</code>.</p>
+<p><strong>Solution</strong> in Flow View:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Value / 10 → Assign Unit °F
+</code></pre></div></p>
+<h3 id="example-2-pressure-in-pascals">✔ Example 2: Pressure in Pascals</h3>
+<p>If a vendor supplies filter differential pressure in <strong>Pa</strong>, but BasiX expects <strong>inWC</strong>:</p>
+<p><strong>Solution</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Pa → ConvertTo(inWC)
+</code></pre></div></p>
+<h3 id="example-3-dimensionless-vfd-speed">✔ Example 3: Dimensionless VFD Speed</h3>
+<p>A VFD reports speed as a 0-1 fraction with dimensionless units, but BasiX expects %.</p>
+<p><strong>Solution</strong>:
+1. Add Convert block
+2. Multiply by 100
+3. Assign unit: %</p>
+<h3 id="example-4-wrong-units-from-controller">✔ Example 4: Wrong Units from Controller</h3>
+<p>A temperature sensor is configured as <strong>psi</strong> instead of <strong>°F</strong> in the BACnet controller.</p>
+<p><strong>Solution</strong>:
+1. Select the BACnet point block
+2. Check <strong>Override Source Units</strong>
+3. Select <strong>°F</strong>
+4. Value remains the same, only unit interpretation changes</p>
+<h3 id="example-5-enum-mapping">✔ Example 5: Enum Mapping</h3>
+<p>Some devices send binary states as numbers:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>0 = Off
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>1 = On
+</code></pre></div>
+<p><strong>Solution</strong> - Map to BasiX-friendly labels:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>0 → Off
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>1 → On
+</code></pre></div></p>
+<hr />
+<h2 id="10-summary">10. Summary</h2>
+<p>Proper unit and formatting handling is <strong>critical for DataLynX success</strong>:</p>
+<ul>
+<li><strong>BasiX Requirement</strong>: All mapped points must have correct units to publish devices to BDX</li>
+<li><strong>Data Quality</strong>: Clean, consistent values ensure accurate analytics</li>
+<li><strong>Automation</strong>: Reliable downstream automation depends on proper units</li>
+<li><strong>Debugging</strong>: Correct units make troubleshooting easier</li>
+<li><strong>Standardization</strong>: Campus-wide consistency across all equipment</li>
+</ul>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li><strong>Dimensionless units are valid</strong> in BACnet but must be assigned proper units when mapping to BasiX fields that expect physical measurements (temperature, airflow, pressure, etc.)</li>
+<li><strong>Delta temperatures (ΔF)</strong> are different from absolute temperatures (°F)—use the right one for calculations</li>
+<li><strong>Override Source Units</strong> flag allows you to reinterpret (not convert) units on BACnet points</li>
+<li><strong>Use the formatting reference table</strong> (Section 6) for consistent, readable displays</li>
+<li><strong>Missing or wrong units on fields expecting physical measurements will prevent BasiX device publishing</strong>—always validate units before mapping</li>
+</ol>
+<p>By following these best practices, your BasiX data becomes robust, readable, and ready for professional-grade analytics in BDX.</p>
+<hr />
+<h2 id="related-documentation">➡️ Related Documentation</h2>
+<ul>
+<li><strong><a href="../data-transformation/">Data Transformation &amp; Logic Flow</a></strong> - Learn about Flow View and logic blocks</li>
+<li><strong><a href="../basix-ontology/">BasiX Ontology &amp; Profiles</a></strong> - Understand BasiX device templates and requirements</li>
+<li><strong><a href="../../user-guide/basix-mapping-workflow/">BasiX Mapping Workflow</a></strong> - Step-by-step mapping process</li>
+<li><strong><a href="../../reference/terminology/">Terminology &amp; Definitions</a></strong> - Key DataLynX terms explained</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div class="footer-left">
+        &copy; 2025 BuildingLogiX. All Rights Reserved.
+    </div>
+    <div class="footer-right">
+        <!-- GitHub -->
+        <a href="https://github.com/BuildingLogiX" target="_blank" rel="noopener" title="GitHub">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/company/buildinglogix" target="_blank" rel="noopener" title="LinkedIn">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+        </a>
+        <!-- BuildingLogiX Website -->
+        <a href="https://buildinglogix.net" target="_blank" rel="noopener" title="BuildingLogiX">
+            <img src="https://buildinglogix.github.io/DataLynX/assets/blx-white.svg" alt="BuildingLogiX" class="footer-logo" onerror="this.style.display='none'">
+        </a>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.tracking", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

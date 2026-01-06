@@ -1,0 +1,2761 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://buildinglogix.github.io/DataLynX/user-guide/hierarchy-digital-twin/">
+      
+      
+        <link rel="prev" href="../explorer-structure/">
+      
+      
+        <link rel="next" href="../bacnet-integration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/datalynx_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Hierarchy & Digital Twin - DataLynX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hierarchy-digital-twin-workspace" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DataLynX" class="md-header__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DataLynX
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hierarchy & Digital Twin
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/architecture/" class="md-tabs__link">
+          
+  
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ui-tour/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../admin/windows-services-logs/" class="md-tabs__link">
+          
+  
+  
+  Admin Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/terminology/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DataLynX" class="md-nav__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    DataLynX
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-bacnet-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First BACnet Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/connect-to-bdx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect to BDX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/data-transformation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Transformation & Logic Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/basix-ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Ontology & Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/mapping-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapping Modes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/units-formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units & Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-tour/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Tour
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explorer-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eXplorer Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hierarchy & Digital Twin
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hierarchy & Digital Twin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Hierarchy?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-hierarchy-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Hierarchy Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Hierarchy Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-organize-by-physical-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Organize by Physical Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-organize-by-equipment-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Organize by Equipment Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-by-function-or-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3: By Function or Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-4-hybrid-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 4: Hybrid Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-lives-in-the-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Lives in the Hierarchy?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Lives in the Hierarchy?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-logic-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Logic Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-virtual-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Virtual Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-equipment-specific-logic-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Equipment-Specific Logic Flows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-your-digital-twin-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building Your Digital Twin: Step-by-Step
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building Your Digital Twin: Step-by-Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-plan-your-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Plan Your Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-the-top-level-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Create the Top-Level Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-build-out-the-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Build Out the Tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-equipment-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Create Equipment Nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-build-logic-inside-equipment-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Build Logic Inside Equipment Nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-organize-and-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Organize and Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchy-vs-connections-key-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy vs Connections: Key Differences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-flow-view-in-the-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Flow View in the Hierarchy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Flow View in the Hierarchy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flow-view-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow View Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-hierarchy-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Hierarchy Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Hierarchy Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case-1-building-level-energy-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 1: Building-Level Energy Aggregation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-2-ahu-efficiency-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 2: AHU Efficiency Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-3-chilled-water-plant-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 3: Chilled Water Plant Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-4-multi-zone-temperature-averaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 4: Multi-Zone Temperature Averaging
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mixing-physical-and-logical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Mixing Physical and Logical
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creating-overly-deep-nesting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Creating Overly Deep Nesting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-forgetting-to-use-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Forgetting to Use Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-not-planning-ahead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Not Planning Ahead
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchy-workflow-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy Workflow Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➡️ Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bacnet-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Integration Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basix-mapping-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Mapping Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Admin Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/windows-services-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Services & Logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/reset-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resetting the Agent Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/security-users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security & User Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology & Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/toolbox-blocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toolbox Block Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/bacnet-driver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Driver Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Hierarchy?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-hierarchy-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Hierarchy Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Hierarchy Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-organize-by-physical-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Organize by Physical Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-organize-by-equipment-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Organize by Equipment Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-by-function-or-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3: By Function or Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-4-hybrid-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 4: Hybrid Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-lives-in-the-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Lives in the Hierarchy?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Lives in the Hierarchy?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-logic-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Logic Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-virtual-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Virtual Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-equipment-specific-logic-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Equipment-Specific Logic Flows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-your-digital-twin-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building Your Digital Twin: Step-by-Step
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building Your Digital Twin: Step-by-Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-plan-your-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Plan Your Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-the-top-level-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Create the Top-Level Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-build-out-the-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Build Out the Tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-equipment-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Create Equipment Nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-build-logic-inside-equipment-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Build Logic Inside Equipment Nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-organize-and-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Organize and Document
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchy-vs-connections-key-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy vs Connections: Key Differences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-flow-view-in-the-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Flow View in the Hierarchy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Flow View in the Hierarchy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flow-view-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow View Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-hierarchy-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Hierarchy Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Hierarchy Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-case-1-building-level-energy-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 1: Building-Level Energy Aggregation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-2-ahu-efficiency-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 2: AHU Efficiency Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-3-chilled-water-plant-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 3: Chilled Water Plant Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-case-4-multi-zone-temperature-averaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Case 4: Multi-Zone Temperature Averaging
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mixing-physical-and-logical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Mixing Physical and Logical
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creating-overly-deep-nesting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Creating Overly Deep Nesting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-forgetting-to-use-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Forgetting to Use Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-not-planning-ahead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Not Planning Ahead
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchy-workflow-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy Workflow Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➡️ Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="hierarchy-digital-twin-workspace"><img alt="DataLynX Logo" src="../../assets/datalynx_logo.svg" width="50" /> Hierarchy &amp; Digital Twin Workspace</h1>
+<p>The <strong>Hierarchy</strong> node in DataLynX is your digital twin workspace—a flexible area where you can mirror your physical building infrastructure, organize custom logic and calculations, and build BasiX profiles for BDX.</p>
+<p>Unlike the physical BACnet device tree (found under Connections → BACnet → devices), the Hierarchy is <strong>your logical workspace</strong> organized however makes sense for your site—whether that's mirroring physical layout, grouping by equipment type, organizing by function, or a combination.</p>
+<hr />
+<h2 id="what-is-the-hierarchy">What is the Hierarchy?</h2>
+<p>The Hierarchy is:</p>
+<ul>
+<li><strong>A blank canvas</strong> for organizing your site's virtual structure</li>
+<li><strong>Site and building-specific</strong> - Unique to each physical location</li>
+<li><strong>Your workspace</strong> for custom logic blocks, calculations, and data transformations</li>
+<li><strong>Separate from BACnet devices</strong> - Provides logical organization independent of physical network topology</li>
+<li><strong>The home of Flow View logic</strong> - Where blocks are stored and organized</li>
+<li><strong>The place where BasiX profiles get mapped</strong> - Virtual devices for BDX are built here</li>
+</ul>
+<p><strong>Key Concept:</strong>
+Think of Hierarchy as the flexible workspace where you:</p>
+<ul>
+<li>Build custom calculations and logic (efficiency metrics, aggregations, fault detection)</li>
+<li>Create BasiX device profiles that map to physical equipment</li>
+<li>Organize data processing flows in whatever structure makes sense for your site</li>
+<li>Prepare normalized output for the BDX agent</li>
+</ul>
+<p><strong>The flow:</strong></p>
+<ul>
+<li><strong>Physical BACnet devices</strong> (raw data from controllers) → Connections/BACnet/devices</li>
+<li><strong>Custom logic &amp; BasiX profiles</strong> (processed, organized data) → Hierarchy</li>
+<li><strong>Normalized BasiX output</strong> (sent to BDX) → Built from Hierarchy blocks</li>
+</ul>
+<hr />
+<h2 id="common-hierarchy-structures">Common Hierarchy Structures</h2>
+<p>The Hierarchy is flexible—organize it however makes sense for your use case. Here are common patterns:</p>
+<h3 id="option-1-organize-by-physical-layout"><strong>Option 1: Organize by Physical Layout</strong></h3>
+<p>Mirror your campus and building structure (good for facility management and location-based analytics):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Hierarchy
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Campus_Main
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── Building_A
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   │   ├── Floor_1
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   │   │   ├── AHU-1A
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   │   │   ├── VAV-101 through VAV-115
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   │   │   └── Lighting_Zone_1A
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   │   ├── Floor_2
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   │   └── Floor_3
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   └── Building_B
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│       ├── Mechanical_Room
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│       │   ├── Chiller_1
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│       │   ├── Chiller_2
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│       │   └── Primary_Pumps
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│       └── Occupied_Spaces
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>├── Campus_North
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>└── Remote_Sites
+</code></pre></div>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Multi-building campuses</li>
+<li>Clear physical separation between buildings or zones</li>
+<li>Facility management teams organized by building</li>
+<li>When you need zone-level aggregations</li>
+</ul>
+<hr />
+<h3 id="option-2-organize-by-equipment-type"><strong>Option 2: Organize by Equipment Type</strong></h3>
+<p>Group by system or equipment category (good for equipment-focused analytics and standardized logic):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Hierarchy
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── AHUs
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│   ├── AHU-1
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│   ├── AHU-2
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   └── AHU-3
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── VAVs
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   ├── East_Wing
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│   │   ├── VAV-101
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│   │   └── VAV-102
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│   └── West_Wing
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>├── Chillers
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>├── Boilers
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>├── Cooling_Towers
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>├── Pumps
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│   ├── Chilled_Water_Pumps
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│   └── Hot_Water_Pumps
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>└── Lighting_Systems
+</code></pre></div>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Single building or small campus</li>
+<li>Emphasis on equipment-type analytics</li>
+<li>When creating standardized logic that applies to all equipment of the same type</li>
+<li>Energy management focus</li>
+</ul>
+<hr />
+<h3 id="option-3-by-function-or-purpose"><strong>Option 3: By Function or Purpose</strong></h3>
+<p>Group by calculation type, function, or analytical purpose:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Hierarchy
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── BasiX_Profiles
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│   ├── AHU_Mappings
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   ├── VAV_Mappings
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   └── Chiller_Mappings
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>├── Custom_Calculations
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   ├── Energy_Metrics
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   ├── Efficiency_Calcs
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│   └── Fault_Detection
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>├── Aggregations
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>│   ├── Building_Totals
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>│   └── Floor_Averages
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>└── Virtual_Meters
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    ├── Electric
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    └── Thermal
+</code></pre></div>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Focus on BasiX profile creation for BDX</li>
+<li>Separating custom calculations from device mappings</li>
+<li>Organizing by analytical function rather than physical location</li>
+<li>Building reusable logic libraries</li>
+</ul>
+<hr />
+<h3 id="option-4-hybrid-approach"><strong>Option 4: Hybrid Approach</strong></h3>
+<p>Combine location, equipment type, and function:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Hierarchy
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── Main_Campus
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│   ├── Central_Plant
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│   │   ├── Chillers
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│   │   ├── Boilers
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│   │   └── Pumps
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   ├── Building_A
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│   │   ├── HVAC
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│   │   │   ├── AHUs
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│   │   │   └── VAVs
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│   │   └── Electrical
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│   └── Building_B
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>├── Utility_Metering
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>│   ├── Electric_Meters
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>│   ├── Gas_Meters
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>│   └── Water_Meters
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>└── Weather_Station
+</code></pre></div>
+<p><strong>When to use:</strong></p>
+<ul>
+<li>Large, complex sites</li>
+<li>Multiple systems spanning multiple buildings</li>
+<li>Need for both location-based and system-based views</li>
+<li>Portfolio-level analytics</li>
+</ul>
+<hr />
+<h2 id="what-lives-in-the-hierarchy">What Lives in the Hierarchy?</h2>
+<h3 id="1-folders"><strong>1. Folders</strong></h3>
+<p>Organizational containers for grouping logic blocks.</p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Hierarchy → AHUs → (folder)
+</code></pre></div></p>
+<p><strong>How to create:</strong></p>
+<ul>
+<li>Right-click on Hierarchy or a subfolder → New Folder</li>
+<li>Or drag a <strong>Folder</strong> block from the Toolbox</li>
+</ul>
+<hr />
+<h3 id="2-logic-blocks"><strong>2. Logic Blocks</strong></h3>
+<p>Custom data transformation blocks that:</p>
+<ul>
+<li>Read values from BACnet points</li>
+<li>Perform calculations (math, conversions, logic)</li>
+<li>Create virtual points</li>
+<li>Output processed values for BasiX mapping</li>
+</ul>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Hierarchy → AHUs → AHU-1 → (contains logic blocks)
+</code></pre></div></p>
+<p>Inside <code>AHU-1</code>, you might have blocks like:</p>
+<ul>
+<li>BACnet point references (supply air temp, fan status, etc.)</li>
+<li>Math blocks (computing airflow, ΔT)</li>
+<li>Conversion blocks (scaling, unit changes)</li>
+<li>Comparison blocks (fault detection)</li>
+</ul>
+<p><img alt="Flow View" src="../../img/Flow%20View.PNG" /></p>
+<hr />
+<h3 id="3-virtual-points"><strong>3. Virtual Points</strong></h3>
+<p>Computed values that don't exist as physical BACnet points.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Total Building Electric Demand</strong> - Sum of multiple meter readings</li>
+<li><strong>AHU Efficiency</strong> - Calculated from airflow, temperatures, and power</li>
+<li><strong>System Status</strong> - Derived from multiple fault conditions</li>
+<li><strong>Occupancy-Adjusted Setpoint</strong> - Computed from schedule and space temp</li>
+</ul>
+<p>These virtual points are created using blocks in the Hierarchy and can be:</p>
+<ul>
+<li>Mapped to BasiX profiles</li>
+<li>Sent to BDX</li>
+<li>Used as inputs to other logic blocks</li>
+</ul>
+<hr />
+<h3 id="4-equipment-specific-logic-flows"><strong>4. Equipment-Specific Logic Flows</strong></h3>
+<p>Each piece of equipment in your digital twin can have its own logic flow workspace.</p>
+<p><strong>Example for a VAV:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Hierarchy → Building_A → Floor_2 → VAV-205
+</code></pre></div></p>
+<p>Inside <code>VAV-205</code>, you might build logic to:</p>
+<ul>
+<li>Read zone temp from BACnet</li>
+<li>Read damper position from BACnet</li>
+<li>Calculate airflow (if not directly available)</li>
+<li>Compute heating/cooling load</li>
+<li>Detect faults (stuck damper, sensor failure)</li>
+<li>Output normalized points for BasiX</li>
+</ul>
+<hr />
+<h2 id="building-your-digital-twin-step-by-step">Building Your Digital Twin: Step-by-Step</h2>
+<h3 id="step-1-plan-your-structure"><strong>Step 1: Plan Your Structure</strong></h3>
+<p>Before creating folders, decide:</p>
+<ul>
+<li>How is your site organized physically? (campus, buildings, floors)</li>
+<li>What equipment types do you have? (AHUs, VAVs, chillers, etc.)</li>
+<li>How will you group similar equipment?</li>
+<li>What makes sense for your analytics and reporting needs?</li>
+</ul>
+<hr />
+<h3 id="step-2-create-the-top-level-structure"><strong>Step 2: Create the Top-Level Structure</strong></h3>
+<ol>
+<li>Navigate to <strong>Hierarchy</strong> in the eXplorer</li>
+<li>Right-click → <strong>New Folder</strong></li>
+<li>Name it (e.g., <code>Campus_Main</code> or <code>Building_A</code>)</li>
+<li>Repeat for other top-level folders</li>
+</ol>
+<hr />
+<h3 id="step-3-build-out-the-tree"><strong>Step 3: Build Out the Tree</strong></h3>
+<p>Create subfolders for:</p>
+<ul>
+<li>Buildings (if you have multiple)</li>
+<li>Equipment categories (AHUs, VAVs, Chillers, etc.)</li>
+<li>Zones or floors (if organizing by location)</li>
+</ul>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Hierarchy
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── Building_A
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>│   ├── AHUs  ← Create this folder
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>│   ├── VAVs  ← Create this folder
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>│   └── Chillers  ← Create this folder
+</code></pre></div></p>
+<hr />
+<h3 id="step-4-create-equipment-nodes"><strong>Step 4: Create Equipment Nodes</strong></h3>
+<p>For each piece of equipment:</p>
+<ol>
+<li>Navigate to the appropriate folder (e.g., <code>Hierarchy → Building_A → AHUs</code>)</li>
+<li>Right-click → <strong>New Folder</strong> (or drag Folder from Toolbox)</li>
+<li>Name it after the equipment (e.g., <code>AHU-1</code>)</li>
+<li>Open the folder in <strong>Flow View</strong></li>
+</ol>
+<hr />
+<h3 id="step-5-build-logic-inside-equipment-nodes"><strong>Step 5: Build Logic Inside Equipment Nodes</strong></h3>
+<p>With the equipment folder open in Flow View:</p>
+<ol>
+<li><strong>Drag BACnet point blocks</strong> from Toolbox → BACnet</li>
+<li>
+<p>Reference physical points from Connections/BACnet/devices</p>
+</li>
+<li>
+<p><strong>Add transformation blocks</strong> from Toolbox categories:</p>
+</li>
+<li>Math (Add, Subtract, Multiply, Divide)</li>
+<li>Logic (AND, OR, NOT, Comparisons)</li>
+<li>Conversions (unit changes, scaling)</li>
+<li>
+<p>Status (fault detection, quality checks)</p>
+</li>
+<li>
+<p><strong>Connect blocks with links</strong></p>
+</li>
+<li>Drag from output to input</li>
+<li>
+<p>Configure link properties (unit propagation, etc.)</p>
+</li>
+<li>
+<p><strong>Create virtual output points</strong></p>
+</li>
+<li>These become available for BasiX mapping</li>
+<li>Can be used in other logic blocks</li>
+</ol>
+<p><img alt="Flow View Example" src="../../img/Flow%20View.PNG" /></p>
+<hr />
+<h3 id="step-6-organize-and-document"><strong>Step 6: Organize and Document</strong></h3>
+<p>Best practices:</p>
+<ul>
+<li><strong>Use clear naming conventions</strong> - <code>AHU-1_supplyAirTemp</code> instead of <code>SAT1</code></li>
+<li><strong>Group related blocks</strong> - Keep blocks for the same equipment together</li>
+<li><strong>Use folders to separate systems</strong> - Don't mix chillers and AHUs in the same folder</li>
+<li><strong>Add comments</strong> - Use description fields to document complex logic</li>
+</ul>
+<hr />
+<h2 id="hierarchy-vs-connections-key-differences">Hierarchy vs Connections: Key Differences</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Connections/BACnet/devices</th>
+<th>Hierarchy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Physical BACnet devices as discovered on the network</td>
+<td>Logical organization and custom logic</td>
+</tr>
+<tr>
+<td><strong>Organization</strong></td>
+<td>Organized by BACnet network topology</td>
+<td>Organized by your site structure</td>
+</tr>
+<tr>
+<td><strong>Contents</strong></td>
+<td>Raw BACnet points (AI, AO, AV, BI, BO, BV, etc.)</td>
+<td>Custom logic blocks and virtual points</td>
+</tr>
+<tr>
+<td><strong>Modification</strong></td>
+<td>Read-only (reflects actual BACnet devices)</td>
+<td>Fully editable (you create the structure)</td>
+</tr>
+<tr>
+<td><strong>Where it comes from</strong></td>
+<td>Discovery process finds devices automatically</td>
+<td>You manually create folders and logic</td>
+</tr>
+<tr>
+<td><strong>Use case</strong></td>
+<td>Reading raw BACnet data</td>
+<td>Processing, transforming, and organizing data</td>
+</tr>
+<tr>
+<td><strong>Flow View</strong></td>
+<td>Shows device points and properties</td>
+<td>Shows custom logic flows you build</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important:</strong>
+You'll often <strong>reference</strong> points from Connections/BACnet in your Hierarchy logic blocks, but they remain separate trees.</p>
+<hr />
+<h2 id="using-flow-view-in-the-hierarchy">Using Flow View in the Hierarchy</h2>
+<p>When you click on any folder in the Hierarchy, it opens in <strong>Flow View</strong> - the visual workspace where you build logic.</p>
+<h3 id="flow-view-layout"><strong>Flow View Layout</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>┌─────────────────────────────────────────────────────────────┐
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>│  Breadcrumb: /Hierarchy/Building_A/AHUs/AHU-1              │
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>├─────────────────────────────────────────────────────────────┤
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>│  ┌──────────────────────────────┐  ┌──────────────────────┐ │
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>│  │                              │  │   Edit Block         │ │
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>│  │    Flow View Canvas          │  │   (Properties)       │ │
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>│  │                              │  │                      │ │
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>│  │  [Blocks and Links]          │  │   - Block Name       │ │
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>│  │                              │  │   - Settings         │ │
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>│  │                              │  │   - Input/Output     │ │
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>│  │                              │  └──────────────────────┘ │
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>│  │                              │  ┌──────────────────────┐ │
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>│  │                              │  │   Toolbox            │ │
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>│  │                              │  │                      │ │
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>│  └──────────────────────────────┘  │  - Math              │ │
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>│                                     │  - Logic             │ │
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>│                                     │  - BACnet            │ │
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>│                                     │  - Conversions       │ │
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>│                                     └──────────────────────┘ │
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>└─────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<hr />
+<h2 id="common-hierarchy-use-cases">Common Hierarchy Use Cases</h2>
+<h3 id="use-case-1-building-level-energy-aggregation"><strong>Use Case 1: Building-Level Energy Aggregation</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Hierarchy → Building_A → Energy_Metering
+</code></pre></div>
+<p><strong>Logic blocks:</strong></p>
+<ul>
+<li>Read electric meters for all floors</li>
+<li>Sum total building demand</li>
+<li>Compute peak demand</li>
+<li>Calculate energy per square foot</li>
+<li>Output virtual "Building_Total_kW" point</li>
+</ul>
+<hr />
+<h3 id="use-case-2-ahu-efficiency-calculation"><strong>Use Case 2: AHU Efficiency Calculation</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Hierarchy → HVAC_Equipment → AHUs → AHU-1
+</code></pre></div>
+<p><strong>Logic blocks:</strong></p>
+<ul>
+<li>Read supply air temp, return air temp, outdoor air temp from BACnet</li>
+<li>Read fan power (kW) from BACnet</li>
+<li>Calculate airflow (cfm)</li>
+<li>Compute ΔT (supply - return)</li>
+<li>Compute efficiency (tons cooling per kW)</li>
+<li>Output virtual "AHU1_Efficiency" point</li>
+</ul>
+<hr />
+<h3 id="use-case-3-chilled-water-plant-optimization"><strong>Use Case 3: Chilled Water Plant Optimization</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Hierarchy → Central_Plant → Chilled_Water_System
+</code></pre></div>
+<p><strong>Logic blocks:</strong></p>
+<ul>
+<li>Read chiller kW from all chillers</li>
+<li>Read supply/return CHW temps</li>
+<li>Compute plant ΔT</li>
+<li>Compute total tons</li>
+<li>Calculate plant kW/ton</li>
+<li>Detect low ΔT conditions</li>
+<li>Output virtual "Plant_Efficiency" and "Low_Delta_T_Alarm" points</li>
+</ul>
+<hr />
+<h3 id="use-case-4-multi-zone-temperature-averaging"><strong>Use Case 4: Multi-Zone Temperature Averaging</strong></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Hierarchy → Building_A → Floor_2 → Zone_Averages
+</code></pre></div>
+<p><strong>Logic blocks:</strong></p>
+<ul>
+<li>Read zone temps from 15 VAVs</li>
+<li>Calculate average zone temp</li>
+<li>Calculate min/max zone temps</li>
+<li>Compute zone temp variance</li>
+<li>Output virtual "Floor2_AvgTemp" point for display</li>
+</ul>
+<hr />
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<h3 id="1-mixing-physical-and-logical"><strong>1. Mixing Physical and Logical</strong></h3>
+<p>❌ <strong>Don't do this:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Hierarchy
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>├── Connections (duplicate structure)
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>└── BACnet (duplicate structure)
+</code></pre></div></p>
+<p>✅ <strong>Do this:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Hierarchy
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>├── Building_A (logical organization)
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>└── Equipment (logical grouping)
+</code></pre></div></p>
+<p><strong>Reason:</strong> Connections already shows the physical structure. Hierarchy is for logical organization.</p>
+<hr />
+<h3 id="2-creating-overly-deep-nesting"><strong>2. Creating Overly Deep Nesting</strong></h3>
+<p>❌ <strong>Don't do this:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Hierarchy → Campus → Region → Building → Wing → Floor → Zone → Equipment_Type → Equipment_01
+</code></pre></div></p>
+<p>✅ <strong>Do this:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Hierarchy → Building_A → Floor_2 → AHU-2A
+</code></pre></div></p>
+<p><strong>Reason:</strong> Deep nesting makes navigation difficult. Keep it practical.</p>
+<hr />
+<h3 id="3-forgetting-to-use-folders"><strong>3. Forgetting to Use Folders</strong></h3>
+<p>❌ <strong>Don't do this:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Hierarchy
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>├── AHU-1 (block at root level)
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>├── AHU-2 (block at root level)
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>├── VAV-101 (block at root level)
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>└── 200 other blocks...
+</code></pre></div></p>
+<p>✅ <strong>Do this:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Hierarchy
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>├── AHUs (folder)
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>│   ├── AHU-1
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>│   └── AHU-2
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>└── VAVs (folder)
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    └── VAV-101
+</code></pre></div></p>
+<p><strong>Reason:</strong> Folders keep things organized and manageable.</p>
+<hr />
+<h3 id="4-not-planning-ahead"><strong>4. Not Planning Ahead</strong></h3>
+<p>❌ <strong>Don't start building logic without a plan</strong></p>
+<p>✅ <strong>Sketch out your structure first:</strong></p>
+<ul>
+<li>What buildings do you have?</li>
+<li>What equipment types?</li>
+<li>How will you group similar equipment?</li>
+<li>What makes sense for your analytics?</li>
+</ul>
+<p><strong>Reason:</strong> Reorganizing later is time-consuming.</p>
+<hr />
+<h2 id="best-practices-summary">Best Practices Summary</h2>
+<ol>
+<li><strong>Plan before you build</strong> - Sketch your structure on paper or whiteboard first</li>
+<li><strong>Use clear naming</strong> - <code>Building_A_AHU_1</code> is better than <code>BA-A1</code></li>
+<li><strong>Mirror physical layout</strong> - Or mirror equipment types, but be consistent</li>
+<li><strong>Keep folders shallow</strong> - 2-4 levels deep is usually sufficient</li>
+<li><strong>Group similar equipment</strong> - All AHUs together, all VAVs together</li>
+<li><strong>Use virtual points</strong> - Create computed values for analytics</li>
+<li><strong>Reference, don't duplicate</strong> - Reference BACnet points from Connections, don't recreate them</li>
+<li><strong>Document your logic</strong> - Use block descriptions to explain complex flows</li>
+<li><strong>Test as you build</strong> - Verify logic works before building out 100 copies</li>
+<li><strong>Think about BasiX</strong> - Organize in a way that makes BasiX mapping straightforward</li>
+</ol>
+<hr />
+<h2 id="hierarchy-workflow-summary">Hierarchy Workflow Summary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>1. Plan Structure
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>   ↓
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>2. Create Folders (Buildings, Equipment Types, Zones)
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>   ↓
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>3. Create Equipment Nodes (Individual AHUs, VAVs, etc.)
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>   ↓
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>4. Open Equipment Node in Flow View
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>   ↓
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>5. Drag BACnet Blocks (Reference physical points)
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>   ↓
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>6. Add Logic Blocks (Math, conversions, fault detection)
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>   ↓
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>7. Connect Blocks with Links
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>   ↓
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>8. Create Virtual Output Points
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>   ↓
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>9. Map Virtual Points to BasiX
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>   ↓
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>10. Publish to BDX
+</code></pre></div>
+<hr />
+<h2 id="next-steps">➡️ Next Steps</h2>
+<p>Now that you understand the Hierarchy and digital twin concept:</p>
+<ul>
+<li><strong>Learn about blocks</strong> - See <a href="../../reference/toolbox-blocks/">Toolbox Reference</a></li>
+<li><strong>Build logic flows</strong> - See <a href="../../concepts/data-transformation/">Data Transformation &amp; Logic Flow</a></li>
+<li><strong>Understand units</strong> - See <a href="../../concepts/units-formatting/">Units &amp; Formatting Best Practices</a></li>
+<li><strong>Map to BasiX</strong> - See <a href="../basix-mapping-workflow/">BasiX Mapping Workflow</a></li>
+<li><strong>Explore the full UI</strong> - See <a href="../explorer-structure/">eXplorer Structure</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div class="footer-left">
+        &copy; 2025 BuildingLogiX. All Rights Reserved.
+    </div>
+    <div class="footer-right">
+        <!-- GitHub -->
+        <a href="https://github.com/BuildingLogiX" target="_blank" rel="noopener" title="GitHub">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/company/buildinglogix" target="_blank" rel="noopener" title="LinkedIn">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+        </a>
+        <!-- BuildingLogiX Website -->
+        <a href="https://buildinglogix.net" target="_blank" rel="noopener" title="BuildingLogiX">
+            <img src="https://buildinglogix.github.io/DataLynX/assets/blx-white.svg" alt="BuildingLogiX" class="footer-logo" onerror="this.style.display='none'">
+        </a>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.tracking", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

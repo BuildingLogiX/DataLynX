@@ -1,0 +1,2243 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://buildinglogix.github.io/DataLynX/user-guide/basix-mapping-workflow/">
+      
+      
+        <link rel="prev" href="../bacnet-integration/">
+      
+      
+        <link rel="next" href="../../admin/windows-services-logs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/datalynx_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>BasiX Mapping Workflow - DataLynX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basix-mapping-workflow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DataLynX" class="md-header__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DataLynX
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BasiX Mapping Workflow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/architecture/" class="md-tabs__link">
+          
+  
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ui-tour/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../admin/windows-services-logs/" class="md-tabs__link">
+          
+  
+  
+  Admin Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/terminology/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DataLynX" class="md-nav__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    DataLynX
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-bacnet-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First BACnet Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/connect-to-bdx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect to BDX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/data-transformation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Transformation & Logic Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/basix-ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Ontology & Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/mapping-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapping Modes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/units-formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units & Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-tour/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Tour
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explorer-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eXplorer Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hierarchy-digital-twin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hierarchy & Digital Twin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bacnet-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Integration Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Mapping Workflow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Mapping Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-where-mapping-happens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Where Mapping Happens
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-saving-reusing-mapping-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Saving &amp; Reusing Mapping Schemes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Saving &amp; Reusing Mapping Schemes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-mapping-schemes-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Mapping Schemes Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-reusable-mapping-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Reusable Mapping Scheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linked-vs-private-rogue-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linked vs Private (Rogue) Schemes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creating-a-basix-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Creating a BasiX Device
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Creating a BasiX Device">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mapping-modes-you-can-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Mapping Modes You Can Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mapping-example-vav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Mapping Example (VAV)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-using-flow-view-for-value-conditioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Using Flow View for Value Conditioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-required-vs-optional-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Required vs Optional Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-device-completeness-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Device Completeness Indicators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-publishing-to-bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Publishing to BDX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-troubleshooting-common-mapping-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Troubleshooting Common Mapping Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Troubleshooting Common Mapping Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-points-appear-in-the-mapping-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ No points appear in the mapping search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cannot-publish-device-to-bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Cannot publish device to BDX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#units-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Units mismatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-fields-unmapped" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Required fields unmapped
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values-look-wrong-in-bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Values look wrong in BDX
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➡️ Next Step
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Admin Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/windows-services-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Services & Logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/reset-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resetting the Agent Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/security-users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security & User Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology & Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/toolbox-blocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toolbox Block Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/bacnet-driver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Driver Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-where-mapping-happens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Where Mapping Happens
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-saving-reusing-mapping-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Saving &amp; Reusing Mapping Schemes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Saving &amp; Reusing Mapping Schemes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-mapping-schemes-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Mapping Schemes Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-reusable-mapping-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Reusable Mapping Scheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linked-vs-private-rogue-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linked vs Private (Rogue) Schemes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-creating-a-basix-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Creating a BasiX Device
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Creating a BasiX Device">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mapping-modes-you-can-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Mapping Modes You Can Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mapping-example-vav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Mapping Example (VAV)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-using-flow-view-for-value-conditioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Using Flow View for Value Conditioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-required-vs-optional-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Required vs Optional Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-device-completeness-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Device Completeness Indicators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-publishing-to-bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Publishing to BDX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-troubleshooting-common-mapping-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Troubleshooting Common Mapping Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Troubleshooting Common Mapping Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-points-appear-in-the-mapping-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ No points appear in the mapping search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cannot-publish-device-to-bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Cannot publish device to BDX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#units-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Units mismatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-fields-unmapped" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Required fields unmapped
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values-look-wrong-in-bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Values look wrong in BDX
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➡️ Next Step
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="basix-mapping-workflow"><img alt="DataLynX Logo" src="../../assets/datalynx_logo.svg" width="50" /> BasiX Mapping Workflow</h1>
+<p>This guide walks you through the full workflow for converting raw BACnet points into clean, normalized <strong>BasiX device profiles</strong> using DataLynX.
+This is the final step before sending standardized data to BDX.</p>
+<hr />
+<h2 id="1-overview">1. Overview</h2>
+<p>The BasiX Mapping Workflow covers:</p>
+<ol>
+<li>Identifying BACnet points for each device</li>
+<li>Selecting or creating a BasiX profile (AHU, VAV, Pump, etc.)</li>
+<li>Mapping raw points to BasiX fields</li>
+<li><strong>Ensuring proper units on all mapped points</strong> ⚠️</li>
+<li>Applying conversions or logic if needed</li>
+<li>Validating required fields</li>
+<li>Reviewing device health and mapping completeness</li>
+<li>Preparing devices for BDX upload</li>
+</ol>
+<p><strong>Critical</strong>: All points mapped to BasiX profiles must have proper units. Missing or incorrect units will prevent device publishing to BDX.  </p>
+<hr />
+<h2 id="2-where-mapping-happens">2. Where Mapping Happens</h2>
+<p>In the eXplorer tree, BasiX mapping schemes are located at:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>System → BasiX → mapping_schemes → [Device Type]
+</code></pre></div>
+<p>Here you will see:</p>
+<ul>
+<li>Profile templates for different device types (VAV, AHU, Chiller, etc.)</li>
+<li>Mapping scheme configurations for each profile</li>
+<li>Field definitions for BasiX standard points</li>
+</ul>
+<p><img alt="BasiX Mapping Scheme Editor" src="../../img/System%20-%20BasiX%20-%20VAV%20Mapping%20Scheme.PNG" /></p>
+<p>The mapping scheme editor allows you to:</p>
+<ul>
+<li>Define paths to BACnet points using patterns</li>
+<li>Specify which property to read (typically <code>out</code>)</li>
+<li>Configure input properties for fields that need additional data</li>
+<li>Link Hierarchy blocks to BasiX profile fields</li>
+</ul>
+<hr />
+<h2 id="3-saving-reusing-mapping-schemes">3. Saving &amp; Reusing Mapping Schemes</h2>
+<p>One of the most powerful features of DataLynX is the ability to <strong>save mapping configurations as reusable schemes</strong> that can be applied to multiple devices. This dramatically reduces setup time when integrating sites with many similar devices.</p>
+<h3 id="how-mapping-schemes-work">How Mapping Schemes Work</h3>
+<p>When you create a BasiX profile and configure its point mappings, you can save that configuration as a <strong>mapping scheme</strong>. This scheme becomes a template that can be applied to other devices of the same type.</p>
+<p><strong>Key Benefits:</strong></p>
+<ul>
+<li><strong>Time Savings</strong>: Configure once, apply to dozens or hundreds of similar devices</li>
+<li><strong>Consistency</strong>: All devices using the same scheme have identical mapping rules</li>
+<li><strong>Maintainability</strong>: Update the scheme once to affect all linked devices</li>
+</ul>
+<h3 id="creating-a-reusable-mapping-scheme">Creating a Reusable Mapping Scheme</h3>
+<ol>
+<li>Create a BasiX device and configure all point mappings</li>
+<li>Use pattern matching (wildcards like <code>*</code>) for device-specific identifiers</li>
+<li>Save the profile as a mapping scheme</li>
+<li>The scheme appears under <code>System → BasiX → mapping_schemes → [Device Type]</code></li>
+</ol>
+<p><strong>Example:</strong>
+For 50 VAVs with naming convention <code>VAV-01</code> through <code>VAV-50</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>BACnet Pattern: /VAV-*/AI-RM-T → zoneAirTemp
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>BACnet Pattern: /VAV-*/AO-DMP → damperPosition
+</code></pre></div>
+<p>This single scheme maps all 50 VAVs automatically.</p>
+<h3 id="linked-vs-private-rogue-schemes">Linked vs Private (Rogue) Schemes</h3>
+<p><strong>Linked Scheme (Default):</strong></p>
+<ul>
+<li>Multiple devices share the same mapping scheme</li>
+<li><strong>Editing the scheme updates ALL linked devices</strong></li>
+<li>Ideal for standardized equipment with consistent naming</li>
+</ul>
+<p><strong>Private Scheme (Rogue):</strong></p>
+<ul>
+<li>A device uses its own independent mapping configuration</li>
+<li>Changes affect only that specific device</li>
+<li>Useful for one-off devices or equipment with unique naming conventions</li>
+</ul>
+<p><strong>To make a scheme private:</strong></p>
+<ol>
+<li>Select the device using the shared scheme</li>
+<li>Choose to "disconnect" or "go rogue" from the linked scheme</li>
+<li>The device now has its own private mapping configuration</li>
+<li>Future edits to the original scheme will not affect this device</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Consider Before Editing Shared Schemes</p>
+<p>When you edit a mapping scheme that is linked to multiple devices, <strong>all linked devices will be affected</strong>. Always verify which devices are using a scheme before making changes. If you need to customize mapping for a specific device without affecting others, make that device's scheme private first.</p>
+</div>
+<hr />
+<h2 id="4-creating-a-basix-device">4. Creating a BasiX Device</h2>
+<h3 id="automatic-creation">Automatic Creation</h3>
+<p>If your BACnet naming conventions are consistent (e.g., <code>VAV-01</code> through <code>VAV-100</code>), DataLynX may automatically detect logical groups.</p>
+<h3 id="manual-creation">Manual Creation</h3>
+<p>You can create a BasiX device manually:</p>
+<ol>
+<li>Navigate to:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>BasiX → Devices → New Device
+</code></pre></div>
+<ol>
+<li>
+<p>Choose a <strong>BasiX Profile</strong> (device type), such as:</p>
+</li>
+<li>
+<p>AHU  </p>
+</li>
+<li>VAV  </li>
+<li>Pump  </li>
+<li>Chiller  </li>
+<li>Cooling Tower  </li>
+<li>Exhaust Fan  </li>
+<li>Heat Pump  </li>
+<li>
+<p>Fan Coil Unit  </p>
+</li>
+<li>
+<p>Provide a device name and optional metadata.</p>
+</li>
+</ol>
+<hr />
+<h2 id="5-mapping-modes-you-can-use">5. Mapping Modes You Can Use</h2>
+<p>When mapping BACnet points to BasiX fields, you may choose:</p>
+<ul>
+<li><strong>Exact mapping</strong>  </li>
+<li><strong>Pattern mapping</strong> (<code>*</code> and <code>?</code>)  </li>
+<li><strong>Regex mapping</strong> (advanced)</li>
+</ul>
+<p>Each profile contains required and optional fields.</p>
+<hr />
+<h2 id="6-mapping-example-vav">6. Mapping Example (VAV)</h2>
+<p>Suppose you create a VAV BasiX device for <code>VAV-12</code>.</p>
+<p>You might map:</p>
+<table>
+<thead>
+<tr>
+<th>BACnet Point</th>
+<th>BasiX Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/VAV-12/AI-RM-T</code></td>
+<td><code>zoneAirTemp</code></td>
+</tr>
+<tr>
+<td><code>/VAV-12/AI-SAT</code></td>
+<td><code>dischargeAirTemp</code></td>
+</tr>
+<tr>
+<td><code>/VAV-12/AO-DMP</code></td>
+<td><code>damperPosition</code></td>
+</tr>
+<tr>
+<td><code>/VAV-12/AV-FLOW</code></td>
+<td><code>airflow</code></td>
+</tr>
+<tr>
+<td><code>/VAV-12/BO-HCMD</code></td>
+<td><code>heatCommand</code></td>
+</tr>
+</tbody>
+</table>
+<p>If dozens of VAVs follow the same naming pattern, you can create a <strong>pattern mapping</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>BACnet Pattern: /VAV-*/AI-RM-T
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>BasiX Point: zoneAirTemp
+</code></pre></div>
+<hr />
+<h2 id="7-using-flow-view-for-value-conditioning">7. Using Flow View for Value Conditioning</h2>
+<p>Before mapping to BasiX, you may need to apply logic such as:</p>
+<ul>
+<li><strong>Assigning units to dimensionless values</strong> ⚠️</li>
+<li>Converting units (°C to °F, Pa to inWC)</li>
+<li>Dividing by scaling factors (e.g., value / 10)</li>
+<li>Replacing null values</li>
+<li>Computing ΔT (delta temperature)</li>
+<li>Cleaning unreliable values</li>
+<li>Re-mapping enumerations</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>RawTemp / 10 → Assign Units °F → Map to BasiX supplyAirTemp
+</code></pre></div>
+<p><strong>Important</strong>: Many BACnet points have dimensionless or missing units. You must assign proper units before mapping to BasiX profiles.</p>
+<p>Use <strong>Flow View</strong> to build logic with blocks.</p>
+<p>See <strong><a href="../../concepts/units-formatting/">Units &amp; Formatting Best Practices</a></strong> for detailed guidance.</p>
+<p><img alt="Flow View" src="../../img/Flow%20View.PNG" /></p>
+<hr />
+<h2 id="8-required-vs-optional-points">8. Required vs Optional Points</h2>
+<p>Each BasiX Profile defines:</p>
+<ul>
+<li><strong>Required points</strong> (must be mapped before sending to BDX)</li>
+<li><strong>Optional points</strong> (increase analytics completeness)</li>
+</ul>
+<p>Missing required points will show warnings like:</p>
+<blockquote>
+<p>⚠️ Required field "supplyAirTemp" is unmapped</p>
+</blockquote>
+<p>You can still save the device but cannot publish to BDX until the profile is complete.</p>
+<hr />
+<h2 id="9-device-completeness-indicators">9. Device Completeness Indicators</h2>
+<p>After mapping a BasiX device, DataLynX displays:</p>
+<ul>
+<li>✔ <strong>Complete</strong> – All required fields mapped  </li>
+<li>⚠️ <strong>Partial</strong> – Some required fields unmapped  </li>
+<li>❌ <strong>Invalid</strong> – No valid mappings or major errors  </li>
+</ul>
+<p>You can filter all mapped devices by status.</p>
+<hr />
+<h2 id="10-publishing-to-bdx">10. Publishing to BDX</h2>
+<p>Once mappings are valid:</p>
+<ol>
+<li>Ensure the BDX connection is enabled  </li>
+<li>Navigate to:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>BasiX → Devices
+</code></pre></div>
+<ol>
+<li>Select a device  </li>
+<li>Click:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Publish to BDX
+</code></pre></div>
+<p>BDX will receive a normalized BasiX structure, enabling analytics, dashboards, and alarms.</p>
+<hr />
+<h2 id="11-troubleshooting-common-mapping-issues">11. Troubleshooting Common Mapping Issues</h2>
+<h3 id="no-points-appear-in-the-mapping-search">❌ No points appear in the mapping search</h3>
+<ul>
+<li>The BACnet network may not be configured</li>
+<li>The device may not have completed discovery</li>
+<li>Polling may be disabled</li>
+</ul>
+<h3 id="cannot-publish-device-to-bdx">❌ Cannot publish device to BDX</h3>
+<p><strong>Most common cause</strong>: Missing or incorrect units on mapped points</p>
+<ul>
+<li>Check all mapped points have proper units</li>
+<li>Look for dimensionless values that need units assigned</li>
+<li>Use <strong>Override Source Units</strong> flag for points with wrong units</li>
+<li>See <strong><a href="../../concepts/units-formatting/">Units &amp; Formatting</a></strong> for guidance</li>
+</ul>
+<h3 id="units-mismatch">❌ Units mismatch</h3>
+<ul>
+<li>Enable "Propagate Units" for debugging</li>
+<li>Add a conversion block before mapping</li>
+<li>Check for absolute vs delta temperature issues</li>
+<li>Verify dimensionless values have units assigned</li>
+</ul>
+<h3 id="required-fields-unmapped">❌ Required fields unmapped</h3>
+<ul>
+<li>Review the BasiX profile to see mandatory fields</li>
+<li>Ensure pattern or regex mappings match correctly</li>
+<li>Check that all required fields have proper units</li>
+</ul>
+<h3 id="values-look-wrong-in-bdx">❌ Values look wrong in BDX</h3>
+<ul>
+<li>Check Flow View for scaling</li>
+<li>Use Watch to inspect raw values</li>
+<li>Confirm mapping order and priority</li>
+<li>Verify unit conversions are correct  </li>
+</ul>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>The BasiX Workflow:</p>
+<ol>
+<li>Identify devices  </li>
+<li>Create BasiX profiles  </li>
+<li>Map BACnet points  </li>
+<li>Normalize units and logic  </li>
+<li>Validate required points  </li>
+<li>Publish to BDX  </li>
+</ol>
+<p>This workflow transforms raw field data into clean, standardized analytics-ready information.</p>
+<hr />
+<h2 id="next-step">➡️ Next Step</h2>
+<p>Proceed to the <strong>Admin Guide</strong> beginning with:</p>
+<p>👉 <strong><a href="../../admin/windows-services-logs/">Windows Services &amp; Logs</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div class="footer-left">
+        &copy; 2025 BuildingLogiX. All Rights Reserved.
+    </div>
+    <div class="footer-right">
+        <!-- GitHub -->
+        <a href="https://github.com/BuildingLogiX" target="_blank" rel="noopener" title="GitHub">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/company/buildinglogix" target="_blank" rel="noopener" title="LinkedIn">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+        </a>
+        <!-- BuildingLogiX Website -->
+        <a href="https://buildinglogix.net" target="_blank" rel="noopener" title="BuildingLogiX">
+            <img src="https://buildinglogix.github.io/DataLynX/assets/blx-white.svg" alt="BuildingLogiX" class="footer-logo" onerror="this.style.display='none'">
+        </a>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.tracking", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

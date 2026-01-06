@@ -1,0 +1,2064 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://buildinglogix.github.io/DataLynX/user-guide/bacnet-integration/">
+      
+      
+        <link rel="prev" href="../hierarchy-digital-twin/">
+      
+      
+        <link rel="next" href="../basix-mapping-workflow/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/datalynx_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>BACnet Integration Flow - DataLynX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bacnet-integration-workflow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DataLynX" class="md-header__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DataLynX
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BACnet Integration Flow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/architecture/" class="md-tabs__link">
+          
+  
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ui-tour/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../admin/windows-services-logs/" class="md-tabs__link">
+          
+  
+  
+  Admin Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/terminology/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DataLynX" class="md-nav__button md-logo" aria-label="DataLynX" data-md-component="logo">
+      
+  <img src="../../assets/blx-white.svg" alt="logo">
+
+    </a>
+    DataLynX
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation & Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-bacnet-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First BACnet Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/connect-to-bdx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect to BDX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/data-transformation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Transformation & Logic Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/basix-ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Ontology & Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/mapping-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapping Modes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/units-formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units & Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-tour/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Tour
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explorer-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eXplorer Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hierarchy-digital-twin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hierarchy & Digital Twin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Integration Flow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Integration Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-enable-the-bacnet-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Enable the BACnet Driver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configure-the-hosted-bacnet-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configure the Hosted BACnet Device
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configure-bacnetip-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Configure BACnet/IP Network(s)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-polling-health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configure Polling &amp; Health Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Configure Polling &amp; Health Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poll-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poll Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-device-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Device Discovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Device Discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#organizing-devices-with-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organizing Devices with Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-router-table-mstp-devices-if-applicable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Router Table &amp; MSTP Devices (If Applicable)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-point-discovery-for-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Point Discovery for Devices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-inspect-properties-live-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Inspect Properties &amp; Live Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-flow-view-data-transformation-optional-at-this-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Flow View &amp; Data Transformation (Optional at this Stage)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-integration-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Integration Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-next-step-basix-mapping-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Next Step: BasiX Mapping Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basix-mapping-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BasiX Mapping Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Admin Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/windows-services-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows Services & Logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup & Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/reset-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resetting the Agent Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/security-users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security & User Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminology & Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/toolbox-blocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toolbox Block Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/bacnet-driver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BACnet Driver Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-enable-the-bacnet-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Enable the BACnet Driver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configure-the-hosted-bacnet-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configure the Hosted BACnet Device
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configure-bacnetip-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Configure BACnet/IP Network(s)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-polling-health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configure Polling &amp; Health Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Configure Polling &amp; Health Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poll-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poll Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-device-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Device Discovery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Device Discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#organizing-devices-with-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organizing Devices with Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-router-table-mstp-devices-if-applicable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Router Table &amp; MSTP Devices (If Applicable)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-point-discovery-for-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Point Discovery for Devices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-inspect-properties-live-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Inspect Properties &amp; Live Values
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-flow-view-data-transformation-optional-at-this-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Flow View &amp; Data Transformation (Optional at this Stage)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-integration-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Integration Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-next-step-basix-mapping-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Next Step: BasiX Mapping Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="bacnet-integration-workflow"><img alt="DataLynX Logo" src="../../assets/datalynx_logo.svg" width="50" /> BACnet Integration Workflow</h1>
+<p>This guide walks through a complete <strong>end-to-end BACnet integration</strong> in DataLynX — from enabling the driver, to discovering devices, to validating live values and preparing for BasiX mapping.</p>
+<p>Use this as a practical checklist for new deployments.</p>
+<hr />
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<p>Before starting:</p>
+<ul>
+<li>DataLynX is installed and both services are <strong>Running</strong>  </li>
+<li>You can access the UI at <code>http://localhost</code> (port 80, or alternatively port 8050 or 8020 if port 80 is unavailable)  </li>
+<li>At least one BACnet/IP network segment is reachable from the agent  </li>
+<li>You have basic network information:</li>
+<li>UDP port (typically <code>47808</code>)  </li>
+<li>Network number(s)  </li>
+<li>Router / BBMD details (if applicable)</li>
+</ul>
+<p>If you haven’t done so yet, complete:</p>
+<ul>
+<li><strong>Getting Started → Installation &amp; Windows Services</strong>  </li>
+<li><strong>Getting Started → First BACnet Network</strong></li>
+</ul>
+<hr />
+<h2 id="2-enable-the-bacnet-driver">2. Enable the BACnet Driver</h2>
+<ol>
+<li>Open the DataLynX UI.</li>
+<li>In the eXplorer tree, locate:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Drivers → BACnet
+</code></pre></div>
+<ol>
+<li>Confirm the driver is <strong>Enabled</strong>.</li>
+<li>Check driver status for any startup errors.</li>
+</ol>
+<p><img alt="BACnet Driver" src="../../img/BACnet.PNG" /></p>
+<p>If the driver is disabled, enable it, then refresh the view.</p>
+<hr />
+<h2 id="3-configure-the-hosted-bacnet-device">3. Configure the Hosted BACnet Device</h2>
+<p>The hosted device is the identity of the DataLynX agent on the BACnet network.</p>
+<ol>
+<li>Navigate to:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>BACnet → Hosted Device
+</code></pre></div>
+<ol>
+<li>
+<p>Configure:</p>
+</li>
+<li>
+<p><strong>Device Name</strong> – Friendly name (e.g., <code>DLX-Agent-1</code>)</p>
+</li>
+<li><strong>Device ID</strong> – Unique across the BACnet internetwork  </li>
+<li><strong>Vendor / Model Info</strong> – Optional but recommended</li>
+<li><strong>Max APDU / Segmentation</strong> – Leave defaults unless required</li>
+</ol>
+<p><img alt="Hosted Device" src="../../img/BACnet%20-%20Configuration%20-%20hosted%20device.PNG" /></p>
+<blockquote>
+<p>💡 Tip: Use a Device ID range that does not overlap with field controllers or existing gateways.</p>
+</blockquote>
+<hr />
+<h2 id="4-configure-bacnetip-networks">4. Configure BACnet/IP Network(s)</h2>
+<ol>
+<li>Navigate to:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>BACnet → Configuration → BACnet IP Network
+</code></pre></div>
+<ol>
+<li>
+<p>Add or edit a <strong>BACnet IP Network</strong>:</p>
+</li>
+<li>
+<p><strong>UDP Port</strong>: Typically <code>47808</code>  </p>
+</li>
+<li><strong>Interface / IP</strong>: NIC or IP for the agent host  </li>
+<li><strong>Network Number</strong>: BACnet network number (unique per segment)  </li>
+<li><strong>Device Type</strong>:  <ul>
+<li>Standard Device  </li>
+<li>Foreign Device (if registering with a remote BBMD)  </li>
+</ul>
+</li>
+<li><strong>FD Registration</strong>: If using Foreign Device, set BBMD address and TTL.</li>
+</ol>
+<p><img alt="BACnet IP Network" src="../../img/BACnet%20-%20Configuration%20-%20BACnet%20IP%20Network.PNG" /></p>
+<ol>
+<li>Save and ensure the network shows as <strong>Enabled</strong>.</li>
+</ol>
+<blockquote>
+<p>⚠️ Make sure firewalls allow UDP on the selected port.</p>
+</blockquote>
+<hr />
+<h2 id="5-configure-polling-health-monitoring">5. Configure Polling &amp; Health Monitoring</h2>
+<h3 id="poll-service">Poll Service</h3>
+<ol>
+<li>In the same BACnet IP Network view, open the <strong>Poll Service</strong> tab.</li>
+</ol>
+<p><img alt="BACnet Poll Service" src="../../img/BACnet%20-%20Configuration%20-%20BACnet%20IP%20Network%20-%20poll%20service.PNG" /></p>
+<ol>
+<li>
+<p>Configure:</p>
+</li>
+<li>
+<p>Global poll interval(s)  </p>
+</li>
+<li>Stale-time rules  </li>
+<li>Timeout and retry behavior</li>
+</ol>
+<h3 id="health-monitoring">Health Monitoring</h3>
+<ol>
+<li>Open the <strong>Health Monitoring</strong> tab.</li>
+</ol>
+<p><img alt="BACnet Health Monitoring" src="../../img/BACnet%20-%20Configuration%20-%20health_monitoring.PNG" /></p>
+<ol>
+<li>
+<p>Configure:</p>
+</li>
+<li>
+<p>Device offline thresholds  </p>
+</li>
+<li>Retry / backoff strategies  </li>
+<li>Fault flags for unreachable devices</li>
+</ol>
+<blockquote>
+<p>💡 A good starting point is a moderate poll interval and conservative offline timeout until you understand network stability.</p>
+</blockquote>
+<hr />
+<h2 id="6-device-discovery">6. Device Discovery</h2>
+<ol>
+<li>Navigate to:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>BACnet → Devices
+</code></pre></div>
+<ol>
+<li>
+<p>Click <strong>Discover</strong> and choose:</p>
+</li>
+<li>
+<p><strong>Who-Is</strong> for broad discovery</p>
+</li>
+<li><strong>Ranged Who-Is</strong> for large networks or targeted ranges</li>
+</ol>
+<p><img alt="Device Discovery" src="../../img/BACnet%20-%20discovery.PNG" /></p>
+<ol>
+<li>As devices respond, they will populate the <strong>Devices</strong> list:</li>
+</ol>
+<p><img alt="BACnet Devices" src="../../img/BACnet%20-%20devices.PNG" /></p>
+<ol>
+<li>
+<p>Verify:</p>
+</li>
+<li>
+<p>Each expected controller is present</p>
+</li>
+<li>Device IDs and names look correct</li>
+<li>Network numbers / MACs are as expected</li>
+</ol>
+<h3 id="organizing-devices-with-folders">Organizing Devices with Folders</h3>
+<p>By default, all discovered devices appear under the top-level <code>devices</code> node. For larger sites with many controllers, this can become difficult to navigate and manage.</p>
+<p><strong>Best Practice:</strong> Use <strong>BACnet Device Folders</strong> to organize controllers logically:</p>
+<ul>
+<li><strong>By building or floor:</strong> <code>Building-A</code>, <code>Floor-1</code>, <code>Floor-2</code></li>
+<li><strong>By system type:</strong> <code>AHUs</code>, <code>VAVs</code>, <code>Chillers</code>, <code>Lighting</code></li>
+<li><strong>By network segment:</strong> <code>Network-1</code>, <code>MSTP-Trunk-A</code></li>
+</ul>
+<p><strong>To create a device folder:</strong></p>
+<ol>
+<li>Right-click on the <code>devices</code> node</li>
+<li>Select <strong>Add → BACnet Device Folder</strong></li>
+<li>Name the folder appropriately</li>
+<li>Drag discovered devices into the folder, or run discovery with the folder selected</li>
+</ol>
+<p><strong>Why organize devices?</strong></p>
+<ul>
+<li>Easier navigation on sites with 50+ controllers</li>
+<li>Logical grouping matches your building structure</li>
+<li>Simplifies BasiX mapping workflows</li>
+<li>Cleaner hierarchy in the eXplorer tree</li>
+<li>Better team collaboration when multiple users work on the same agent</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Plan your folder structure before large discoveries</p>
+<p>On sites with many controllers, create your folder structure first, then discover devices directly into the appropriate folders. This saves time compared to reorganizing later.</p>
+</div>
+<hr />
+<h2 id="7-router-table-mstp-devices-if-applicable">7. Router Table &amp; MSTP Devices (If Applicable)</h2>
+<p>If your BACnet environment includes routers:</p>
+<ol>
+<li>Navigate to:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>BACnet → Configuration → Router Table
+</code></pre></div>
+<ol>
+<li>Review discovered routers and network paths.</li>
+</ol>
+<p><img alt="Router Table" src="../../img/BACnet%20-%20Configuration%20-%20router%20table.PNG" /></p>
+<ol>
+<li>
+<p>For MSTP devices behind routers:</p>
+</li>
+<li>
+<p>Ensure routers are online  </p>
+</li>
+<li>Verify remote networks appear in the table  </li>
+<li>Add manual router entries if required by your topology</li>
+</ol>
+<hr />
+<h2 id="8-point-discovery-for-devices">8. Point Discovery for Devices</h2>
+<p>Once devices are discovered, drill into each device to find its points.</p>
+<ol>
+<li>From <strong>BACnet → Devices</strong>, select a device.</li>
+<li>Open the <strong>Point Discovery</strong> / <strong>Objects</strong> view.</li>
+</ol>
+<p><img alt="Point Discovery" src="../../img/BACnet%20-%20devices%20-%20point%20discovery.PNG" /></p>
+<ol>
+<li>
+<p>For each point, you can see:</p>
+</li>
+<li>
+<p>Object type and instance</p>
+</li>
+<li>Present value</li>
+<li>Units</li>
+<li>Reliability</li>
+<li>
+<p>Status flags</p>
+</li>
+<li>
+<p>Use filters or search to focus on key points (e.g., temperatures, flows, valve commands).</p>
+</li>
+</ol>
+<hr />
+<h2 id="9-inspect-properties-live-values">9. Inspect Properties &amp; Live Values</h2>
+<p>Use the <strong>Property View</strong> for detailed insight and debugging.</p>
+<p><img alt="Property View" src="../../img/Property%20View.PNG" /></p>
+<p>You can:</p>
+<ul>
+<li>Open a single point’s full property sheet  </li>
+<li>See all relevant BACnet properties  </li>
+<li>Watch live updates as the device changes state  </li>
+<li>Verify units and scaling  </li>
+</ul>
+<blockquote>
+<p>💡 This is the best place to confirm a point behaves correctly before mapping it to BasiX.</p>
+</blockquote>
+<hr />
+<h2 id="10-flow-view-data-transformation-optional-at-this-stage">10. Flow View &amp; Data Transformation (Optional at this Stage)</h2>
+<p>If you need to:</p>
+<ul>
+<li>Scale values  </li>
+<li>Compute derived points (ΔT, kW/ton, etc.)  </li>
+<li>Clean up units or reliability</li>
+</ul>
+<p>You can add logic in <strong>Flow View</strong>:</p>
+<p><img alt="Flow View" src="../../img/Flow%20View.PNG" /></p>
+<p>Use the <strong>Toolbox</strong>:</p>
+<p><img alt="Toolbox" src="../../img/DataLynX%20-%20Toolbox.PNG" /></p>
+<p>Common tasks:</p>
+<ul>
+<li>Divide by 10 for scaled temperatures  </li>
+<li>Compute ΔT between two sensors  </li>
+<li>Apply default/fallback value if device is offline  </li>
+<li>Normalize enum or binary states</li>
+</ul>
+<hr />
+<h2 id="11-integration-checklist">11. Integration Checklist</h2>
+<p>Before moving on to BasiX mapping, verify:</p>
+<ul>
+<li>[ ] BACnet driver is enabled and healthy  </li>
+<li>[ ] Hosted Device has a unique Device ID  </li>
+<li>[ ] BACnet/IP network(s) are configured and enabled  </li>
+<li>[ ] Polling and health monitoring settings are reasonable  </li>
+<li>[ ] All expected devices appear in the Devices list  </li>
+<li>[ ] Router table is correct for routed / MSTP networks  </li>
+<li>[ ] Key points have been discovered and show live values  </li>
+<li>[ ] Units and scaling have been validated (and corrected if needed)  </li>
+</ul>
+<p>If all items are checked, your BACnet integration is ready for the next stage.</p>
+<hr />
+<h2 id="12-next-step-basix-mapping-workflow">12. Next Step: BasiX Mapping Workflow</h2>
+<p>You are now ready to:</p>
+<p>👉 Proceed to <strong><a href="../basix-mapping-workflow/">BasiX Mapping Workflow</a></strong>
+to normalize BACnet points into BasiX device profiles and push them to BDX.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div class="footer-left">
+        &copy; 2025 BuildingLogiX. All Rights Reserved.
+    </div>
+    <div class="footer-right">
+        <!-- GitHub -->
+        <a href="https://github.com/BuildingLogiX" target="_blank" rel="noopener" title="GitHub">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/company/buildinglogix" target="_blank" rel="noopener" title="LinkedIn">
+            <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+        </a>
+        <!-- BuildingLogiX Website -->
+        <a href="https://buildinglogix.net" target="_blank" rel="noopener" title="BuildingLogiX">
+            <img src="https://buildinglogix.github.io/DataLynX/assets/blx-white.svg" alt="BuildingLogiX" class="footer-logo" onerror="this.style.display='none'">
+        </a>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.tracking", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
