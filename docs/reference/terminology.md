@@ -1,4 +1,4 @@
-# 📖 Terminology & Definitions
+# Terminology & Definitions
 
 This page provides clear definitions of key terms and concepts used throughout the DataLynX documentation and user interface.
 
@@ -6,7 +6,7 @@ Understanding these terms will help you navigate the software, communicate with 
 
 ---
 
-## 🏗️ Core Components
+## Core Components
 
 ### **Agent**
 The running DataLynX instance that executes the actual BACnet driver, data processing, and BuildingLogiX processes.
@@ -40,7 +40,7 @@ The Supervisor role has the highest level of privileges in DataLynX.
 
 ---
 
-## 🧭 User Interface Elements
+## User Interface Elements
 
 ### **eXplorer**
 The navigation tree (typically on the left side of the UI) that allows users to browse and organize:
@@ -148,7 +148,7 @@ See [Toolbox Block Reference](toolbox-blocks.md) for complete block library.
 
 ---
 
-## 🧩 Logic & Data Processing
+## Logic & Data Processing
 
 ### **Block / Blox**
 A functional component that can exist in the eXplorer or Toolbox. Blocks are used for:
@@ -163,7 +163,7 @@ Blocks have inputs, outputs, and properties that define their behavior.
 
 ---
 
-## 🔄 View Modes (Active View)
+## View Modes (Active View)
 
 DataLynX provides multiple view modes for working with blocks. Switch between views using the **Active View** dropdown in the **top-right corner** of the screen.
 
@@ -250,7 +250,7 @@ The Properties Pane streamlines workflow by keeping block configuration visible 
 
 ---
 
-## 📊 Data & Configuration
+## Data & Configuration
 
 ### **Property**
 A data element that contains:
@@ -292,7 +292,7 @@ Links are the "wires" that connect blocks together in Flow View.
 
 ---
 
-## 🌐 BACnet Terms
+## BACnet Terms
 
 ### **Hosted Device**
 The BACnet device identity that DataLynX presents on the network:
@@ -325,7 +325,7 @@ The automated reading of point values from BACnet devices at configured interval
 
 ---
 
-## 🧬 BasiX Terms
+## BasiX Terms
 
 ### **BasiX Profile**
 A standardized device template that defines:
@@ -348,7 +348,7 @@ The process of connecting raw BACnet points to BasiX profile fields using:
 
 ---
 
-## 🔒 System Terms
+## System Terms
 
 ### **Snapshot**
 A saved state of the logic processing configuration including:
@@ -372,7 +372,7 @@ The component responsible for:
 
 ---
 
-## 📝 Quick Reference Table
+## Quick Reference Table
 
 | Term | Category | Description |
 |------|----------|-------------|

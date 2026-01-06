@@ -1,4 +1,4 @@
-# 🧰 Toolbox Block Reference
+# Toolbox Block Reference
 
 The **Toolbox** is the block library available in DataLynX Flow View. It contains all the building blocks you can use to create data transformation logic, perform calculations, connect to BACnet points, and build virtual points for BasiX mapping.
 
@@ -8,7 +8,7 @@ The Toolbox appears on the right side of the screen when you're working in Flow 
 
 ---
 
-## 📚 Toolbox Categories
+## Toolbox Categories
 
 Blocks are organized into the following categories:
 
@@ -30,7 +30,7 @@ Toolbox
 
 ---
 
-## 🔢 Math
+## Math
 
 Mathematical operations for calculations and transformations.
 
@@ -82,7 +82,7 @@ Boiler kW ──┘
 
 ---
 
-## 🧠 Logic
+## Logic
 
 Boolean logic and decision-making blocks.
 
@@ -107,7 +107,7 @@ Supply Temp > 100°F ─┘
 
 ---
 
-## ⚖️ Comparisons
+## Comparisons
 
 Compare values and generate boolean outputs.
 
@@ -134,7 +134,7 @@ Setpoint ───┘
 
 ---
 
-## 🌐 BACnet
+## BACnet
 
 Blocks for BACnet network configuration and point references.
 
@@ -171,7 +171,7 @@ Blocks for BACnet network configuration and point references.
 
 ---
 
-## 🧬 BasiX Profiles
+## BasiX Profiles
 
 Blocks representing BasiX device profile fields.
 
@@ -207,7 +207,7 @@ These blocks represent standardized points in BasiX profiles:
 
 ---
 
-## 🔄 Switches and Selects
+## Switches and Selects
 
 Conditional routing and selection blocks for different data types.
 
@@ -236,7 +236,7 @@ Unoccupied Setpoint (65°F) ┘
 
 ---
 
-## 📊 Aggregate Functions
+## Aggregate Functions
 
 Aggregation and statistical operations for multiple inputs.
 
@@ -264,7 +264,7 @@ VAV-105 Zone Temp ──┘
 
 ---
 
-## 🎛️ Control Points
+## Control Points
 
 Virtual points for storing and managing values.
 
@@ -289,7 +289,7 @@ Virtual points for storing and managing values.
 
 ---
 
-## 📡 Status
+## Status
 
 Status monitoring and signal routing blocks.
 
@@ -309,7 +309,7 @@ Status monitoring and signal routing blocks.
 
 ---
 
-## 🔢 Priority Arrays
+## Priority Arrays
 
 Priority array blocks for managing values with BACnet-style 16-level priorities.
 
@@ -326,7 +326,7 @@ Priority arrays allow multiple sources to command a value at different priority 
 
 ---
 
-## 📦 BDX
+## BDX
 
 Blocks for BDX connectivity configuration.
 
@@ -338,7 +338,7 @@ Blocks for BDX connectivity configuration.
 
 ---
 
-## 📁 Folder
+## Folder
 
 Organizational container block.
 
@@ -355,7 +355,7 @@ Used to create organizational folders within the Hierarchy or other nodes.
 
 ---
 
-## 🔧 Units and Conversions
+## Units and Conversions
 
 Many blocks automatically handle units:
 
@@ -382,7 +382,7 @@ Many blocks automatically handle units:
 
 ---
 
-## 🎨 Using Blocks in Flow View
+## Using Blocks in Flow View
 
 ### **Step 1: Open Flow View**
 
@@ -435,7 +435,7 @@ Use **Link View** to see all connections into and out of a block at a glance:
 
 ---
 
-## 💡 Common Block Patterns
+## Common Block Patterns
 
 ### **Pattern 1: Reading and Scaling**
 
@@ -497,7 +497,7 @@ Use **Link View** to see all connections into and out of a block at a glance:
 
 ---
 
-## ⚠️ Common Mistakes
+## Common Mistakes
 
 ### **1. Forgetting Units**
 
@@ -539,7 +539,7 @@ Use **Link View** to see all connections into and out of a block at a glance:
 
 ---
 
-## 📝 Toolbox Best Practices
+## Toolbox Best Practices
 
 1. **Start simple** - Build one piece of logic at a time
 2. **Test frequently** - Verify each block works before connecting more

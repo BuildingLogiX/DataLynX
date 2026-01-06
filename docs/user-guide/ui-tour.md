@@ -5,7 +5,7 @@ Use this as a reference when learning the platform or training new users.
 
 ---
 
-## 🧭 1. UI Navigation Overview
+## 1. UI Navigation Overview
 
 When you access the DataLynX UI (typically at `http://localhost` on port 80, or alternatively port 8050 or 8020), you will see a clean, organized navigation structure consisting of:
 
@@ -23,7 +23,7 @@ When you access the DataLynX UI (typically at `http://localhost` on port 80, or 
 
 ---
 
-## 🏠 2. eXplorer Parent Nodes
+## 2. eXplorer Parent Nodes
 
 The eXplorer tree is the primary navigation tool in DataLynX. When you first log in with the agent running, you'll see these **parent nodes**:
 
@@ -57,7 +57,7 @@ For detailed information, see [eXplorer Structure Guide](explorer-structure.md).
 
 ---
 
-## 🌐 3. BACnet Configuration
+## 3. BACnet Configuration
 
 BACnet configuration consists of several key sections:
 
@@ -99,7 +99,7 @@ Shows automatically discovered or manually added BACnet router entries.
 
 ---
 
-## 🔍 4. Device Discovery
+## 4. Device Discovery
 
 After configuring your network, use the **Device Discovery** section to scan the BACnet network.
 
@@ -107,7 +107,7 @@ After configuring your network, use the **Device Discovery** section to scan the
 
 ---
 
-## 📟 5. BACnet Device List
+## 5. BACnet Device List
 
 All discovered devices appear in the Devices view:
 
@@ -115,7 +115,7 @@ All discovered devices appear in the Devices view:
 
 ---
 
-## 🔧 6. Point Discovery Within Devices
+## 6. Point Discovery Within Devices
 
 Each device exposes object lists.  
 The point discovery screen shows details for each point, including:
@@ -130,7 +130,7 @@ The point discovery screen shows details for each point, including:
 
 ---
 
-## 🔄 7. View Modes & Active View Toggle
+## 7. View Modes & Active View Toggle
 
 DataLynX provides multiple **view modes** for working with blocks. You can switch between views using the **Active View** dropdown in the **top-right corner** of the screen.
 
@@ -259,7 +259,7 @@ This panel allows quick edits without switching to Property View.
 
 ---
 
-## 🧬 8. BasiX Mapping
+## 8. BasiX Mapping
 
 Mapping nodes let you configure BasiX Profiles and link BACnet points to BasiX standard fields.
 
@@ -267,7 +267,7 @@ Mapping nodes let you configure BasiX Profiles and link BACnet points to BasiX s
 
 ---
 
-## 👤 9. User Administration
+## 9. User Administration
 
 DataLynX supports multiple user roles and privileges.
 
@@ -283,7 +283,7 @@ Configure passwords, role levels, and account options.
 
 ---
 
-## 💾 10. System Tools & Backup
+## 10. System Tools & Backup
 
 DataLynX includes system maintenance tools for:
 
@@ -296,7 +296,7 @@ DataLynX includes system maintenance tools for:
 
 ---
 
-## 🧩 11. Windows Services & File Locations (Reference)
+## 11. Windows Services & File Locations (Reference)
 
 Diagnostics views provide insight into:
 
@@ -312,7 +312,7 @@ Diagnostics views provide insight into:
 
 ---
 
-## 🎨 12. Theme & Personalization
+## 12. Theme & Personalization
 
 Users can optionally change the theme and appearance of the UI.
 

@@ -6,7 +6,7 @@ Unlike the physical BACnet device tree (found under Connections → BACnet → d
 
 ---
 
-## 🎯 What is the Hierarchy?
+## What is the Hierarchy?
 
 The Hierarchy is:
 
@@ -33,7 +33,7 @@ Think of Hierarchy as the flexible workspace where you:
 
 ---
 
-## 🏗️ Common Hierarchy Structures
+## Common Hierarchy Structures
 
 The Hierarchy is flexible—organize it however makes sense for your use case. Here are common patterns:
 
@@ -167,7 +167,7 @@ Hierarchy
 
 ---
 
-## 🧩 What Lives in the Hierarchy?
+## What Lives in the Hierarchy?
 
 ### **1. Folders**
 
@@ -249,7 +249,7 @@ Inside `VAV-205`, you might build logic to:
 
 ---
 
-## 🔧 Building Your Digital Twin: Step-by-Step
+## Building Your Digital Twin: Step-by-Step
 
 ### **Step 1: Plan Your Structure**
 
@@ -337,7 +337,7 @@ Best practices:
 
 ---
 
-## 🔗 Hierarchy vs Connections: Key Differences
+## Hierarchy vs Connections: Key Differences
 
 | Aspect | Connections/BACnet/devices | Hierarchy |
 |--------|---------------------------|-----------|
@@ -354,7 +354,7 @@ You'll often **reference** points from Connections/BACnet in your Hierarchy logi
 
 ---
 
-## 🎨 Using Flow View in the Hierarchy
+## Using Flow View in the Hierarchy
 
 When you click on any folder in the Hierarchy, it opens in **Flow View** - the visual workspace where you build logic.
 
@@ -385,7 +385,7 @@ When you click on any folder in the Hierarchy, it opens in **Flow View** - the v
 
 ---
 
-## 📋 Common Hierarchy Use Cases
+## Common Hierarchy Use Cases
 
 ### **Use Case 1: Building-Level Energy Aggregation**
 
@@ -454,7 +454,7 @@ Hierarchy → Building_A → Floor_2 → Zone_Averages
 
 ---
 
-## ⚠️ Common Mistakes to Avoid
+## Common Mistakes to Avoid
 
 ### **1. Mixing Physical and Logical**
 
@@ -532,7 +532,7 @@ Hierarchy
 
 ---
 
-## 🎯 Best Practices Summary
+## Best Practices Summary
 
 1. **Plan before you build** - Sketch your structure on paper or whiteboard first
 2. **Use clear naming** - `Building_A_AHU_1` is better than `BA-A1`
@@ -547,7 +547,7 @@ Hierarchy
 
 ---
 
-## 📊 Hierarchy Workflow Summary
+## Hierarchy Workflow Summary
 
 ```
 1. Plan Structure

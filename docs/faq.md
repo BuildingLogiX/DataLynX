@@ -1,10 +1,10 @@
-# ❓ Frequently Asked Questions (FAQ)
+# Frequently Asked Questions (FAQ)
 
 This FAQ covers the most common questions and troubleshooting steps for working with DataLynX, including BACnet configuration, BasiX mapping, services, backups, and UI usage.
 
 ---
 
-## 🔧 1. General System Questions
+## 1. General System Questions
 
 ### **Q: What's the difference between the Windows Services and the DataLynX Agent?**
 **A:**
@@ -155,7 +155,7 @@ The agent is probably not running. After login, you land on the **Supervisor** p
 
 ---
 
-## 🌐 2. BACnet Questions
+## 2. BACnet Questions
 
 ### **Q: Devices are not showing up in discovery. What should I check?**
 **A:**
@@ -196,7 +196,7 @@ If using routers, verify:
 
 ---
 
-## 🧩 3. Data Transformation & Logic Questions
+## 3. Data Transformation & Logic Questions
 
 ### **Q: My math block is producing NaN. Why?**
 **Possible reasons:**
@@ -243,7 +243,7 @@ See **[Property Configuration & Flags](concepts/units-formatting.md#-5-property-
 
 ---
 
-## 🧬 4. BasiX Questions
+## 4. BasiX Questions
 
 ### **Q: Why can't I publish my BasiX device to BDX?**
 Because required fields are missing or have incorrect/missing units.
@@ -309,7 +309,7 @@ For actual conversion (e.g., Pa → inWC), use a Convert block.
 
 ---
 
-## ☁️ 5. BDX Communication Questions
+## 5. BDX Communication Questions
 
 ### **Q: Agent shows “offline” in BDX. Why?**
 Check:
@@ -335,7 +335,7 @@ Check:
 
 ---
 
-# 🔐 6. Security & User Questions
+## 6. Security & User Questions
 
 ### **Q: I forgot my password. How do I reset it?**
 Log in as a **Supervisor**, then:
@@ -354,7 +354,7 @@ For temporary access removal, disable the account instead.
 
 ---
 
-## 💾 7. Backup & Reset Questions
+## 7. Backup & Reset Questions
 
 ### **Q: Does deleting datalynx.cfg reset the system?**
 Yes, **but only if the Supervisor Service is stopped first**.  
@@ -385,7 +385,7 @@ onto the new machine’s agent directory.
 
 ---
 
-## 🛠️ 8. Advanced Questions
+## 8. Advanced Questions
 
 ### **Q: Does DataLynX support BACnet MSTP?**
 Yes, **via routed networks** (Remote Stations).  
@@ -404,7 +404,7 @@ Yes — DataLynX supports saving and loading mapping structures through configur
 
 ---
 
-## 📝 Summary
+## Summary
 
 This FAQ covers:
 

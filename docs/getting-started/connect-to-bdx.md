@@ -1,11 +1,11 @@
-# 🔗 Connecting DataLynX to BDX
+# Connecting DataLynX to BDX
 
 This guide explains how to connect your local DataLynX Agent to the **[BuildingLogiX Data eXchange (BDX)](https://buildinglogix.github.io/BDX/)** platform.
 Once connected, DataLynX will begin securely transmitting normalized point data (BasiX) to BDX for analytics, dashboards, alarming, and long‑term storage.
 
 ---
 
-## 📘 1. Overview
+## 1. Overview
 
 DataLynX communicates with BDX using a secure, authenticated connection.  
 Each local Agent appears as a managed device inside BDX.
@@ -21,7 +21,7 @@ BDX supports multiple Agents, and one Agent may serve many buildings or systems.
 
 ---
 
-## 🌐 2. Prerequisites
+## 2. Prerequisites
 
 Before connecting, ensure:
 
@@ -33,7 +33,7 @@ Before connecting, ensure:
 
 ---
 
-## 🔧 3. Configure BDX to Recognize Your Agent
+## 3. Configure BDX to Recognize Your Agent
 
 For detailed instructions on managing agents in BDX, see the **[BDX Agent Management Documentation](https://buildinglogix.github.io/BDX/manage_agent_summary)**.
 
@@ -68,7 +68,7 @@ http://localhost/agent/bdxAgent
 
 ---
 
-## 🔑 4. Authentication Setup
+## 4. Authentication Setup
 
 BDX and DataLynX exchange:
 
@@ -97,7 +97,7 @@ Connections → BDX
 
 ---
 
-## 🔄 5. Establishing Communication
+## 5. Establishing Communication
 
 Once both sides (BDX and DataLynX) have matching credentials and agent URLs:
 
@@ -119,7 +119,7 @@ You should now see the Agent listed in the BDX Agent screen with status indicato
 
 ---
 
-## 🧪 6. Validate the Connection
+## 6. Validate the Connection
 
 You can confirm the connection by checking:
 
@@ -129,7 +129,7 @@ You can confirm the connection by checking:
 - DataLynX and BDX Agent settings match or update if changed and appear in sync on eachothers pages
 
 
-## 🔒 7. Security Best Practices
+## 7. Security Best Practices
 
 For production environments:
 
@@ -139,7 +139,7 @@ For production environments:
 
 ---
 
-## 🚑 8. Troubleshooting
+## 8. Troubleshooting
 
 ### ❌ "Agent Unreachable" in BDX
 
@@ -163,7 +163,7 @@ For production environments:
 
 ---
 
-## 🎉 Next Step
+## Next Step
 
 Move on to:
 

@@ -1,10 +1,10 @@
-# 🌐 Setting Up Your First BACnet Network
+# Setting Up Your First BACnet Network
 
 This guide walks you through configuring DataLynX for BACnet/IP communication, creating your first network, discovering devices, and validating point data.
 
 ---
 
-## 🔧 1. Overview
+## 1. Overview
 
 After installing DataLynX and ensuring services are running, your next step is to configure your first **BACnet network**.  
 This process includes:
@@ -19,7 +19,7 @@ This is the essential foundation for all later mapping and BasiX modeling.
 
 ---
 
-## 🏠 2. Configure the Hosted Device
+## 2. Configure the Hosted Device
 
 The **hosted device** is DataLynX’s identity on the BACnet network.
 
@@ -50,7 +50,7 @@ Connections → BACnet → configuration → Hosted Device
 
 ---
 
-## 🌐 3. Add a BACnet/IP Network
+## 3. Add a BACnet/IP Network
 
 1. Navigate to:
 
@@ -82,7 +82,7 @@ After saving, make sure the network shows as **Enabled**.
 
 ---
 
-## 🔍 4. Configure Polling (Optional for First Setup)
+## 4. Configure Polling (Optional for First Setup)
 
 You may keep default polling settings.
 
@@ -101,7 +101,7 @@ Connections → BACnet → Networks → Poll Service
 
 ---
 
-## 📡 5. Discover Devices
+## 5. Discover Devices
 
 Now you are ready to find controllers on the network.
 
@@ -134,7 +134,7 @@ Discover → Who-Is
 - MAC address
 - Vendor information
 
-### 📁 Organizing Devices with Folders
+### Organizing Devices with Folders
 
 By default, all discovered devices appear under the top-level `devices` node. For larger sites, this can become difficult to manage.
 
@@ -164,7 +164,7 @@ By default, all discovered devices appear under the top-level `devices` node. Fo
 
 ---
 
-## 📘 6. View Device Details
+## 6. View Device Details
 
 Click any discovered device to open the **device detail view**, where you can:
 
@@ -185,7 +185,7 @@ Manual addition is useful for MSTP devices behind remote routers.
 
 ---
 
-## 🧪 7. Validate Point Data
+## 7. Validate Point Data
 
 Choose a device and open its **Point List**.  
 Verify:
@@ -206,7 +206,7 @@ If values do not change:
 
 ---
 
-## 📁 8. Router Table Verification (If Using Routers)
+## 8. Router Table Verification (If Using Routers)
 
 Navigate to:
 
@@ -222,7 +222,7 @@ If routers are present on your network:
 - You may add manual entries if network topology requires it
 - Remote stations (for MSTP) may appear here as well
 
-### 📌 Pinning Router Table Entries
+### Pinning Router Table Entries
 
 Router table entries learned automatically can be purged or overwritten when routers restart or network conditions change. To prevent this:
 
@@ -251,7 +251,7 @@ Router table entries learned automatically can be purged or overwritten when rou
 
 ---
 
-## 🎉 9. Next Steps
+## 9. Next Steps
 
 After discovery and point validation, you can proceed with:
 

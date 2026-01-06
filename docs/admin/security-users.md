@@ -1,11 +1,11 @@
-## 🔐 Security & User Management
+## Security & User Management
 
 DataLynX provides a simple but effective security model designed for on-premises building automation environments.  
 This guide explains how authentication works, how to manage user accounts, and best practices for securing your installation.
 
 ---
 
-## 🧭 1. Overview
+## 1. Overview
 
 Security features include:
 
@@ -21,7 +21,7 @@ Security in DataLynX is intentionally lightweight but robust enough for operatio
 
 ---
 
-## 👤 2. User Roles
+## 2. User Roles
 
 DataLynX supports **two primary user roles**:
 
@@ -59,7 +59,7 @@ This role is required for commissioning and integration work.
 
 ---
 
-## 🔑 3. Authentication Model
+## 3. Authentication Model
 
 ### ✔ Username + Password  
 All users must authenticate with a unique username and password.
@@ -80,7 +80,7 @@ Admin can set the complexity level (depends on version):
 
 ---
 
-## 🧰 4. User Management Interface
+## 4. User Management Interface
 
 Navigate to:
 
@@ -109,7 +109,7 @@ Used for editing:
 
 ---
 
-## ➕ 5. Adding a New User
+## 5. Adding a New User
 
 1. Open:
 
@@ -129,7 +129,7 @@ The user can now log in immediately.
 
 ---
 
-## 🛑 6. Deleting or Disabling Users
+## 6. Deleting or Disabling Users
 
 You can remove users entirely or disable them temporarily.
 
@@ -141,7 +141,7 @@ You can remove users entirely or disable them temporarily.
 
 ---
 
-## 🧪 7. Auditing & Logging
+## 7. Auditing & Logging
 
 Authentication events are logged, including:
 
@@ -160,7 +160,7 @@ Use these logs to review suspicious activity or access issues.
 
 ---
 
-## 🔐 8. Security Best Practices
+## 8. Security Best Practices
 
 ### ✔ Restrict network access to trusted subnets
 ### ✔ Always assign strong passwords  
@@ -172,7 +172,7 @@ Use these logs to review suspicious activity or access issues.
 
 ---
 
-## 📝 Summary
+## Summary
 
 DataLynX provides:
 

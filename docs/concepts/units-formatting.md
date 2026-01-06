@@ -1,4 +1,4 @@
-# 📏 Units & Formatting Best Practices
+# Units & Formatting Best Practices
 
 DataLynX includes powerful unit handling, formatting rules, and data validation features to ensure that values coming from BACnet devices are presented correctly, normalized for analytics, and safely propagated through the Data Processing Layer.
 
@@ -8,7 +8,7 @@ This guide explains how DataLynX manages units, handling of dimensionless values
 
 ---
 
-## 🎯 1. Why Units Matter
+## 1. Why Units Matter
 
 BACnet points may come in with:
 
@@ -30,7 +30,7 @@ To prevent bad data from reaching analytics, DataLynX:
 
 ---
 
-## 🧩 2. Unit Propagation
+## 2. Unit Propagation
 
 Each value in the Data Processing Layer contains:
 
@@ -55,7 +55,7 @@ Links between blocks may propagate units depending on configuration.
 
 ---
 
-## 🔧 3. Dimensionless Units in BACnet
+## 3. Dimensionless Units in BACnet
 
 BACnet points can legally have **dimensionless** or **no units**—this is fully supported in the BACnet standard.
 
@@ -106,7 +106,7 @@ BACnet objects frequently use dimensionless units when the value is:
 
 ---
 
-## 🌡️ 4. Temperature Units and Delta Temperature
+## 4. Temperature Units and Delta Temperature
 
 ## Critical Difference: Absolute vs Delta Temperature
 
@@ -159,7 +159,7 @@ To avoid these issues:
 
 ---
 
-## 🔄 5. Property Configuration & Flags
+## 5. Property Configuration & Flags
 
 When configuring properties in DataLynX, you have access to several flags that control how the property behaves within the system. These are accessed through the **Configure Property** dialog.
 
@@ -200,7 +200,7 @@ The Configure Property dialog also provides:
 
 ---
 
-## 🛠️ 6. HVAC Measurement Formatting Reference
+## 6. HVAC Measurement Formatting Reference
 
 The following table provides recommended formatting for all common HVAC and energy management measurements. These recommendations ensure consistent, readable displays throughout DataLynX and BDX.
 
@@ -251,7 +251,7 @@ The following table provides recommended formatting for all common HVAC and ener
 
 ---
 
-## 📘 7. Physical Unit Conversions
+## 7. Physical Unit Conversions
 
 The Data Processing Layer supports automatic unit conversions such as:
 
@@ -270,7 +270,7 @@ If a BACnet point has no unit:
 
 ---
 
-## ❗ 8. Handling Incorrect or Missing Units
+## 8. Handling Incorrect or Missing Units
 
 If a BACnet point:
 
@@ -292,7 +292,7 @@ You can correct this by:
 
 ---
 
-## 🔍 9. Typical Examples
+## 9. Typical Examples
 
 ### ✔ Example 1: Temperature Scaling
 Some devices send temperatures like `734` to represent `73.4°F`.
@@ -343,7 +343,7 @@ Some devices send binary states as numbers:
 
 ---
 
-## 📝 10. Summary
+## 10. Summary
 
 Proper unit and formatting handling is **critical for DataLynX success**:
 

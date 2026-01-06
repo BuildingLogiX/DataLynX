@@ -1,4 +1,4 @@
-# 🔀 Mapping Modes in DataLynX
+# Mapping Modes in DataLynX
 
 The Mapping Layer in DataLynX is responsible for converting raw BACnet points into structured BasiX points.  
 Because building automation systems vary widely in naming, structure, and point availability, DataLynX supports **three powerful mapping modes**:
@@ -11,7 +11,7 @@ This page explains each mode, when to use it, and how they fit into the BasiX no
 
 ---
 
-## 🎯 1. Why Mapping Matters
+## 1. Why Mapping Matters
 
 Raw BACnet metadata is rarely standardized.  
 Examples you may encounter:
@@ -31,7 +31,7 @@ Mapping modes provide the flexibility needed for these realities.
 
 ---
 
-## 🎯 2. Exact Mapping
+## 2. Exact Mapping
 
 Exact Mapping creates a strict one-to-one relationship:
 
@@ -57,7 +57,7 @@ If the name does not match exactly, the mapping will not apply.
 
 ---
 
-## 🟡 3. Pattern Mapping (Glob)
+## 3. Pattern Mapping (Glob)
 
 Pattern mapping uses simple wildcards:
 
@@ -99,7 +99,7 @@ Matches:
 
 ---
 
-## 🧠 4. Regex Mapping (Advanced)
+## 4. Regex Mapping (Advanced)
 
 Regex mapping uses **full regular expressions**, allowing the most powerful matching method.
 
@@ -136,7 +136,7 @@ Regex mapping is extremely powerful and enables cross-vendor normalization.
 
 ---
 
-## 🧩 5. Best Practices
+## 5. Best Practices
 
 ### ✔ Use Exact Mapping for:
 

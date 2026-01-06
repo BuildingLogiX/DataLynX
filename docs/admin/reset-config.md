@@ -31,7 +31,7 @@ Reset is a **last resort** option, typically used only when:
 
 ---
 
-## 🛑 1. Critical Warnings
+## 1. Critical Warnings
 
 !!! warning "STOP - Back Up First!"
     **Before proceeding, you MUST manually back up your configuration files if you want any chance of recovery.**
@@ -58,7 +58,7 @@ Once you delete the configuration and restart the service, the old configuration
 
 ---
 
-## 🧭 2. Reset Procedure (Safe Method)
+## 2. Reset Procedure (Safe Method)
 
 ### Step 1 — Open Windows Services
 
@@ -160,7 +160,7 @@ Once complete, you can log into the UI and begin a fresh setup.
 
 ---
 
-## 🧪 3. Verifying the Reset
+## 3. Verifying the Reset
 
 After restart, confirm:
 
@@ -187,7 +187,7 @@ http://localhost
 
 ---
 
-## 🛑 4. What NOT to Delete
+## 4. What NOT to Delete
 
 Do **NOT** remove:
 
@@ -201,7 +201,7 @@ These are managed by the system and should not be tampered with.
 
 ---
 
-## 🔄 5. Optional: Full Hard Reset
+## 5. Optional: Full Hard Reset
 
 If you want to completely wipe the agent state:
 
@@ -225,7 +225,7 @@ Avoid this for production unless absolutely necessary.
 
 ---
 
-## 📝 Summary
+## Summary
 
 Resetting the configuration is safe when done correctly:
 

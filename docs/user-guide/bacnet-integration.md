@@ -6,7 +6,7 @@ Use this as a practical checklist for new deployments.
 
 ---
 
-## 🧭 1. Prerequisites
+## 1. Prerequisites
 
 Before starting:
 
@@ -25,7 +25,7 @@ If you haven’t done so yet, complete:
 
 ---
 
-## ⚙️ 2. Enable the BACnet Driver
+## 2. Enable the BACnet Driver
 
 1. Open the DataLynX UI.
 2. In the eXplorer tree, locate:
@@ -43,7 +43,7 @@ If the driver is disabled, enable it, then refresh the view.
 
 ---
 
-## 🏠 3. Configure the Hosted BACnet Device
+## 3. Configure the Hosted BACnet Device
 
 The hosted device is the identity of the DataLynX agent on the BACnet network.
 
@@ -66,7 +66,7 @@ The hosted device is the identity of the DataLynX agent on the BACnet network.
 
 ---
 
-## 🌐 4. Configure BACnet/IP Network(s)
+## 4. Configure BACnet/IP Network(s)
 
 1. Navigate to:
 
@@ -92,7 +92,7 @@ The hosted device is the identity of the DataLynX agent on the BACnet network.
 
 ---
 
-## ⏱️ 5. Configure Polling & Health Monitoring
+## 5. Configure Polling & Health Monitoring
 
 ### Poll Service
 
@@ -122,7 +122,7 @@ The hosted device is the identity of the DataLynX agent on the BACnet network.
 
 ---
 
-## 🔍 6. Device Discovery
+## 6. Device Discovery
 
 1. Navigate to:
 
@@ -147,7 +147,7 @@ The hosted device is the identity of the DataLynX agent on the BACnet network.
    - Device IDs and names look correct
    - Network numbers / MACs are as expected
 
-### 📁 Organizing Devices with Folders
+### Organizing Devices with Folders
 
 By default, all discovered devices appear under the top-level `devices` node. For larger sites with many controllers, this can become difficult to navigate and manage.
 
@@ -177,7 +177,7 @@ By default, all discovered devices appear under the top-level `devices` node. Fo
 
 ---
 
-## 🔁 7. Router Table & MSTP Devices (If Applicable)
+## 7. Router Table & MSTP Devices (If Applicable)
 
 If your BACnet environment includes routers:
 
@@ -199,7 +199,7 @@ If your BACnet environment includes routers:
 
 ---
 
-## 📟 8. Point Discovery for Devices
+## 8. Point Discovery for Devices
 
 Once devices are discovered, drill into each device to find its points.
 
@@ -220,7 +220,7 @@ Once devices are discovered, drill into each device to find its points.
 
 ---
 
-## 🧩 9. Inspect Properties & Live Values
+## 9. Inspect Properties & Live Values
 
 Use the **Property View** for detailed insight and debugging.
 
@@ -237,7 +237,7 @@ You can:
 
 ---
 
-## 🎛️ 10. Flow View & Data Transformation (Optional at this Stage)
+## 10. Flow View & Data Transformation (Optional at this Stage)
 
 If you need to:
 
@@ -262,7 +262,7 @@ Common tasks:
 
 ---
 
-## ✅ 11. Integration Checklist
+## 11. Integration Checklist
 
 Before moving on to BasiX mapping, verify:
 
@@ -279,7 +279,7 @@ If all items are checked, your BACnet integration is ready for the next stage.
 
 ---
 
-## 🚀 12. Next Step: BasiX Mapping Workflow
+## 12. Next Step: BasiX Mapping Workflow
 
 You are now ready to:
 

@@ -1,11 +1,11 @@
-# 🧬 BasiX Ontology & Device Profiles
+# BasiX Ontology & Device Profiles
 
 The **BasiX Ontology** is the standardized data model that DataLynX uses to transform diverse BACnet devices and point structures into a common, analytics-ready format for BDX.  
 It ensures that AHUs, VAVs, pumps, chillers, heat pumps, fan coils, and other HVAC systems all follow consistent schemas—regardless of vendor differences.
 
 ---
 
-## 🌐 1. What Is BasiX?
+## 1. What Is BasiX?
 
 **BasiX** defines:
 
@@ -19,7 +19,7 @@ BasiX serves as the "lingua franca" between on-prem building systems and BDX.
 
 ---
 
-## 🏗️ 2. Why BasiX Exists
+## 2. Why BasiX Exists
 
 BACnet systems differ dramatically across:
 
@@ -41,7 +41,7 @@ BasiX solves this by:
 
 ---
 
-## 🔧 3. BasiX Device Profiles
+## 3. BasiX Device Profiles
 
 A **BasiX Profile** is a template that defines the standard structure of a device.
 
@@ -73,7 +73,7 @@ The same logic applies to VAVs, Chillers, Pumps, etc.
 
 ---
 
-## 🔁 4. Mapping BACnet → BasiX
+## 4. Mapping BACnet → BasiX
 
 DataLynX uses two layers to convert field data into BasiX:
 
@@ -105,24 +105,24 @@ BasiX point: ZoneAirTemp
 
 ---
 
-## 🔎 5. Multi-Device Scenarios
+## 5. Multi-Device Scenarios
 
 Some equipment configurations require special handling:
 
-### **1 BAS → Many BasiX**
+### **1 BACnet Device → Many BasiX**
 Example: A plant controller exposes multiple towers and pumps under one device.
 
-### **Many BAS → One BasiX**
-Example: Multiple BAS controllers represent a single AHU’s logic and sensors.
+### **Many BACnet Devices → One BasiX**
+Example: Multiple BACnet controllers represent a single AHU's logic and sensors.
 
-### **Many BAS → Many BasiX**
+### **Many BACnet Devices → Many BasiX**
 Often used in distributed systems with many repeated devices (VAVs, FCUs).
 
 The mapping layer handles all these scenarios.
 
 ---
 
-## 🧪 6. Validation & Health Checking
+## 6. Validation & Health Checking
 
 The BasiX layer validates:
 
@@ -137,7 +137,7 @@ See **[Units & Formatting Best Practices](units-formatting.md)** for detailed gu
 
 ---
 
-## ☁️ 7. Output to BDX
+## 7. Output to BDX
 
 Once a device is mapped and validated:
 

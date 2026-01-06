@@ -6,7 +6,7 @@ Understanding the eXplorer structure is essential for efficient navigation and w
 
 ---
 
-## 📊 eXplorer Tree Overview
+## eXplorer Tree Overview
 
 When you log into DataLynX with the agent running, you'll see the following top-level structure:
 
@@ -26,7 +26,7 @@ Each of these nodes serves a specific purpose in the DataLynX ecosystem.
 
 ---
 
-## 🏗️ Top-Level Nodes Explained
+## Top-Level Nodes Explained
 
 ### **DataLynX (Root Node)**
 
@@ -254,7 +254,7 @@ License and activation management.
 
 ---
 
-## 🔍 Navigation Patterns
+## Navigation Patterns
 
 ### **Breadcrumb Navigation**
 
@@ -301,7 +301,7 @@ The top-right corner shows the **Active View** toggle:
 
 ---
 
-## 📁 Organizing Your Workspace
+## Organizing Your Workspace
 
 ### **Best Practices for Hierarchy Organization**
 
@@ -343,7 +343,7 @@ To create a new folder in Hierarchy:
 
 ---
 
-## 🗺️ Quick Reference: Where to Find Things
+## Quick Reference: Where to Find Things
 
 | Task | Navigate To |
 |------|-------------|
@@ -361,7 +361,7 @@ To create a new folder in Hierarchy:
 
 ---
 
-## 💡 Key Concepts Summary
+## Key Concepts Summary
 
 1. **Physical vs Logical Separation:**
    - **Connections/BACnet/devices** = Physical BACnet devices from the network

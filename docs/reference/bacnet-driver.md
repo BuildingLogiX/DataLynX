@@ -1,11 +1,11 @@
-# 📡 BACnet Driver Reference
+# BACnet Driver Reference
 
 The **BACnet Driver** in DataLynX provides full BACnet/IP client functionality, enabling device discovery, polling, routing, health monitoring, and property access.  
 This reference outlines all BACnet driver configuration fields, behavior, limits, and operational details.
 
 ---
 
-## 🧭 1. Overview
+## 1. Overview
 
 The BACnet driver is responsible for:
 
@@ -20,7 +20,7 @@ The BACnet driver is responsible for:
 
 ---
 
-## 🌐 2. BACnet/IP Network Configuration Fields
+## 2. BACnet/IP Network Configuration Fields
 
 Located at:
 
@@ -43,7 +43,7 @@ BACnet → Configuration → BACnet IP Network
 
 ---
 
-## 🔄 3. Device Discovery
+## 3. Device Discovery
 
 ### **Who-Is / I-Am**
 
@@ -63,7 +63,7 @@ BACnet → Configuration → BACnet IP Network
 
 ---
 
-## 📋 4. Device List & Properties
+## 4. Device List & Properties
 
 All discovered devices appear in:
 
@@ -87,7 +87,7 @@ You can view:
 
 ---
 
-## 🔁 5. Polling Engine
+## 5. Polling Engine
 
 Polling determines how often DataLynX reads analog, binary, and multistate values.
 
@@ -110,7 +110,7 @@ BACnet → Configuration → Poll Service
 
 ---
 
-## 🚦 6. Health Monitoring
+## 6. Health Monitoring
 
 Located at:
 
@@ -131,7 +131,7 @@ Monitors:
 
 ---
 
-## 🔀 7. Router Table
+## 7. Router Table
 
 DataLynX automatically learns routers and remote networks.
 
@@ -152,7 +152,7 @@ Supports:
 
 ---
 
-## 🧩 8. Object Types Supported
+## 8. Object Types Supported
 
 The BACnet driver supports all major object types:
 
@@ -173,7 +173,7 @@ Each object type exposes:
 - Status flags  
 ---
 
-## ✏️ 9. Read Behavior
+## 9. Read Behavior
 
 DataLynX is a **read-only BACnet client**. It reads point values from BACnet devices but does not write to them.
 
@@ -184,7 +184,7 @@ DataLynX is a **read-only BACnet client**. It reads point values from BACnet dev
 
 ---
 
-## 🛡️ 10. Reliability & Status Handling
+## 10. Reliability & Status Handling
 
 The driver tags each property with:
 
@@ -200,7 +200,7 @@ These flags propagate through block links unless overridden.
 
 ---
 
-## 🔐 11. Foreign Device Registration (FDR)
+## 11. Foreign Device Registration (FDR)
 
 If the Agent is not on the same subnet as field devices, FDR allows connection to a BBMD.
 
@@ -218,7 +218,7 @@ Used primarily for:
 
 ---
 
-## 🚫 12. Common BACnet Errors
+## 12. Common BACnet Errors
 
 | Error | Cause | Fix |
 |-------|-------|-----|
@@ -230,7 +230,7 @@ Used primarily for:
 
 ---
 
-## 📝 13. Summary
+## 13. Summary
 
 The BACnet Driver provides:
 

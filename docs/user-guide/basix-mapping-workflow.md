@@ -5,7 +5,7 @@ This is the final step before sending standardized data to BDX.
 
 ---
 
-## 🎯 1. Overview
+## 1. Overview
 
 The BasiX Mapping Workflow covers:
 
@@ -22,7 +22,7 @@ The BasiX Mapping Workflow covers:
 
 ---
 
-## 🧩 2. Where Mapping Happens
+## 2. Where Mapping Happens
 
 In the eXplorer tree, BasiX mapping schemes are located at:
 
@@ -47,7 +47,7 @@ The mapping scheme editor allows you to:
 
 ---
 
-## 💾 3. Saving & Reusing Mapping Schemes
+## 3. Saving & Reusing Mapping Schemes
 
 One of the most powerful features of DataLynX is the ability to **save mapping configurations as reusable schemes** that can be applied to multiple devices. This dramatically reduces setup time when integrating sites with many similar devices.
 
@@ -104,7 +104,7 @@ This single scheme maps all 50 VAVs automatically.
 
 ---
 
-## 🏗️ 4. Creating a BasiX Device
+## 4. Creating a BasiX Device
 
 ### Automatic Creation  
 If your BACnet naming conventions are consistent (e.g., `VAV-01` through `VAV-100`), DataLynX may automatically detect logical groups.
@@ -133,7 +133,7 @@ You can create a BasiX device manually:
 
 ---
 
-## 🔀 5. Mapping Modes You Can Use
+## 5. Mapping Modes You Can Use
 
 When mapping BACnet points to BasiX fields, you may choose:
 
@@ -145,7 +145,7 @@ Each profile contains required and optional fields.
 
 ---
 
-## 🧭 6. Mapping Example (VAV)
+## 6. Mapping Example (VAV)
 
 Suppose you create a VAV BasiX device for `VAV-12`.
 
@@ -168,7 +168,7 @@ BasiX Point: zoneAirTemp
 
 ---
 
-## 🛠️ 7. Using Flow View for Value Conditioning
+## 7. Using Flow View for Value Conditioning
 
 Before mapping to BasiX, you may need to apply logic such as:
 
@@ -196,7 +196,7 @@ See **[Units & Formatting Best Practices](../concepts/units-formatting.md)** for
 
 ---
 
-## 📋 8. Required vs Optional Points
+## 8. Required vs Optional Points
 
 Each BasiX Profile defines:
 
@@ -211,7 +211,7 @@ You can still save the device but cannot publish to BDX until the profile is com
 
 ---
 
-## 📡 9. Device Completeness Indicators
+## 9. Device Completeness Indicators
 
 After mapping a BasiX device, DataLynX displays:
 
@@ -223,7 +223,7 @@ You can filter all mapped devices by status.
 
 ---
 
-## ☁️ 10. Publishing to BDX
+## 10. Publishing to BDX
 
 Once mappings are valid:
 
@@ -245,7 +245,7 @@ BDX will receive a normalized BasiX structure, enabling analytics, dashboards, a
 
 ---
 
-## 🧪 11. Troubleshooting Common Mapping Issues
+## 11. Troubleshooting Common Mapping Issues
 
 ### ❌ No points appear in the mapping search
 
@@ -283,7 +283,7 @@ BDX will receive a normalized BasiX structure, enabling analytics, dashboards, a
 
 ---
 
-## 📝 Summary
+## Summary
 
 The BasiX Workflow:
 

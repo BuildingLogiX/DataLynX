@@ -1,4 +1,4 @@
-# ⚡ Quick Start Guide
+# Quick Start Guide
 
 **Get DataLynX running in 10 minutes.** This guide is for experienced BAS integrators who want to get up and running fast.
 

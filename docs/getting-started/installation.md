@@ -1,10 +1,10 @@
-# 🛠️ Installation & Windows Services
+# Installation & Windows Services
 
 This guide walks you through installing **DataLynX**, understanding the required Windows services, and verifying the system is running correctly. This is the recommended first stop after setting up your GitHub-based documentation.
 
 ---
 
-## 📥 1. Install DataLynX
+## 1. Install DataLynX
 
 DataLynX is distributed as a Windows **.msi installer**.
 
@@ -20,7 +20,7 @@ DataLynX is distributed as a Windows **.msi installer**.
      - If port 80 is already in use by another application (like IIS, Apache, or another web server), choose an alternative port such as **8050** or **8020**
      - Make note of the port you select for browser access and firewall configuration
 
-![DataLynX Installer Port Configuration](../img/DataLynX Installer Port Config.PNG)
+![DataLynX Installer Port Configuration](../img/DataLynX-Installer-Port-Config.PNG)
 
    - Proceed with installation
 
@@ -40,7 +40,7 @@ The installer sets up the following:
 
 ---
 
-## ⚙️ 2. Required Windows Services
+## 2. Required Windows Services
 
 DataLynX installs **two** Windows services.
 Both must be running for the UI to be accessible.
@@ -59,7 +59,7 @@ Both must be running for the UI to be accessible.
 - Required for logging into the UI via browser
 - Process: `agent.exe`
 
-### 📍 How to check services
+### How to check services
 
 1. Open **Services.msc**
 2. Look for:
@@ -93,7 +93,7 @@ The DataLynX Agent is controlled from the **Supervisor** page in the UI (not fro
 
 ---
 
-## 🔥 3. Firewall Configuration
+## 3. Firewall Configuration
 
 **IMPORTANT:** DataLynX requires firewall configuration to access the Web UI from a browser.
 
@@ -153,7 +153,7 @@ After configuring the firewall:
 
 ---
 
-## 🌐 4. Accessing the Web UI
+## 4. Accessing the Web UI
 
 After installation and service startup:
 
@@ -239,7 +239,7 @@ The Supervisor page also allows you to configure the **Agent Startup Type**, whi
 
 ---
 
-## 📁 5. Important Folders
+## 5. Important Folders
 
 | Purpose | Path |
 |--------|------|
@@ -253,7 +253,7 @@ If you delete `datalynx.cfg` while the agent is running, it will **rebuild the f
 
 ---
 
-## 🧪 6. Verify Successful Installation
+## 6. Verify Successful Installation
 
 Perform the following checks:
 
@@ -295,7 +295,7 @@ If all checks pass, your installation is complete and you're ready to configure 
 
 ---
 
-## 🚑 7. Troubleshooting
+## 7. Troubleshooting
 
 ### **UI will not load**
 
@@ -320,7 +320,7 @@ If all checks pass, your installation is complete and you're ready to configure 
 
 ---
 
-## 🎉 You're Ready for the Next Step
+## Next Step
 
 Move on to:
 

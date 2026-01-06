@@ -5,7 +5,7 @@ Built on Python, it provides fast, reliable BACnet/IP communication, powerful da
 
 ---
 
-## 🚀 What is DataLynX?
+## What is DataLynX?
 
 DataLynX acts as the **bridge between on-premises building automation systems (BAS)** and the **BDX (BuildingLogiX Data eXchange)** analytics platform.
 
@@ -41,7 +41,7 @@ It provides:
 
 ---
 
-## 🧭 Documentation Overview
+## Documentation Overview
 
 This site contains the complete documentation for DataLynX, including:
 
@@ -87,7 +87,7 @@ Common issues, troubleshooting steps, and quick answers.
 
 ---
 
-## 🏗 System Requirements
+## System Requirements
 
 - Windows 10, Windows Server 2016+  
 - DataLynX installer (.msi)  
@@ -98,7 +98,7 @@ Common issues, troubleshooting steps, and quick answers.
 
 ---
 
-## 🌐 How DataLynX Fits into the BDX Ecosystem
+## How DataLynX Fits into the BDX Ecosystem
 
 DataLynX is designed to work seamlessly with:
 
@@ -115,7 +115,7 @@ DataLynX handles on-prem BAS communication, computation, and normalization so BD
 
 ---
 
-## 🔧 Getting Started
+## Getting Started
 
 ➡ Start with: **Installation & Services**  
 After installing DataLynX, you will:
@@ -131,7 +131,7 @@ Use the navigation on the left to follow the recommended sequence.
 
 ---
 
-## 📧 Licensing, Support, & Contact
+## Licensing, Support, & Contact
 
 **DataLynX** is proprietary software developed and owned by **BuildingLogiX**.
 
@@ -141,7 +141,7 @@ For questions, licensing, technical support, or feedback:
 
 ---
 
-## 📄 License & Copyright
+## License & Copyright
 
 - **Software:** DataLynX © 2025 BuildingLogiX. All rights reserved.
 - **Documentation:** © 2025 BuildingLogiX. All rights reserved.

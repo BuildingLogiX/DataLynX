@@ -1,4 +1,4 @@
-# 🔧 Data Transformation & Logic Flow
+# Data Transformation & Logic Flow
 
 DataLynX provides powerful **data transformation and logic capabilities** that allow you to clean, scale, convert, and manipulate building automation data before sending it to BDX.
 
@@ -8,7 +8,7 @@ You'll interact with these capabilities primarily through the **Flow View** in t
 
 ---
 
-## 🧠 1. What Data Transformation Does
+## 1. What Data Transformation Does
 
 DataLynX's data transformation layer:
 
@@ -30,7 +30,7 @@ Everything that goes to BDX flows through this transformation layer.
 
 ---
 
-## 🧩 2. Core Concepts
+## 2. Core Concepts
 
 ### **Logic Blocks**
 Logic blocks are the functional units you'll work with in the Flow View.
@@ -84,7 +84,7 @@ There is a global configuration option for **"propagate units"**:
 
 ---
 
-## 🔁 3. Data Flow Through DataLynX
+## 3. Data Flow Through DataLynX
 
 Below is the typical flow of a single value from a BACnet device:
 
@@ -103,7 +103,7 @@ This pipeline ensures that raw, noisy field data is normalized, scaled, and reli
 
 ---
 
-## 🛠️ 4. Example: Building a Simple Logic Flow
+## 4. Example: Building a Simple Logic Flow
 
 Consider measuring an AHU Cooling Coil Delta-T:
 
@@ -129,7 +129,7 @@ The block automatically:
 
 ---
 
-## 🛡️ 5. Status & Reliability Handling
+## 5. Status & Reliability Handling
 
 Every property maintains:
 
@@ -157,7 +157,7 @@ This ensures BDX receives quality data.
 
 ---
 
-## 🔍 6. Flow View & Live Monitoring
+## 6. Flow View & Live Monitoring
 
 The **Flow View** in the UI provides a visual wiresheet interface where you can:
 
@@ -181,7 +181,7 @@ Watches are essential for troubleshooting mappings or device issues.
 
 ---
 
-## 📦 7. Snapshots & Backups
+## 7. Snapshots & Backups
 
 DataLynX automatically maintains:
 
@@ -195,7 +195,7 @@ This is critical for restoring operation after failures, upgrades, or corrupted 
 
 ---
 
-## 🧾 8. Configuration Files
+## 8. Configuration Files
 
 DataLynX stores your logic configuration in standard formats:
 

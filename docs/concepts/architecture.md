@@ -4,7 +4,7 @@ This page provides an overview of **DataLynX**, the BuildingLogiX on-premises ag
 
 ---
 
-## 🏗️ How DataLynX Works
+## How DataLynX Works
 
 DataLynX is designed with clear, modular layers:
 
@@ -31,7 +31,7 @@ DataLynX is designed with clear, modular layers:
 ```
 
 
-## 🧩 Core Components at a Glance
+## Core Components at a Glance
 
 | Component | What It Does |
 |-----------|--------------|
@@ -44,7 +44,7 @@ DataLynX is designed with clear, modular layers:
 
 ---
 
-## 🌐 BACnet Driver
+## BACnet Driver
 
 The BACnet driver handles all communication with your building automation system.
 
@@ -64,7 +64,7 @@ The BACnet driver handles all communication with your building automation system
 
 ---
 
-## 🔢 Data Processing & Transformation Layer
+## Data Processing & Transformation Layer
 
 The data processing layer is where raw BACnet data becomes analytics-ready.
 
@@ -88,7 +88,7 @@ All values sent to BDX flow through this layer.
 
 ---
 
-## 🧱 Property Containers & Data Flow
+## Property Containers & Data Flow
 
 DataLynX uses **Property Containers** to track each value through the system:
 
@@ -100,7 +100,7 @@ DataLynX uses **Property Containers** to track each value through the system:
 
 ---
 
-## 📚 BasiX Ontology & Device Profiles
+## BasiX Ontology & Device Profiles
 
 BasiX provides a **standardized schema** for HVAC and building equipment.
 
@@ -115,7 +115,7 @@ DataLynX converts raw BACnet points into structured BasiX entities using mapping
 
 ---
 
-## ☁️ Data Pump (BDX Communication)
+## Data Pump (BDX Communication)
 
 The Data Pump sends normalized data to BDX:
 
@@ -132,7 +132,7 @@ The Data Pump sends normalized data to BDX:
 
 ---
 
-## 🖥️ Web Service
+## Web Service
 
 The Web Service provides:
 
@@ -146,7 +146,7 @@ This service must be running to access the DataLynX UI.
 
 ---
 
-## 🔒 Supervisor Interface
+## Supervisor Interface
 
 Used by BDX for remote management:
 
@@ -160,7 +160,7 @@ This interface is accessed through secure channels by BDX tooling.
 
 ---
 
-## 📝 Summary
+## Summary
 
 This architecture ensures:
 
